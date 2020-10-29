@@ -1,0 +1,129 @@
+@namespace xml "http://www.w3.org/XML/1998/namespace";
+
+/* Bibelexegese */
+
+titleStmt title {
+    -oxy-show-placeholder: always;
+}
+
+titleStmt title:after{
+    content: " ("oxy_textfield(edit, "xml:lang",color, "black",columns, 2)")";
+}
+
+titleStmt author{
+    display: block;
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"Autor"
+}
+
+msIdentifier altIdentifier{
+    display:block;
+}
+
+msIdentifier altIdentifier[type='diktyon']:before{
+    content: "Diktyon-Signatur: " 
+}
+
+msIdentifier altIdentifier:before{
+    content: "weitere Signatur: " 
+}
+
+encodingDesc{
+    display:none;
+}
+
+profileDesc, langUsage, language{
+    -oxy-display-tags: none;
+}
+
+language:before{
+    content:"\A Sprache: "
+}
+
+language:after{
+    content: " (" oxy_textfield(edit, "ident",color, "black",columns, 4)")";
+}
+
+handDesc, handNote{
+    display: block;
+}
+
+handDesc:before{
+    content: "Anzahl der Schreiber: "oxy_textfield(edit, "hands",color, "black",columns, 2);
+}
+
+
+
+/* body */
+
+div head title{
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"Titel"
+}
+
+div[type='textpart'][subtype='section']:before{
+    content: "Sektion " attr(n);
+    color:gray;
+    font-size: 75%;
+}
+
+g{
+    -oxy-display-tags: none;
+    background-color:lightblue;
+}
+
+g[type='diple']{
+    content:"›";
+}
+
+g[type='doubled_diple']{
+    content:"»";
+}
+
+g[type='paragraphos']{
+    content:"_";
+}
+
+text gap:before{
+    content:" ("attr(reason)")";
+    font-size:75%;
+}
+
+/* Marginalien */
+text note[place^='mTop']{
+    border-top:dotted 1px;
+}
+
+text note[place^='mBottom']{
+    border-bottom:dotted 1px;
+}
+
+text note[place='margin_inner']{
+    border-left:dotted 1px;
+}
+
+text note[place='margin_outer']{
+    border-right:dotted 1px;
+}
+
+/* Nomina Sacra */
+
+abbr[type='nomSac'] hi{
+    -oxy-display-tags: none;
+    text-decoration: overline;
+}
+
+/* Handschriftenwechsel */
+handShift{
+    -oxy-display-tags: none;
+    /*content: attr(scribeRef) " ";*/
+    font-size:70%;
+    position: relative; 
+    top: -0.5em;
+    font-size: 0.7em;
+    content:" \|" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("scribeRef"),"',@xml:id)]/string(), ' ')")) " ";
+}
+
+/*handShift:before{
+    content:" \|"
+}*/

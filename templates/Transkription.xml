@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" telota:doctype="transcription" xml:id="t${uuid}">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="la"/>
+        <author key="#pta0013"/>
+          <respStmt>
+              <persName ref="https://lobid.org/gnd/124321291" xml:id="AvS">
+                  <surname>von Stockhausen</surname>
+                  <forename>Annette</forename>
+              </persName>
+              <resp><note type="remarkResponsibility">Transkription</note></resp>
+          </respStmt>
+      </titleStmt>
+        <publicationStmt>
+            <publisher><ref target="http://www.bbaw.de">Berlin-Brandenburgische Akademie der
+                Wissenschaften (BBAW)</ref></publisher>
+            <pubPlace ref="http://www.geonames.org/2950159">Berlin</pubPlace>
+            <!-- 
+            <distributor>Patristic Text Archive</distributor>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by-sa/4.0/">Available under a Creative Commons Attribution ShareAlike 4.0 International License</licence>
+        </availability>
+            -->
+        </publicationStmt>
+      <sourceDesc>
+        <msDesc rend="manuscript">
+                    <msIdentifier
+                        xml:id="${ask('ID eintragen in Form von Aufbewahrungsort_Signatur', generic, '')}">
+                        <settlement>${ask('Aufbewahrungsort eingeben', generic, '')}</settlement>
+                        <repository>${ask('Bibliothek eingeben', generic, '')}</repository>
+                        <idno>${ask('Signatur', generic, '')}</idno>
+                    </msIdentifier>
+                    <physDesc>
+                        <objectDesc>
+                            <layoutDesc>
+                                <layout columns="1">
+                                    <p/>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc hands="3">
+                            <handNote xml:id="m1">Schreiber</handNote>
+                            <handNote xml:id="m2">Korrektor</handNote>
+                        </handDesc>
+                    </physDesc>
+                </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <editorialDecl>
+        <correction>
+          <p>Die in der Handschrift durchgehend auf ι und υ gesetzten Dialytika wurden bei der Transkription nicht aufgenommen.</p>
+        </correction>
+      </editorialDecl>
+      <refsDecl n="CTS">
+        <cRefPattern n="section" matchPattern="(.+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div[@type='transcription']/tei:div[@n='$1'])"/>
+      </refsDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="grc">Ancient Greek</language>
+      </langUsage>
+    </profileDesc>
+    
+  </teiHeader>
+  <text>
+    <body>
+      <div type="transcription" xml:lang="grc" n="urn:cts:pta:pta0013.pta003.pta-msLa">
+        <head>
+          <title/>
+        </head>
+        <div type="textpart" subtype="section" n="1">
+          <p></p>   
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
