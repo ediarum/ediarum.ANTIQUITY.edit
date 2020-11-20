@@ -1,50 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" telota:doctype="transcription" xml:id="t${uuid}">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" telota:doctype="transcription" xml:id="t_${uuid}">
   <teiHeader>
     <fileDesc>
       <titleStmt>
         <title xml:lang="la"/>
-        <author key="#pta0013"/>
+        <author/>
           <respStmt>
-              <persName ref="https://lobid.org/gnd/124321291" xml:id="AvS">
-                  <surname>von Stockhausen</surname>
-                  <forename>Annette</forename>
+            <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben ihres Vor- und Nachnamen)', generic, '')}">
+              <surname>${ask('Mitarbeiter: Nachname', generic, '')}</surname>
+              <forename>${ask('Mitarbeiter: Vorname', generic, '')}</forename>
               </persName>
-              <resp><note type="remarkResponsibility">Transkription</note></resp>
+            <resp><note type="remarkResponsibility">${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'Mitarbeit')}</note></resp>
           </respStmt>
       </titleStmt>
         <publicationStmt>
             <publisher><ref target="http://www.bbaw.de">Berlin-Brandenburgische Akademie der
                 Wissenschaften (BBAW)</ref></publisher>
             <pubPlace ref="http://www.geonames.org/2950159">Berlin</pubPlace>
-            <!-- 
-            <distributor>Patristic Text Archive</distributor>
-        <availability>
-          <licence target="https://creativecommons.org/licenses/by-sa/4.0/">Available under a Creative Commons Attribution ShareAlike 4.0 International License</licence>
-        </availability>
-            -->
         </publicationStmt>
       <sourceDesc>
         <msDesc rend="manuscript">
                     <msIdentifier
-                        xml:id="${ask('ID eintragen in Form von Aufbewahrungsort_Signatur', generic, '')}">
-                        <settlement>${ask('Aufbewahrungsort eingeben', generic, '')}</settlement>
-                        <repository>${ask('Bibliothek eingeben', generic, '')}</repository>
-                        <idno>${ask('Signatur', generic, '')}</idno>
+                      xml:id="${ask('ID für transkribierte Handschrift eintragen in Form von Aufbewahrungsort_Signatur', generic, '')}">
+                      <settlement>${ask('Aufbewahrungsort der Handschrift eingeben', generic, '')}</settlement>
+                      <repository>${ask('Bibliothek der Handschrift eingeben', generic, '')}</repository>
+                      <idno>${ask('Signatur der Handschrift', generic, '')}</idno>
                     </msIdentifier>
-                    <physDesc>
-                        <objectDesc>
-                            <layoutDesc>
-                                <layout columns="1">
-                                    <p/>
-                                </layout>
-                            </layoutDesc>
-                        </objectDesc>
-                        <handDesc hands="3">
-                            <handNote xml:id="m1">Schreiber</handNote>
-                            <handNote xml:id="m2">Korrektor</handNote>
-                        </handDesc>
-                    </physDesc>
+                    
                 </msDesc>
       </sourceDesc>
     </fileDesc>
@@ -58,21 +40,20 @@
         <cRefPattern n="section" matchPattern="(.+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div[@type='transcription']/tei:div[@n='$1'])"/>
       </refsDecl>
     </encodingDesc>
-    <profileDesc>
-      <langUsage>
-        <language ident="grc">Ancient Greek</language>
-      </langUsage>
-    </profileDesc>
-    
+    <revisionDesc status="draft">
+      <listChange>
+        <change when="${date(yyyy-MM-dd)}" who="${ask('Bearbeitungshistorie: Wdh. Kürzel Bearbeiter*in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">Created new record</change>
+      </listChange>
+    </revisionDesc>
   </teiHeader>
   <text>
     <body>
-      <div type="transcription" xml:lang="grc" n="urn:cts:pta:pta0013.pta003.pta-msLa">
+      <div type="transcription" xml:lang="${ask('Schreibsprache nach ISO 639 (z.B. grc, lat, etc.)', generic, '')}" n="urn:cts:pta:${ask('PTA-Autor-ID', generic, '')}.${ask('PTA-Werk-ID', generic, '')}.pta-ms${ask('Sigle der Handschrift', generic, '')}">
         <head>
           <title/>
         </head>
-        <div type="textpart" subtype="section" n="1">
-          <p></p>   
+        <div type="textpart" subtype="${ask('Unterabschnitt der Transkription', combobox, ('section':'Fließtexte';'fragment':'fragmentarische Überlieferung';'commented':'Kommentar';'commentary':'vergleichbarer Text';), 'section')}">
+          <p></p>
         </div>
       </div>
     </body>
