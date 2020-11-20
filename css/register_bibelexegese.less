@@ -1,0 +1,14 @@
+bibl idno {
+    &:before {
+        content: attr('type') ": ";
+    }
+    &:after {
+        content: "";
+    }
+}
+bibl date {
+    &[source]:after {
+        link: attr('source');
+        content: " (" attr('source') " " oxy_url('${baseFramework}/css/gfx/ref_black_small.png') ")";
+    }
+}

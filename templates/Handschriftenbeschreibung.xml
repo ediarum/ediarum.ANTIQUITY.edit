@@ -1,0 +1,77 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:telota="http://www.telota.de"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    telota:doctype="manuscriptDesc bibelexegese"
+    xml:id="diktyon-none">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title></title>
+            </titleStmt>
+            <editionStmt>
+                <edition>
+                    <title>Die alexandrinische und antiochenische Bibelexegese in der Spätantike</title>
+                </edition>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>
+                    <ref target="http://www.bbaw.de">Berlin-Brandenburgische Akademie der
+                        Wissenschaften (BBAW)</ref>
+                </publisher>
+                <pubPlace ref="http://www.geonames.org/2950159">Berlin</pubPlace>
+                <availability>
+                    <p>CC-BY-SA 4.0</p>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p/>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when-iso="${date(yyyy-MM-dd)}">Create new record</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <msDesc>
+                <msIdentifier>
+                    <country/>
+                    <settlement/>
+                    <repository/>
+                    <idno/>
+                </msIdentifier>
+                <msContents>
+                    <msItem><p></p></msItem>
+                </msContents>
+                <physDesc>
+                    <objectDesc>
+                        <supportDesc>
+                            <support>
+                                <p n="supportMaterial">
+                                    <material></material>
+                                </p>
+                            </support>
+                            <extent>
+                                <measure type="leafsize"></measure>
+                                <measure type="numleaves"></measure>
+                            </extent>
+                        </supportDesc>
+                    </objectDesc>
+                </physDesc>
+                <history>
+                    <origin>
+                        <p n="origDate">
+                        </p>
+                    </origin>
+                </history>
+                <additional>
+                    <adminInfo>
+                        <recordHist>
+                            <p></p>
+                        </recordHist>
+                    </adminInfo>
+                </additional>
+            </msDesc>
+        </body>
+    </text>
+</TEI>

@@ -22,15 +22,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/ediarum.OVP.edit/ediarum.ovp.register.framework/ediarum.OVP.register</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/ediarum_mediaevum/ediarum.mediaevum.register.framework/ediarum.mediaevum.register</String>
+                                    <String>4/bibelexegese/ediarum.bibelexegese.register.framework/ediarum.bibelexegese.register</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -62,55 +54,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/ediarum_schleiermacher/ediarum.schleiermacher.register.framework/ediarum.schleiermacher.register</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/ediarum.AVHR.edit/ediarum_avhr-c.framework/ediarum.AVHR-C Chronologie</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/ediarum.AVHR.edit/ediarum.AVHR.framework/ediarum.AVHR.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/cagb/ediarum.basis_cagb_transkriptionen.framework/ediarum.CAGB.transkriptionen</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
                                     <String>4/ediarum.IFFLAND.edit/ediarum_iffland.framework/ediarum.IFFLAND.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/ediarum.BASE.edit/ediarum.INTRO.framework/ediarum.INTRO</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/ediarum.MEGA.edit/ediarum_mega.framework/ediarum.MEGA.edit</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -134,14 +78,6 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/ediarum.OVP.edit/ediarum.ovp.framework/ediarum.OVP.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
                                     <String>4/http_telota.bbaw.de_ediarum_mop_hk_edit_update.xml/ediarum.register.mop-hk.edit.framework/ediarum.REGISTER.MOP-HK.edit</String>
                                 </field>
                                 <field name="enable">
@@ -150,71 +86,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/ediarum.REGISTER/ediarum.REGISTER.framework/ediarum.REGISTER.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/ediarum_mediaevum/ediarum.mediaevum.framework/ediarum.mediaevum</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
                                     <String>4/ediarum.SCHLEIERMACHER.edit/ediarum.schleiermacher.framework/ediarum.schleiermacher</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/ediarum_schleiermacher/ediarum.schleiermacher.framework/ediarum.schleiermacher</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/cagb/cagb.framework/CAGB</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/cagb/cagb_personenregister.framework/CAGB - Personenregister</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/cagb/cagb_sachregister.framework/CAGB - Sachregister</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/cagb/cagb_transkriptionsgruppen.framework/CAGB - Transkriptionsgruppen</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/cagb/cagb_werkregister.framework/CAGB - Werkregister</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
