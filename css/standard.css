@@ -131,14 +131,14 @@ text hi[rendition='#in']{
     -oxy-display-tags: none;
     font-weight:bold;
     -oxy-display-tags: none;
-    font-size:1.8em;
+    font-size:2.2em;
     -oxy-placeholder-content:"Initiale"
 }
 
 text hi[rendition='#ekthesis']{
     font-weight:bold;
     -oxy-display-tags: none;
-    font-size:2.2em;
+    font-size:1.6em;
     -oxy-placeholder-content:"Ekthesis"
 }
 
