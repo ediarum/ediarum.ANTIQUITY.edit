@@ -1,0 +1,326 @@
+/* Redaktionsansicht Bibelexegese */
+
+/*@import url("standard.css");*/
+
+
+titleStmt title:after{
+    content: " ("oxy_textfield(edit, "xml:lang",color, "black",columns, 2)")";
+}
+
+handDesc:before{
+    content: "Anzahl der Schreiber ("oxy_textfield(edit, "hands",color, "black",columns, 2)")";
+}
+text add:after{
+    font-size: 75%;
+    color:black;
+    content: " (" 
+        oxy_popup(
+            edit, "@place", 
+            values, "superlinear, sublinear, intralinear, across, left, right, mTop, mBottom", 
+            labels, "über der Zeile eingetragen, unter der Zeile eingetragen, innerhalb der Zeile eingetragen, über den ursprünglichen Text geschrieben, am linken Rand eingetragen, am rechten Rand eingetragen, am oberen Rand eingetragen, am unteren Rand eingetragen",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text add[hand]:after{
+    font-size: 75%;
+    color:black;
+    content: " (" 
+        oxy_popup(
+            edit, "@place", 
+            values, "superlinear, sublinear, intralinear, across, left, right, mTop, mBottom", 
+            labels, "über der Zeile eingetragen, unter der Zeile eingetragen, innerhalb der Zeile eingetragen, über den ursprünglichen Text geschrieben, am linken Rand eingetragen, am rechten Rand eingetragen, am oberen Rand eingetragen, am unteren Rand eingetragen",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)
+            " - " oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')")) " ) ";
+}
+
+text del:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" 
+        oxy_popup(
+            edit, "@rendition", 
+            values, "#ow, #s, #erased", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text del[hand]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" 
+        oxy_popup(
+            edit, "@rendition", 
+            values, "#ow, #s, #erased", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)" - " oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')")) " ) ";
+}
+
+text del[cert]:after{
+    content: " (" oxy_popup(
+            edit, "@cert", 
+            values, "high, low", 
+            labels, "hohe Wahrscheinlichkeit, geringe Wahrscheinlichkeit",
+            resultSeparator, " ", 
+            columns, 10, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black) ") "
+}
+
+text del[rendition][cert]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" 
+        oxy_popup(
+            edit, "@rendition", 
+            values, "#ow, #s, #erased", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)", "
+        oxy_popup(
+            edit, "@cert", 
+            values, "high, low", 
+            labels, "hohe Wahrscheinlichkeit, geringe Wahrscheinlichkeit",
+            resultSeparator, " ", 
+            columns, 10, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text del[rendition][hand][cert]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" 
+        oxy_popup(
+            edit, "@rendition", 
+            values, "#ow, #s, #erased", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)", "
+        oxy_popup(
+            edit, "@cert", 
+            values, "high, low", 
+            labels, "hohe Wahrscheinlichkeit, geringe Wahrscheinlichkeit",
+            resultSeparator, " ", 
+            columns, 10, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)" - "
+            oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')")) " ) ";
+            ;
+}
+
+
+
+text subst[hand]:after{
+    content:")";
+    font-size:75%;
+}
+
+text subst[hand]:before{
+    content: "(Ersetzung durch " oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')")) ": ";
+    font-size:75%;    
+}
+
+
+/* Marginalien */
+text note[place]:after{
+    content: " (" 
+        oxy_popup(
+            edit, "@place", 
+            values, "mTop, mTop_inner, mTop_center, mTop_outer, mBottom, mBottom_inner, mBottom_center, mBottom_outer, margin_inner, margin_outer", 
+            labels, "am oberen Rand eingetragen, am oberen Rand innen eingetragen, am oberen Rand mittig eingetragen, am oberen Rand außen eingetragen, am unteren Rand eingetragen, am unteren Rand innen eingetragen, am unteren Rand mittig eingetragen, am unteren Rand außen eingetragen, am Rand innen, am Rand außen",
+            resultSeparator, " ", 
+            columns, 20, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text gap[reason][unit][quantity]:before{
+    /*content:" ("attr(reason)")";*/
+    font-size:75%;
+    content: " (" 
+        oxy_popup(
+            edit, "@reason", 
+            values, "damage, fenestra, lost, empty, illegible, covered, fm, insignificant", 
+            labels, "physische Beschädigung, Fenestra, Zerstörung/Verlust, Leerraum, unleserlich, durch Überschreibung/Überzeichnung schwer leserlich, fremdsprachlicher Text, Für das Korpus unwichtiger Text",
+            resultSeparator, " ", 
+            columns, 10, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)", "
+            oxy_popup(
+            edit, "@unit", 
+            values, "chars, pages, lines, words", 
+            labels, "Zeichen, Seiten, Zeilen, Wörter",
+            resultSeparator, " ", 
+            columns, 5, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)": "
+            oxy_textfield(edit, "quantity",color, "black",columns, 3)" ";
+}
+
+text gap[reason][unit]:before{
+    font-size:75%;
+    content: " (" 
+        oxy_popup(
+            edit, "@reason", 
+            values, "damage, fenestra, lost, empty, illegible, covered, fm, insignificant", 
+            labels, "physische Beschädigung, Fenestra, Zerstörung/Verlust, Leerraum, unleserlich, durch Überschreibung/Überzeichnung schwer leserlich, fremdsprachlicher Text, Für das Korpus unwichtiger Text",
+            resultSeparator, " ", 
+            columns, 10, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)" "
+            oxy_popup(
+            edit, "@unit", 
+            values, "chars, pages, lines, words", 
+            labels, "Zeichen, Seiten, Zeilen, Wörter",
+            resultSeparator, " ", 
+            columns, 5, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text gap[reason]:before{
+    /*content:" ("attr(reason)")";*/
+    font-size:75%;
+    content: " (" 
+        oxy_popup(
+            edit, "@reason", 
+            values, "damage, fenestra, lost, empty, illegible, covered, fm, insignificant", 
+            labels, "physische Beschädigung, Fenestra, Zerstörung/Verlust, Leerraum, unleserlich, durch Überschreibung/Überzeichnung schwer leserlich, fremdsprachlicher Text, Für das Korpus unwichtiger Text",
+            resultSeparator, " ", 
+            columns, 10, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+
+div[type='textpart'][subtype][n]:before{
+    font-size: 75%;
+    content:  
+        oxy_popup(
+            edit, "@subtype", 
+            values, "section, fragment, commented, commentary", 
+            labels, "Sektion, Fragment, Kommentar, vergleichbarer Text",
+            resultSeparator, " ", 
+            columns, 5, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, gray)" "oxy_textfield(edit, "n",color, "black",columns, 3)" ";;
+}
+
+
+text unclear[reason]:after{
+    content: " (" 
+        oxy_popup(
+            edit, "@reason", 
+            values, "illegible, covered", 
+            labels, "unleserlich, durch Überschreibung/Überzeichnung schwer leserlich",
+            resultSeparator, " ", 
+            columns, 10, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)", "
+            oxy_popup(
+            edit, "@cert", 
+            values, "high, low", 
+            labels, "hohe Wahrscheinlichkeit, geringe Wahrscheinlichkeit",
+            resultSeparator, " ", 
+            columns, 10, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)
+            ;
+}
+
+handShift{
+    -oxy-display-tags: none;
+    font-size:70%;
+    position: relative; 
+    top: -0.5em;
+    font-size: 0.7em;
+    content:" \|" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("scribeRef"),"',@xml:id)]/string(), ' ')")) " ("
+    oxy_textfield(edit, "medium",color, "black",columns, 10)
+    ")";
+}
+
+
+layout:before{
+    content: "Spalte(n): " oxy_textfield(edit, "columns",color, "black",columns, 2);
+}
+
+
+text hi[rendition='#in']:before,
+text hi[rendition='#ekthesis']:before{
+    content: oxy_popup(
+            edit, "@rendition", 
+            values, "#in, #ekthesis", 
+            labels, "(Initiale), (Ekthesis)",
+            resultSeparator, " ", 
+            columns, 6, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)
+            ;
+}
+
+/*div[type='transcription']{
+    display:block;
+}*/
+
+div[type='transcription'][n]:before{
+    content: "\A Transkription \A Schreibsprache: "oxy_textfield(edit, "xml:lang",color, "black",columns, 3) "\A CTS-PTA-URN: " oxy_textfield(edit, "n",color, "black",columns, 30) "\A\A";
+    font-size: 105%;
+}
+
+/* nochmal anschauen */
+text supplied:after{
+    content: "] " oxy_popup(
+            edit, "@cert", 
+            values, "high, low", 
+            labels, "(hohe Wahrscheinlichkeit), (geringe Wahrscheinlichkeit)",
+            resultSeparator, " ", 
+            columns, 18, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)
+            ;
+}
+
+text pb[n]:after {
+    content: "(" oxy_textfield(edit, "n",color, "black",columns, 4) ")";
+    color: gray;
+}
