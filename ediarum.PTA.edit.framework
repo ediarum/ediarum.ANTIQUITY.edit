@@ -17,7 +17,7 @@
 											<Integer>-1</Integer>
 										</field>
 										<field name="value">
-											<String>ediarum.BIBELEXEGESE.edit</String>
+											<String>ediarum.PTA.edit</String>
 										</field>
 										<field name="patchHandling">
 											<String>set</String>
@@ -90,7 +90,7 @@
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_physDesc_out</String>
+													<String>pta_physDesc_out</String>
 												</field>
 												<field name="name">
 													<String>Kurzbeschreibung der physischen Beschaffenheit</String>
@@ -168,7 +168,7 @@
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_msDesc/physDesc</String>
+													<String>pta_msDesc/physDesc</String>
 												</field>
 												<field name="name">
 													<String>Beschreibung des Manuskripts</String>
@@ -276,7 +276,7 @@
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_handDesc_all</String>
+													<String>pta_handDesc_all</String>
 												</field>
 												<field name="name">
 													<String>Schreiber hinzufügen</String>
@@ -306,8 +306,8 @@
 																<serializableOrderedMap>
 																	<entry>
 																		<String>actionIDs</String>
-																		<String>bibex_handDesc_insert
-bibex_handNote_count</String>
+																		<String>pta_handDesc_insert
+pta_handNote_count</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -418,7 +418,7 @@ bibex_handNote_count</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_writingSession</String>
+													<String>pta_writingSession</String>
 												</field>
 												<field name="name">
 													<String>Neue Sektion beginnen</String>
@@ -492,7 +492,7 @@ bibex_handNote_count</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_altIdentifier</String>
+													<String>pta_altIdentifier</String>
 												</field>
 												<field name="name">
 													<String>Weiterer Nachweis</String>
@@ -564,7 +564,7 @@ bibex_handNote_count</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_note[marginalie]</String>
+													<String>pta_note[marginalie]</String>
 												</field>
 												<field name="name">
 													<String>Marginalien</String>
@@ -626,7 +626,7 @@ bibex_handNote_count</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_g[diple]</String>
+													<String>pta_g[diple]</String>
 												</field>
 												<field name="name">
 													<String>Diple</String>
@@ -688,7 +688,7 @@ bibex_handNote_count</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_g[paragraphos]</String>
+													<String>pta_g[paragraphos]</String>
 												</field>
 												<field name="name">
 													<String>Paragraphos</String>
@@ -750,7 +750,7 @@ bibex_handNote_count</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_gap_1</String>
+													<String>pta_gap_1</String>
 												</field>
 												<field name="name">
 													<String>Lücke im Text</String>
@@ -812,7 +812,7 @@ bibex_handNote_count</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_gap_all</String>
+													<String>pta_gap_all</String>
 												</field>
 												<field name="name">
 													<String>Nicht entzifferbarer Text, Schäden und Auslassungen</String>
@@ -842,7 +842,7 @@ bibex_handNote_count</String>
 																<serializableOrderedMap>
 																	<entry>
 																		<String>actionIDs</String>
-																		<String>bibex_gap_1
+																		<String>pta_gap_1
 gap_2
 gap_3</String>
 																	</entry>
@@ -876,7 +876,7 @@ gap_3</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_nomSac_abbr</String>
+													<String>pta_nomSac_abbr</String>
 												</field>
 												<field name="name">
 													<String>Nomina Sacra insert abbr</String>
@@ -942,7 +942,7 @@ gap_3</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_nomSac_expan</String>
+													<String>pta_nomSac_expan</String>
 												</field>
 												<field name="name">
 													<String>Nomina Sacra insert expan</String>
@@ -1012,7 +1012,7 @@ gap_3</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_nomSac_all</String>
+													<String>pta_nomSac_all</String>
 												</field>
 												<field name="name">
 													<String>Nomen Sacrum</String>
@@ -1042,8 +1042,8 @@ gap_3</String>
 																<serializableOrderedMap>
 																	<entry>
 																		<String>actionIDs</String>
-																		<String>bibex_nomSac_abbr
-bibex_nomSac_expan</String>
+																		<String>pta_nomSac_abbr
+pta_nomSac_expan</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -1075,7 +1075,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_handShift</String>
+													<String>pta_handShift</String>
 												</field>
 												<field name="name">
 													<String>Handwechsel</String>
@@ -1213,7 +1213,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_@hand</String>
+													<String>pta_@hand</String>
 												</field>
 												<field name="name">
 													<String>Verweis auf Hand</String>
@@ -1415,7 +1415,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_langUsage</String>
+													<String>pta_langUsage</String>
 												</field>
 												<field name="name">
 													<String>Schreibsprache</String>
@@ -1541,7 +1541,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_div/@n</String>
+													<String>pta_div/@n</String>
 												</field>
 												<field name="name">
 													<String>Abschnittsnummerierung</String>
@@ -1611,7 +1611,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_hi[initiale]</String>
+													<String>pta_hi[initiale]</String>
 												</field>
 												<field name="name">
 													<String>Initiale</String>
@@ -1673,7 +1673,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_hi[ekthesis]</String>
+													<String>pta_hi[ekthesis]</String>
 												</field>
 												<field name="name">
 													<String>Ekthesis</String>
@@ -1735,7 +1735,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_del_gap</String>
+													<String>pta_del_gap</String>
 												</field>
 												<field name="name">
 													<String>Nicht entzifferbarer Text, durchgestrichen</String>
@@ -1797,7 +1797,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_hi[rubricated]</String>
+													<String>pta_hi[rubricated]</String>
 												</field>
 												<field name="name">
 													<String>Rubrizierter Text</String>
@@ -1859,7 +1859,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_head</String>
+													<String>pta_head</String>
 												</field>
 												<field name="name">
 													<String>Titel entfernen/hinzufügen</String>
@@ -1945,7 +1945,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_symbol_symbols_01</String>
+													<String>pta_symbol_symbols_01</String>
 												</field>
 												<field name="name">
 													<String>Symbole: U+03D8 - U+03E1</String>
@@ -2007,7 +2007,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_symbol_symbols_02</String>
+													<String>pta_symbol_symbols_02</String>
 												</field>
 												<field name="name">
 													<String>Symbole: Griechisches (gespiegeltes) punktiertes halbmondförmiges Sigma-Symbol</String>
@@ -2070,7 +2070,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_symbol_symbols_03</String>
+													<String>pta_symbol_symbols_03</String>
 												</field>
 												<field name="name">
 													<String>Symbole: U+2020, U+2021, U+2058, U+205C</String>
@@ -2132,7 +2132,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_symbol_symbols_04</String>
+													<String>pta_symbol_symbols_04</String>
 												</field>
 												<field name="name">
 													<String>Symbole: Griechisches Kai-Symbol (ϗ)</String>
@@ -2195,7 +2195,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_symbol_symbols_06</String>
+													<String>pta_symbol_symbols_06</String>
 												</field>
 												<field name="name">
 													<String>Symbole: U+2E0E - U+2E16</String>
@@ -2257,7 +2257,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_handDesc_insert</String>
+													<String>pta_handDesc_insert</String>
 												</field>
 												<field name="name">
 													<String>handNote insert</String>
@@ -2382,7 +2382,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_handNote_count</String>
+													<String>pta_handNote_count</String>
 												</field>
 												<field name="name">
 													<String>handNote count</String>
@@ -2460,7 +2460,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>bibex_persName</String>
+													<String>pta_author</String>
 												</field>
 												<field name="name">
 													<String>Verweis auf das Autorenregister</String>
@@ -2490,7 +2490,7 @@ bibex_nomSac_expan</String>
 																<serializableOrderedMap>
 																	<entry>
 																		<String>URL</String>
-																		<String>${ediarum_project_domain}${ediarum_projects_directory}${ediarum_project_name}${ediarum_index_person}</String>
+																		<String>${ediarum_project_domain}${ediarum_projects_directory}${ediarum_project_name}${ediarum_index_authors}</String>
 																	</entry>
 																	<entry>
 																		<String>attribute name</String>
@@ -2518,7 +2518,7 @@ bibex_nomSac_expan</String>
 																	</entry>
 																	<entry>
 																		<String>node</String>
-																		<String>//li</String>
+																		<String>//tei:item</String>
 																	</entry>
 																	<entry>
 																		<String>xpath to element of the attribute</String>
@@ -2566,7 +2566,101 @@ bibex_nomSac_expan</String>
 																	</entry>
 																	<entry>
 																		<String>node</String>
-																		<String>//li</String>
+																		<String>//item</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>213</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>pta_persName</String>
+												</field>
+												<field name="name">
+													<String>Personenname</String>
+												</field>
+												<field name="description">
+													<String>Im Manuskript explizit erwähnte Person kennzeichnen</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>ancestor-or-self::text
+or ancestor-or-self::abstract 
+or ancestor-or-self::correspDesc/note
+or ancestor-or-self::note[parent::notesStmt]
+or ancestor-or-self::p[parent::physDesc]</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>URL</String>
+																		<String>${ediarum_project_domain}${ediarum_projects_directory}${ediarum_project_name}${ediarum_index_authors}</String>
+																	</entry>
+																	<entry>
+																		<String>element</String>
+																		<String>&lt;persName xmlns='http://www.tei-c.org/ns/1.0'  key='$ITEMS'>&lt;/persName></String>
+																	</entry>
+																	<entry>
+																		<String>item rendering</String>
+																		<String>$XPATH{/span}</String>
+																	</entry>
+																	<entry>
+																		<String>item separator</String>
+																		<String> </String>
+																	</entry>
+																	<entry>
+																		<String>item variable</String>
+																		<String>$XPATH{@xml:id}</String>
+																	</entry>
+																	<entry>
+																		<String>multiple selection</String>
+																		<String>true</String>
+																	</entry>
+																	<entry>
+																		<String>namespaces</String>
+																		<String>tei:http://www.tei-c.org/ns/1.0</String>
+																	</entry>
+																	<entry>
+																		<String>node</String>
+																		<String>//tei:item</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -2632,7 +2726,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<menuItem>
 												<field name="actionID">
-													<String>bibex_head</String>
+													<String>pta_head</String>
 												</field>
 											</menuItem>
 										</field>
@@ -2687,7 +2781,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<menuItem>
 												<field name="actionID">
-													<String>bibex_gap_all</String>
+													<String>pta_gap_all</String>
 												</field>
 											</menuItem>
 										</field>
@@ -2708,7 +2802,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<menuItem>
 												<field name="actionID">
-													<String>bibex_del_gap</String>
+													<String>pta_del_gap</String>
 												</field>
 											</menuItem>
 										</field>
@@ -2785,23 +2879,6 @@ bibex_nomSac_expan</String>
 										</field>
 										<field name="anchor">
 											<String>@rendition="mPrint"</String>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList/[6]/menuEntriesDescriptorList</String>
-										</field>
-										<field name="index">
-											<Integer>0</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -2950,7 +3027,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<menuItem>
 												<field name="actionID">
-													<String>bibex_msDesc/physDesc</String>
+													<String>pta_msDesc/physDesc</String>
 												</field>
 											</menuItem>
 										</field>
@@ -2993,40 +3070,6 @@ bibex_nomSac_expan</String>
 										</field>
 										<field name="anchor">
 											<String>wit(Druck)</String>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
-										</field>
-										<field name="index">
-											<Integer>12</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
-										</field>
-										<field name="anchor">
-											<String>Variantenapparat</String>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/menubarDescriptor/menuEntriesDescriptorList</String>
-										</field>
-										<field name="index">
-											<Integer>11</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
 										</field>
 									</poPatch>
 									<poPatch>
@@ -3122,7 +3165,7 @@ bibex_nomSac_expan</String>
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>persName</String>
+																<String>pta_persName</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
@@ -3328,7 +3371,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<toolbarItem>
 												<field name="actionID">
-													<String>bibex_gap_all</String>
+													<String>pta_gap_all</String>
 												</field>
 											</toolbarItem>
 										</field>
@@ -3349,7 +3392,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<toolbarItem>
 												<field name="actionID">
-													<String>bibex_del_gap</String>
+													<String>pta_del_gap</String>
 												</field>
 											</toolbarItem>
 										</field>
@@ -3457,7 +3500,7 @@ bibex_nomSac_expan</String>
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Bibelexegese: Transkription</String>
+													<String>PTA: Transkription</String>
 												</field>
 												<field name="type">
 													<Integer>2</Integer>
@@ -3487,23 +3530,23 @@ bibex_nomSac_expan</String>
 																<toolbarEntry-array>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_altIdentifier</String>
+																			<String>pta_altIdentifier</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_langUsage</String>
+																			<String>pta_langUsage</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_handDesc_all</String>
+																			<String>pta_handDesc_all</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarSeparator/>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_persName</String>
+																			<String>pta_author</String>
 																		</field>
 																	</toolbarItem>
 																</toolbarEntry-array>
@@ -3526,22 +3569,22 @@ bibex_nomSac_expan</String>
 																<toolbarEntry-array>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_writingSession</String>
+																			<String>pta_writingSession</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_div/@n</String>
+																			<String>pta_div/@n</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_head</String>
+																			<String>pta_head</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_note[marginalie]</String>
+																			<String>pta_note[marginalie]</String>
 																		</field>
 																	</toolbarItem>
 																</toolbarEntry-array>
@@ -3564,12 +3607,12 @@ bibex_nomSac_expan</String>
 																<toolbarEntry-array>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_handShift</String>
+																			<String>pta_handShift</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_@hand</String>
+																			<String>pta_@hand</String>
 																		</field>
 																	</toolbarItem>
 																</toolbarEntry-array>
@@ -3592,27 +3635,27 @@ bibex_nomSac_expan</String>
 																<toolbarEntry-array>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_hi[initiale]</String>
+																			<String>pta_hi[initiale]</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_hi[ekthesis]</String>
+																			<String>pta_hi[ekthesis]</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_g[diple]</String>
+																			<String>pta_g[diple]</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_g[paragraphos]</String>
+																			<String>pta_g[paragraphos]</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_hi[rubricated]</String>
+																			<String>pta_hi[rubricated]</String>
 																		</field>
 																	</toolbarItem>
 																</toolbarEntry-array>
@@ -3713,7 +3756,7 @@ bibex_nomSac_expan</String>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_msDesc/physDesc</String>
+																			<String>pta_msDesc/physDesc</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarSeparator/>
@@ -3786,27 +3829,27 @@ bibex_nomSac_expan</String>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_symbol_symbols_04</String>
+																			<String>pta_symbol_symbols_04</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_symbol_symbols_01</String>
+																			<String>pta_symbol_symbols_01</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_symbol_symbols_02</String>
+																			<String>pta_symbol_symbols_02</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_symbol_symbols_03</String>
+																			<String>pta_symbol_symbols_03</String>
 																		</field>
 																	</toolbarItem>
 																	<toolbarItem>
 																		<field name="actionID">
-																			<String>bibex_symbol_symbols_06</String>
+																			<String>pta_symbol_symbols_06</String>
 																		</field>
 																	</toolbarItem>
 																</toolbarEntry-array>
@@ -3932,7 +3975,7 @@ bibex_nomSac_expan</String>
 																		<Integer>4</Integer>
 																	</field>
 																	<field name="uri">
-																		<String>${framework}/schemata/ediarum.bibelexegese.rng</String>
+																		<String>${framework}/schemata/ediarum.pta.rng</String>
 																	</field>
 																</validationUnitSchema>
 															</field>
@@ -3943,7 +3986,7 @@ bibex_nomSac_expan</String>
 													<String>Validation_scenario</String>
 												</field>
 												<field name="name">
-													<String>ediarum.BIBELEXEGESE.edit</String>
+													<String>ediarum.PTA.edit</String>
 												</field>
 											</validationScenario>
 										</field>
@@ -3963,7 +4006,7 @@ bibex_nomSac_expan</String>
 										</field>
 										<field name="value">
 											<list>
-												<String>ediarum.BIBELEXEGESE.edit</String>
+												<String>ediarum.PTA.edit</String>
 											</list>
 										</field>
 										<field name="patchHandling">

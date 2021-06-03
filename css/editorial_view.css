@@ -234,7 +234,7 @@ div[type='textpart'][subtype][n]:before{
         oxy_popup(
             edit, "@subtype", 
             values, "section, fragment, commented, commentary", 
-            labels, "Sektion, Fragment, Kommentar, vergleichbarer Text",
+            labels, "Fließtext, fragmentarische Überlieferung, Kommentar, vergleichbarer Text",
             resultSeparator, " ", 
             columns, 5, 
             selectionMode, "single",

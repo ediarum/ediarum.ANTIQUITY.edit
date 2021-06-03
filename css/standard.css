@@ -151,6 +151,14 @@ text hi[rendition='#rubricated']{
 }
 
 /* Marginalien */
+
+text note[place^='mTop'],
+text note[place^='mBottom'],
+text note[place='margin_inner'],
+text note[place='margin_outer']{
+    -oxy-placeholder-content:"Marginalie eingeben"
+}
+
 text note[place^='mTop']{
     border-top:dotted 1px;
 }
