@@ -70,7 +70,7 @@ This file is part of ediarum.BIBELEXEGESE.edit.
                 <xsl:when test="@xml:id = 'need_ID'">
                     <!-- dann füge die neue ID ein -->
                     <xsl:attribute name="xml:id">
-                        <xsl:text>m</xsl:text><xsl:value-of select="$generate_new_ID"/>
+                        <xsl:value-of select="$generate_new_ID"/>
                     </xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
