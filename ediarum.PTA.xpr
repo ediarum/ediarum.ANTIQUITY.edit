@@ -10,8 +10,21 @@
                         <documentTypeDescriptor-array/>
                     </entry>
                     <entry>
+                        <String>document.types.order</String>
+                        <documentTypeEntry-array>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>6/ediarum.PTA.edit/ediarum.PTA.edit.framework/ediarum.PTA-OLD.edit</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                        </documentTypeEntry-array>
+                    </entry>
+                    <entry>
                         <String>frameworks.directory.url.with.editor.variables</String>
-                        <String>file:/G:/ediarum.BIBELEXEGESE</String>
+                        <String>${pdu}</String>
                     </entry>
                     <entry>
                         <String>key.custom.editor.variables.option.pane</String>
