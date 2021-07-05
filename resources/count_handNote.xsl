@@ -2,7 +2,7 @@
 <!-- 
 Copyright 2019 Berlin-Brandenburg Academy of Sciences and Humanities
 
-This file is part of ediarum.BIBELEXEGESE.edit.
+This file is part of ediarum.PTA.edit.
 
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
