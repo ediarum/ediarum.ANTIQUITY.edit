@@ -20,7 +20,7 @@ along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
 @namespace xml "http://www.w3.org/XML/1998/namespace";
 @namespace telota "http://www.telota.de";
 
-@font-face{
+/*@font-face{
     font-family: "BBAWfont";
     src:url("../fonts/linlibertine_r.ttf");
     font-weight: normal;
@@ -44,7 +44,7 @@ along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
     font-family: "Biolinum-italic";
     src: url("../fonts/linbiolinum_ri.ttf");
     font-weight: normal;
-}
+}*/
 
 @font-face{
     font-family: "IFAOGrec";
@@ -569,6 +569,8 @@ text cb {
     padding: 0;
     color: black;
     -oxy-display-tags: none;
+    display:block;
+    
 }
 
 text cb {
@@ -577,7 +579,7 @@ text cb {
 
 text pb[n]:after,
 text cb[n]:after {
-    content: "(" attr(n) ")";
+    content: "(" attr(n) ")\A";
     font-family: "BBAWfont-italic";
     color: gray;
 }
