@@ -7,7 +7,7 @@
         <author/>
         <respStmt>
           <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
-          <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben ihres Vor- und Nachnamen)', generic, '')}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}</persName>
+          <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben Ihres Vor- und Nachnamens)', generic, '')}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}</persName>
         </respStmt>
       </titleStmt>
         <publicationStmt>
@@ -22,7 +22,6 @@
           <idno type="BHG"/>
           <idno type="Aldama"/>
           <idno type="Pinakes-Oeuvre"></idno>
-          <idno type="ClaCla"></idno>
         </publicationStmt>
       <sourceDesc>
         <msDesc rend="manuscript">
@@ -43,6 +42,11 @@
       <refsDecl n="CTS">
         <cRefPattern n="section" matchPattern="(.+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div[@type='transcription']/tei:div[@n='$1'])"/>
       </refsDecl>
+      <classDecl>
+        <taxonomy xml:id="comphistsem">
+          <bibl>Text Type Classification by <ref target="https://www.comphistsem.org/46.html">"Computational Historical Semantics</ref></bibl>
+        </taxonomy>
+      </classDecl> 
     </encodingDesc>
     <profileDesc>
       <creation>
@@ -52,7 +56,7 @@
     </profileDesc>
     <revisionDesc status="draft">
       <listChange>
-        <change when="${date(yyyy-MM-dd)}" who="${ask('Bearbeitungshistorie: Wdh. Kürzel Bearbeiter*in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">Created new record</change>
+        <change when="${date(yyyy-MM-dd)}" who="${ask('Bearbeitungshistorie: Wdh. Kürzel Bearbeiter*in', generic, '')}">Created new record</change>
       </listChange>
     </revisionDesc>
   </teiHeader>

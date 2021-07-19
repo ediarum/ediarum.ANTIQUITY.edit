@@ -20,7 +20,7 @@ along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
 @namespace xml "http://www.w3.org/XML/1998/namespace";
 @namespace telota "http://www.telota.de";
 
-@font-face{
+/*@font-face{
     font-family: "BBAWfont";
     src:url("../fonts/linlibertine_r.ttf");
     font-weight: normal;
@@ -44,7 +44,7 @@ along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
     font-family: "Biolinum-italic";
     src: url("../fonts/linbiolinum_ri.ttf");
     font-weight: normal;
-}
+}*/
 
 @font-face{
     font-family: "IFAOGrec";
@@ -52,6 +52,11 @@ along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
     font-weight: normal;
 }
 
+@font-face{
+    font-family: "brill";
+    src: url("../fonts/BrillRoman.ttf");
+    font-weight: normal;
+}
 
 /*  */
 
@@ -188,7 +193,7 @@ publicationStmt idno[type="BHG"]:before{
 }
 
 publicationStmt idno[type="Aldama"]:before{
-    content: "Aldama"
+    content: "Aldama: "
 }
 
 publicationStmt idno[type="Pinakes-Oeuvre"]:before{
@@ -236,14 +241,27 @@ profileDesc creation placeName:empty{
     background-color:#abbcff
 }
 
-textClass{
-    display:block;
-    -oxy-placeholder-content:"Textklasse";
-    -oxy-show-placeholder:always;
+textClass:empty{
+    content: oxy_editor(type, button, actionID, pta_textClass, transparent, true, color, black, text-align, right);
 }
 
-textClass:first-of-type:before{
-    content: "Textklasse(n):\A"
+keywords:before{
+    content: "Textklasse(n):";
+    font-weight:bold;
+}
+textClass keywords{
+    margin-top:1em;
+}
+
+textClass,
+textClass keywords,
+textClass keywords term{
+    display: block;
+}
+
+textClass keywords term{
+    -oxy-placeholder-content: "[Textklasse]";
+    -oxy-show-placeholder : always ;
 }
 
 sourceDesc,
@@ -569,6 +587,8 @@ text cb {
     padding: 0;
     color: black;
     -oxy-display-tags: none;
+    display:block;
+    
 }
 
 text cb {
@@ -577,7 +597,7 @@ text cb {
 
 text pb[n]:after,
 text cb[n]:after {
-    content: "(" attr(n) ")";
+    content: "(" attr(n) ")\A";
     font-family: "BBAWfont-italic";
     color: gray;
 }
@@ -919,10 +939,11 @@ div[type='transcription'][xml|lang]:before{
 
 div[type='transcription']{
     display: block;
+    font-family: "brill";
 }
 
 div[type='textpart']{
-    font-family: "IFAOGrec";
+    font-family: "brill";
 }
 
 div[type='textpart'][subtype]:before{

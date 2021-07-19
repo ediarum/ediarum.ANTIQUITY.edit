@@ -76,6 +76,17 @@
                                     <String></String>
                                 </field>
                             </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${pta_textClassFunction}</String>
+                                </field>
+                                <field name="value">
+                                    <String>/oxygen/index.xql?name=textClassTextType</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String></String>
+                                </field>
+                            </userEditorVariable>
                         </userEditorVariable-array>
                     </entry>
                 </serializableOrderedMap>
