@@ -36516,52 +36516,6 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_symbol_symbols_01</String>
-										</field>
-										<field name="name">
-											<String>Symbole: U+03D8 - U+03E1</String>
-										</field>
-										<field name="description">
-											<String></String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String></String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>fragment</String>
-																<String>${ask('Wählen Sie ein Zeichen aus', combobox, ('&amp;#x03D8;':'Ϙ';'&amp;#x03D9;':'ϙ';'&amp;#x03DA;':'Ϛ';'&amp;#x03DB;':'ϛ';'&amp;#x03DC;':'Ϝ';'&amp;#x03DD;':'ϝ';'&amp;#x03DE;':'Ϟ';'&amp;#x03DF;':'ϟ';'&amp;#x03E0;':'Ϡ';'&amp;#x03E1;':'ϛ';'&amp;#x03DB;':'ϡ';),'&amp;#x03D8;')}</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
 											<String>pta_symbol_symbols_02</String>
 										</field>
 										<field name="name">
@@ -37019,50 +36973,19 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>//textClass</String>
+														<String>not(//profileDesc//textClass//keywords)</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
-																<String>fragment</String>
-																<String>&lt;textClass xmlns="http://www.tei-c.org/ns/1.0">&lt;/textClass></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>//textClass</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
+																<String>actionIDs</String>
+																<String>pta_textClass_01
+pta_textClass_02</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>//profileDesc and not(//profileDesc//textClass)</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>fragment</String>
-																<String>&lt;textClass xmlns="http://www.tei-c.org/ns/1.0">&lt;/textClass></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>//profileDesc</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>Inside as last child</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -37605,6 +37528,194 @@ revisionDesc[2]</String>
 													</field>
 													<field name="operationID">
 														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_symbol_symbols_01</String>
+										</field>
+										<field name="name">
+											<String>Symbole: U+03D8 - U+03E1</String>
+										</field>
+										<field name="description">
+											<String></String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>${ask('Wählen Sie ein Zeichen aus', combobox, ('&amp;#x3D8;':'Ϙ - Griechischer Großbuchstabe altes Koppa';'&amp;#x3D9;':'ϙ - Griechischer Kleinbuchstabe altes Koppa';'&amp;#x3DA;':'Ϛ - Griechischer Buchstabe Stigma';'&amp;#x3DB;':'ϛ - Griechischer Kleinbuchstabe Stigma';'&amp;#x3DC;':'Ϝ - Griechischer Buchstabe Digamma';'&amp;#x3DD;':'ϝ - Griechischer Kleinbuchstabe Digamma';'&amp;#x3DE;':'Ϟ - Griechischer Buchstabe Koppa';'&amp;#x3DF;':'ϟ - Griechischer Kleinbuchstabe Koppa';'&amp;#x3E0;':'Ϡ - Griechischer Buchstabe Sampi';'&amp;#x3E1;':'ϡ - Griechischer Kleinbuchstabe Sampi';),'&amp;#x3D8;')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_textClass_01</String>
+										</field>
+										<field name="name">
+											<String>Textklasse 01: insert</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction: insert Textklasse 1</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${ediarum_project_domain}${ediarum_projects_directory}${ediarum_project_name}${pta_textClassFunction}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;keywords xmlns="http://www.tei-c.org/ns/1.0" scheme="#comphistsem">
+  &lt;term>$ITEMS&lt;/term>
+&lt;/keywords></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//textClass</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{//span}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>$XPATH{//span}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>false</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//li</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_textClass_02</String>
+										</field>
+										<field name="name">
+											<String>Textklasse 02: sort</String>
+										</field>
+										<field name="description">
+											<String>Teil einer multipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>//textClass</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    version="2.0">
+    &lt;xsl:import href="resources/tokenize_textClass.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>//TEI</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>//TEI</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
