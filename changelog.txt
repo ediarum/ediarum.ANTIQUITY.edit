@@ -13,7 +13,11 @@ Entwicklung: Nadine Arndt, nadine.arndt@bbaw.de
 CHANGELOG
 ------------------------------------------------------------------------------------------------
 
-0.5.1. vom 19.07.2021
+0.5.2 vom 09.08.2021
+
+	* Schema aktualisiert
+
+0.5.1 vom 19.07.2021
 
 	* Neue Schriftart
 	* Angabe von Textklassen
