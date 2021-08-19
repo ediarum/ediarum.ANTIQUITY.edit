@@ -15243,7 +15243,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>//sourceDesc/msDesc/physDesc and not(//objectDesc) and ancestor-or-self::text and //TEI[@telota:doctype='transcription'] </String>
+														<String>//sourceDesc/msDesc/physDesc[not(//objectDesc)] and //TEI[@telota:doctype='transcription'] </String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -15252,7 +15252,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 																<String>&lt;objectDesc xmlns="http://www.tei-c.org/ns/1.0">
   &lt;layoutDesc>
     &lt;layout columns="${ask('Bitte Spaltenzahl (in Form einer Zahl) angeben', generic, '1')}">
-      &lt;p>&lt;/p>
+      &lt;p>${caret}&lt;/p>
     &lt;/layout>
   &lt;/layoutDesc>
 &lt;/objectDesc></String>
@@ -15273,7 +15273,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>//sourceDesc/msDesc[not(physDesc)] and ancestor-or-self::text and //TEI[@telota:doctype='transcription'] </String>
+														<String>//sourceDesc/msDesc[not(physDesc)] and //TEI[@telota:doctype='transcription'] </String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -15283,7 +15283,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
   &lt;objectDesc>
     &lt;layoutDesc>
       &lt;layout columns="${ask('Bitte Spaltenzahl (in Form einer Zahl) angeben', generic, '1')}">
-        &lt;p>&lt;/p>
+        &lt;p>${caret}&lt;/p>
       &lt;/layout>
     &lt;/layoutDesc>
   &lt;/objectDesc>
