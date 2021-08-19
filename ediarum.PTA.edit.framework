@@ -14659,6 +14659,14 @@ pta_moveCaret</String>
   &lt;idno>${ask('Signatur', generic, '')}&lt;/idno>
 &lt;/altIdentifier></String>
 															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//msIdentifier</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">

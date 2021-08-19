@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="22.1">
+<project version="22.0">
     <meta>
         <filters directoryPatterns="" filePatterns="\Qediarum.BIBELEXEGESE.xpr\E" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="22.1" xml:space="preserve">
+            <serialized version="22.0" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>document.types</String>
@@ -12,14 +12,6 @@
                     <entry>
                         <String>document.types.order</String>
                         <documentTypeEntry-array>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.SCHLEIERMACHER.edit/ediarum.schleiermacher.register.framework/ediarum.schleiermacher.register</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
                                     <String>4/ediarum.BASE.edit/ediarum.INTRO.framework/ediarum.INTRO</String>
@@ -31,14 +23,6 @@
                             <documentTypeEntry>
                                 <field name="documentTypeID">
                                     <String>6/ediarum.PTA.edit/ediarum.PTA.edit_OLD.framework/ediarum.PTA.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.SCHLEIERMACHER.edit/ediarum.schleiermacher.framework/ediarum.schleiermacher</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
