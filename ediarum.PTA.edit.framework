@@ -12481,7 +12481,7 @@ hand</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>//div[@type='transcription']//self::pb[not(@facs)] and //TEI[@telota:doctype='transcription']</String>
+														<String>self::pb[not(@facs) and ancestor::div[@type='transcription'] and ancestor::TEI[@telota:doctype='transcription']]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
