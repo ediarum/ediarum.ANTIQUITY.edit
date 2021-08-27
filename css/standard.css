@@ -1024,7 +1024,8 @@ text note[place^='top'],
 text note[place^='bottom'],
 text note[place='margin_inner'],
 text note[place='margin_outer']{
-    -oxy-placeholder-content:"Marginalie eingeben"
+    -oxy-placeholder-content:"Marginalie eingeben";
+    background-color: #FFF5EE;
 }
 
 text note[place^='top']{
