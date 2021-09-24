@@ -14211,7 +14211,7 @@ pta_moveCaret</String>
 															<entry>
 																<String>fragment</String>
 																<String>&lt;choice xmlns="http://www.tei-c.org/ns/1.0">
-  &lt;abbr type="siglum">${caret}&lt;/abbr>
+  &lt;abbr>${caret}&lt;/abbr>
 &lt;/choice></String>
 															</entry>
 														</serializableOrderedMap>
