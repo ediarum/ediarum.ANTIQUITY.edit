@@ -155,7 +155,7 @@ text del[hand^="#"]:after{
             columns, 15, 
             selectionMode, "single",
             fontInherit, false,
-            color, black) " ) ";
+            color, black)" ) ";
 }
 
 text del[hand^="unknown"]:after{
@@ -188,6 +188,56 @@ text subst[hand="unknown"]:before{
     content: "(Ersetzung durch Unbekannt: ";
     font-size:75%;    
 }
+
+text subst>del:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" 
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction, unmarked, marker", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text), Der zu ersetzende Text ist überhaupt nicht explizit markiert, Der zu ersetzende Text ist mit einem Zeichen (z.B. einem Obelus o.ä.) markiert",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text subst>del[hand^="#"]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')"))" - "
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text), Der zu ersetzende Text ist überhaupt nicht explizit markiert, Der zu ersetzende Text ist mit einem Zeichen (z.B. einem Obelus o.ä.) markiert",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)" ) ";
+}
+
+text subst>del[hand^="unknown"]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (Unbekannt - "
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text), Der zu ersetzende Text ist überhaupt nicht explizit markiert, Der zu ersetzende Text ist mit einem Zeichen (z.B. einem Obelus o.ä.) markiert",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black) " ) ";
+}
+
+
 
 text unclear:after{
     content: " (unleserlich)";

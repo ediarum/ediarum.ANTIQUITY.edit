@@ -12783,6 +12783,38 @@ hand</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
+														<String>//handDesc[not(@hands)]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>action</String>
+																<String>Replace</String>
+															</entry>
+															<entry>
+																<String>script</String>
+																<String>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    version="2.0">
+    &lt;xsl:import href="resources/count_handNote.xsl"/>
+&lt;/xsl:stylesheet></String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String>self::handDesc</String>
+															</entry>
+															<entry>
+																<String>targetLocation</String>
+																<String>self::handDesc</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XSLTOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
 														<String></String>
 													</field>
 													<field name="argValues">
@@ -13084,7 +13116,7 @@ pta_handNote_count</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del rend="${ask('Art der Streichung', combobox, ('overwrite':'Tilgung durch Überschreibung des ursprünglichen Textes';'strikethrough':'Tilgung durch Streichung';'erasure':'Tilgung durch Radieren';'expunction':'Tilgung durch Punkte (unter dem Text)';), 'strikethrough')}" >&lt;/del>&lt;add place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'above')}">${caret}&lt;/add>&lt;/subst></String>
+																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del rend="${ask('Art der Streichung', combobox, ('overwrite':'Tilgung durch Überschreibung des ursprünglichen Textes';'strikethrough':'Tilgung durch Streichung';'erasure':'Tilgung durch Radieren';'expunction':'Tilgung durch Punkte (unter dem Text)';'unmarked':'Der zu ersetzende Text ist überhaupt nicht explizit markiert';'marker':'Der zu ersetzende Text ist mit einem Zeichen, z.B. einem Obelus o.ä., markiert';), 'strikethrough')}" >&lt;/del>&lt;add place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'above')}">${caret}&lt;/add>&lt;/subst></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
