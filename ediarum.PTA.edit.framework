@@ -16120,7 +16120,7 @@ revisionDesc[2]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>${ask('Wählen Sie ein Zeichen aus', combobox, ('&amp;#x3D8;':'Ϙ - Griechischer Großbuchstabe altes Koppa';'&amp;#x3D9;':'ϙ - Griechischer Kleinbuchstabe altes Koppa';'&amp;#x3DA;':'Ϛ - Griechischer Buchstabe Stigma';'&amp;#x3DB;':'ϛ - Griechischer Kleinbuchstabe Stigma';'&amp;#x3DC;':'Ϝ - Griechischer Buchstabe Digamma';'&amp;#x3DD;':'ϝ - Griechischer Kleinbuchstabe Digamma';'&amp;#x3DE;':'Ϟ - Griechischer Buchstabe Koppa';'&amp;#x3DF;':'ϟ - Griechischer Kleinbuchstabe Koppa';'&amp;#x3E0;':'Ϡ - Griechischer Buchstabe Sampi';'&amp;#x3E1;':'ϡ - Griechischer Kleinbuchstabe Sampi';),'&amp;#x3D8;')}</String>
+																<String>${ask('Wählen Sie ein Zeichen aus', combobox, ('&amp;#x3D8;':'Ϙ - Griechischer Buchstabe altes Koppa';'&amp;#x3D9;':'ϙ - Griechischer Kleinbuchstabe altes Koppa';'&amp;#x3DA;':'Ϛ - Griechischer Buchstabe Stigma';'&amp;#x3DB;':'ϛ - Griechischer Kleinbuchstabe Stigma';'&amp;#x3DC;':'Ϝ - Griechischer Buchstabe Digamma';'&amp;#x3DD;':'ϝ - Griechischer Kleinbuchstabe Digamma';'&amp;#x3DE;':'Ϟ - Griechischer Buchstabe Koppa';'&amp;#x3DF;':'ϟ - Griechischer Kleinbuchstabe Koppa';'&amp;#x3E0;':'Ϡ - Griechischer Buchstabe Sampi';'&amp;#x3E1;':'ϡ - Griechischer Kleinbuchstabe Sampi';),'&amp;#x3D8;')}</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
