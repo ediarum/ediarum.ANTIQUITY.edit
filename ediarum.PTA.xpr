@@ -60,6 +60,14 @@
                                     <Boolean>false</Boolean>
                                 </field>
                             </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>6/ediarum.PTA.edit/ediarum.PTA.edit.framework/ediarum.PTA.edit</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
                         </documentTypeEntry-array>
                     </entry>
                     <entry>

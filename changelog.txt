@@ -12,7 +12,10 @@ Entwicklung: Nadine Arndt, nadine.arndt@bbaw.de
 
 CHANGELOG
 ------------------------------------------------------------------------------------------------
+0.5.4 vom 30.09.2021
 
+	* kleinere Bugs behoben
+	
 0.5.3 vom 27.08.2021
 
 	* Marginalien mit Hintergrundfarbe
