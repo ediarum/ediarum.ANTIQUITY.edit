@@ -22,7 +22,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>4/ediarum.ovp.edit/ediarum.ovp.register.framework/ediarum.OVP.register</String>
+                                    <String>4/ediarum_mediaevum/ediarum.mediaevum.register.framework/ediarum.mediaevum.register</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -38,14 +38,6 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>4/ediarum.ovp.edit/ediarum.ovp.framework/ediarum.OVP.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
                                     <String>6/ediarum.PTA.edit/ediarum.PTA.edit_OLD.framework/ediarum.PTA.edit</String>
                                 </field>
                                 <field name="enable">
@@ -54,7 +46,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>4/ediarum.REGISTER.edit/ediarum.REGISTER.framework/ediarum.REGISTER.edit</String>
+                                    <String>4/ediarum_mediaevum/ediarum.mediaevum.framework/ediarum.mediaevum</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -146,6 +138,17 @@
                                 </field>
                                 <field name="shortDescription">
                                     <String></String>
+                                </field>
+                            </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${ediarum_manual_url}</String>
+                                </field>
+                                <field name="value">
+                                    <String>http://telota.bbaw.de/ediarum/bibelexegese/manual/index.html</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String>URL zum Handbuch</String>
                                 </field>
                             </userEditorVariable>
                         </userEditorVariable-array>
