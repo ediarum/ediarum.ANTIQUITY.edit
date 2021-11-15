@@ -11851,11 +11851,11 @@ hand</String>
 															</entry>
 															<entry>
 																<String>sourceLocation</String>
-																<String>self::handDesc</String>
+																<String>ancestor-or-self::handDesc</String>
 															</entry>
 															<entry>
 																<String>targetLocation</String>
-																<String>self::handDesc</String>
+																<String>ancestor-or-self::handDesc</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
