@@ -22,7 +22,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>4/ediarum_mediaevum/ediarum.mediaevum.register.framework/ediarum.mediaevum.register</String>
+                                    <String>4/ediarum.MEGA.edit/ediarum.mega.register.edit.framework/ediarum.MEGA.register</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -30,7 +30,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>4/ediarum.BASE.edit/ediarum.INTRO.framework/ediarum.INTRO</String>
+                                    <String>4/ediarum.MEGA.edit/ediarum_mega.framework/ediarum.MEGA.edit</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -38,31 +38,7 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/ediarum.PTA.edit/ediarum.PTA.edit_OLD.framework/ediarum.PTA.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum_mediaevum/ediarum.mediaevum.framework/ediarum.mediaevum</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.BASE.edit/ediarum.BASE.framework/ediarum.BASE.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/ediarum.PTA.edit/ediarum.PTA.edit.framework/ediarum.PTA.edit</String>
+                                    <String>4/ediarum.REGISTER.edit/ediarum.REGISTER.framework/ediarum.REGISTER.edit</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
