@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="22.0" xml:space="preserve">
+<serialized xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
 			<documentTypeDescriptor-array>
 				<documentTypeDescriptor>
+					<field name="webResources">
+						<null/>
+					</field>
 					<field name="extensionPatch">
 						<null/>
 					</field>
@@ -13188,7 +13191,7 @@ pta_handNote_count</String>
 											<String>Nomen Sacrum</String>
 										</field>
 										<field name="description">
-											<String>Nominum Sacrum markieren und auflösen</String>
+											<String>Nomen Sacrum markieren und auflösen</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -13308,7 +13311,7 @@ pta_moveCaret</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;expan xmlns="http://www.tei-c.org/ns/1.0">${ask('Auflösung des Nomina Sacra', generic, '')}&lt;/expan></String>
+																<String>&lt;expan xmlns="http://www.tei-c.org/ns/1.0">${ask('Auflösung des Nomen Sacrum', generic, '')}&lt;/expan></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -17279,6 +17282,9 @@ revisionDesc[2]</String>
 														<String>${framework}/schemata/tei-pta.rng</String>
 													</field>
 												</validationUnitSchema>
+											</field>
+											<field name="validationAdvancedSettings">
+												<null/>
 											</field>
 										</validationUnit>
 									</list>
