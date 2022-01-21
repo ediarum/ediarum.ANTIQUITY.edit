@@ -11909,10 +11909,10 @@ hand</String>
 											<String>pta_handDesc_all</String>
 										</field>
 										<field name="name">
-											<String>Schreiber hinzufügen</String>
+											<String>Hand hinzufügen</String>
 										</field>
 										<field name="description">
-											<String>fügt einen neuen Schreiber hinzu</String>
+											<String>Fügt eine neue Hand hinzu.</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -13063,10 +13063,10 @@ pta_moveCaret</String>
 											<String>pta_handNote[manus_recentior]_all</String>
 										</field>
 										<field name="name">
-											<String>Manus recentior hinzufügen</String>
+											<String>Jüngere Hand hinzufügen</String>
 										</field>
 										<field name="description">
-											<String>fügt einen Manus recentior ein</String>
+											<String>Fügt eine jüngere Hand ein. Voraussetzung ist, dass bereits eine (ältere) Hand definiert wurde.</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -13113,7 +13113,7 @@ pta_handNote_count</String>
 											<String>Handwechsel</String>
 										</field>
 										<field name="description">
-											<String>Wechsel des Schreibers</String>
+											<String>Fügt an der Cursor-Position einen Handwechsel ein.</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -14124,10 +14124,10 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<String>pta_symbol_symbols_02</String>
 										</field>
 										<field name="name">
-											<String>Symbole: Griechisches (gespiegeltes) punktiertes halbmondförmiges Sigma-Symbol</String>
+											<String>(Anti-)Sigma-periestigmenon-Majuskel</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Auswahl zwischen den Majuskeln von Sigma periestigmenon und Antisigma periestigmenon.</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -14170,10 +14170,10 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<String>pta_symbol_symbols_03</String>
 										</field>
 										<field name="name">
-											<String>Symbole: U+2020, U+2021, U+2058, U+205C</String>
+											<String>Verweiszeichen</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Fügt das ausgewählte Zeichen ein. Auswahl: U+2020, U+2021, U+2058, U+205C</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -14197,7 +14197,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>${ask('Wählen Sie ein Zeichen aus', combobox, ('&amp;#x2020;':'†';'&amp;#x2021;':'‡ ';'&amp;#x2058;':'⁘';'&amp;#x205C;':'⁜ ';),'&amp;#x2020;')}</String>
+																<String>${ask('Wählen Sie ein Zeichen aus', combobox, ('&amp;#x2020;':'† (Verweiszeichen)';'&amp;#x2021;':'‡ (Verweiszeichen) ';'&amp;#x2058;':'⁘';'&amp;#x205C;':'⁜ ';),'&amp;#x2020;')}</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -14216,10 +14216,10 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<String>pta_symbol_symbols_04</String>
 										</field>
 										<field name="name">
-											<String>Symbole: Griechisches Kai-Symbol (ϗ)</String>
+											<String>ϗ (Abkürzungszeichen für καὶ)</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Fügt das Abkürzungs-Zeichen für das griechische Wort "καὶ" ein.</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -14262,10 +14262,10 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<String>pta_symbol_symbols_05</String>
 										</field>
 										<field name="name">
-											<String>Symbole: U+2E0E - U+2E16</String>
+											<String>Textgliederungs- und Auszeichnungs-Zeichen</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Fügt das ausgewählte Zeichen ein. Auswahl aus: U+2E0E (Koronis), U+2E0F (Paragrafos), U+2E10 (Gegabelter Paragrafos), U+2E11 (Gespiegelter gegabelter Paragrafos), U+2E12 (Hypodiastole), U+2E13 (Obelos periestigmenos), U+2E14 (Ankerzeichen nach unten), U+2E15 (Ankerzeichen nach oben) und U+2E16 (Diple periestigmene).</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -14289,7 +14289,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>${ask('Wählen Sie ein Zeichen aus', combobox, ('&amp;#x2E0E;':'⸎';'&amp;#x2E0F;':'⸏ (Paragraphos)';'&amp;#x2E10;':'⸐ (Gegabelter Pragraphos)';'&amp;#x2E11;':'⸑ (Gespiegelter gegabelter Paragraphos)';'&amp;#x2E12;':'⸒';'&amp;#x2E13;':'⸓';'&amp;#x2E14;':'⸔';'&amp;#x2E15;':'⸕';'&amp;#x2E16;':'⸖';),'&amp;#x2E0E;')}</String>
+																<String>${ask('Wählen Sie ein Zeichen aus', combobox, ('&amp;#x2E0E;':'⸎ (Koronis)';'&amp;#x2E0F;':'⸏ (Paragrafos)';'&amp;#x2E10;':'⸐ (Gegabelter Paragrafos)';'&amp;#x2E11;':'⸑ (Gespiegelter gegabelter Paragrafos)';'&amp;#x2E12;':'⸒ (Hypodiastole)';'&amp;#x2E13;':'⸓ (Obelos periestigmenos)';'&amp;#x2E14;':'⸔ (Ancora nach unten)';'&amp;#x2E15;':'⸕ (Ancora nach oben)';'&amp;#x2E16;':'⸖ (Diple periestigmene)';),'&amp;#x2E0E;')}</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -15146,10 +15146,10 @@ revisionDesc[2]</String>
 											<String>pta_symbol_symbols_01</String>
 										</field>
 										<field name="name">
-											<String>Symbole: U+03D8 - U+03E1</String>
+											<String>Koptische und archaische Buchstaben</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Fügt den ausgewählten koptischen oder archaischen Buchstaben ein.</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -15554,10 +15554,10 @@ revisionDesc[2]</String>
 											<String>pta_symbol_symbols_07</String>
 										</field>
 										<field name="name">
-											<String>Symbole: Mittelpunkt</String>
+											<String>Mittelpunkt</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Fügt das Satzzeichen U+00B7 ein.</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
