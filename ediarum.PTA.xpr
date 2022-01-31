@@ -36712,6 +36712,22 @@ revisionDesc[2]</String>
                         <documentTypeEntry-array>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
+                                    <String>4/ediarum.PTA.edit/ediarum.bibelexegese.register.framework/ediarum.BIBELEXEGESE.register</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>6/ediarum.pta.edit/ediarum.bibelexegese.register.framework/ediarum.BIBELEXEGESE.register</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
                                     <String>2/internal/ediarum.PTA.edit - Dateiendung</String>
                                 </field>
                                 <field name="enable">
@@ -36721,6 +36737,14 @@ revisionDesc[2]</String>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
                                     <String>2/internal/ediarum.PTA.edit - Dateiendung (2)</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>4/ediarum.PTA.edit/ediarum.PTA.edit.framework/ediarum.PTA.edit</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
