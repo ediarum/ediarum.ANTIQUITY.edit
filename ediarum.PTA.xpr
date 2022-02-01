@@ -36712,7 +36712,7 @@ revisionDesc[2]</String>
                         <documentTypeEntry-array>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>4/ediarum.PTA.edit_v0-5-5/ediarum.bibelexegese.register.framework/ediarum.BIBELEXEGESE.register</String>
+                                    <String>6/ediarum.pta.edit/ediarum.bibelexegese.register.framework/ediarum.BIBELEXEGESE.register</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -36793,14 +36793,6 @@ revisionDesc[2]</String>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
                                     <String>4/ediarum.BASE.edit/ediarum.BASE.framework/ediarum.BASE.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.PTA.edit_v0-5-5/ediarum.PTA.edit.framework/ediarum.PTA.edit</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
