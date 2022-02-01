@@ -11706,7 +11706,7 @@ hand</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;handNote xmlns="http://www.tei-c.org/ns/1.0" xml:id="need_ID">${ask('Kurzbeschreibung des Schreibers (z.B. Schreiber, Erster Korrektor)', generic, 'Schreiber')}&lt;/handNote></String>
+																<String>&lt;handNote xmlns="http://www.tei-c.org/ns/1.0" xml:id="need_ID">${ask('Kurzbeschreibung der Hand (z.B. Grundstock, Nachtrag)', generic, 'Hand')}&lt;/handNote></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -13036,7 +13036,7 @@ pta_moveCaret</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;handNote xmlns="http://www.tei-c.org/ns/1.0" xml:id="mr">Manus recentior&lt;/handNote></String>
+																<String>&lt;handNote xmlns="http://www.tei-c.org/ns/1.0" xml:id="mr">Jüngere Hand&lt;/handNote></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>

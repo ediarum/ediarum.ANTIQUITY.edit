@@ -36712,7 +36712,7 @@ revisionDesc[2]</String>
                         <documentTypeEntry-array>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>4/ediarum.PTA.edit/ediarum.bibelexegese.register.framework/ediarum.BIBELEXEGESE.register</String>
+                                    <String>4/ediarum.PTA.edit_v0-5-5/ediarum.bibelexegese.register.framework/ediarum.BIBELEXEGESE.register</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -36720,7 +36720,15 @@ revisionDesc[2]</String>
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/ediarum.pta.edit/ediarum.bibelexegese.register.framework/ediarum.BIBELEXEGESE.register</String>
+                                    <String>4/cagb/ediarum.basis_cagb_transkriptionen.framework/ediarum.CAGB.transkriptionen</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>4/ediarum.BASE.edit/ediarum.INTRO.framework/ediarum.INTRO</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
@@ -36744,7 +36752,55 @@ revisionDesc[2]</String>
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>4/ediarum.PTA.edit/ediarum.PTA.edit.framework/ediarum.PTA.edit</String>
+                                    <String>4/cagb/cagb.framework/CAGB</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>4/cagb/cagb_personenregister.framework/CAGB - Personenregister</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>4/cagb/cagb_sachregister.framework/CAGB - Sachregister</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>4/cagb/cagb_transkriptionsgruppen.framework/CAGB - Transkriptionsgruppen</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>4/cagb/cagb_werkregister.framework/CAGB - Werkregister</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>4/ediarum.BASE.edit/ediarum.BASE.framework/ediarum.BASE.edit</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
+                                    <String>4/ediarum.PTA.edit_v0-5-5/ediarum.PTA.edit.framework/ediarum.PTA.edit</String>
                                 </field>
                                 <field name="enable">
                                     <Boolean>false</Boolean>
