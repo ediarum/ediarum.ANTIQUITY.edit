@@ -5890,7 +5890,7 @@ rs_drei</String>
 											<String></String>
 										</field>
 										<field name="accelerator">
-											<null/>
+											<String>M1 M2 L</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>
@@ -14522,7 +14522,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<String></String>
 										</field>
 										<field name="accelerator">
-											<null/>
+											<String>M1 M2 L</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>
