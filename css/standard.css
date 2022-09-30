@@ -937,12 +937,14 @@ div[type='transcription'][xml|lang]:before{
     font-size: 75%;
 }
 
-div[type='transcription']{
+div[type='transcription'][xml|lang="syc"]{
+	direction: rtl;
     display: block;
-    font-family: "brill";
+    font-family: "Estrangelo Edessa";
 }
 
-div[type='textpart']{
+div[type='transcription']{
+    display: block;
     font-family: "brill";
 }
 
