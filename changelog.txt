@@ -1,0 +1,50 @@
+Berlin-Brandenburgische Akademie der Wissenschaften 
+TELOTA - The electronic Life of the Academy
+
+------------------------------------------------------------------------------------------------
+
+ediarum.PTA.edit
+Digitale Arbeitsumgebung für das Editionsvorhaben Patristisches Textarchiv: Ein Open Access-Archiv antiker christlicher Texte
+
+Framework (Dokumenttyp Zuordnung) für Oxygen XML 
+
+Entwicklung: Nadine Arndt, nadine.arndt@bbaw.de und Ursula Kundert, ursula.kundert@bbaw.de
+
+CHANGELOG
+------------------------------------------------------------------------------------------------
+0.5.5. vom 24.01.2022
+
+	* An Oxygen 24.0 angepasst.
+	* Unbenannte Aktionsleisten benannt
+
+0.5.4 vom 30.09.2021
+
+	* kleinere Bugs behoben
+	
+0.5.3 vom 27.08.2021
+
+	* Marginalien mit Hintergrundfarbe
+	* kleinere Bugs behoben
+
+0.5.2 vom 09.08.2021
+
+	* Schema aktualisiert
+
+0.5.1 vom 19.07.2021
+
+	* Neue Schriftart
+	* Angabe von Textklassen
+	* Kleinere Anpassungen
+
+0.5.0 vom 05.07.2021
+
+	* Breakpoint: Datenmodell folgt dem des PTA
+	* Featureanpassungen für Transkriptionen
+	* Testphase startet
+
+
+0.4.4 vom 22.11.2020:
+
+	* Initial commit: Release ediarum.BIBELEXEGESE.edit v0.4.4
+	* Umstellung auf ediarum.BASE.edit
+	* Featureanpassungen für Transkriptionen

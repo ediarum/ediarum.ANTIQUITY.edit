@@ -5,29 +5,32 @@
       <titleStmt>
         <title xml:lang="la"/>
         <author/>
-          <respStmt>
-            <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben ihres Vor- und Nachnamen)', generic, '')}">
-              <surname>${ask('Mitarbeiter: Nachname', generic, '')}</surname>
-              <forename>${ask('Mitarbeiter: Vorname', generic, '')}</forename>
-              </persName>
-            <resp><note type="remarkResponsibility">${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'Mitarbeit')}</note></resp>
-          </respStmt>
+        <respStmt>
+          <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
+          <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben Ihres Vor- und Nachnamens)', generic, '')}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}</persName>
+        </respStmt>
       </titleStmt>
-        <publicationStmt>
-            <publisher><ref target="http://www.bbaw.de">Berlin-Brandenburgische Akademie der
-                Wissenschaften (BBAW)</ref></publisher>
-            <pubPlace ref="http://www.geonames.org/2950159">Berlin</pubPlace>
-        </publicationStmt>
+      <publicationStmt>
+        <authority ref="http://www.bbaw.de">Berlin-Brandenburgische Akademie der Wissenschaften</authority>
+        <distributor>Patristic Text Archive</distributor>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by-sa/4.0/">Available under a Creative Commons Attribution ShareAlike 4.0 International License</licence>
+        </availability>
+        <date></date>
+        <idno type="PTA"></idno>
+        <idno type="CPG"></idno>
+        <idno type="BHG"/>
+        <idno type="Aldama"/>
+        <idno type="Pinakes-Oeuvre"></idno>
+      </publicationStmt>
       <sourceDesc>
         <msDesc rend="manuscript">
-                    <msIdentifier
-                      xml:id="${ask('ID für transkribierte Handschrift eintragen in Form von Aufbewahrungsort_Signatur', generic, '')}">
-                      <settlement>${ask('Aufbewahrungsort der Handschrift eingeben', generic, '')}</settlement>
-                      <repository>${ask('Bibliothek der Handschrift eingeben', generic, '')}</repository>
-                      <idno>${ask('Signatur der Handschrift', generic, '')}</idno>
-                    </msIdentifier>
-                    
-                </msDesc>
+          <msIdentifier xml:id="${ask('ID für transkribierte Handschrift eintragen in Form von Aufbewahrungsort_Signatur', generic, '')}">
+            <settlement>${ask('Aufbewahrungsort der Handschrift eingeben', generic, '')}</settlement>
+            <repository>${ask('Bibliothek der Handschrift eingeben', generic, '')}</repository>
+            <idno>${ask('Signatur der Handschrift', generic, '')}</idno>
+          </msIdentifier>
+        </msDesc>
       </sourceDesc>
     </fileDesc>
     <encodingDesc>
@@ -39,16 +42,28 @@
       <refsDecl n="CTS">
         <cRefPattern n="section" matchPattern="(.+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div[@type='transcription']/tei:div[@n='$1'])"/>
       </refsDecl>
+      <classDecl>
+        <taxonomy xml:id="comphistsem">
+          <bibl>Text Type Classification by <ref target="https://www.comphistsem.org/46.html">"Computational Historical Semantics</ref></bibl>
+        </taxonomy>
+      </classDecl> 
     </encodingDesc>
+    <profileDesc>
+      <creation>
+        <date/>
+        <placeName/>
+      </creation>
+      <textClass/>
+    </profileDesc>
     <revisionDesc status="draft">
       <listChange>
-        <change when="${date(yyyy-MM-dd)}" who="${ask('Bearbeitungshistorie: Wdh. Kürzel Bearbeiter*in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">Created new record</change>
+        <change when="${date(yyyy-MM-dd)}" who="${ask('Bearbeitungshistorie: Wdh. Kürzel Bearbeiter*in', generic, '')}">Created new record</change>
       </listChange>
     </revisionDesc>
   </teiHeader>
   <text>
     <body>
-      <div type="transcription" xml:lang="${ask('Schreibsprache nach ISO 639 (z.B. grc, lat, etc.)', generic, '')}" n="urn:cts:pta:${ask('PTA-Autor-ID', generic, '')}.${ask('PTA-Werk-ID', generic, '')}.pta-ms${ask('Sigle der Handschrift', generic, '')}">
+      <div type="transcription" n="urn:cts:pta:${ask('PTA-Autor-ID', generic, '')}.${ask('PTA-Werk-ID', generic, '')}.pta-ms${ask('Sigle der Handschrift', generic, '')}">
         <head>
           <title/>
         </head>
