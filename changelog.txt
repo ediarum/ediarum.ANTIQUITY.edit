@@ -8,10 +8,18 @@ Digitale Arbeitsumgebung für das Editionsvorhaben Patristisches Textarchiv: Ein
 
 Framework (Dokumenttyp Zuordnung) für Oxygen XML 
 
-Entwicklung: Nadine Arndt, nadine.arndt@bbaw.de und Ursula Kundert, ursula.kundert@bbaw.de
+Entwicklung: Nadine Arndt, nadine.arndt@bbaw.de & Elke Zinsmeister, zinsmeister@bbaw.de
+
+Ehemals: Ursula Kundert, ursula.kundert@bbaw.de
 
 CHANGELOG
 ------------------------------------------------------------------------------------------------
+0.5.6. vom 22.11.2022
+
+	* Shortcut für lb break
+	* CSS für syrischen Text (rtl)
+
+
 0.5.5. vom 24.01.2022
 
 	* An Oxygen 24.0 angepasst.
