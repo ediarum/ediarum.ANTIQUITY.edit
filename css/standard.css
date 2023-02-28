@@ -1063,3 +1063,31 @@ handShift{
     font-size: 0.7em;
     content:" \|" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("scribeRef"),"',@xml:id)]/string(), ' ')")) " ";
 }
+
+
+/* #######################################
+ * #######################################
+ * #######################################
+ * 
+ * Editionstext 
+ * 
+ * ######################################
+ * ######################################
+ * ######################################*/
+
+/* Pseudo-Zitat */
+
+seg,quote{
+    -oxy-display-tags: none;   
+}
+
+seg[type="psq"]{
+    background-color:purple;
+    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+}
+
+
+seg[type="allusion"]{
+    background-color:blue;
+    -oxy-placeholder-content:"[Text der Anspielung eintragen]"
+}
