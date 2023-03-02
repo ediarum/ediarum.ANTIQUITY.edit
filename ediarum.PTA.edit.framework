@@ -15733,6 +15733,329 @@ revisionDesc[2]</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>pta_writingSession_edition</String>
+										</field>
+										<field name="name">
+											<String>pta_writingSession_edition</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String>${framework}/icons/new_section_24.png</String>
+										</field>
+										<field name="smallIconPath">
+											<String>${framework}/icons/new_section_16.png</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("div")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;div  xmlns="http://www.tei-c.org/ns/1.0"  type="textpart" subtype="${ask('Unterabschnitt der Edition', combobox, ('book':'Buch';'homily':'Homilie';'chapter':'Kapitel';'subdok':'Unterdokument';'praefatio':'Praefatio';'section':'Abschnitt';'fragment':'Fragment';'commented':'Kommentierter Text';'commentary':'Kommentierung';'hypopsalmos':'Hypopsalmos';'hypothesis':'Hypothesis';'perioche':'Perioche';),'section', @subtype)}" n="${answer(@subtype)}">&lt;head>&lt;title>&lt;/title>&lt;/head>&lt;p>&lt;/p>&lt;/div></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::div[@type="textpart"]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_writingSession[@n]</String>
+										</field>
+										<field name="name">
+											<String>pta_writingSession[@n]</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction: Wenn @subtype folgende Werte hat, muss eine Abfrage zur Zählung oder Bibelstellenangabe erfolgen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='book']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='book']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='homily']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='homily']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='chapter']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='chapter']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='subdok']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='subdok']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='section']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='section']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='fragment']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='fragment']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='commented']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='commented']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Bibelstelle in der Form Buch_Kapitel_Vers')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='commentary']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='commentary']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Bibelstelle in der Form Buch_Kapitel_Vers')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_writingSession_edition_all</String>
+										</field>
+										<field name="name">
+											<String>Neue Sektion beginnen</String>
+										</field>
+										<field name="description">
+											<String>Weiterere Sektion beginnen</String>
+										</field>
+										<field name="largeIconPath">
+											<String>${framework}/icons/new_section_24.png</String>
+										</field>
+										<field name="smallIconPath">
+											<String>${framework}/icons/new_section_16.png</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("div")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_writingSession_edition
+pta_writingSession[@n]</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
