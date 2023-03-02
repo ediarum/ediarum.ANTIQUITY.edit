@@ -3,8 +3,10 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title xml:lang="la"/>
-        <author/>
+        <title xml:lang="${ask('Schreibsprache eintragen', generic, '')}"/>
+        <author>
+          <persName>${ask('Autor eintragen', generic, '')}</persName>
+        </author>
         <respStmt>
           <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
           <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben Ihres Vor- und Nachnamens)', generic, '', @editor)}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}</persName>
@@ -87,11 +89,11 @@
   </teiHeader>
   <text>
     <body>
-      <div type="transcription" n="urn:cts:pta:${ask('PTA-Autor-ID', generic, '')}.${ask('PTA-Werk-ID', generic, '')}.pta-ms${ask('Sigle der Handschrift', generic, '')}">
+      <div type="edition" n="urn:cts:pta:${ask('PTA-Autor-ID', generic, '')}.${ask('PTA-Werk-ID', generic, '')}.pta-ms${ask('Sigle der Handschrift', generic, '')}">
         <head>
           <title/>
         </head>
-        <div type="textpart" subtype="${ask('Unterabschnitt der Transkription', combobox, ('section':'Fließtexte';'fragment':'fragmentarische Überlieferung';'commented':'Kommentar';'commentary':'vergleichbarer Text';), 'section')}">
+        <div type="textpart" subtype="${ask('Unterabschnitt der Edition', combobox, ('book':'Buch';'homily':'Homilie';'chapter':'Kapitel';'subdok':'Unterdokument';'praefatio':'Praefatio';'section':'Abschnitt';'fragment':'Fragment';'commented':'Kommentierter Text';'commentary':'Kommentierung';'hypopsalmos':'Hypopsalmos';'hypothesis':'Hypothesis';'perioche':'Perioche';),'section', @subtype)}" n="${answer(@subtype)}">
           <p></p>
         </div>
       </div>
