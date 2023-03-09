@@ -16056,6 +16056,1144 @@ pta_writingSession[@n]</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>pta_var_listWit</String>
+										</field>
+										<field name="name">
+											<String>Handschriftlichen Zeugen hinzufügen</String>
+										</field>
+										<field name="description">
+											<String>fügt in den Metadaten einen handschriftlichen Zeugen hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::head</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;witness xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('ID der Handschrift', generic, '', @witness-id)}">
+  &lt;abbr type="siglum">${answer(@witness-id)}&lt;/abbr>
+  &lt;name>${ask('lateinischer Name der Handschrift', generic, '')}&lt;/name>,
+  &lt;origDate>${ask('Datierung der Handschrift', generic, '')}&lt;/origDate>,
+  &lt;locus>${ask('Folia bzw. Seiten der Handschrift', generic, '')}&lt;/locus>
+&lt;/witness></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::listWit[@xml:id]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::witness</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;witness xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('ID der Handschrift', generic, '', @witness-id)}">
+  &lt;abbr type="siglum">${answer(@witness-id)}&lt;/abbr>
+  &lt;name>${ask('lateinischer Name der Handschrift', generic, '')}&lt;/name>,
+  &lt;origDate>${ask('Datierung der Handschrift', generic, '')}&lt;/origDate>,
+  &lt;locus>${ask('Folia bzw. Seiten der Handschrift', generic, '')}&lt;/locus>
+&lt;/witness></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::witness</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>//listWit and not(//listWit/listWit[@xml:id])</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;witness xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('ID der Handschrift', generic, '', @witness-id)}">
+  &lt;abbr type="siglum">${answer(@witness-id)}&lt;/abbr>
+  &lt;name>${ask('lateinischer Name der Handschrift', generic, '')}&lt;/name>,
+  &lt;origDate>${ask('Datierung der Handschrift', generic, '')}&lt;/origDate>,
+  &lt;locus>${ask('Folia bzw. Seiten der Handschrift', generic, '')}&lt;/locus>
+&lt;/witness></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//listWit</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>not(//listWit) and not(//sourceDesc/listWit)</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;listWit xmlns="http://www.tei-c.org/ns/1.0">
+  &lt;witness xml:id="${ask('ID der Handschrift', generic, '', @witness-id)}">
+    &lt;abbr type="siglum">${answer(@witness-id)}&lt;/abbr>
+    &lt;name>${ask('lateinischer Name der Handschrift', generic, '')}&lt;/name>,
+    &lt;origDate>${ask('Datierung der Handschrift', generic, '')}&lt;/origDate>,
+    &lt;locus>${ask('Folia bzw. Seiten der Handschrift', generic, '')}&lt;/locus>
+  &lt;/witness>
+&lt;/listWit></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//sourceDesc/msDesc</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>not(//listWit)</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;listWit xmlns="http://www.tei-c.org/ns/1.0">
+  &lt;witness xml:id="${ask('ID der Handschrift', generic, '', @witness-id)}">
+    &lt;abbr type="siglum">${answer(@witness-id)}&lt;/abbr>
+    &lt;name>${ask('lateinischer Name der Handschrift', generic, '')}&lt;/name>,
+    &lt;origDate>${ask('Datierung der Handschrift', generic, '')}&lt;/origDate>,
+    &lt;locus>${ask('Folia bzw. Seiten der Handschrift', generic, '')}&lt;/locus>
+  &lt;/witness>
+&lt;/listWit></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//sourceDesc</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_var_origDate[@when_@notBefore_@notAfter]</String>
+										</field>
+										<field name="name">
+											<String>maschinenlesbare Datierung</String>
+										</field>
+										<field name="description">
+											<String>maschinenlesbare Hinterlegung von Datierungen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::origDate</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>attributeNames</String>
+																<String>notBefore
+notAfter</String>
+															</entry>
+															<entry>
+																<String>elementLocations</String>
+																<String>self::origDate</String>
+															</entry>
+															<entry>
+																<String>values</String>
+																<String>${ask('Ungefährer Zeitraum: Anfangsdatum im Format JJJJ-MM-TT')}
+${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::date</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>self::date</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>when</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Veröffentlichungsjahr maschinenlesbar hinterlegen')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_var_listBibl</String>
+										</field>
+										<field name="name">
+											<String>Zeugen frühere Editionen hinzufügen</String>
+										</field>
+										<field name="description">
+											<String>fügt in den Metadaten einen Zeugen einer frühere Editionen hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::bibl</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;bibl xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('ID des früheren Zeugen', generic, '', @bibl-id)}">
+     &lt;abbr type="siglum">${answer(@bibl-id)}.&lt;/abbr>
+     &lt;editor>${ask('Herausgeber der Edition', generic, '')}&lt;/editor>
+     &lt;title>${ask('Titel der Edition', generic, '')}&lt;/title>
+     &lt;pubPlace>${ask('Erscheinungsort der Edition', generic, '')}&lt;/pubPlace>
+     &lt;publisher>${ask('Verlag/Verleger der Edition', generic, '')}&lt;/publisher>
+     &lt;date when="${ask('Veröffentlichungsjahr der Edition', generic, '', @date)}">${answer(@date)}&lt;/date>
+ &lt;/bibl></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::bibl</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>//listBibl and //listBibl/listBibl[@xml:id]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;bibl xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('ID des früheren Zeugen', generic, '', @bibl-id)}">
+     &lt;abbr type="siglum">${answer(@bibl-id)}.&lt;/abbr>
+     &lt;editor>${ask('Herausgeber der Edition', generic, '')}&lt;/editor>
+     &lt;title>${ask('Titel der Edition', generic, '')}&lt;/title>
+     &lt;pubPlace>${ask('Erscheinungsort der Edition', generic, '')}&lt;/pubPlace>
+     &lt;publisher>${ask('Verlag/Verleger der Edition', generic, '')}&lt;/publisher>
+     &lt;date when="${ask('Veröffentlichungsjahr der Edition', generic, '', @date)}">${answer(@date)}&lt;/date>
+ &lt;/bibl></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//listBibl</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Before</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>//listBibl and not(//listBibl/listBibl[@xml:id])</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;bibl xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('ID des früheren Zeugen', generic, '', @bibl-id)}">
+     &lt;abbr type="siglum">${answer(@bibl-id)}.&lt;/abbr>
+     &lt;editor>${ask('Herausgeber der Edition', generic, '')}&lt;/editor>
+     &lt;title>${ask('Titel der Edition', generic, '')}&lt;/title>
+     &lt;pubPlace>${ask('Erscheinungsort der Edition', generic, '')}&lt;/pubPlace>
+     &lt;publisher>${ask('Verlag/Verleger der Edition', generic, '')}&lt;/publisher>
+     &lt;date when="${ask('Veröffentlichungsjahr der Edition', generic, '', @date)}">${answer(@date)}&lt;/date>
+ &lt;/bibl></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//listBibl</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>not(//sourceDesc//listBibl) and //sourceDesc/listWit</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;listBibl xmlns="http://www.tei-c.org/ns/1.0">
+ &lt;bibl xml:id="${ask('ID des früheren Zeugen', generic, '', @bibl-id)}">
+     &lt;abbr type="siglum">${answer(@bibl-id)}.&lt;/abbr>
+     &lt;editor>${ask('Herausgeber der Edition', generic, '')}&lt;/editor>
+     &lt;title>${ask('Titel der Edition', generic, '')}&lt;/title>
+     &lt;pubPlace>${ask('Erscheinungsort der Edition', generic, '')}&lt;/pubPlace>
+     &lt;publisher>${ask('Verlag/Verleger der Edition', generic, '')}&lt;/publisher>
+     &lt;date when="${ask('Veröffentlichungsjahr der Edition', generic, '', @date)}">${answer(@date)}&lt;/date>
+ &lt;/bibl>
+&lt;/listBibl>
+</String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//sourceDesc/listWit</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>not(//sourceDesc//listBibl) and not(//sourceDesc/listWit)</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;listBibl xmlns="http://www.tei-c.org/ns/1.0">
+ &lt;bibl xml:id="${ask('ID des früheren Zeugen', generic, '', @bibl-id)}">
+     &lt;abbr type="siglum">${answer(@bibl-id)}.&lt;/abbr>
+     &lt;editor>${ask('Herausgeber der Edition', generic, '')}&lt;/editor>
+     &lt;title>${ask('Titel der Edition', generic, '')}&lt;/title>
+     &lt;pubPlace>${ask('Erscheinungsort der Edition', generic, '')}&lt;/pubPlace>
+     &lt;publisher>${ask('Verlag/Verleger der Edition', generic, '')}&lt;/publisher>
+     &lt;date when="${ask('Veröffentlichungsjahr der Edition', generic, '', @date)}">${answer(@date)}&lt;/date>
+ &lt;/bibl>
+&lt;/listBibl></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//sourceDesc</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as first child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_var_listWit_group</String>
+										</field>
+										<field name="name">
+											<String>Handschriftliche Zeugengruppe hinzufügen</String>
+										</field>
+										<field name="description">
+											<String>fügt in den Metadaten eine handschriftliche Zeugengruppe hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::witness[ancestor::listWit[@xml:id]]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;listWit xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('ID der Handschriftengruppe', generic, '')}">
+  &lt;head>Hyparchetyp &lt;abbr type="siglum">${ask('Sigle der Handschriftengruppe', generic, '')}&lt;/abbr>&lt;/head>
+  &lt;witness xml:id="${ask('ID der Handschrift', generic, '', @witness-id)}">
+    &lt;abbr type="siglum">${answer(@witness-id)}&lt;/abbr>
+    &lt;name>${ask('lateinischer Name der Handschrift', generic, '')}&lt;/name>,
+    &lt;origDate>${ask('Datierung der Handschrift', generic, '')}&lt;/origDate>,
+    &lt;locus>${ask('Folia bzw. Seiten der Handschrift', generic, '')}&lt;/locus>
+  &lt;/witness>
+&lt;/listWit></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor::listWit[@xml:id]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::witness[ancestor::listWit[not(@xml:id)]]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;listWit xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('ID der Handschriftengruppe', generic, '')}">
+  &lt;head>Hyparchetyp &lt;abbr type="siglum">${ask('Sigle der Handschriftengruppe', generic, '')}&lt;/abbr>&lt;/head>
+  &lt;witness xml:id="${ask('ID der Handschrift', generic, '', @witness-id)}">
+    &lt;abbr type="siglum">${answer(@witness-id)}&lt;/abbr>
+    &lt;name>${ask('lateinischer Name der Handschrift', generic, '')}&lt;/name>,
+    &lt;origDate>${ask('Datierung der Handschrift', generic, '')}&lt;/origDate>,
+    &lt;locus>${ask('Folia bzw. Seiten der Handschrift', generic, '')}&lt;/locus>
+  &lt;/witness>
+&lt;/listWit></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::witness</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>not(//listWit[@xml:id]) and not(//sourceDesc//listWit)</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;listWit xmlns="http://www.tei-c.org/ns/1.0">
+  &lt;head>${ask('Überschrift der Handschriftengruppen', generic, '')}&lt;/head>
+  &lt;listWit xml:id="${ask('ID der Handschriftengruppe', generic, '')}">
+  &lt;head>Hyparchetyp &lt;abbr type="siglum">${ask('Sigle der Handschriftengruppe', generic, '')}&lt;/abbr>&lt;/head>
+  &lt;witness xml:id="${ask('ID der Handschrift', generic, '', @witness-id)}">
+    &lt;abbr type="siglum">${answer(@witness-id)}&lt;/abbr>
+    &lt;name>${ask('lateinischer Name der Handschrift', generic, '')}&lt;/name>,
+    &lt;origDate>${ask('Datierung der Handschrift', generic, '')}&lt;/origDate>,
+    &lt;locus>${ask('Folia bzw. Seiten der Handschrift', generic, '')}&lt;/locus>
+  &lt;/witness>
+&lt;/listWit>
+&lt;/listWit></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//sourceDesc</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_var_listPerson</String>
+										</field>
+										<field name="name">
+											<String>Konjektor:innen hinzufügen</String>
+										</field>
+										<field name="description">
+											<String>fügt in den Metadaten eine:n Konjektor:innen hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::person</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;person  xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('Bearbeitungskürzel des:der Konjektor:in (bestehend aus dem jeweiligen Anfangsbuchstaben des Vor- und Nachnamens)', generic, '', @person-id)}">
+  &lt;persName>
+  &lt;abbr type="siglum">${answer(@person-id)}&lt;/abbr>
+  &lt;forename>${ask('Vorname des:der Konjektor:in', generic, '')}&lt;/forename>
+  &lt;surname>${ask('Nachname des:der Konjektor:in', generic, '')}&lt;/surname>
+ &lt;/persName>
+&lt;/person></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::person</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>not(//sourceDesc//listPerson) and //sourceDesc//listBibl</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;listPerson xmlns="http://www.tei-c.org/ns/1.0">
+  &lt;person  xml:id="${ask('Bearbeitungskürzel des:der Konjektor:in (bestehend aus dem jeweiligen Anfangsbuchstaben des Vor- und Nachnamens)', generic, '', @person-id)}">
+    &lt;persName>
+      &lt;abbr type="siglum">${answer(@person-id)}&lt;/abbr>
+      &lt;forename>${ask('Vorname des:der Konjektor:in', generic, '')}&lt;/forename>
+      &lt;surname>${ask('Nachname des:der Konjektor:in', generic, '')}&lt;/surname>
+    &lt;/persName>
+  &lt;/person>
+&lt;/listPerson></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//sourceDesc//listBibl</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_persName/@ref</String>
+										</field>
+										<field name="name">
+											<String>GND des:r Konjektor:in ergänzen</String>
+										</field>
+										<field name="description">
+											<String>ergänzt die GND des:r Konjektor:in</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::persName</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::persName</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>ref</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('GND-Link einfügen')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_note_konjektor_in</String>
+										</field>
+										<field name="name">
+											<String>Zitierangabe (Konjektor:in)</String>
+										</field>
+										<field name="description">
+											<String>gibt die Zitierangabe zum:zur Konjektor:in an</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::person and not(ancestor-or-self::person//note)</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;note xmlns="http://www.tei-c.org/ns/1.0">&lt;/note></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::person</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_var_get_witness/@source</String>
+										</field>
+										<field name="name">
+											<String>Abschrift verlinken</String>
+										</field>
+										<field name="description">
+											<String>verlinkt eine Abschrift</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::witness</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>source</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>$ITEMS</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{#normalize-space(tei:abbr[@type='siglum'])}: $XPATH{/name}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>ancestor-or-self::witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::witness</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;witness xmlns="http://www.tei-c.org/ns/1.0" corresp="$ITEMS">&lt;/witness></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::listWit[@xml:id]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{#normalize-space(tei:abbr[@type='siglum'])}: $XPATH{/name}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_witness_locus</String>
+										</field>
+										<field name="name">
+											<String>Folia bzw. Seiten maschinenlesbar hinterlegen</String>
+										</field>
+										<field name="description">
+											<String>Folia bzw. Seiten maschinenlesbar hinterlegen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::locus</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>attributeNames</String>
+																<String>from
+to</String>
+															</entry>
+															<entry>
+																<String>elementLocations</String>
+																<String>self::locus</String>
+															</entry>
+															<entry>
+																<String>values</String>
+																<String>${ask('Beginn: Folia bzw. Seiten der Handschrift')}
+${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_witness/@corresp</String>
+										</field>
+										<field name="name">
+											<String>Verweis auf Transkription der Handschrift</String>
+										</field>
+										<field name="description">
+											<String>Verweis auf Transkription der Handschrift</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::witness</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::witness</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>corresp</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Dateiname der Transkription eingeben', generic, '')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_bibl/@facs</String>
+										</field>
+										<field name="name">
+											<String>Faksimile ergänzen</String>
+										</field>
+										<field name="description">
+											<String>Faksimile ergänzen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::bibl</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::bibl</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>facs</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Faksimile-Link einfügen')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_var_get_witness/@source_Konjektor:in</String>
+										</field>
+										<field name="name">
+											<String>Verweis auf eine Handschrift (Konjektor:in)</String>
+										</field>
+										<field name="description">
+											<String>Verweis auf eine Handschrift (Konjektor:in)</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::note</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;ref xmlns="http://www.tei-c.org/ns/1.0" target="$ITEMS">&lt;/ref></String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{#normalize-space(tei:abbr[@type='siglum'])}: $XPATH{/name}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -16372,6 +17510,47 @@ pta_writingSession[@n]</String>
 											<menuItem>
 												<field name="actionID">
 													<String>paragraph</String>
+												</field>
+											</menuItem>
+											<menuSeparator/>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_var_origDate[@when_@notBefore_@notAfter]</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_var_get_witness/@source</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_witness/@corresp</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_witness_locus</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_bibl/@facs</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_persName/@ref</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_note_konjektor_in</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_var_get_witness/@source_Konjektor:in</String>
 												</field>
 											</menuItem>
 											<menuSeparator/>
@@ -16858,6 +18037,51 @@ pta_writingSession[@n]</String>
 										</field>
 										<field name="toolbarEntriesDescriptorList">
 											<toolbarEntry-array>
+												<toolbar>
+													<field name="id">
+														<String>Variantenapparat (Metadaten)</String>
+													</field>
+													<field name="type">
+														<Integer>3</Integer>
+													</field>
+													<field name="largeIconPath">
+														<String></String>
+													</field>
+													<field name="smallIconPath">
+														<String></String>
+													</field>
+													<field name="toolbarEntriesDescriptorList">
+														<toolbarEntry-array>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_var_listWit</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_var_listWit_group</String>
+																</field>
+															</toolbarItem>
+															<toolbarSeparator/>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_var_listBibl</String>
+																</field>
+															</toolbarItem>
+															<toolbarSeparator/>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_var_listPerson</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_var_get_witness/@source_Konjektor:in</String>
+																</field>
+															</toolbarItem>
+														</toolbarEntry-array>
+													</field>
+												</toolbar>
 												<toolbar>
 													<field name="id">
 														<String>Zitate</String>
