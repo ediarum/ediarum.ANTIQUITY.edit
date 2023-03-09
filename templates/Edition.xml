@@ -93,6 +93,9 @@
         <head>
           <title/>
         </head>
+        <div type="textpart" subtype="praefatio" n="praefatio">
+          <p></p>
+        </div>
         <div type="textpart" subtype="${ask('Unterabschnitt der Edition', combobox, ('book':'Buch';'homily':'Homilie';'chapter':'Kapitel';'subdok':'Unterdokument';'praefatio':'Praefatio';'section':'Abschnitt';'fragment':'Fragment';'commented':'Kommentierter Text';'commentary':'Kommentierung';'hypopsalmos':'Hypopsalmos';'hypothesis':'Hypothesis';'perioche':'Perioche';),'section', @subtype)}" n="${answer(@subtype)}">
           <p></p>
         </div>
