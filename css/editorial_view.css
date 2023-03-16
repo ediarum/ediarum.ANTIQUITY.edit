@@ -347,3 +347,58 @@ text hi[rend='ekthesis']:before{
             color, black)
             ;
 }*/
+
+
+
+/* ###################################################################
+ * ###################################################################
+                    Editionstex
+ ###################################################################
+ ################################################################### 
+ *  */
+
+listWit:not([xml|id]),
+sourceDesc listBibl,
+sourceDesc listPerson{
+    -oxy-foldable: false;
+    -oxy-folded: false;
+}
+
+witness:focus-within,bibl:focus-within, person:focus-within{
+    background-color: #e0e0e0;
+}
+
+
+listWit[xml|id]:before{
+    content: "\A xml:id des Hyparchetyps (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) ")\A"!important;
+    color:red;
+}
+
+witness:before{
+    content: "Handschriftlicher Zeuge: "oxy_xpath(oxy_concat("string-join(child::abbr/string(), ' ')")) " \A ""xml:id (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) "), Abschrift ("oxy_textfield(edit, "source",color, "black",columns, 10) "), Transkription der Handschrift (" 
+    oxy_textfield(edit, "corresp",color, "black",columns, 10)
+    ") , Sigle: "
+}
+
+listBibl bibl:before{
+    content:
+    "frühere Edition: "oxy_xpath(oxy_concat("string-join(child::abbr/string(), ' ')")) " \A "
+    "xml:id (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) "), Sigle: "
+}
+
+listBibl bibl[facs]:after{
+    content:
+    "\A Faksimile-Link: " oxy_textfield(edit, "facs",color, "black",columns, 50) " "url(gfx/link.png);
+    link: url(attr(facs));
+}
+
+sourceDesc listPerson person:before{
+    content: 
+    "Konjektor:in: "oxy_xpath(oxy_concat("string-join(child::abbr/string(), ' ')")) " \A "
+    "xml:id (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) "), Kürzel: "
+}
+
+person note ref[target]:after{
+    content: " ("oxy_textfield(edit, "target",color, "black",columns, 10)")"
+}
+

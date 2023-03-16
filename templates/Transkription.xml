@@ -7,7 +7,6 @@
         <author/>
         <respStmt>
           <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
-          <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben Ihres Vor- und Nachnamens)', generic, '')}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}</persName>
         </respStmt>
       </titleStmt>
       <publicationStmt>
@@ -57,7 +56,7 @@
     </profileDesc>
     <revisionDesc status="draft">
       <listChange>
-        <change when="${date(yyyy-MM-dd)}" who="${ask('Bearbeitungshistorie: Wdh. Kürzel Bearbeiter*in', generic, '')}">Created new record</change>
+        <change when="${date(yyyy-MM-dd)}" who="${answer(@editor)}">Created new record</change>
       </listChange>
     </revisionDesc>
   </teiHeader>
