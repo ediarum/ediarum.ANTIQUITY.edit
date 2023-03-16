@@ -17164,11 +17164,11 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
-																<String>$XPATH{#normalize-space(tei:abbr[@type='siglum'])}: $XPATH{/name}</String>
+																<String>$XPATH{/tei:abbr}:$XPATH{/tei:name}</String>
 															</entry>
 															<entry>
 																<String>item separator</String>
-																<String> </String>
+																<String></String>
 															</entry>
 															<entry>
 																<String>item variable</String>
@@ -17186,6 +17186,88 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 													</field>
 													<field name="operationID">
 														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>@TEST</String>
+										</field>
+										<field name="name">
+											<String>Index aus Projektdatei aufrufen</String>
+										</field>
+										<field name="description">
+											<String></String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>script</String>
+																<String>/resources/index.xql?index=manuscriptId</String>
+															</entry>
+															<entry>
+																<String>sourceLocation</String>
+																<String></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XQueryOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${pdu}/resources/index.xql?index=manuscriptId</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.OpenFileOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>script</String>
+																<String>${pdu}/resources/index.xql?index=manuscriptId</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.XQueryUpdateOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -17504,6 +17586,17 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 											<menuItem>
 												<field name="actionID">
 													<String>@cert[remove]</String>
+												</field>
+											</menuItem>
+											<menuSeparator/>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_@hand</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>pta_@hand[unknown]</String>
 												</field>
 											</menuItem>
 											<menuSeparator/>
@@ -18037,6 +18130,11 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 										</field>
 										<field name="toolbarEntriesDescriptorList">
 											<toolbarEntry-array>
+												<toolbarItem>
+													<field name="actionID">
+														<String>@TEST</String>
+													</field>
+												</toolbarItem>
 												<toolbar>
 													<field name="id">
 														<String>Variantenapparat (Metadaten)</String>
