@@ -1138,21 +1138,31 @@ biblStruct{
 }
 
 
-/* Pseudo-Zitat */
 
-seg,quote{
+
+seg,quote,sic{
     -oxy-display-tags: none;   
 }
+
+/* Pseudo-Zitat */
 
 seg[type="psq"]{
     background-color:purple;
     -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
 }
-
+/* Anspielung */
 
 seg[type="allusion"]{
     background-color:blue;
     -oxy-placeholder-content:"[Text der Anspielung eintragen]"
 }
 
+/* Crux */
 
+sic:empty{
+    content:"\02020" 
+}
+
+sic:not(:empty):before,sic:not(:empty):after{
+    content:"\02020"    
+}
