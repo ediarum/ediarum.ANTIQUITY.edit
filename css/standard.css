@@ -1,3 +1,6 @@
+/* Hallo Elke */
+
+
 /* 
 Copyright 2011-2018 Berlin-Brandenburg Academy of Sciences and Humanities
 
@@ -111,15 +114,14 @@ respStmt resp note {
 }
 
 respStmt resp:before,
-respStmt note:before {
-    content: "(";
+respStmt note:before{
+    content: " (";
 
 }
 respStmt resp:after{
     content: " "
 }
 
-respStmt persName:after,
 respStmt note:after {
     content: ")";
 }
@@ -202,6 +204,10 @@ publicationStmt idno[type="Pinakes-Oeuvre"]:before{
 
 publicationStmt idno[type="ClaCla"]:before{
     content: "ClaCla-Signatur: "
+}
+
+publicationStmt idno[type="TLG"]:before{
+    content: "TLG-Signatur: "
 }
 
 msDesc msIdentifier settlement{
@@ -961,20 +967,70 @@ div[type='textpart'][subtype='fragment']:before{
     content: "Fragment " attr(n);
 }
 
+div[type='transcription'] div[type='textpart'][subtype='commented']:before{
+    content: "Kommentar " attr(n);
+}
+
+div[type='transcription'] div[type='textpart'][subtype='commentary']:before{
+    content: "vergleichbarer Text " attr(n);
+}
+
+/* weitere Abschnitte (Editionstext) */
+
+div[type='edition'] div[type='textpart'][subtype='commented']:before{
+    content: "Kommentierter Text " attr(n);
+}
+
+div[type='edition'] div[type='textpart'][subtype='commentary']:before{
+    content: "Kommentierung " attr(n);
+}
+
+div[type='textpart'][subtype='book']:before{
+    content: "Buch " attr(n);
+}
+
+div[type='textpart'][subtype='homily']:before{
+    content: "Homilie " attr(n);
+}
+
+div[type='textpart'][subtype='chapter']:before{
+    content: "Kapitel " attr(n);
+}
+
+div[type='textpart'][subtype='subdok']:before{
+    content: "Unterdokument " attr(n);
+}
+
+div[type='textpart'][subtype='praefatio']:before{
+    content: "Praefatio " ;
+}
+
+div[type='textpart'][subtype='hypopsalmos']:before{
+    content: "Hypopsalmos ";
+}
+
+div[type='textpart'][subtype='hypothesis']:before{
+    content: "Hypothesis ";
+}
+
+div[type='textpart'][subtype='perioche']:before{
+    content: "Perioche ";
+}
+
 div[type='textpart'][subtype='commented']:before{
     content: "Kommentar " attr(n);
 }
 
-div[type='textpart'][subtype='commentary']:before{
-    content: "vergleichbarer Text " attr(n);
-}
 
 
 
-div[type='textpart']:after{
+div[type='transcription'] div[type='textpart']:after{
     content: oxy_editor(type, button, actionID, pta_writingSession, transparent, true, color, black, text-align, right)" ";
 }
 
+div[type='edition'] div[type='textpart']:after{
+    content: oxy_editor(type, button, actionID, pta_writingSession_edition_all, transparent, true, color, black, text-align, right)" ";
+}
 
 
 g{
@@ -1063,3 +1119,40 @@ handShift{
     font-size: 0.7em;
     content:" \|" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("scribeRef"),"',@xml:id)]/string(), ' ')")) " ";
 }
+
+
+/* #######################################
+ * #######################################
+ * #######################################
+ * 
+ * Editionstext 
+ * 
+ * ######################################
+ * ######################################
+ * ######################################*/
+
+/* Metadaten */
+
+biblStruct{
+    display:none;
+}
+
+
+/* Pseudo-Zitat */
+
+seg,quote{
+    -oxy-display-tags: none;   
+}
+
+seg[type="psq"]{
+    background-color:purple;
+    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+}
+
+
+seg[type="allusion"]{
+    background-color:blue;
+    -oxy-placeholder-content:"[Text der Anspielung eintragen]"
+}
+
+

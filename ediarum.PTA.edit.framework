@@ -15595,6 +15595,467 @@ revisionDesc[2]</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>pta_seg[@type=psq]</String>
+										</field>
+										<field name="name">
+											<String>Pseudo-Zitat</String>
+										</field>
+										<field name="description">
+											<String>Pseudo-Zitat</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("seg")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;seg xmlns="http://www.tei-c.org/ns/1.0" type="psq"/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_seg[@type=allusion]</String>
+										</field>
+										<field name="name">
+											<String>Anspielung</String>
+										</field>
+										<field name="description">
+											<String>Anspielung</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("seg")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;seg xmlns="http://www.tei-c.org/ns/1.0" type="allusion"/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_quote</String>
+										</field>
+										<field name="name">
+											<String>Zitat</String>
+										</field>
+										<field name="description">
+											<String>Zitate (markiert, nicht-markiert, paraphrasierend, Lemma-Zitat)</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("quote")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;quote xmlns="http://www.tei-c.org/ns/1.0" type="${ask('Typ des Zitats',combobox,('marked':'markiertes Zitat';'unmarked':'nicht-markiertes Zitat';'paraphrase':'paraphrasierendes Zitat';'lemma':'Lemma-Zitat';),'marked')}"/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_writingSession_edition</String>
+										</field>
+										<field name="name">
+											<String>pta_writingSession_edition</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String>${framework}/icons/new_section_24.png</String>
+										</field>
+										<field name="smallIconPath">
+											<String>${framework}/icons/new_section_16.png</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("div")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;div  xmlns="http://www.tei-c.org/ns/1.0"  type="textpart" subtype="${ask('Unterabschnitt der Edition', combobox, ('book':'Buch';'homily':'Homilie';'chapter':'Kapitel';'subdok':'Unterdokument';'praefatio':'Praefatio';'section':'Abschnitt';'fragment':'Fragment';'commented':'Kommentierter Text';'commentary':'Kommentierung';'hypopsalmos':'Hypopsalmos';'hypothesis':'Hypothesis';'perioche':'Perioche';),'section', @subtype)}" n="${answer(@subtype)}">&lt;head>&lt;title>&lt;/title>&lt;/head>&lt;p>&lt;/p>&lt;/div></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::div[@type="textpart"]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_writingSession[@n]</String>
+										</field>
+										<field name="name">
+											<String>pta_writingSession[@n]</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction: Wenn @subtype folgende Werte hat, muss eine Abfrage zur Zählung oder Bibelstellenangabe erfolgen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='book']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='book']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='homily']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='homily']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='chapter']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='chapter']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='subdok']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='subdok']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='section']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='section']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='fragment']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='fragment']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Nummerierung des neuen Abschnitts')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='commented']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='commented']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Bibelstelle in der Form Buch_Kapitel_Vers')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::div[@n='commentary']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::div[@n='commentary']</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Bibelstelle in der Form Buch_Kapitel_Vers')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_writingSession_edition_all</String>
+										</field>
+										<field name="name">
+											<String>Neue Sektion beginnen</String>
+										</field>
+										<field name="description">
+											<String>Weiterere Sektion beginnen</String>
+										</field>
+										<field name="largeIconPath">
+											<String>${framework}/icons/new_section_24.png</String>
+										</field>
+										<field name="smallIconPath">
+											<String>${framework}/icons/new_section_16.png</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("div")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_writingSession_edition
+pta_writingSession[@n]</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -16382,6 +16843,57 @@ revisionDesc[2]</String>
 											</toolbarEntry-array>
 										</field>
 									</toolbar>
+									<toolbar>
+										<field name="id">
+											<String>Editionsfeatures</String>
+										</field>
+										<field name="type">
+											<Integer>2</Integer>
+										</field>
+										<field name="largeIconPath">
+											<null/>
+										</field>
+										<field name="smallIconPath">
+											<null/>
+										</field>
+										<field name="toolbarEntriesDescriptorList">
+											<toolbarEntry-array>
+												<toolbar>
+													<field name="id">
+														<String>Zitate</String>
+													</field>
+													<field name="type">
+														<Integer>3</Integer>
+													</field>
+													<field name="largeIconPath">
+														<String>${framework}/icons/quote_24.png</String>
+													</field>
+													<field name="smallIconPath">
+														<String>${framework}/icons/quote_16.png</String>
+													</field>
+													<field name="toolbarEntriesDescriptorList">
+														<toolbarEntry-array>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_quote</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_seg[@type=allusion]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_seg[@type=psq]</String>
+																</field>
+															</toolbarItem>
+														</toolbarEntry-array>
+													</field>
+												</toolbar>
+											</toolbarEntry-array>
+										</field>
+									</toolbar>
 								</toolbar-array>
 							</field>
 							<field name="contextualItems">
@@ -16486,6 +16998,32 @@ revisionDesc[2]</String>
 								</field>
 								<field name="attributeValue">
 									<String>transcription*</String>
+								</field>
+							</documentTypeRule>
+							<documentTypeRule>
+								<field name="namespace">
+									<String>*</String>
+								</field>
+								<field name="rootElem">
+									<String>*</String>
+								</field>
+								<field name="fileName">
+									<String>*</String>
+								</field>
+								<field name="publicID">
+									<String>*</String>
+								</field>
+								<field name="javaRuleClass">
+									<String></String>
+								</field>
+								<field name="attributeLocalName">
+									<String>doctype</String>
+								</field>
+								<field name="attributeNamespace">
+									<String>http://www.telota.de</String>
+								</field>
+								<field name="attributeValue">
+									<String>edition*</String>
 								</field>
 							</documentTypeRule>
 						</documentTypeRule-array>
