@@ -11638,13 +11638,13 @@ hand</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element('del')</String>
+														<String>oxy:allows-child-element("del") and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;del xmlns="http://www.tei-c.org/ns/1.0" rend="${ask('Art der Streichung', combobox, ('overwrite':'Tilgung durch Überschreibung des ursprünglichen Textes';'strikethrough':'Tilgung durch Streichung';'erasure':'Tilgung durch Radieren';'expunction':'Tilgung duch Punkte (unter dem Text)';), 'strikethrough')}">&lt;/del></String>
+																<String>&lt;del xmlns="http://www.tei-c.org/ns/1.0" rend="${ask('Art der Streichung', combobox, ('overwrite':'Tilgung durch Überschreibung des ursprünglichen Textes';'strikethrough':'Tilgung durch Streichung';'erasure':'Tilgung durch Radieren';'expunction':'Tilgung durch Punkte (unter dem Text)';), 'strikethrough')}">&lt;/del></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -11654,13 +11654,13 @@ hand</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("del") and //TEI[@telota:doctype='transcription']</String>
+														<String>oxy:allows-child-element("del") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;del xmlns="http://www.tei-c.org/ns/1.0" rend="${ask('Art der Streichung', combobox, ('overwrite':'Tilgung durch Überschreibung des ursprünglichen Textes';'strikethrough':'Tilgung durch Streichung';'erasure':'Tilgung durch Radieren';'expunction':'Tilgung durch Punkte (unter dem Text)';), 'strikethrough')}">&lt;/del></String>
+																<String>&lt;del xmlns="http://www.tei-c.org/ns/1.0">&lt;/del></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -12163,7 +12163,7 @@ pta_handNote_count</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("subst")</String>
+														<String>oxy:allows-child-element("subst") and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -12179,13 +12179,29 @@ pta_handNote_count</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("subst")</String>
+														<String>oxy:allows-child-element("subst") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del rendition="${ask('Art der Streichung', combobox, ('#ow':'Tilgung durch Überschreibung des ursprünglichen Textes';'#s':'Tilgung durch Streichung';'#erased':'Tilgung durch Radieren';), '#s')}" >&lt;/del>&lt;add place="${ask('Art der Hinzufügung', combobox, ('superlinear':'über der Zeile eingetragen';'sublinear':'unter der Zeile eingetragen';'intralinear':'innerhalb der Zeile eingetragen';'across':'über den ursprünglichen Text geschrieben';'left':'am linken Rand eingetragen';'right':'am rechten Rand eingetragen';))}">${caret}&lt;/add>&lt;/subst></String>
+																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del/>&lt;add place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'above')}">${selection}${caret}&lt;/add>&lt;/subst></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertOrReplaceFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("subst") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del/>&lt;add place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'above')}">${caret}&lt;/add>&lt;/subst></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
