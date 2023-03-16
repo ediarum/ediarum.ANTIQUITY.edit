@@ -1,3 +1,6 @@
+/* Hallo Elke */
+
+
 /* 
 Copyright 2011-2018 Berlin-Brandenburg Academy of Sciences and Humanities
 
@@ -19,6 +22,7 @@ along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
 
 @namespace xml "http://www.w3.org/XML/1998/namespace";
 @namespace telota "http://www.telota.de";
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
 
 /*@font-face{
     font-family: "BBAWfont";
@@ -58,7 +62,15 @@ along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
     font-weight: normal;
 }
 
-/*  */
+oxy|processing-instruction{
+    visibility:-oxy-collapse-text;
+    -oxy-display-tags: none;
+}
+
+oxy|comment{
+    visibility:-oxy-collapse-text;
+    -oxy-display-tags: none;
+}
 
 TEI {
     padding: 1em;
@@ -101,7 +113,7 @@ titleStmt respStmt {
     font-size: 0.8em;
 }
 
-editor:after {
+teiHeader > editor:after {
     content: "(Herausgeber)";
 }
 
@@ -111,15 +123,14 @@ respStmt resp note {
 }
 
 respStmt resp:before,
-respStmt note:before {
-    content: "(";
+respStmt note:before{
+    content: " (";
 
 }
 respStmt resp:after{
     content: " "
 }
 
-respStmt persName:after,
 respStmt note:after {
     content: ")";
 }
@@ -204,6 +215,10 @@ publicationStmt idno[type="ClaCla"]:before{
     content: "ClaCla-Signatur: "
 }
 
+publicationStmt idno[type="TLG"]:before{
+    content: "TLG-Signatur: "
+}
+
 msDesc msIdentifier settlement{
     -oxy-placeholder-content:"Aufbewahrungsort der Handschrift";
     -oxy-show-placeholder:always;
@@ -267,6 +282,7 @@ textClass keywords term{
 sourceDesc,
 msIdentifier {
     -oxy-display-tags: none;
+    margin:2em 0 2em 0;
 }
 
 
@@ -316,128 +332,165 @@ sourceDesc msDesc physDesc objectDesc:before {
 }
 
 
-sourceDesc listWit witness {
+sourceDesc listWit witness,
+sourceDesc listBibl bibl,
+sourceDesc listPerson person
+{
     display: block;
 }
 
-sourceDesc witness msDesc[type='concept'] {
-    content: "Entwurf: ";
-}
-
-sourceDesc witness msDesc[type='copy'] {
-    content: "Abschrift: ";
-}
-
-sourceDesc witness>bibl {
-    content: "D: ";
-    -oxy-display-tags: none;
-}
-
-sourceDesc witness:nth-child(2)>bibl {
-    content: "D2: ";
-}
-
-sourceDesc witness:nth-child(3)>bibl {
-    content: "D3: ";
-}
-
-sourceDesc witness:nth-child(4)>bibl {
-    content: "D4: ";
-}
-
-sourceDesc witness:nth-child(5)>bibl {
-    content: "D5: ";
-}
-
-sourceDesc witness:nth-child(6)>bibl {
-    content: "D6: ";
-}
-
-sourceDesc witness:nth-child(7)>bibl {
-    content: "D7: ";
-}
-
-sourceDesc witness:nth-child(8)>bibl {
-    content: "D8: ";
-}
-
-sourceDesc witness:nth-child(9)>bibl {
-    content: "D9: ";
-}
-
-sourceDesc witness[select='#this'] {
-    font-weight: bold;
-}
-
-
-
-
 /* TEXTZEUGEN METADATEN */
-listWit[n='textWitnesses']{
+listWit:not([xml|id]),
+sourceDesc listBibl,
+sourceDesc listPerson{
     -oxy-foldable: true;
     -oxy-folded: true;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
-listWit[n='textWitnesses']:before{
-    content: "Liste der Textzeugen";
+
+listWit[xml|id] witness,
+listBibl bibl,
+listPerson person{
+    display:block;
+    margin-top:1em;
+    margin-left:1em;
 }
 
-listWit[n='textWitnesses'] listWit head,
-listWit[n='textWitnesses'] listWit head title,
-listWit[n='textWitnesses'] listWit witness,
-listWit[n='textWitnesses'] title,
-listWit[n='textWitnesses'] idno{
+abbr[type='siglum']{
+    font-weight:bold;
+}
+
+listWit witness abbr{
+    -oxy-placeholder-content:"[Sigle der Handschrift]";
+}
+
+listBibl bibl abbr{
+    -oxy-placeholder-content:"[Sigle der Edition]";
+}
+
+listPerson person abbr{
+    -oxy-placeholder-content:"[Sigle Konjektor:in]";
+}
+
+listWit witness abbr:after,
+listBibl bibl abbr:after,
+listPerson person abbr:after{
+    content: " \A "
+}
+
+/* Handschriftliche Textzeigen */
+listWit:not([xml|id]):before{
+    content: "Liste der Textzeugen: Handschriftliche Zeugen";
+    font-weight:bold;
+    font-size:110%;
+}
+
+listWit listWit[xml|id]:before{
+    content:"\A"
+}
+
+listWit listWit[xml|id] > head{
+    text-decoration:underline;
+    font-weight:bold;
+    font-size:110%;
+}
+
+listWit{
     -oxy-display-tags: none;
 }
 
-listWit[n='textWitnesses'] witness:first-child{
-    margin-top: 0.5em;
-}
-
-/* #NA: nochmal anschauen
- * listWit[n='textWitnesses']:nth-child(2)>listWit[xml|id] {
-    content: "TZG-2: ";
-}*/
-
-
-listWit[n='textWitnesses'] listWit:before{
-    content: "\A Textzeugengruppe: ";
+listWit:not([xml|id]) head{
     display:block;
 }
 
-listWit[n='textWitnesses'] listWit witness{
-    display:inline-block;
-    margin-top: 15em;
+listWit:not([xml|id]) witness{
+    display:block;
+    margin-top:1em;
 }
 
-listWit[n='textWitnesses'] listWit head:after{
-    content: " --- "
+witness name{
+    -oxy-placeholder-content:"[Lateinischer Name der Handschrift]";
+    -oxy-show-placeholder:always;
 }
 
-listWit[n='textWitnesses'] listWit witness:after{
-    content: ", ";
+witness name:not([key]):after{
+    content: "Bitte Verweis auf die Handschriftenbeschreibung setzen, ggf. diese neu anlegen";
+    border:solid red;
+    padding: 1px;
+    display:block;
 }
 
-listWit[n='textWitnesses'] listWit witness:last-child:after{
-    content: ".";
+witness origDate{
+    -oxy-placeholder-content:"[Datierung der Handschrift]";
+    -oxy-show-placeholder:always;
 }
 
-listWit[n='textWitnesses'] title{
-    -oxy-placeholder-content:"kein Titel vergeben";
+witness locus{
+    -oxy-placeholder-content:"[Folia bzw. Seiten der Handschrift]";
+    -oxy-show-placeholder:always;
 }
 
-listWit[n='textWitnesses'] idno:before{
-    content: " (Sigle: ";
+/* frühere Editionen */
+
+sourceDesc listBibl:before{
+    content: "Liste der Textzeugen: frühere Editionen";
+    font-weight:bold;
+    font-size:110%;
 }
 
-listWit[n='textWitnesses'] idno:after{
-    content: ")";
+listBibl editor{
+    -oxy-placeholder-content:"[Herausgeber der Edition]";
+    -oxy-show-placeholder:always;
 }
 
+listBibl title{
+    -oxy-placeholder-content:"[Titel der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl pubPlace{
+    -oxy-placeholder-content:"[Erscheinungsort der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl publisher{
+    -oxy-placeholder-content:"[Verlag/Verleger der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl date{
+    -oxy-placeholder-content:"[Veröffentlichungsjahr der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl publisher:before,
+listBibl publisher:after,
+listBibl title:before,
+listBibl title:after{
+    content: " / ";
+}
+
+
+/* Konjektoren */
+sourceDesc listPerson:before{
+    content: "Konjektor:innen";
+    font-weight:bold;
+    font-size:110%;
+}
+
+sourceDesc listPerson note{
+    display:block;
+    -oxy-placeholder-content:"[Zitierhinweis]";
+}
+
+
+
+
+/*
 listWit[n='textWitnesses'] listWit witness{
     content: oxy_xpath(oxy_concat("string-join(//listWit[@n='textWitnesses']/witness[contains('",attr("sameAs"),"',@xml:id)]/idno[@type='siglum']/string(), ' ')")) " ";
-}
+}*/
 
 /* revisionDesc */
 
@@ -961,20 +1014,70 @@ div[type='textpart'][subtype='fragment']:before{
     content: "Fragment " attr(n);
 }
 
+div[type='transcription'] div[type='textpart'][subtype='commented']:before{
+    content: "Kommentar " attr(n);
+}
+
+div[type='transcription'] div[type='textpart'][subtype='commentary']:before{
+    content: "vergleichbarer Text " attr(n);
+}
+
+/* weitere Abschnitte (Editionstext) */
+
+div[type='edition'] div[type='textpart'][subtype='commented']:before{
+    content: "Kommentierter Text " attr(n);
+}
+
+div[type='edition'] div[type='textpart'][subtype='commentary']:before{
+    content: "Kommentierung " attr(n);
+}
+
+div[type='textpart'][subtype='book']:before{
+    content: "Buch " attr(n);
+}
+
+div[type='textpart'][subtype='homily']:before{
+    content: "Homilie " attr(n);
+}
+
+div[type='textpart'][subtype='chapter']:before{
+    content: "Kapitel " attr(n);
+}
+
+div[type='textpart'][subtype='subdok']:before{
+    content: "Unterdokument " attr(n);
+}
+
+div[type='textpart'][subtype='praefatio']:before{
+    content: "Praefatio " ;
+}
+
+div[type='textpart'][subtype='hypopsalmos']:before{
+    content: "Hypopsalmos ";
+}
+
+div[type='textpart'][subtype='hypothesis']:before{
+    content: "Hypothesis ";
+}
+
+div[type='textpart'][subtype='perioche']:before{
+    content: "Perioche ";
+}
+
 div[type='textpart'][subtype='commented']:before{
     content: "Kommentar " attr(n);
 }
 
-div[type='textpart'][subtype='commentary']:before{
-    content: "vergleichbarer Text " attr(n);
-}
 
 
 
-div[type='textpart']:after{
+div[type='transcription'] div[type='textpart']:after{
     content: oxy_editor(type, button, actionID, pta_writingSession, transparent, true, color, black, text-align, right)" ";
 }
 
+div[type='edition'] div[type='textpart']:after{
+    content: oxy_editor(type, button, actionID, pta_writingSession_edition_all, transparent, true, color, black, text-align, right)" ";
+}
 
 
 g{
@@ -1063,3 +1166,40 @@ handShift{
     font-size: 0.7em;
     content:" \|" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("scribeRef"),"',@xml:id)]/string(), ' ')")) " ";
 }
+
+
+/* #######################################
+ * #######################################
+ * #######################################
+ * 
+ * Editionstext 
+ * 
+ * ######################################
+ * ######################################
+ * ######################################*/
+
+/* Metadaten */
+
+biblStruct{
+    display:none;
+}
+
+
+/* Pseudo-Zitat */
+
+seg,quote{
+    -oxy-display-tags: none;   
+}
+
+seg[type="psq"]{
+    background-color:purple;
+    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+}
+
+
+seg[type="allusion"]{
+    background-color:blue;
+    -oxy-placeholder-content:"[Text der Anspielung eintragen]"
+}
+
+
