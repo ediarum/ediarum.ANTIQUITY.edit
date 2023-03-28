@@ -1140,7 +1140,7 @@ biblStruct{
 
 
 
-seg,quote,sic{
+seg,quote,sic,app{
     -oxy-display-tags: none;   
 }
 
@@ -1166,3 +1166,19 @@ sic:empty{
 sic:not(:empty):before,sic:not(:empty):after{
     content:"\02020"    
 }
+
+/* Beginn eines Textzeugen */
+
+
+rdg[wit]{
+    content:"Beginn " attr(wit) ":" ;
+    background-color: #E0FFFF;
+    font-size: 70%;
+}
+
+witStart{
+    display:none
+}
+
+
+
