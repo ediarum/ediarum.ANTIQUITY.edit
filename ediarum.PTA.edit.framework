@@ -16138,7 +16138,7 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witStart/>${caret}&lt;/rdg>&lt;/app></String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witStart/>${ask('erstes Wort des Textzeugen', editable_combobox)}#&lt;/rdg>&lt;/app></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -16174,6 +16174,36 @@ pta_writingSession[@n]</String>
 														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
 													</field>
 												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_witEnd</String>
+										</field>
+										<field name="name">
+											<String>Ende eines Zeugen (Textzeugengruppe)</String>
+										</field>
+										<field name="description">
+											<String>Markiert das Ende eines Textzeugen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
 														<String>oxy:allows-child-element("app")</String>
@@ -16181,13 +16211,45 @@ pta_writingSession[@n]</String>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
 																<String>element</String>
-																<String>${ask{("erstes Wort des Textzeugen einfügen")}</String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witEnd/>${ask('letztes Wort des Textzeugen', editable_combobox)}#&lt;/rdg>&lt;/app></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.InsertFragmentAfterOperation</String>
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -16232,7 +16294,7 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;lacunaStart/>&lt;/rdg>&lt;/app></String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;lacunaStart/>${ask('letztes Wort vor der Lücke', editable_combobox)}#&lt;/rdg>&lt;/app></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -16276,13 +16338,13 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg</String>
+											<String>pta_lacunaEnd</String>
 										</field>
 										<field name="name">
-											<String>Textfeld für Variante</String>
+											<String>Ende einer Lücke (Textzeugengruppe)</String>
 										</field>
 										<field name="description">
-											<String>Teil einer multipleAction</String>
+											<String>Markiert das Ende einer Lücke eines Textzeugen</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -16300,26 +16362,206 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>oxy:allows-child-element("app")</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
-																<String>fragment</String>
-																<String>&lt;expan xmlns="http://www.tei-c.org/ns/1.0">${ask('Variante', generic, '')}&lt;/expan></String>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;lacunaEnd/>${ask('erstes Wort nach der Lücke', editable_combobox)}#&lt;/rdg>&lt;/app></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg/parent::app[@type="witnesses"]</String>
+																<String></String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as first child</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertOrReplaceFragmentOperation</String>
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[wit]</String>
+										</field>
+										<field name="name">
+											<String>weiterer Textzeuge</String>
+										</field>
+										<field name="description">
+											<String>Fügt einen Textzeugen hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>$ITEMS</String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//child::wit</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_app[textcritical]_lem</String>
+										</field>
+										<field name="name">
+											<String>Variante zur Leithandschrift</String>
+										</field>
+										<field name="description">
+											<String>Apparateintrag für eine Variante zur LeithandschriftLei</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witStart/>${ask('erstes Wort des Textzeugen', editable_combobox)}#&lt;/rdg>&lt;/app></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -17152,7 +17394,22 @@ pta_writingSession[@n]</String>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
+																	<String>pta_witEnd</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
 																	<String>pta_lacunaStart</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_lacunaEnd</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[wit]</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>

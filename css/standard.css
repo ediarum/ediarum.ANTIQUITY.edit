@@ -1140,7 +1140,7 @@ biblStruct{
 
 
 
-seg,quote,sic,app{
+seg,quote,sic,app,rdg,witStart,witEnd,lacunaStart,lacunaEnd{
     -oxy-display-tags: none;   
 }
 
@@ -1169,16 +1169,52 @@ sic:not(:empty):before,sic:not(:empty):after{
 
 /* Beginn eines Textzeugen */
 
-
 rdg[wit]{
-    content:"Beginn " attr(wit) ":" ;
+    content: attr(wit);
     background-color: #E0FFFF;
     font-size: 70%;
 }
 
 witStart{
-    display:none
+    content:" Beginn: ";
+    background-color: #E0FFFF;    
 }
 
+/* Ende eines Textzeugen */
 
+rdg[wit]{
+    content: attr(wit);
+    background-color: #E0FFFF;
+    font-size: 70%;
+}
 
+witEnd{
+    content:" Ende: ";
+    background-color: #E0FFFF;    
+}
+
+/* Beginn einer Lücke eines Textzeugen */
+
+rdg[wit]{
+    content: attr(wit);
+    background-color: #E0FFFF;
+    font-size: 70%;
+}
+
+lacunaStart{
+    content:" Beginn Lücke: ";
+    background-color: #E0FFFF;    
+}
+
+/* Ende einer Lücke eines Textzeugen */
+
+rdg[wit]{
+    content: attr(wit);
+    background-color: #E0FFFF;
+    font-size: 70%;
+}
+
+lacunaEnd{
+    content:" Ende Lücke: ";
+    background-color: #E0FFFF;    
+}
