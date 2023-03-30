@@ -1140,8 +1140,9 @@ biblStruct{
 
 
 
-seg,quote,sic,app,rdg,witStart,witEnd,lacunaStart,lacunaEnd{
+seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd{
     -oxy-display-tags: none;   
+}
 }
 
 /* Pseudo-Zitat */

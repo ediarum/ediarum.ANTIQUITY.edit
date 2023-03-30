@@ -16440,7 +16440,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("rdg")</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16494,13 +16494,13 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_app[textcritical]_lem</String>
+											<String>pta_rdg[@type=orthographic]</String>
 										</field>
 										<field name="name">
-											<String>Variante zur Leithandschrift</String>
+											<String>orthographische Variante</String>
 										</field>
 										<field name="description">
-											<String>Apparateintrag für eine Variante zur LeithandschriftLei</String>
+											<String>Fügt orthographische Variante in Apparateintrag ein</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -16518,7 +16518,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("rdg")</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16528,11 +16528,323 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witStart/>${ask('erstes Wort des Textzeugen', editable_combobox)}#&lt;/rdg>&lt;/app></String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" type="orthographic">&lt;/rdg></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String></String>
+																<String>//app[@type="textcritical"]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=homoioteleuton]</String>
+										</field>
+										<field name="name">
+											<String>Homoioteleuton</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine auf Homoioteleuton zurückzuführende Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("rdg")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" type="homoioteleuton" cause="omission"/></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//app[@type="textcritical"]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=dittography]</String>
+										</field>
+										<field name="name">
+											<String>Dittographie</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine als Dittographie gedeutete Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("rdg")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" type="dittography" cause="addition">&lt;/rdg></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//app[@type="textcritical"]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=homoiarkton]</String>
+										</field>
+										<field name="name">
+											<String>Homoiarkton</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine auf Homoiarkton zurückzuführende Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("rdg")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" type="homoiarkton" cause="omission"/></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//app[@type="textcritical"]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=saut_du_meme]</String>
+										</field>
+										<field name="name">
+											<String>saut du même</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine auf einen saut_du_meme zurückzuführende Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("rdg")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" type="saut_du_meme" cause="omission"/></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>//app[@type="textcritical"]</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
@@ -17372,6 +17684,49 @@ pta_writingSession[@n]</String>
 										</field>
 										<field name="toolbarEntriesDescriptorList">
 											<toolbarEntry-array>
+												<toolbar>
+													<field name="id">
+														<String>Variante hinzufügen</String>
+													</field>
+													<field name="type">
+														<Integer>3</Integer>
+													</field>
+													<field name="largeIconPath">
+														<String></String>
+													</field>
+													<field name="smallIconPath">
+														<String></String>
+													</field>
+													<field name="toolbarEntriesDescriptorList">
+														<toolbarEntry-array>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[@type=orthographic]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[@type=homoioteleuton]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[@type=homoiarkton]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[@type=saut_du_meme]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[@type=dittography]</String>
+																</field>
+															</toolbarItem>
+														</toolbarEntry-array>
+													</field>
+												</toolbar>
 												<toolbar>
 													<field name="id">
 														<String>Bezeugung des Textes</String>
