@@ -66,6 +66,7 @@ along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
 TEI {
     padding: 1em;
     font-family: BBAWfont;
+     -oxy-display-tags: none;
 }
 
 /* ################ teiHeader ############ */
@@ -1140,10 +1141,10 @@ biblStruct{
 
 
 
-seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd{
+seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem{
     -oxy-display-tags: none;   
 }
-}
+
 
 /* Pseudo-Zitat */
 
@@ -1168,54 +1169,107 @@ sic:not(:empty):before,sic:not(:empty):after{
     content:"\02020"    
 }
 
-/* Beginn eines Textzeugen */
+/* Nachweis von Textzeugen */
 
-rdg[wit]{
+app[type="witnesses"] rdg[wit]{
     content: attr(wit);
     background-color: #E0FFFF;
     font-size: 70%;
 }
 
+/* Beginn eines Textzeugen */
+
 witStart{
-    content:" Beginn: ";
-    background-color: #E0FFFF;    
+    content:" Beginn: ";   
 }
 
 /* Ende eines Textzeugen */
 
-rdg[wit]{
-    content: attr(wit);
-    background-color: #E0FFFF;
-    font-size: 70%;
-}
 
 witEnd{
     content:" Ende: ";
-    background-color: #E0FFFF;    
 }
 
 /* Beginn einer Lücke eines Textzeugen */
 
-rdg[wit]{
-    content: attr(wit);
-    background-color: #E0FFFF;
-    font-size: 70%;
-}
 
 lacunaStart{
-    content:" Beginn Lücke: ";
-    background-color: #E0FFFF;    
+    content:" Beginn Lücke: "; 
 }
 
 /* Ende einer Lücke eines Textzeugen */
 
-rdg[wit]{
-    content: attr(wit);
-    background-color: #E0FFFF;
+
+lacunaEnd{
+    content:" Ende Lücke: ";  
+}
+
+
+/* Variantenapparat allgemein */
+
+app[type="variants"] lem {
+    background-color: yellow;
+}
+
+app[type="variants"] lem[wit]:after {
+    content: " ("attr(wit)") ";
     font-size: 70%;
 }
 
-lacunaEnd{
-    content:" Ende Lücke: ";
-    background-color: #E0FFFF;    
+app[type="variants"] rdg {
+    background-color: blue;
+}
+
+app[type="variants"] rdg[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg:nth-child(2n) {
+    background-color: lime;
+}
+
+/* Homoioteleuton */
+rdg[cause="homoioteleuton"]{
+    content:" (Homoioteleuton) ";
+}
+
+/* Homoiarkton */
+rdg[cause="homoiarkton"]{
+    content:" (Homoiarkton) ";
+}
+
+/* saut du même */
+rdg[cause="saut_du_meme"]{
+    content:" (saut du même) ";
+}
+
+/* Hinzufügung */
+
+
+
+
+/* Auslassung */
+rdg[type="omission"]{
+    content:" (Auslassung) ";
+}
+
+/* Löschung */
+rdg[type="deletion"]{
+    content:" (Löschung) ";
+}
+
+/* Nicht lesbarer Text */
+rdg[type="illegible"]{
+    content:" (Nicht lesbarer Text) ";
+}
+
+/* Lücke (Beschädigung) */
+rdg[type="damage"]{
+    content:" (Lücke (Beschädigung)) ";
+}
+
+/* Lücke (freigelassen) */
+rdg[type="fenestra"]{
+    content:" (Lücke (freigelassen)) ";
 }
