@@ -1216,12 +1216,31 @@ app[type="variants"] lem[wit]:after {
     font-size: 70%;
 }
 
+app[type="variants"] lem[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 70%;
+}
 app[type="variants"] rdg {
     background-color: blue;
 }
 
 app[type="variants"] rdg[wit]:after {
     content: " ("attr(wit)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[resp]:after {
+    content: " ("attr(resp)") ";
     font-size: 70%;
 }
 
@@ -1272,4 +1291,9 @@ rdg[type="damage"]{
 /* Lücke (freigelassen) */
 rdg[type="fenestra"]{
     content:" (Lücke (freigelassen)) ";
+}
+
+/* vermutete Lücke */
+rdg[type="lacunam_indicavit"]{
+    content:" (vermutete Lücke) ";
 }
