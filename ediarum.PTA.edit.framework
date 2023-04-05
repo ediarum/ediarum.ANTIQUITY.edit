@@ -16107,7 +16107,7 @@ pta_writingSession[@n]</String>
 											<String>pta_witStart</String>
 										</field>
 										<field name="name">
-											<String>Beginn eines Zeugen (Textzeugengruppe)</String>
+											<String>Beginn einer Handschrift (Textzeugengruppe)</String>
 										</field>
 										<field name="description">
 											<String>Markiert den Beginn eines Textzeugen</String>
@@ -16138,7 +16138,7 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witStart/>${ask('erstes Wort des Textzeugen', generic, ' ')}&lt;/rdg>&lt;/app></String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witStart/>${ask('erstes Wort der Handschrift', generic, ' ')}&lt;/rdg>&lt;/app></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -16185,7 +16185,7 @@ pta_writingSession[@n]</String>
 											<String>pta_witEnd</String>
 										</field>
 										<field name="name">
-											<String>Ende eines Zeugen (Textzeugengruppe)</String>
+											<String>Ende einer Handschrift (Textzeugengruppe)</String>
 										</field>
 										<field name="description">
 											<String>Markiert das Ende eines Textzeugen</String>
@@ -16216,7 +16216,7 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witEnd/>${ask('letztes Wort des Textzeugen', generic, ' ')}&lt;/rdg>&lt;/app></String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="witnesses">&lt;rdg wit="$ITEMS">&lt;witEnd/>${ask('letztes Wort der Handschrift', generic, ' ')}&lt;/rdg>&lt;/app></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -16263,7 +16263,7 @@ pta_writingSession[@n]</String>
 											<String>pta_lacunaStart</String>
 										</field>
 										<field name="name">
-											<String>Beginn einer Lücke (Textzeugengruppe)</String>
+											<String>Beginn einer Lücke in einer Handschrift (Textzeugengruppe)</String>
 										</field>
 										<field name="description">
 											<String>Markiert den Beginn einer Lücke eines Textzeugen</String>
@@ -16341,7 +16341,7 @@ pta_writingSession[@n]</String>
 											<String>pta_lacunaEnd</String>
 										</field>
 										<field name="name">
-											<String>Ende einer Lücke (Textzeugengruppe)</String>
+											<String>Ende einer Lücke in einer Handschrift (Textzeugengruppe)</String>
 										</field>
 										<field name="description">
 											<String>Markiert das Ende einer Lücke eines Textzeugen</String>
@@ -16419,7 +16419,7 @@ pta_writingSession[@n]</String>
 											<String>pta_rdg[wit]</String>
 										</field>
 										<field name="name">
-											<String>weiterer Textzeuge</String>
+											<String>Handschrift hinzufügen</String>
 										</field>
 										<field name="description">
 											<String>Fügt einen Textzeugen hinzu</String>
@@ -18194,10 +18194,10 @@ pta_writingSession[@n]</String>
 											<String>pta_rdg[@resp @type=conjecture]</String>
 										</field>
 										<field name="name">
-											<String>Konjektur (von Person, nicht übernommen)</String>
+											<String>Konjektur (von Editor:in, nicht übernommen)</String>
 										</field>
 										<field name="description">
-											<String>Fügt eine nicht übernommene Konjektur einer Person als Variante in Apparateintrag ein</String>
+											<String>Fügt eine nicht übernommene Konjektur einer Editor:in als Variante in Apparateintrag ein</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -18572,7 +18572,7 @@ pta_writingSession[@n]</String>
 											<String>pta_rdg[@resp @type=deletion]</String>
 										</field>
 										<field name="name">
-											<String>Tilgung (von Person, nicht übernommen)</String>
+											<String>Tilgung (von Editor:in, nicht übernommen)</String>
 										</field>
 										<field name="description">
 											<String>Fügt eine nicht übernommene Tilgung von einer Person als Variante in Apparateintrag ein</String>
@@ -18824,7 +18824,7 @@ pta_writingSession[@n]</String>
 											<String>pta_rdg[@resp @type=additon]</String>
 										</field>
 										<field name="name">
-											<String>Hinzufügung (von Person, nicht übernommen)</String>
+											<String>Hinzufügung (von Editor:in, nicht übernommen)</String>
 										</field>
 										<field name="description">
 											<String>Fügt eine nicht übernommene Hinzufügung von einer Person als Variante in Apparateintrag ein</String>
@@ -19076,7 +19076,7 @@ pta_writingSession[@n]</String>
 											<String>pta_rdg[@resp @type=lacunam_indicavit]</String>
 										</field>
 										<field name="name">
-											<String>Lücke vermutet (von Person, nicht übernommen)</String>
+											<String>Lücke vermutet (von Editor:in, nicht übernommen)</String>
 										</field>
 										<field name="description">
 											<String>Fügt eine nicht übernommene  vermutete Lücke von einer Person als Variante in Apparateintrag ein</String>
@@ -19711,6 +19711,274 @@ pta_lem[@type=deletion]
 													</field>
 													<field name="operationID">
 														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[source]</String>
+										</field>
+										<field name="name">
+											<String>Edition hinzufügen</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine ältere Edition hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::rdg</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>source</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>${xpath_eval(@source)} $ITEMS</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:bibl</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>self::rdg</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::lem</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>source</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>${xpath_eval(@source)} $ITEMS</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:bibl</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>self::lem</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[resp]</String>
+										</field>
+										<field name="name">
+											<String>Editor:in hinzufügen</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine Person hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::rdg</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>resp</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>${xpath_eval(@resp)} $ITEMS</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:person</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>self::rdg</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::lem</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>resp</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>${xpath_eval(@resp)} $ITEMS</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:person</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>self::lem</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -20561,6 +20829,17 @@ pta_lem[@type=deletion]
 																	<String>pta_sic</String>
 																</field>
 															</toolbarItem>
+															<toolbarSeparator/>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[source]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[resp]</String>
+																</field>
+															</toolbarItem>
 														</toolbarEntry-array>
 													</field>
 												</toolbar>
@@ -20690,6 +20969,16 @@ pta_lem[@type=deletion]
 															<toolbarItem>
 																<field name="actionID">
 																	<String>pta_rdg[wit]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[source]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[resp]</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>
