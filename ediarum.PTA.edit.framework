@@ -16082,7 +16082,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("sic")</String>
+														<String>oxy:allows-child-element("sic") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16440,7 +16440,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::rdg</String>
+														<String>self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16492,7 +16492,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::lem</String>
+														<String>self::lem and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16574,7 +16574,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16626,7 +16626,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16700,7 +16700,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16752,7 +16752,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16826,7 +16826,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16878,7 +16878,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16952,7 +16952,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17000,7 +17000,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17074,7 +17074,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17122,7 +17122,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17196,7 +17196,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17248,7 +17248,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17333,7 +17333,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17385,7 +17385,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17459,7 +17459,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17511,7 +17511,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17585,7 +17585,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17637,7 +17637,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17711,7 +17711,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17763,7 +17763,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17837,7 +17837,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17889,7 +17889,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17963,7 +17963,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18015,7 +18015,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18089,7 +18089,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18141,7 +18141,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18215,7 +18215,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18267,7 +18267,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18341,7 +18341,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18393,7 +18393,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18467,7 +18467,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18519,7 +18519,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18593,7 +18593,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18645,7 +18645,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18719,7 +18719,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18771,7 +18771,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18845,7 +18845,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18897,7 +18897,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18971,7 +18971,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19023,7 +19023,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19097,7 +19097,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg</String>
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19149,7 +19149,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19349,7 +19349,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition'] </String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19363,17 +19363,6 @@ pta_lem[@type=conjecture]
 													</field>
 													<field name="operationID">
 														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String></String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap/>
-													</field>
-													<field name="operationID">
-														<String></String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -19486,7 +19475,7 @@ pta_lem[@type=conjecture]
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19500,17 +19489,6 @@ pta_lem[@type=correction]
 													</field>
 													<field name="operationID">
 														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String></String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap/>
-													</field>
-													<field name="operationID">
-														<String></String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -19623,7 +19601,7 @@ pta_lem[@type=correction]
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19671,7 +19649,7 @@ pta_lem[@type=deletion]
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String></String>
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19745,7 +19723,7 @@ pta_lem[@type=deletion]
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::rdg</String>
+														<String>self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19797,7 +19775,7 @@ pta_lem[@type=deletion]
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::lem</String>
+														<String>self::lem and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19879,7 +19857,7 @@ pta_lem[@type=deletion]
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::rdg</String>
+														<String>self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -19931,7 +19909,7 @@ pta_lem[@type=deletion]
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::lem</String>
+														<String>self::lem and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -20532,6 +20510,11 @@ pta_lem[@type=deletion]
 														<toolbarItem>
 															<field name="actionID">
 																<String>pta_persName</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>orgName</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
