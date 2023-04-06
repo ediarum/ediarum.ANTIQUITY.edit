@@ -12117,23 +12117,23 @@ pta_handNote_count</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("subst")</String>
+														<String>oxy:allows-child-element("subst") and ancestor::TEI[@telota:doctype="edition"]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del rend="${ask('Art der Streichung', combobox, ('overwrite':'Tilgung durch Überschreibung des ursprünglichen Textes';'strikethrough':'Tilgung durch Streichung';'erasure':'Tilgung durch Radieren';'expunction':'Tilgung durch Punkte (unter dem Text)';'unmarked':'Der zu ersetzende Text ist überhaupt nicht explizit markiert';'marker':'Der zu ersetzende Text ist mit einem Zeichen, z.B. einem Obelus o.ä., markiert';), 'strikethrough')}" >&lt;/del>&lt;add place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'above')}">${caret}&lt;/add>&lt;/subst></String>
+																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del rend="${ask('Art der Streichung', combobox, ('overwrite':'Tilgung durch Überschreibung des ursprünglichen Textes';'strikethrough':'Tilgung durch Streichung';'erasure':'Tilgung durch Radieren';'expunction':'Tilgung durch Punkte (unter dem Text)';'unmarked':'Der zu ersetzende Text ist überhaupt nicht explizit markiert';'marker':'Der zu ersetzende Text ist mit einem Zeichen, z.B. einem Obelus o.ä., markiert';), 'strikethrough')}" >${caret}&lt;/del>&lt;add place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'above')}">${selection}&lt;/add>&lt;/subst></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+														<String>ro.sync.ecss.extensions.commons.operations.InsertOrReplaceFragmentOperation</String>
 													</field>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("subst")</String>
+														<String>oxy:allows-child-element("subst") and ancestor::TEI[@telota:doctype="transcription"]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
