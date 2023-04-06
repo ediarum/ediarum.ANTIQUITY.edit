@@ -12378,7 +12378,7 @@ or ancestor-or-self::quote and //TEI[@telota:doctype='transcription']</String>
 											<String>Lücke im Text</String>
 										</field>
 										<field name="description">
-											<String>Lücke im Text durch physische Beschädigung oder vom Schreiber freigelassen</String>
+											<String>Lücke im Text durch physische Beschädigung oder vom Schreiber freigelassen (Transkription) oder im überlieferten Textbestand (Edition)</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/icons/gap_luecke_24.png</String>
@@ -12396,7 +12396,24 @@ or ancestor-or-self::quote and //TEI[@telota:doctype='transcription']</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element('gap')</String>
+														<String>oxy:allows-child-element('gap') and ancestor::TEI[@telota:doctype="edition"]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_gap[edition]_insert
+pta_remove_attributes</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element('gap') and ancestor::TEI[@telota:doctype="transcription"]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -17266,6 +17283,103 @@ pta_pb/@edRef_insert</String>
 													</field>
 													<field name="operationID">
 														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_gap[edition]_insert</String>
+										</field>
+										<field name="name">
+											<String>Lücke im Text</String>
+										</field>
+										<field name="description">
+											<String>Teil einer multipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element('gap') and ancestor::TEI[@telota:doctype="edition"]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;gap xmlns="http://www.tei-c.org/ns/1.0" reason="missing" unit="${ask('Einheit', combobox, ('character':'Zeichen';'word':'Wörter';'line':'Zeilen';'page':'Seiten';), '')}" quantity="${ask('Anzahl der unleserlichen Zeichen', generic, '1')}" >${caret}&lt;/gap></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_remove_attributes</String>
+										</field>
+										<field name="name">
+											<String>Entferne überflüssige Attribute</String>
+										</field>
+										<field name="description">
+											<String>Entfernt überflüssige Attribute</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::gap[@unit=""]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>attributeNames</String>
+																<String>unit
+quantity</String>
+															</entry>
+															<entry>
+																<String>elementLocations</String>
+																<String>.</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
