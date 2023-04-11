@@ -19965,6 +19965,191 @@ pta_lem[@type=deletion]
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@varSeq]</String>
+										</field>
+										<field name="name">
+											<String>Korrektur durch Schreiber/Korrektor</String>
+										</field>
+										<field name="description">
+											<String>Fügt bei einer Korrektur in der Handschrift im Varianteneintrag die Position in der Reihenfolge der Korrektur, den Urheber der Korrektur und den Ort der Korrektur ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>attributeNames</String>
+																<String>varSeq
+hand
+style</String>
+															</entry>
+															<entry>
+																<String>elementLocations</String>
+																<String>//rdg</String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>values</String>
+																<String>${ask('Position in Reihenfolge der Korrektur',combobox,('1':'Ausgangsvariante';'2':'erste Korrektur';'3':'zweite Korrektur';'4':'dritte Korrektur';),' ')}
+${ask('Urheber der Variante/Korrektur',combobox,('#m1':'Schreiber';'#m2':'Korrektor 1';'#m3':'Korrektor 2';'#m4':'Korrektor 3';),' ')}
+${ask('Ort der Korrektur',combobox,('supralinear':'über der Zeile';'marginal':'am Rand';'inline':'innerhalb der Zeile';),' ')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap/>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.tei.id.TEIP5ConfigureAutoIDElementsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_app[@xml:id]</String>
+										</field>
+										<field name="name">
+											<String>Umstellung (groß, erster Eintrag)</String>
+										</field>
+										<field name="description">
+											<String>Fügt bei einer Umstellung in einer Handschrift dem chronologisch ersten Eintrag eine Identifizierung zu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>attributeNames</String>
+																<String>xml:id
+next</String>
+															</entry>
+															<entry>
+																<String>elementLocations</String>
+																<String>//app</String>
+															</entry>
+															<entry>
+																<String>values</String>
+																<String>app1-1
+app1-2</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_app[@xml:id]_2</String>
+										</field>
+										<field name="name">
+											<String>Umstellung (groß, zweiter Eintrag)</String>
+										</field>
+										<field name="description">
+											<String>Fügt bei einer Umstellung in einer Handschrift dem chronologisch zweiten Eintrag eine Identifizierung zu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>attributeNames</String>
+																<String>xml:id
+prev</String>
+															</entry>
+															<entry>
+																<String>elementLocations</String>
+																<String>//app</String>
+															</entry>
+															<entry>
+																<String>values</String>
+																<String>app1_2
+app1-1</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -20900,6 +21085,21 @@ pta_lem[@type=deletion]
 															<toolbarItem>
 																<field name="actionID">
 																	<String>pta_rdg[@type=transposition]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_app[@xml:id]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_app[@xml:id]_2</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[@varSeq]</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>

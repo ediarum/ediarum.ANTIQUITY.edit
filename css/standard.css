@@ -1246,7 +1246,7 @@ app[type="variants"] lem[resp]:after {
     font-size: 70%;
 }
 app[type="variants"] rdg {
-    background-color: blue;
+    background-color: lightblue;
 }
 
 app[type="variants"] rdg[wit][source][resp]:after {
@@ -1337,4 +1337,9 @@ rdg[type="fenestra"]{
 /* vermutete Lücke */
 rdg[type="lacunam_indicavit"]{
     content:" (vermutete Lücke) ";
+}
+
+/* Korrektur durch Schreiber/Korrektor */
+rdg[varSeq][hand][style]{
+    content:" (Korrektur)";
 }
