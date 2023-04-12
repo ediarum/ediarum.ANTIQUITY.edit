@@ -16714,11 +16714,11 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -16836,15 +16836,15 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" cause="dittography" type="addition">${selection} ${selection}&lt;/rdg></String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" cause="dittography" type="addition">${ask('Dittographie eintragen', generic, '')}&lt;/rdg></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -16966,11 +16966,11 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -16983,6 +16983,10 @@ pta_writingSession[@n]</String>
 															<entry>
 																<String>item variable</String>
 																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
 															</entry>
 															<entry>
 																<String>namespaces</String>
@@ -17088,11 +17092,11 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -17105,6 +17109,10 @@ pta_writingSession[@n]</String>
 															<entry>
 																<String>item variable</String>
 																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
 															</entry>
 															<entry>
 																<String>namespaces</String>
@@ -17206,15 +17214,15 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" type="addition">${ask('Hinzufügung eintragen', generic, '')}&lt;/rdg></String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" cause="${ask('Grund für die Hinzufügung',combobox,('dittography':'Dittographie';),'')}" type="addition">${ask('Hinzufügung eintragen', generic, '')}&lt;/rdg></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -17258,7 +17266,7 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem/>&lt;rdg wit="$ITEMS" type="addition">${ask('Hinzufügung eintragen', generic, '')}&lt;/rdg>&lt;/app>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem/>&lt;rdg wit="$ITEMS" cause="${ask('Grund für die Hinzufügung',combobox,('dittography':'Dittographie';),'')}" type="addition">${ask('Hinzufügung eintragen', generic, '')}&lt;/rdg>&lt;/app>
 
 
 
@@ -17343,15 +17351,15 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" type="omission"/></String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" cause="${ask('Grund für die Auslassung',combobox,('homoioteleuton':'Homoioteleuton';'homoiarkton':'Homoiarkton';'saut_du_meme':'saut du même au même';),'')}" type="omission"/></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -17395,7 +17403,7 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem/>&lt;rdg wit="$ITEMS" type="omission"/>&lt;/app></String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem/>&lt;rdg wit="$ITEMS" cause="${ask('Grund für die Auslassung',combobox,('homoioteleuton':'Homoioteleuton';'homoiarkton':'Homoiarkton';'saut_du_meme':'saut du même au même'),'')}" type="omission"/>&lt;/app></String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -17473,11 +17481,11 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -17599,11 +17607,11 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -17725,11 +17733,11 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -17851,11 +17859,11 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
-																<String>//app[@type="variants"]</String>
+																<String>ancestor-or-self::rdg</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
-																<String>Inside as last child</String>
+																<String>After</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -20040,13 +20048,13 @@ ${ask('Ort der Korrektur',combobox,('supralinear':'über der Zeile';'marginal':'
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_app[@xml:id]</String>
+											<String>pta_app[@xml:id]_1</String>
 										</field>
 										<field name="name">
-											<String>Umstellung (groß, erster Eintrag)</String>
+											<String>Umstellung (groß, erstens: Auslassung)</String>
 										</field>
 										<field name="description">
-											<String>Fügt bei einer Umstellung in einer Handschrift dem chronologisch ersten Eintrag eine Identifizierung zu</String>
+											<String>Erster Schritt: Fügt bei einer Umstellung in einer Handschrift dem Apparateintrag, an der Stelle, an der Text ausgelassen wurde, eine Identifizierung zu</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -20064,7 +20072,7 @@ ${ask('Ort der Korrektur',combobox,('supralinear':'über der Zeile';'marginal':'
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+														<String>ancestor-or-self::app and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -20075,12 +20083,16 @@ next</String>
 															</entry>
 															<entry>
 																<String>elementLocations</String>
-																<String>//app</String>
+																<String>//app[@type="variants"]</String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
 															</entry>
 															<entry>
 																<String>values</String>
-																<String>app1-1
-app1-2</String>
+																<String>${id}
+${id}</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -20099,10 +20111,10 @@ app1-2</String>
 											<String>pta_app[@xml:id]_2</String>
 										</field>
 										<field name="name">
-											<String>Umstellung (groß, zweiter Eintrag)</String>
+											<String>Umstellung (groß, zweitens: Hinzufügung)</String>
 										</field>
 										<field name="description">
-											<String>Fügt bei einer Umstellung in einer Handschrift dem chronologisch zweiten Eintrag eine Identifizierung zu</String>
+											<String>Zweiter Schritt: Fügt bei einer Umstellung in einer Handschrift dem Apparateintrag, an der Stelle, an der Text eingefügt wurde, eine Identifizierung zu</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -20120,28 +20132,180 @@ app1-2</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>xml:id</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>$ITEMS</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/app}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//text:app</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>.</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg_Luecke</String>
+										</field>
+										<field name="name">
+											<String>Lücke (in Handschrift)</String>
+										</field>
+										<field name="description">
+											<String>Fügt Lücke (Beschädigung/freigelassen/Tilgung) als Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" wit="$ITEMS" type="${ask('Art der Lücke',combobox,('damage':'Beschädigung';'fenestra':'freigelassen';'deletion':'Tilgung';),'Beschädigung')}"/></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::rdg</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
 														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
-																<String>attributeNames</String>
-																<String>xml:id
-prev</String>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
 															</entry>
 															<entry>
-																<String>elementLocations</String>
-																<String>//app</String>
+																<String>element</String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem/>&lt;rdg wit="$ITEMS" type="${ask('Art der Lücke',combobox,('damage':'Beschädigung';'fenestra':'freigelassen';'deletion':'Tilgung';),'Beschädigung')}"/>&lt;/app></String>
 															</entry>
 															<entry>
-																<String>values</String>
-																<String>app1_2
-app1-1</String>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
+														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -21033,27 +21197,6 @@ app1-1</String>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@cause=homoioteleuton]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@cause=homoiarkton]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@cause=saut_du_meme]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@cause=dittography]</String>
-																</field>
-															</toolbarItem>
-															<toolbarSeparator/>
-															<toolbarItem>
-																<field name="actionID">
 																	<String>pta_rdg[@type=addition]</String>
 																</field>
 															</toolbarItem>
@@ -21074,12 +21217,7 @@ app1-1</String>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@type=damage]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@type=fenestra]</String>
+																	<String>pta_rdg_Luecke</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
@@ -21089,7 +21227,7 @@ app1-1</String>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_app[@xml:id]</String>
+																	<String>pta_app[@xml:id]_1</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
