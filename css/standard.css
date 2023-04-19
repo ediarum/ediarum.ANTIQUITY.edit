@@ -1265,7 +1265,7 @@ app[type="variants"] rdg[wit][resp]:after {
 }
 
 app[type="variants"] rdg[source][resp]:after {
-    content: " ("attr(source) attr(resp)") ";
+    content: " ("attr(resp) attr(source)") ";
     font-size: 70%;
 }
 

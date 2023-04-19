@@ -19745,7 +19745,7 @@ pta_lem[@type=deletion]
 															</entry>
 															<entry>
 																<String>attribute value</String>
-																<String>${xpath_eval(@source)} $ITEMS</String>
+																<String>${xpath_eval(@source)} $ITEMS </String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -19797,7 +19797,7 @@ pta_lem[@type=deletion]
 															</entry>
 															<entry>
 																<String>attribute value</String>
-																<String>${xpath_eval(@source)} $ITEMS</String>
+																<String> ${xpath_eval(@source)} $ITEMS</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -20019,8 +20019,8 @@ style</String>
 															</entry>
 															<entry>
 																<String>values</String>
-																<String>${ask('Position in Reihenfolge der Korrektur',combobox,('1':'Ausgangsvariante';'2':'erste Korrektur';'3':'zweite Korrektur';'4':'dritte Korrektur';),' ')}
-${ask('Urheber der Variante/Korrektur',combobox,('#m1':'Schreiber';'#m2':'Korrektor 1';'#m3':'Korrektor 2';'#m4':'Korrektor 3';),' ')}
+																<String>${ask('Position in Reihenfolge der Korrektur',combobox,('1':'Ausgangsvariante';'2':'erste Korrektur';'3':'zweite Korrektur';'4':'dritte Korrektur';'5':'vierte Korrektur';),' ')}
+${ask('Urheber der Variante/Korrektur',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'Korrektor 2';'m4':'Korrektor 3';'m5':'Korrektor 4';'mr':'manus recentior';'unknown':'unklar';),' ')}
 ${ask('Ort der Korrektur',combobox,('supralinear':'über der Zeile';'marginal':'am Rand';'inline':'innerhalb der Zeile';),' ')}</String>
 															</entry>
 														</serializableOrderedMap>
@@ -20306,6 +20306,265 @@ ${id}</String>
 													</field>
 													<field name="operationID">
 														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_lem[@xml:id]</String>
+										</field>
+										<field name="name">
+											<String>Identifikator</String>
+										</field>
+										<field name="description">
+											<String>Fügt einem Lemma oder einer Variante einen Identifikator zu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::lem and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>self::lem</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>xml:id</String>
+															</entry>
+															<entry>
+																<String>namespace</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${id}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::rdg and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>self::rdg</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>xml:id</String>
+															</entry>
+															<entry>
+																<String>namespace</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${id}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_lem[@copyOf]</String>
+										</field>
+										<field name="name">
+											<String>identische Variante</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine Korrektur, die identisch ist mit einer anderen Variante, als leeren Varianteneintrag mit Verweis auf identische Variante ein.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::lem and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;rdg wit="$ITEMS"  varSeq="${ask('Position der Variante in Reihenfolge der Korrektur',combobox,('2':'erste Korrektur';'3':'zweite Korrektur';'4':'dritte Korrektur';'5':'vierte Korrektur';),' ')}" hand="${ask('Urheber der Variante/Korrektur',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'Korrektor 2';'m4':'Korrektor 3';'m5':'Korrektor 4';'mr':'manus recentior';'unknown':'unklar';),' ')}" style="${ask('Ort der Korrektur',combobox,('supralinear':'über der Zeile';'marginal':'am Rand';'inline':'innerhalb der Zeile';),' ')}"/> </String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>parent::app</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as last child</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+															<entry>
+																<String>schemaAware</String>
+																<String>true</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::rdg and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>self::rdg</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>xml:id</String>
+															</entry>
+															<entry>
+																<String>namespace</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${id}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg_identische_Variante</String>
+										</field>
+										<field name="name">
+											<String>identische Korrektur</String>
+										</field>
+										<field name="description">
+											<String>Erstellt bei Identität der Korrektur durch einen Schreiber mit einer anderen Variante einen Varianteneintrag für die Korrektur und verknpüft die beiden Einträge</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_lem[@xml:id]
+pta_lem[@copyOf]</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -21235,9 +21494,20 @@ ${id}</String>
 																	<String>pta_app[@xml:id]_2</String>
 																</field>
 															</toolbarItem>
+															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
 																	<String>pta_rdg[@varSeq]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg_identische_Variante</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_lem[@xml:id]</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
