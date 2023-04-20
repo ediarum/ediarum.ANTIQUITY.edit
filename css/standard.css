@@ -1207,9 +1207,31 @@ lacunaEnd{
 
 /* Variantenapparat allgemein */
 
-app[type="variants"] lem {
-    background-color: yellow;
+text app{
+    padding-left: 8px; 
+    padding-right: 8px; 
+    padding-bottom: 4px; 
+    background-color: DarkOrange;
 }
+
+app[type="variants"] lem {
+    background-color: LightYellow;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+}
+
+app[type="variants"] rdg {
+    background-color: lightCyan;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+}
+
+app[type="variants"] rdg:nth-child(2n) {
+    background-color: PaleGreen;
+}    
+
 
 app[type="variants"] lem[wit][source][resp]:after {
     content: " ("attr(wit) attr(source) attr(resp)") ";
@@ -1245,10 +1267,8 @@ app[type="variants"] lem[resp]:after {
     content: " ("attr(resp)") ";
     font-size: 70%;
 }
-app[type="variants"] rdg {
-    background-color: lightblue;
-}
 
+    
 app[type="variants"] rdg[wit][source][resp]:after {
     content: " ("attr(wit) attr(source) attr(resp)") ";
     font-size: 70%;
@@ -1285,9 +1305,6 @@ app[type="variants"] rdg[resp]:after {
 }
 
 
-app[type="variants"] rdg:nth-child(2n) {
-    background-color: lime;
-}
 
 /* Homoioteleuton */
 rdg[cause="homoioteleuton"]{
@@ -1341,5 +1358,5 @@ rdg[type="lacunam_indicavit"]{
 
 /* Korrektur durch Schreiber/Korrektor */
 rdg[varSeq][hand][style]{
-    content:" (Korrektur)";
+    content:" (Korrektur " attr(varSeq)") ";
 }
