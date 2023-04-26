@@ -19667,7 +19667,7 @@ pta_lem[@type=deletion]
 															</entry>
 															<entry>
 																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="variants">&lt;lem resp="$ITEMS" type="addition">${ask('Hinzufügung eintragen', generic, ' ')}&lt;/lem>&lt;rdg type="omission"/>&lt;/app></String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0"  type="variants">&lt;lem resp="$ITEMS" type="addition">&lt;supplied>${ask('Hinzufügung eintragen', generic, ' ')}&lt;/supplied>&lt;/lem>&lt;rdg type="omission"/>&lt;/app></String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -20691,6 +20691,52 @@ pta_lem[@copyOf]</String>
 													</field>
 													<field name="operationID">
 														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_said</String>
+										</field>
+										<field name="name">
+											<String>direkte Rede</String>
+										</field>
+										<field name="description">
+											<String>Text wird als direkte Rede markiert</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("said") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;said xmlns="http://www.tei-c.org/ns/1.0"/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -21815,6 +21861,11 @@ pta_lem[@copyOf]</String>
 															<toolbarItem>
 																<field name="actionID">
 																	<String>pta_seg[@type=psq]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_said</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>

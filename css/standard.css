@@ -1141,7 +1141,7 @@ biblStruct{
 
 
 
-seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem{
+seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem,said{
     -oxy-display-tags: none;   
 }
 
@@ -1157,6 +1157,20 @@ seg[type="psq"]{
 seg[type="allusion"]{
     background-color:blue;
     -oxy-placeholder-content:"[Text der Anspielung eintragen]"
+}
+
+/* direkte Rede */
+
+said:before{
+    content: "»";  
+    color: blue;
+    font-size: 130%;
+}
+
+said:after{
+    content: "«"; 
+    color: blue;
+    font-size: 130%;
 }
 
 /* Crux */
