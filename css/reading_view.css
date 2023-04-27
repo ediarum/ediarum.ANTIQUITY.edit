@@ -1,0 +1,26 @@
+@import url("standard.css");
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+
+oxy|comment,
+oxy|comment[oxy_comment_start],
+oxy|processing-instruction {
+    display:none !important;
+}
+
+oxy|processing-instruction[xml-stylesheet],
+oxy|processing-instruction[oxy_comment_start]
+{
+    display:none !important;
+}
+
+rdg{
+    display:none
+}
+
+text app,
+app[type="variants"] lem {
+    background-color:transparent
+    
+    
+}

@@ -695,8 +695,8 @@ text supplied[cert="low"]:before {
     color: gray;
 }
 
-quote surplus,
-text surplus {
+TEI[telota|doctype="transcripton"] quote surplus,
+TEI[telota|doctype="transcripton"] text surplus {
     text-decoration: line-through;
     color: #395B8C;
 }
@@ -1253,7 +1253,7 @@ app[type="variants"] lem[wit][source][resp]:after {
 }
 
 app[type="variants"] lem[wit][source]:after {
-    content: " ("attr(wit) attr(source)") ";
+    content: " ("attr(wit)"; " attr(source)") ";
     font-size: 70%;
 }
 
@@ -1263,7 +1263,7 @@ app[type="variants"] lem[wit][resp]:after {
 }
 
 app[type="variants"] lem[source][resp]:after {
-    content: " ("attr(source) attr(resp)") ";
+    content: " ("attr(resp)"; " attr(source)") ";
     font-size: 70%;
 }
 
