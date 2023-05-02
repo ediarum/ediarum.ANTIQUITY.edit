@@ -12706,6 +12706,94 @@ or ancestor-or-self::quote and //TEI[@telota:doctype='transcription']</String>
 																<String>name</String>
 																<String>n</String>
 															</entry>
+															<entry>
+																<String>value</String>
+																<String></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg[@cause=""]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::rdg</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>cause</String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg[@n]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::rdg</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>n</String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg[@cert=" "]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::rdg</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>cert</String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String></String>
+															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
@@ -12813,8 +12901,12 @@ or ancestor-or-self::quote and //TEI[@telota:doctype='transcription']</String>
 																<String>Inside, at the beginning</String>
 															</entry>
 															<entry>
+																<String>selection</String>
+																<String>None</String>
+															</entry>
+															<entry>
 																<String>xpathLocation</String>
-																<String>following::rdg</String>
+																<String>following-sibling::rdg</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -17222,13 +17314,13 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=addition]</String>
+											<String>pta_rdg[@wit @type=addition]_1</String>
 										</field>
 										<field name="name">
-											<String>Hinzufügung (in Handschrift)</String>
+											<String>Hinzufügung (in Handschrift)_1</String>
 										</field>
 										<field name="description">
-											<String>Fügt eine Hinzufügung in einer Handschrift als Variante in Apparateintrag ein</String>
+											<String>Teil einer MultipleAction</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -17359,10 +17451,10 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=omission]</String>
+											<String>pta_rdg[@type=omission]_1</String>
 										</field>
 										<field name="name">
-											<String>Auslassung (in Handschrift)</String>
+											<String>Auslassung (in Handschrift)_1</String>
 										</field>
 										<field name="description">
 											<String>Fügt eine Auslassung in einer Handschrift als Variante in Apparateintrag ein</String>
@@ -17485,7 +17577,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=deletion]</String>
+											<String>pta_rdg[@wit @type=deletion]</String>
 										</field>
 										<field name="name">
 											<String>Löschung (in Handschrift)</String>
@@ -18115,262 +18207,10 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@source @type=conjecture]</String>
+											<String>pta_rdg_pers/source/wit</String>
 										</field>
 										<field name="name">
-											<String>Konjektur ( aus Edition, nicht übernommen)</String>
-										</field>
-										<field name="description">
-											<String>Fügt eine nicht übernommene Konjektur aus einer Edition als Variante in Apparateintrag ein</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" source="$ITEMS" type="conjecture">${ask('nicht übernommene Konjektur eintragen', generic, '')}&lt;/rdg></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:bibl</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg source="$ITEMS" type="conjecture">${ask('nicht übernommene Konjekture eintragen', generic, '')}&lt;/rdg>&lt;/app></String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:bibl</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>pta_rdg[@resp @type=conjecture]</String>
-										</field>
-										<field name="name">
-											<String>Konjektur (von Editor:in, nicht übernommen)</String>
-										</field>
-										<field name="description">
-											<String>Fügt eine nicht übernommene Konjektur einer Editor:in als Variante in Apparateintrag ein</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" resp="$ITEMS" type="conjecture">${ask('nicht übernommene Konjektur eintragen', generic, '')}&lt;/rdg></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg resp="$ITEMS" type="conjecture">${ask('nicht übernommene Konjekture eintragen', generic, '')}&lt;/rdg>&lt;/app></String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>pta_rdg[@type=proposition]_2</String>
-										</field>
-										<field name="name">
-											<String>Konjektur (Vorschlag)_2</String>
+											<String>Wahl resp/source/wit</String>
 										</field>
 										<field name="description">
 											<String>Teil einer MultipleAction</String>
@@ -18441,39 +18281,9 @@ pta_writingSession[@n]</String>
 														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
 													</field>
 												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>pta_rdg[@source @type=deletion]</String>
-										</field>
-										<field name="name">
-											<String>Tilgung (aus Edition, nicht übernommen)</String>
-										</field>
-										<field name="description">
-											<String>Fügt eine nicht übernommene Tilgung aus einer Edition als Variante in Apparateintrag ein</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
+														<String>ancestor-or-self::rdg[@n="source"]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18482,16 +18292,12 @@ pta_writingSession[@n]</String>
 																<String>${currentFileURL}</String>
 															</entry>
 															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" source="$ITEMS" type="deletion">&lt;surplus>${ask('ggf. nicht übernommene Tilgung eintragen', generic, '')}&lt;/surplus>&lt;/rdg></String>
+																<String>attribute name</String>
+																<String>source</String>
 															</entry>
 															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
+																<String>attribute value</String>
+																<String>$ITEMS</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -18517,15 +18323,19 @@ pta_writingSession[@n]</String>
 																<String>node</String>
 																<String>//tei:bibl</String>
 															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>ancestor-or-self::rdg[@n="source"]</String>
+															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
 													</field>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+														<String>ancestor-or-self::rdg[@n="wit"]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18534,8 +18344,12 @@ pta_writingSession[@n]</String>
 																<String>${currentFileURL}</String>
 															</entry>
 															<entry>
-																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg source="$ITEMS" type="deletion">&lt;surplus>${ask('ggf. nicht übernommene Tilgung eintragen', generic, '')}&lt;/surplus>&lt;/rdg>&lt;/app></String>
+																<String>attribute name</String>
+																<String>wit</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>$ITEMS</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -18559,642 +18373,16 @@ pta_writingSession[@n]</String>
 															</entry>
 															<entry>
 																<String>node</String>
-																<String>//tei:bibl</String>
+																<String>//tei:witness</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>ancestor-or-self::rdg[@n="wit"]</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>pta_rdg[@resp @type=deletion]</String>
-										</field>
-										<field name="name">
-											<String>Tilgung (von Editor:in, nicht übernommen)</String>
-										</field>
-										<field name="description">
-											<String>Fügt eine nicht übernommene Tilgung von einer Person als Variante in Apparateintrag ein</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" resp="$ITEMS" type="deletion">&lt;surplus>${ask('ggf. nicht übernommene Tilgung eintragen', generic, '')}&lt;/surplus>&lt;/rdg></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg resp="$ITEMS" type="deletion">&lt;surplus>${ask('ggf. nicht übernommene Tilgung eintragen', generic, '')}&lt;/surplus>&lt;/rdg>&lt;/app></String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>pta_rdg[@source @type=addition]</String>
-										</field>
-										<field name="name">
-											<String>Hinzufügung (aus Edition, nicht übernommen)</String>
-										</field>
-										<field name="description">
-											<String>Fügt eine nicht übernommene Hinzufügung aus einer Edition als Variante in Apparateintrag ein</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" source="$ITEMS" type="addition">&lt;supplied>${ask('nicht übernommene Hinzufügung eintragen', generic, '')}&lt;/supplied>&lt;/rdg></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:bibl</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg source="$ITEMS" type="addition">&lt;supplied>${ask('nicht übernommene Hinzufügung eintragen', generic, '')}&lt;/supplied>&lt;/rdg>&lt;/app></String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:bibl</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>pta_rdg[@resp @type=additon]</String>
-										</field>
-										<field name="name">
-											<String>Hinzufügung (von Editor:in, nicht übernommen)</String>
-										</field>
-										<field name="description">
-											<String>Fügt eine nicht übernommene Hinzufügung von einer Person als Variante in Apparateintrag ein</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" resp="$ITEMS" type="addition">&lt;supplied>${ask('nicht übernommene Hinzufügung eintragen', generic, '')}&lt;/supplied>&lt;/rdg></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg resp="$ITEMS" type="addition">&lt;supplied>${ask('nicht übernommene Hhinzufügung eintragen', generic, '')}&lt;/supplied>&lt;/rdg>&lt;/app></String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>pta_rdg[@source @type=lacunam_indicavit]</String>
-										</field>
-										<field name="name">
-											<String>Lücke vermutet (aus Edition, nicht übernommen)</String>
-										</field>
-										<field name="description">
-											<String>Fügt eine nicht übernommene vermutete Lücke aus einer Edition als Variante in Apparateintrag ein</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" source="$ITEMS" type="lacuna_indicavit"/></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:bibl</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg source="$ITEMS" type="lacunam_indicavit"/>&lt;/app></String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:bibl</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
-											<String>pta_rdg[@resp @type=lacunam_indicavit]</String>
-										</field>
-										<field name="name">
-											<String>Lücke vermutet (von Editor:in, nicht übernommen)</String>
-										</field>
-										<field name="description">
-											<String>Fügt eine nicht übernommene  vermutete Lücke von einer Person als Variante in Apparateintrag ein</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" resp="$ITEMS" type="lacunam_indicavit"/></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String>ancestor-or-self::rdg</String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>After</String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg resp="$ITEMS" type="lacunam_indicavit"/>&lt;/app></String>
-															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -20774,12 +19962,8 @@ pta_lem[@copyOf]</String>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" resp="$ITEMS" type="proposition" cert="${ask('Wahrscheinlichkeitsgrad des Zutreffens',combobox,('low':'niedrig';'medium':'mittel';'high':'hoch'),' ')}">${ask('Vorschlag für Konjektur eintragen', generic, '')}&lt;/rdg></String>
+																<String>fragment</String>
+																<String>&lt;rdg  xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Urheber:in des Konjekturvorschlags',combobox,('resp':'Person';'source':'Edition';'wit':'Handschrift'),'resp')}" type="proposition" cert="${ask('Wahrscheinlichkeitsgrad des Zutreffens',combobox,('low':'niedrig';'medium':'mittel';'high':'hoch'),' ')}">${ask('Vorschlag für Konjektur eintragen', generic, '')}${caret}&lt;/rdg></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -20788,6 +19972,291 @@ pta_lem[@copyOf]</String>
 															<entry>
 																<String>insertPosition</String>
 																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in des Konjekturvorschlags',combobox,('resp':'Person';'source':'Edition';'wit':'Handschrift'),'resp')}" type="proposition" cert="${ask('Wahrscheinlichkeitsgrad des Zutreffens',combobox,('low':'niedrig';'medium':'mittel';'high':'hoch'),' ')}">${ask('Vorschlag für Konjektur eintragen', generic, '')}${caret}&lt;/rdg>&lt;/app></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=conjecture]</String>
+										</field>
+										<field name="name">
+											<String>Konjektur (nicht übernommen)</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine nicht übernommene Konjektur als Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_rdg[@type=conjecture]_1
+pta_rdg_pers/source/wit
+pta_@[remove]
+</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@wit @type=addition]</String>
+										</field>
+										<field name="name">
+											<String>Hinzufügung (in Handschrift)</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine Hinzufügung in einer Handschrift als Variante in Apparateintrag ein.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_rdg[@wit @type=addition]_1
+pta_moveCaret
+pta_@[remove]</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=omission] - Kopie</String>
+										</field>
+										<field name="name">
+											<String>Auslassung (in Handschrift)</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine Auslassung in einer Handschrift als Variante in Apparateintrag ein.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_rdg[@type=omission]_1
+pta_moveCaret
+pta_@[remove]</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=conjecture]_1</String>
+										</field>
+										<field name="name">
+											<String>Konjektur (nicht übernommen)_1</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;rdg  xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Urheber:in der nicht übernommenen Konjektur',combobox,('resp':'Person';'source':'Edition';'wit':'Handschrift'),'resp')}" type="conjecture">${ask('nicht übernommene Konjektur eintragen', generic, '')}${caret}&lt;/rdg></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::rdg</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in der nicht übernommenen Konjektur',combobox,('resp':'Person';'source':'Edition';'wit':'Handschrift'),'resp')}" type="conjecture">${ask('nicht übernommene Konjektur eintragen', generic, '')}${caret}&lt;/rdg>&lt;/app></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=conjecture]_2</String>
+										</field>
+										<field name="name">
+											<String>Konjektur (nicht übernommen)_2</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg[@n="resp"]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>resp</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>$ITEMS</String>
 															</entry>
 															<entry>
 																<String>item rendering</String>
@@ -20813,26 +20282,118 @@ pta_lem[@copyOf]</String>
 																<String>node</String>
 																<String>//tei:person</String>
 															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
-													</field>
-												</actionMode>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
 															<entry>
-																<String>fragment</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in des Konjekturvorschlags',combobox,('resp':'Person';'source':'Edition';'wit':'Handschrift'),'resp')}" type="proposition" cert="${ask('Wahrscheinlichkeitsgrad des Zutreffens',combobox,('low':'niedrig';'medium':'mittel';'high':'hoch'),' ')}">${ask('Vorschlag für Konjektur eintragen', generic, '')}&lt;/rdg>&lt;/app></String>
+																<String>xpath to element of the attribute</String>
+																<String>ancestor-or-self::rdg[@n="resp"]</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg[@n="source"]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>source</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>$ITEMS</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:bibl</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>ancestor-or-self::rdg[@n="source"]</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg[@n="wit"]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${currentFileURL}</String>
+															</entry>
+															<entry>
+																<String>attribute name</String>
+																<String>wit</String>
+															</entry>
+															<entry>
+																<String>attribute value</String>
+																<String>$ITEMS</String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/abbr}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>#$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//tei:witness</String>
+															</entry>
+															<entry>
+																<String>xpath to element of the attribute</String>
+																<String>ancestor-or-self::rdg[@n="wit"]</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterChangeAttributeOperation</String>
 													</field>
 												</actionMode>
 											</actionMode-array>
@@ -20867,17 +20428,113 @@ pta_lem[@copyOf]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_rdg[@type=proposition]_1
+pta_rdg_pers/source/wit
+pta_@[remove]
+pta_@[remove]
+</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=deletion]</String>
+										</field>
+										<field name="name">
+											<String>Tilgung (nicht übernommen)</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine nicht übernommene Tilgung aus einer Edition oder von einer Konjektorin bzw. einem Konjektor als Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_rdg[@type=deletion]_1
+pta_rdg_pers/source/wit
+pta_@[remove]
+
+</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=lacunam_indicavit]_1</String>
+										</field>
+										<field name="name">
+											<String>Lücke vermutet (nicht übernommen)_1</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
 														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
-																<String>URL</String>
-																<String>${currentFileURL}</String>
-															</entry>
-															<entry>
-																<String>element</String>
-																<String>&lt;rdg xmlns="http://www.tei-c.org/ns/1.0" resp="$ITEMS" type="proposition" cert="${ask('Wahrscheinlichkeitsgrad des Zutreffens',combobox,('low':'niedrig';'medium':'mittel';'high':'hoch'),' ')}">${ask('Vorschlag für Konjektur eintragen', generic, '')}&lt;/rdg></String>
+																<String>fragment</String>
+																<String>&lt;rdg  xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Urheber:in der nicht übernommenen Lücken-Vermutung',combobox,('resp':'Person';'source':'Edition'),'resp')}" type="lacunam_indicavit"/></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -20887,34 +20544,10 @@ pta_lem[@copyOf]</String>
 																<String>insertPosition</String>
 																<String>After</String>
 															</entry>
-															<entry>
-																<String>item rendering</String>
-																<String>$XPATH{/abbr}</String>
-															</entry>
-															<entry>
-																<String>item separator</String>
-																<String> </String>
-															</entry>
-															<entry>
-																<String>item variable</String>
-																<String>#$XPATH{@xml:id}</String>
-															</entry>
-															<entry>
-																<String>multiple selection</String>
-																<String>true</String>
-															</entry>
-															<entry>
-																<String>namespaces</String>
-																<String>tei:http://www.tei-c.org/ns/1.0</String>
-															</entry>
-															<entry>
-																<String>node</String>
-																<String>//tei:person</String>
-															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
-														<String>org.bbaw.telota.ediarum.RegisterInsertFragmentOperation</String>
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
 													</field>
 												</actionMode>
 												<actionMode>
@@ -20924,10 +20557,178 @@ pta_lem[@copyOf]</String>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
+																<String>fragment</String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in der nicht übernommenen Lücken-Vermutung',combobox,('resp':'Person';'source':'Edition'),'resp')}" type="lacunam_indicavit"/>${caret}&lt;/app></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=addition]</String>
+										</field>
+										<field name="name">
+											<String>Hinzufügung (nicht übernommen)</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine nicht übernommeneHinzufügug aus einer Edition oder von einer Konjektorin bzw. einem Konjektor als Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg[@type=proposition]_1
-pta_moveCaret
-pta_rdg[@type=proposition]_2</String>
+																<String>pta_rdg[@type=addition]_1
+pta_rdg_pers/source/wit
+pta_@[remove]
+
+</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=addition]_1</String>
+										</field>
+										<field name="name">
+											<String>Hinzufügung (nicht übernommen)_1</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::rdg and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;rdg  xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Urheber:in der nicht übernommenen Hinzufügung',combobox,('resp':'Person';'source':'Edition'),'resp')}" type="addition">&lt;supplied>${ask('nicht übernommene Hinzufügung eintragen', generic,' ')}&lt;/supplied>${caret}&lt;/rdg></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::rdg</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in der nicht übernommenen Hinzufügung',combobox,('resp':'Person';'source':'Edition'),'resp')}" type="addition">&lt;supplied>${ask('nicht übernommene Hinzufügung eintragen', generic,' ')}&lt;/supplied>${caret}&lt;/rdg>&lt;/app></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdg[@type=lacunam_indicavit]</String>
+										</field>
+										<field name="name">
+											<String>Lücke vermutet (nicht übernommen)</String>
+										</field>
+										<field name="description">
+											<String>Fügt eine nicht übernommene vermutete Lücke aus einer Edition oder von einer Konjektorin bzw. einem Konjektor als Variante in Apparateintrag ein</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("app") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_rdg[@type=lacunam_indicavit]_1
+pta_rdg_pers/source/wit
+
+
+</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -21867,17 +21668,17 @@ pta_rdg[@type=proposition]_2</String>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@type=addition]</String>
+																	<String>pta_rdg[@wit @type=addition]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@type=omission]</String>
+																	<String>pta_rdg[@type=omission] - Kopie</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@type=deletion]</String>
+																	<String>pta_rdg[@wit @type=deletion]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
@@ -21924,12 +21725,7 @@ pta_rdg[@type=proposition]_2</String>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@source @type=conjecture]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@resp @type=conjecture]</String>
+																	<String>pta_rdg[@type=conjecture]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
@@ -21939,37 +21735,17 @@ pta_rdg[@type=proposition]_2</String>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@type=proposition]_1</String>
+																	<String>pta_rdg[@type=deletion]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@source @type=deletion]</String>
+																	<String>pta_rdg[@type=addition]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@resp @type=deletion]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@source @type=addition]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@resp @type=additon]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@source @type=lacunam_indicavit]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@resp @type=lacunam_indicavit]</String>
+																	<String>pta_rdg[@type=lacunam_indicavit]</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>

@@ -1248,7 +1248,7 @@ app[type="variants"] rdg:nth-child(2n) {
 
 
 app[type="variants"] lem[wit][source][resp]:after {
-    content: " ("attr(wit) attr(source) attr(resp)") ";
+    content: " ("attr(wit)"; " attr(source) attr(resp)") ";
     font-size: 70%;
 }
 
@@ -1258,7 +1258,7 @@ app[type="variants"] lem[wit][source]:after {
 }
 
 app[type="variants"] lem[wit][resp]:after {
-    content: " ("attr(wit) attr(resp)") ";
+    content: " ("attr(wit)"; " attr(resp)") ";
     font-size: 70%;
 }
 
@@ -1284,22 +1284,22 @@ app[type="variants"] lem[resp]:after {
 
     
 app[type="variants"] rdg[wit][source][resp]:after {
-    content: " ("attr(wit) attr(source) attr(resp)") ";
+    content: " ("attr(wit)"; " attr(source) attr(resp)") ";
     font-size: 70%;
 }
 
 app[type="variants"] rdg[wit][source]:after {
-    content: " ("attr(wit) attr(source)") ";
+    content: " ("attr(wit)"; " attr(source)") ";
     font-size: 70%;
 }
 
 app[type="variants"] rdg[wit][resp]:after {
-    content: " ("attr(wit) attr(resp)") ";
+    content: " ("attr(wit)"; " attr(resp)") ";
     font-size: 70%;
 }
 
 app[type="variants"] rdg[source][resp]:after {
-    content: " ("attr(resp) attr(source)") ";
+    content: " ("attr(resp)"; " attr(source)") ";
     font-size: 70%;
 }
 
@@ -1357,12 +1357,12 @@ rdg[type="illegible"]{
 
 /* Lücke (Beschädigung) */
 rdg[type="damage"]{
-    content:" (Lücke (Beschädigung)) ";
+    content:" (Lücke (Beschädigung) ";
 }
 
 /* Lücke (freigelassen) */
 rdg[type="fenestra"]{
-    content:" (Lücke (freigelassen)) ";
+    content:" (Lücke (freigelassen) ";
 }
 
 /* vermutete Lücke */
