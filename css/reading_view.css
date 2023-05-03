@@ -14,13 +14,128 @@ oxy|processing-instruction[oxy_comment_start]
     display:none !important;
 }
 
-rdg{
-    display:none
+quote{
+    background-color:transparent !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important; 
+    padding-bottom: 0px !important;    
+}
+
+
+/* Pseudo-Zitat */
+
+seg[type="psq"]{
+    background-color:transparent;
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+    
+}
+/* Anspielung */
+
+seg[type="allusion"]{
+    background-color:transparent;
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+   
+}
+
+seg[type="similar"]{
+    background-color:transparent;
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+    
+}
+
+seg[type="source"]{
+    background-color:transparent;
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+   
+}
+
+
+
+
+
+text app [type="variants"]{   
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+   background-color:transparent
 }
 
 text app,
 app[type="variants"] lem {
-    background-color:transparent
+    background-color:transparent;
+    border-style:none;
+    content:none;
+}
+
+app[type="variants"] lem:empty {
+    display:none;
+}
+
+rdg {
+    display:none 
+}
+
+app[type="variants"] lem[wit][source][resp]:after {
+    content: none;
+}
+
+app[type="variants"] lem[wit][source]:after {
+     content: none;
+}
+
+app[type="variants"] lem[wit][resp]:after {
+     content: none;
+}
+
+app[type="variants"] lem[source][resp]:after {
+      content: none;
+}
+
+app[type="variants"] lem[wit]:after {
+      content: none;
+}
+
+app[type="variants"] lem[source]:after {
+     content: none;
+}
+
+app[type="variants"] lem[resp]:after {
+     content: none;
+}
+
     
-    
+app[type="variants"] rdg[wit][source][resp]:after {
+    content: none;
+}
+
+app[type="variants"] rdg[wit][source]:after {
+     content: none;
+}
+
+app[type="variants"] rdg[wit][resp]:after {
+      content: none;
+}
+
+app[type="variants"] rdg[source][resp]:after {
+     content: none;
+}
+
+app[type="variants"] rdg[wit]:after {
+    content: none;
+}
+
+app[type="variants"] rdg[source]:after {
+      content: none;
+}
+
+app[type="variants"] rdg[resp]:after {
+      content: none;
 }

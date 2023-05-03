@@ -669,27 +669,27 @@ text hi[rend="underline"] del{
 
 
 /* Publishers editing */
-quote supplied,
-text supplied {
+TEI[telota|doctype="transcripton"] quote supplied,
+TEI[telota|doctype="transcripton"] text supplied {
     font-family: "BBAWfont-italic";
     background-color: #e0e0e0;
     -oxy-display-tags: none;    
 }
 
-quote supplied:before,
-text supplied:before  {
+TEI[telota|doctype="transcripton"] quote supplied:before,
+TEI[telota|doctype="transcripton"] text supplied:before  {
     content: "[";
     font-style: normal;
 }
 
-quote supplied:after,
-text supplied:after {
+TEI[telota|doctype="transcripton"] quote supplied:after,
+TEI[telota|doctype="transcripton"] text supplied:after {
     content: "]";
     font-style: normal;
 }
 
 
-text supplied[cert="low"]:before {
+TEI[telota|doctype="transcripton"] text supplied[cert="low"]:before {
     content: "zu ergänzen wohl [";
     font-family: "BBAWfont-italic";
     color: gray;
@@ -1141,22 +1141,55 @@ biblStruct{
 
 
 
-seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem,said{
+seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem,said,supplied,surplus{
     -oxy-display-tags: none;   
+}
+
+
+/* Zitat */
+
+TEI[telota|doctype="edition"] quote{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Zitat eintragen]"   
 }
 
 
 /* Pseudo-Zitat */
 
 seg[type="psq"]{
-    background-color:purple;
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
     -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
 }
 /* Anspielung */
 
 seg[type="allusion"]{
-    background-color:blue;
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
     -oxy-placeholder-content:"[Text der Anspielung eintragen]"
+}
+
+seg[type="similar"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Simile eintragen]"
+}
+
+seg[type="source"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Quelle eintragen]"
 }
 
 /* direkte Rede */
@@ -1176,19 +1209,25 @@ said:after{
 /* Crux */
 
 sic:empty{
-    content:"\02020" 
+    content:"\02020";
+    font-size: 130%;
 }
 
 sic:not(:empty):before,sic:not(:empty):after{
-    content:"\02020"    
+    content:"\02020";  
+    font-size: 130%;
 }
 
 /* Nachweis von Textzeugen */
 
 app[type="witnesses"] rdg[wit]{
     content: attr(wit);
-    background-color: #E0FFFF;
+    background-color: Gainsboro;
+    color: DimGray;
     font-size: 70%;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
 }
 
 /* Beginn eines Textzeugen */
@@ -1221,7 +1260,7 @@ lacunaEnd{
 
 /* Variantenapparat allgemein */
 
-text app{
+text app [type="variants"]{
     padding-left: 8px; 
     padding-right: 8px; 
     padding-bottom: 4px; 
@@ -1232,7 +1271,13 @@ app[type="variants"] lem {
     background-color: LightYellow;
     border-style: dashed;
     border-color:gray;
-    border-width: 1px;
+    border-width: 1px;     
+}
+
+app[type="variants"] lem:empty {
+    content: " [leere primäre Variante] ";
+    color: DimGray;
+    font-size: 80%; 
 }
 
 app[type="variants"] rdg {
@@ -1240,6 +1285,7 @@ app[type="variants"] rdg {
     border-style: dashed;
     border-color:gray;
     border-width: 1px;
+    color: DimGray;
 }
 
 app[type="variants"] rdg:nth-child(2n) {
@@ -1318,59 +1364,64 @@ app[type="variants"] rdg[resp]:after {
     font-size: 70%;
 }
 
-
+/* Auslassung */
+rdg[type="omission"]{
+    content:" [Auslassung] ";
+    font-size: 80%;
+}
 
 /* Homoioteleuton */
 rdg[cause="homoioteleuton"]{
-    content:" (Homoioteleuton) ";
+    content:" [Homoioteleuton)] ";
+    font-size: 80%;
 }
 
 /* Homoiarkton */
 rdg[cause="homoiarkton"]{
-    content:" (Homoiarkton) ";
+    content:" [Homoiarkton] ";
+    font-size: 80%;
 }
 
 /* saut du même */
 rdg[cause="saut_du_meme"]{
-    content:" (saut du même) ";
+    content:" [saut du même] ";
+    font-size: 80%;
 }
 
-/* Hinzufügung */
 
-
-
-
-/* Auslassung */
-rdg[type="omission"]{
-    content:" (Auslassung) ";
-}
 
 /* Löschung */
 rdg[type="deletion"]{
-    content:" (Löschung) ";
+    content:" [Löschung] ";
+    font-size: 80%;
 }
 
 /* Nicht lesbarer Text */
 rdg[type="illegible"]{
-    content:" (Nicht lesbarer Text) ";
+    content:" [nicht lesbarer Text] ";
+    font-size: 80%;
 }
 
 /* Lücke (Beschädigung) */
 rdg[type="damage"]{
-    content:" (Lücke (Beschädigung) ";
+    content:" [Lücke (Beschädigung)] ";
+    font-size: 80%;
 }
 
 /* Lücke (freigelassen) */
 rdg[type="fenestra"]{
-    content:" (Lücke (freigelassen) ";
+    content:" [Lücke (freigelassen)] ";
+    font-size: 80%;
 }
 
 /* vermutete Lücke */
 rdg[type="lacunam_indicavit"]{
-    content:" (vermutete Lücke) ";
+    content:" [vermutete Lücke] ";
+    font-size: 80%;
 }
 
 /* Korrektur durch Schreiber/Korrektor */
 rdg[varSeq][hand][style]{
-    content:" (Korrektur " attr(varSeq)") ";
+    content:" [Korrektur " attr(varSeq)"] ";
+    font-size: 80%;
 }
