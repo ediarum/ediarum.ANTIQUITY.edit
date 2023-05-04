@@ -20955,6 +20955,52 @@ pta_@[remove]</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>pta_rdgGrp</String>
+										</field>
+										<field name="name">
+											<String>Variantengruppe einfügen</String>
+										</field>
+										<field name="description">
+											<String>Fasst mehrere Varianten zu einer Variantengruppe zusammen.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("rdgGrp") and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;rdgGrp xmlns="http://www.tei-c.org/ns/1.0"/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -21867,6 +21913,11 @@ pta_@[remove]</String>
 															<toolbarItem>
 																<field name="actionID">
 																	<String>pta_rdg</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdgGrp</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>

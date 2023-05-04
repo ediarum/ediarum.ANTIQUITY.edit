@@ -1141,7 +1141,7 @@ biblStruct{
 
 
 
-seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem,said,supplied,surplus{
+seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem,said,supplied,surplus,rdgGrp{
     -oxy-display-tags: none;   
 }
 
@@ -1365,38 +1365,43 @@ app[type="variants"] rdg[resp]:after {
 }
 
 /* Auslassung */
+
 rdg[type="omission"]{
     content:" [Auslassung] ";
     font-size: 80%;
 }
 
 /* Homoioteleuton */
+
 rdg[cause="homoioteleuton"]{
     content:" [Homoioteleuton)] ";
     font-size: 80%;
 }
 
 /* Homoiarkton */
+
 rdg[cause="homoiarkton"]{
     content:" [Homoiarkton] ";
     font-size: 80%;
 }
 
 /* saut du même */
+
 rdg[cause="saut_du_meme"]{
     content:" [saut du même] ";
     font-size: 80%;
 }
 
 
-
 /* Löschung */
+
 rdg[type="deletion"]{
     content:" [Löschung] ";
     font-size: 80%;
 }
 
 /* Nicht lesbarer Text */
+
 rdg[type="illegible"]{
     content:" [nicht lesbarer Text] ";
     font-size: 80%;
@@ -1409,19 +1414,36 @@ rdg[type="damage"]{
 }
 
 /* Lücke (freigelassen) */
+
 rdg[type="fenestra"]{
     content:" [Lücke (freigelassen)] ";
     font-size: 80%;
 }
 
 /* vermutete Lücke */
+
 rdg[type="lacunam_indicavit"]{
     content:" [vermutete Lücke] ";
     font-size: 80%;
 }
 
 /* Korrektur durch Schreiber/Korrektor */
+
 rdg[varSeq][hand][style]{
     content:" [Korrektur " attr(varSeq)"] ";
     font-size: 80%;
+}
+
+/* Variantengruppe */
+
+rdgGrp:before{
+    content: "[";
+    font-size: 120%;
+    color: DarkGray;
+}
+
+rdgGrp:after{
+    content: "]";
+    font-size: 120%;
+    color: DarkGray;
 }
