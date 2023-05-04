@@ -73,24 +73,13 @@
 									</cssFile>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/css/plus_variants.css</String>
-										</field>
-										<field name="title">
-											<String>+ Varianten</String>
-										</field>
-										<field name="alternate">
-											<Boolean>true</Boolean>
-										</field>
-									</cssFile>
-									<cssFile>
-										<field name="href">
 											<String>${framework}/css/plus_quotes.css</String>
 										</field>
 										<field name="title">
 											<String>+ Zitate und Quellen</String>
 										</field>
 										<field name="alternate">
-											<Boolean>true</Boolean>
+											<Boolean>false</Boolean>
 										</field>
 									</cssFile>
 								</cssFile-array>
@@ -21955,32 +21944,7 @@ pta_@[remove]</String>
 																	<String>pta_rdg[@type=transposition]</String>
 																</field>
 															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_app[@xml:id]_1</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_app[@xml:id]_2</String>
-																</field>
-															</toolbarItem>
 															<toolbarSeparator/>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@varSeq]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg_identische_Variante</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_lem[@xml:id]</String>
-																</field>
-															</toolbarItem>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
