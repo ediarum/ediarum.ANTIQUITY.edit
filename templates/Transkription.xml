@@ -9,19 +9,19 @@
           <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
         </respStmt>
       </titleStmt>
-        <publicationStmt>
-          <authority ref="http://www.bbaw.de">Berlin-Brandenburgische Akademie der Wissenschaften</authority>
-          <distributor>Patristic Text Archive</distributor>
-          <availability>
-            <licence target="https://creativecommons.org/licenses/by-sa/4.0/">Available under a Creative Commons Attribution ShareAlike 4.0 International License</licence>
-          </availability>
-          <date></date>
-          <idno type="PTA"></idno>
-          <idno type="CPG"></idno>
-          <idno type="BHG"/>
-          <idno type="Aldama"/>
-          <idno type="Pinakes-Oeuvre"></idno>
-        </publicationStmt>
+      <publicationStmt>
+        <authority ref="http://www.bbaw.de">Berlin-Brandenburgische Akademie der Wissenschaften</authority>
+        <distributor>Patristic Text Archive</distributor>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by-sa/4.0/">Available under a Creative Commons Attribution ShareAlike 4.0 International License</licence>
+        </availability>
+        <date></date>
+        <idno type="PTA"></idno>
+        <idno type="CPG"></idno>
+        <idno type="BHG"/>
+        <idno type="Aldama"/>
+        <idno type="Pinakes-Oeuvre"></idno>
+      </publicationStmt>
       <sourceDesc>
         <msDesc rend="manuscript">
           <msIdentifier xml:id="${ask('ID für transkribierte Handschrift eintragen in Form von Aufbewahrungsort_Signatur', generic, '')}">

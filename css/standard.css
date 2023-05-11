@@ -75,6 +75,7 @@ oxy|comment{
 TEI {
     padding: 1em;
     font-family: BBAWfont;
+     -oxy-display-tags: none;
 }
 
 /* ################ teiHeader ############ */
@@ -715,34 +716,34 @@ text hi[rend="underline"] del{
 
 
 /* Publishers editing */
-quote supplied,
-text supplied {
+TEI[telota|doctype="transcripton"] quote supplied,
+TEI[telota|doctype="transcripton"] text supplied {
     font-family: "BBAWfont-italic";
     background-color: #e0e0e0;
     -oxy-display-tags: none;    
 }
 
-quote supplied:before,
-text supplied:before  {
+TEI[telota|doctype="transcripton"] quote supplied:before,
+TEI[telota|doctype="transcripton"] text supplied:before  {
     content: "[";
     font-style: normal;
 }
 
-quote supplied:after,
-text supplied:after {
+TEI[telota|doctype="transcripton"] quote supplied:after,
+TEI[telota|doctype="transcripton"] text supplied:after {
     content: "]";
     font-style: normal;
 }
 
 
-text supplied[cert="low"]:before {
+TEI[telota|doctype="transcripton"] text supplied[cert="low"]:before {
     content: "zu ergänzen wohl [";
     font-family: "BBAWfont-italic";
     color: gray;
 }
 
-quote surplus,
-text surplus {
+TEI[telota|doctype="transcripton"] quote surplus,
+TEI[telota|doctype="transcripton"] text surplus {
     text-decoration: line-through;
     color: #395B8C;
 }
@@ -1185,21 +1186,311 @@ biblStruct{
 }
 
 
-/* Pseudo-Zitat */
 
-seg,quote{
+
+seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem,said,supplied,surplus,rdgGrp{
     -oxy-display-tags: none;   
 }
 
-seg[type="psq"]{
-    background-color:purple;
-    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+
+/* Zitat */
+
+TEI[telota|doctype="edition"] quote{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Zitat eintragen]"   
 }
 
 
+/* Pseudo-Zitat */
+
+seg[type="psq"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+}
+/* Anspielung */
+
 seg[type="allusion"]{
-    background-color:blue;
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
     -oxy-placeholder-content:"[Text der Anspielung eintragen]"
 }
 
+seg[type="similar"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Simile eintragen]"
+}
 
+seg[type="source"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Quelle eintragen]"
+}
+
+/* direkte Rede */
+
+said:before{
+    content: "»";  
+    color: blue;
+    font-size: 130%;
+}
+
+said:after{
+    content: "«"; 
+    color: blue;
+    font-size: 130%;
+}
+
+/* Crux */
+
+sic:empty{
+    content:"\02020";
+    font-size: 130%;
+}
+
+sic:not(:empty):before,sic:not(:empty):after{
+    content:"\02020";  
+    font-size: 130%;
+}
+
+/* Nachweis von Textzeugen */
+
+app[type="witnesses"] rdg[wit]{
+    content: attr(wit);
+    background-color: Gainsboro;
+    color: DimGray;
+    font-size: 70%;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+}
+
+/* Beginn eines Textzeugen */
+
+witStart{
+    content:" Beginn: ";   
+}
+
+/* Ende eines Textzeugen */
+
+
+witEnd{
+    content:" Ende: ";
+}
+
+/* Beginn einer Lücke eines Textzeugen */
+
+
+lacunaStart{
+    content:" Beginn Lücke: "; 
+}
+
+/* Ende einer Lücke eines Textzeugen */
+
+
+lacunaEnd{
+    content:" Ende Lücke: ";  
+}
+
+
+/* Variantenapparat allgemein */
+
+text app[type="variants"]{
+    padding-left: 8px; 
+    padding-right: 8px; 
+    padding-bottom: 4px; 
+    background-color: DarkOrange;
+}
+
+app[type="variants"] lem {
+    background-color: LightYellow;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;     
+}
+
+app[type="variants"] lem:empty {
+    content: " [leere primäre Variante] ";
+    color: DimGray;
+    font-size: 80%; 
+}
+
+app[type="variants"] rdg {
+    background-color: lightCyan;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+    color: DimGray;
+}
+
+app[type="variants"] rdg:nth-child(2n) {
+    background-color: PaleGreen;
+}    
+
+
+app[type="variants"] lem[wit][source][resp]:after {
+    content: " ("attr(wit)"; " attr(source) attr(resp)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[wit][source]:after {
+    content: " ("attr(wit)"; " attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[wit][resp]:after {
+    content: " ("attr(wit)"; " attr(resp)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[source][resp]:after {
+    content: " ("attr(resp)"; " attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 70%;
+}
+
+    
+app[type="variants"] rdg[wit][source][resp]:after {
+    content: " ("attr(wit)"; " attr(source) attr(resp)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[wit][source]:after {
+    content: " ("attr(wit)"; " attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[wit][resp]:after {
+    content: " ("attr(wit)"; " attr(resp)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[source][resp]:after {
+    content: " ("attr(resp)"; " attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 70%;
+}
+
+/* Auslassung */
+
+rdg[type="omission"]{
+    content:" [Auslassung] ";
+    font-size: 80%;
+}
+
+/* Homoioteleuton */
+
+rdg[cause="homoioteleuton"]{
+    content:" [Homoioteleuton)] ";
+    font-size: 80%;
+}
+
+/* Homoiarkton */
+
+rdg[cause="homoiarkton"]{
+    content:" [Homoiarkton] ";
+    font-size: 80%;
+}
+
+/* saut du même */
+
+rdg[cause="saut_du_meme"]{
+    content:" [saut du même] ";
+    font-size: 80%;
+}
+
+
+/* Löschung */
+
+rdg[type="deletion"]{
+    content:" [Löschung] ";
+    font-size: 80%;
+}
+
+/* Nicht lesbarer Text */
+
+rdg[type="illegible"]{
+    content:" [nicht lesbarer Text] ";
+    font-size: 80%;
+}
+
+/* Lücke (Beschädigung) */
+rdg[type="damage"]{
+    content:" [Lücke (Beschädigung)] ";
+    font-size: 80%;
+}
+
+/* Lücke (freigelassen) */
+
+rdg[type="fenestra"]{
+    content:" [Lücke (freigelassen)] ";
+    font-size: 80%;
+}
+
+/* vermutete Lücke */
+
+rdg[type="lacunam_indicavit"]{
+    content:" [vermutete Lücke] ";
+    font-size: 80%;
+}
+
+/* Korrektur durch Schreiber/Korrektor */
+
+rdg[varSeq][hand][style]{
+    content:" [Korrektur " attr(varSeq)"] ";
+    font-size: 80%;
+}
+
+/* Variantengruppe */
+
+rdgGrp:before{
+    content: "[";
+    font-size: 120%;
+    color: DarkGray;
+}
+
+rdgGrp:after{
+    content: "]";
+    font-size: 120%;
+    color: DarkGray;
+}

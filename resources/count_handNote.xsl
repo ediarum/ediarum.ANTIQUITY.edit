@@ -9,15 +9,15 @@ This file is part of ediarum.PTA.edit.
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:saxon="http://saxon.sf.net/" exclude-result-prefixes="saxon" version="2.0">
-
-
-
+    
+    
+    
     <xsl:template match="@* | node()">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
-
+    
     <xsl:template match="tei:handDesc">
         <xsl:variable name="count_handNote" select="count(handNote)"/>
         <xsl:copy>
@@ -28,7 +28,7 @@ This file is part of ediarum.PTA.edit.
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
-
+    
     <xsl:template match="tei:handNote">
         <!-- Variable: Zähle alle handNote -->
         <xsl:variable name="count_handNote" select="count(parent::tei:handDesc/handNote)"/>
@@ -63,7 +63,7 @@ This file is part of ediarum.PTA.edit.
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-
+        
         <xsl:copy>
             <xsl:choose>
                 <!-- wenn der anegegben Wert vorhanden ist -->
@@ -81,5 +81,5 @@ This file is part of ediarum.PTA.edit.
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
-
+    
 </xsl:stylesheet>
