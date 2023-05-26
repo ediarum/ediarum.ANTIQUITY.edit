@@ -21866,7 +21866,7 @@ quantity</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::origDate</String>
+														<String>self::origDate[not(@notBefore)][not(@notAfter)][not(@when)]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -21892,7 +21892,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::date</String>
+														<String>self::date[not(@when)]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
