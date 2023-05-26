@@ -380,7 +380,7 @@ listPerson person abbr:after{
     content: " \A "
 }
 
-/* Handschriftliche Textzeigen */
+/* Handschriftliche Textzeugen */
 listWit:not([xml|id]):before{
     content: "Liste der Textzeugen: Handschriftliche Zeugen";
     font-weight:bold;
@@ -388,7 +388,7 @@ listWit:not([xml|id]):before{
 }
 
 listWit listWit[xml|id]:before{
-    content:"\A"
+    content:"\A "
 }
 
 listWit listWit[xml|id] > head{
@@ -440,6 +440,16 @@ sourceDesc listBibl:before{
     font-size:110%;
 }
 
+listBibl listBibl[xml|id]:before{
+    content:"\A "
+}
+
+listBibl listBibl[xml|id] > head{
+    text-decoration:underline;
+    font-weight:bold;
+    font-size:110%;
+}
+
 listBibl editor{
     -oxy-placeholder-content:"[Herausgeber der Edition]";
     -oxy-show-placeholder:always;
@@ -485,7 +495,11 @@ sourceDesc listPerson note{
     -oxy-placeholder-content:"[Zitierhinweis]";
 }
 
-
+ref[target]{
+    color: #465E7A;
+    border-bottom: 1px dashed #00C6FF;
+    
+}
 
 
 /*

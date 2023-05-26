@@ -3,7 +3,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title xml:lang="${ask('Schreibsprache eintragen', generic, '')}"/>
+        <title xml:lang="${ask('Schreibsprache eintragen', generic, 'la')}"/>
         <author>
           <persName>${ask('Autor eintragen', generic, '')}</persName>
         </author>
