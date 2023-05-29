@@ -22407,10 +22407,10 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 											<String>pta_witness/name[@key]</String>
 										</field>
 										<field name="name">
-											<String>Verweis auf Transkription der Handschrift</String>
+											<String>Verweis auf Handschriftenbeschreibung der Handschrift</String>
 										</field>
 										<field name="description">
-											<String>Verweis auf Transkription der Handschrift</String>
+											<String>Verweis auf Handschriftenbeschreibung der Handschrift</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -22482,7 +22482,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::bibl</String>
+														<String>ancestor-or-self::bibl[not(@facs)]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
