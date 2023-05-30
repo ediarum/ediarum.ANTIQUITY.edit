@@ -10,10 +10,19 @@ Framework (Dokumenttyp Zuordnung) für Oxygen XML
 
 Entwicklung: Nadine Arndt, nadine.arndt@bbaw.de & Elke Zinsmeister, zinsmeister@bbaw.de
 
-Ehemals: Ursula Kundert, ursula.kundert@bbaw.de
+Ehemalige: Ursula Kundert
 
 CHANGELOG
 ------------------------------------------------------------------------------------------------
+
+0.5.8. vom 30.05.2023
+
+	* Erweiterung für Editionstexte (Metadaten) implementiert
+
+0.5.7. vom 04.05.2023
+
+	* Erweiterung für Editionstexte (Textbereich) implementiert
+
 0.5.6. vom 22.11.2022
 
 	* Shortcut für lb break
