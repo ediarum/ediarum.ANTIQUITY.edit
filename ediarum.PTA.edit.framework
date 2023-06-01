@@ -23908,7 +23908,6 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
-															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
 																	<String>pta_rdg[@type=conjecture]</String>
