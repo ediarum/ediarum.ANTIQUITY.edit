@@ -20797,7 +20797,7 @@ pta_rdg_pers/source/wit
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in der Variante',combobox,('resp':'Konjektor:in';'source':'Edition';'wit':'Handschrift'),'resp')}" type="conjecture">${ask('neue Variante eintragen', generic, '')}${caret}&lt;/rdg>&lt;/app></String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in der Variante',combobox,('resp':'Konjektor:in';'source':'Edition';'wit':'Handschrift'),'resp')}">${ask('neue Variante eintragen', generic, '')}${caret}&lt;/rdg>&lt;/app></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -23900,6 +23900,11 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 															<toolbarItem>
 																<field name="actionID">
 																	<String>pta_rdg_Luecke</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>pta_rdg[@varSeq]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>

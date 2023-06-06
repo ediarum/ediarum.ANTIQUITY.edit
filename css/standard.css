@@ -1335,11 +1335,13 @@ app[type="variants"] lem {
     border-width: 1px;     
 }
 
+/*  
 app[type="variants"] lem:empty {
     content: " [leere primäre Variante] ";
     color: DimGray;
-    font-size: 70%; 
+    font-size: 81%; 
 }
+*/
 
 app[type="variants"] rdg {
     background-color: LavenderBlush;
@@ -1425,74 +1427,126 @@ app[type="variants"] rdg[resp]:after {
     font-size: 81%;
 }
 
+/* Hinzufügung */
+
+rdg[type="addition"]{
+    content: " [add.] ";
+    font-size: 81%;
+}
+
+
 /* Auslassung */
 
 rdg[type="omission"]{
     content:" [om.] ";
-    font-size: 70%;
+    font-size: 81%;
 }
 
 /* Homoioteleuton */
 
 rdg[cause="homoioteleuton"]{
     content:" [om. - Homoioteleuton] ";
-    font-size: 70%;
+    font-size: 81%;
 }
 
 /* Homoiarkton */
 
 rdg[cause="homoiarkton"]{
     content:" [om. - Homoiarkton] ";
-    font-size: 70%;
+    font-size: 81%;
 }
 
 /* saut du même */
 
 rdg[cause="saut_du_meme"]{
     content:" [om. - saut du même] ";
-    font-size: 70%;
+    font-size: 81%;
 }
 
 
 /* Löschung */
 
+lem[type="deletion"]{
+    content:" [del.] ";
+    font-size: 81%;
+}
+
 rdg[type="deletion"]{
     content:" [del.] ";
-    font-size: 70%;
+    font-size: 81%;
 }
 
 /* Nicht lesbarer Text */
 
 rdg[type="illegible"]{
-    content:" [nicht lesbar] ";
-    font-size: 70%;
+    content:" [illegible] ";
+    font-size: 81%;
 }
 
 /* Lücke (Beschädigung) */
 rdg[type="damage"]{
-    content:" [Lücke (Beschädigung)] ";
-    font-size: 70%;
+    content:" [damage] ";
+    font-size: 81%;
 }
 
 /* Lücke (freigelassen) */
 
 rdg[type="fenestra"]{
-    content:" [Lücke (freigelassen)] ";
-    font-size: 70%;
+    content:" [fenestra] ";
+    font-size: 81%;
 }
+
+/* Umstellung */
+
+rdg[type="transposition"]{
+    content:" [transp.] ";
+    font-size: 81%;    
+}
+
 
 /* vermutete Lücke */
 
 rdg[type="lacunam_indicavit"]{
-    content:" [vermutete Lücke] ";
-    font-size: 70%;
+    content:" [lacunam_indicavit] ";
+    font-size: 81%;
 }
 
 /* Korrektur durch Schreiber/Korrektor */
 
-rdg[varSeq][hand][style]{
-    content:" [Korrektur " attr(varSeq)"] ";
-    font-size: 70%;
+rdg[varSeq="1"][hand][style]{
+    content:" [a.c.] ";
+    font-size: 81%;
+}
+
+rdg[varSeq="2"][hand][style]{
+    content:" [p.c.] ";
+    font-size: 81%;
+}
+
+/* Konjektur */
+
+lem[type="conjecture"]{
+    content:" [coni.] ";
+    font-size: 81%;
+}
+
+rdg[type="conjecture"]{
+        content:" [coni.] ";
+    font-size: 81%;
+}
+
+/* Korrektur durch Editor:in */
+
+lem[type="correction"]{
+    content:" [corr.] ";
+    font-size: 81%;
+}
+
+/* Vorschlag für Konjektur */
+
+rdg[type="proposition"]{
+    content:" [prop.] ";
+    font-size: 81%;
 }
 
 /* Variantengruppe */
