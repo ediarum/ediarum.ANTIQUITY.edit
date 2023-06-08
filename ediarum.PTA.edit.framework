@@ -11999,7 +11999,7 @@ pta_handNote_count</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::add[parent::subst] or self::del[parent::subst]</String>
+														<String>self::add[parent::subst] or self::del[parent::subst] and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -12051,7 +12051,7 @@ pta_handNote_count</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::del</String>
+														<String>self::del and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -12103,7 +12103,7 @@ pta_handNote_count</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::add</String>
+														<String>self::add and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -12849,6 +12849,34 @@ pta_remove_attributes</String>
 														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
 													</field>
 												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::del[@crend=" "]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::del</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>cert</String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
 											</actionMode-array>
 										</field>
 										<field name="enabledInReadOnlyContext">
@@ -12956,6 +12984,30 @@ pta_remove_attributes</String>
 															<entry>
 																<String>xpathLocation</String>
 																<String>following-sibling::rdg</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.MoveCaretOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::del</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>position</String>
+																<String>Inside, at the beginning</String>
+															</entry>
+															<entry>
+																<String>selection</String>
+																<String>None</String>
+															</entry>
+															<entry>
+																<String>xpathLocation</String>
+																<String>//subst/del</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -22872,13 +22924,13 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_add_del_subst[hand] -</String>
+											<String>pta_add_del[hand] -</String>
 										</field>
 										<field name="name">
-											<String>Hand in Variante hinzufügen</String>
+											<String>Verweis auf Hand (Hinzufügung/Tilgung)</String>
 										</field>
 										<field name="description">
-											<String>Fügt in einer Hinzufügung, Tilgung oder Ersetzung eine Hand hinzu</String>
+											<String>Fügt in einer Hinzufügung oder Tilgung den Verweis auf die Hand hinzu</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -22902,7 +22954,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>elementLocation</String>
-																<String>//rdg/add</String>
+																<String>self::add</String>
 															</entry>
 															<entry>
 																<String>name</String>
@@ -22935,7 +22987,7 @@ hand</String>
 															</entry>
 															<entry>
 																<String>elementLocations</String>
-																<String>//rdg/del</String>
+																<String>self::del</String>
 															</entry>
 															<entry>
 																<String>values</String>
@@ -22948,23 +23000,155 @@ ${ask('Urheber der Tilgung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'
 														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
 													</field>
 												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_subst[hand]</String>
+										</field>
+										<field name="name">
+											<String>Verweis auf Hand (Ersetzung)</String>
+										</field>
+										<field name="description">
+											<String>Fügt in einer Ersetzung den Verweis auf die Hand hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::subst and //TEI[@telota:doctype='edition']</String>
+														<String>self::add[parent::subst] or self::del[parent::subst] and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_subst[hand]_1
+pta_moveCaret
+pta_@[remove]</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_subst[hand]_2</String>
+										</field>
+										<field name="name">
+											<String>Verweis auf Hand (Ersetzung) - Tilgung @rend</String>
+										</field>
+										<field name="description">
+											<String>Teil einer multipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>child::del and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>elementLocation</String>
-																<String>//subst</String>
+																<String>//del</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>rend</String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_subst[hand]_1</String>
+										</field>
+										<field name="name">
+											<String>Verweis auf Hand (Ersetzung) - Einfügen @hand</String>
+										</field>
+										<field name="description">
+											<String>Teil einer multipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::add[parent::subst] or self::del[parent::subst] and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>parent::subst</String>
 															</entry>
 															<entry>
 																<String>name</String>
 																<String>hand</String>
 															</entry>
 															<entry>
-																<String>namespace</String>
-																<String></String>
+																<String>removeIfEmpty</String>
+																<String>true</String>
 															</entry>
 															<entry>
 																<String>value</String>
@@ -23366,7 +23550,12 @@ ${ask('Urheber der Tilgung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_add_del_subst[hand] -</String>
+																<String>pta_add_del[hand] -</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>pta_subst[hand]</String>
 															</field>
 														</menuItem>
 													</menuEntry-array>
