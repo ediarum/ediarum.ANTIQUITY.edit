@@ -11682,7 +11682,7 @@ hand</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;del xmlns="http://www.tei-c.org/ns/1.0">&lt;/del></String>
+																<String>&lt;del xmlns="http://www.tei-c.org/ns/1.0" hand="${ask('Urheber der Tilgung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'Korrektor 2';'m4':'Korrektor 3';'m5':'Korrektor 4';'mr':'manus recentior';'unknown':'unklar';),'m1')}">&lt;/del></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -12207,7 +12207,7 @@ pta_handNote_count</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del>${caret}&lt;/del>&lt;add place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'above')}">${selection}&lt;/add>&lt;/subst></String>
+																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del>${caret}&lt;/del>&lt;add place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'above')}" hand="${ask('Urheber der Korrektur',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'Korrektor 2';'m4':'Korrektor 3';'m5':'Korrektor 4';'mr':'manus recentior';'unknown':'unklar';),'m1')}">${selection}&lt;/add>&lt;/subst></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -12263,13 +12263,29 @@ pta_handNote_count</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element('add')</String>
+														<String>oxy:allows-child-element('add') and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
 																<String>&lt;add xmlns="http://www.tei-c.org/ns/1.0" place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'inline')}" /></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element('add') and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;add xmlns="http://www.tei-c.org/ns/1.0" place="${ask('Art der Hinzufügung', combobox, ('above':'über der Zeile eingetragen';'inline':'innerhalb der Zeile eingetragen';'margin':'am Rand eingetragen';), 'inline')}" hand="${ask('Urheber der Hinzufügung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'Korrektor 2';'m4':'Korrektor 3';'m5':'Korrektor 4';'mr':'manus recentior';'unknown':'unklar';),'m1')}" /></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -15788,7 +15804,7 @@ revisionDesc[2]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("seg")</String>
+														<String>oxy:allows-child-element("seg")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -15834,7 +15850,7 @@ revisionDesc[2]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("seg")</String>
+														<String>oxy:allows-child-element("seg")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -15880,7 +15896,7 @@ revisionDesc[2]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("quote")</String>
+														<String>oxy:allows-child-element("quote")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16295,7 +16311,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16373,7 +16389,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16451,7 +16467,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16529,7 +16545,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("app")</String>
+														<String>oxy:allows-child-element("app")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18264,7 +18280,7 @@ pta_writingSession[@n]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg[@n="resp"]</String>
+														<String>ancestor-or-self::rdg[@n="resp"] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18316,7 +18332,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg[@n="source"]</String>
+														<String>ancestor-or-self::rdg[@n="source"] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -18368,7 +18384,7 @@ pta_writingSession[@n]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::rdg[@n="wit"]</String>
+														<String>ancestor-or-self::rdg[@n="wit"] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -20675,7 +20691,7 @@ pta_rdg_pers/source/wit
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("seg")</String>
+														<String>oxy:allows-child-element("seg")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -20721,7 +20737,7 @@ pta_rdg_pers/source/wit
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("seg")</String>
+														<String>oxy:allows-child-element("seg")  and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -20797,7 +20813,7 @@ pta_rdg_pers/source/wit
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in der Variante',combobox,('resp':'Konjektor:in';'source':'Edition';'wit':'Handschrift'),'resp')}" type="conjecture">${ask('neue Variante eintragen', generic, '')}${caret}&lt;/rdg>&lt;/app></String>
+																<String>&lt;app xmlns="http://www.tei-c.org/ns/1.0" type="variants">&lt;lem>&lt;/lem> &lt;rdg n="${ask('Urheber:in der Variante',combobox,('resp':'Konjektor:in';'source':'Edition';'wit':'Handschrift'),'resp')}">${ask('neue Variante eintragen', generic, '')}${caret}&lt;/rdg>&lt;/app></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -22854,6 +22870,118 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>pta_add_del_subst[hand] -</String>
+										</field>
+										<field name="name">
+											<String>Hand in Variante hinzufügen</String>
+										</field>
+										<field name="description">
+											<String>Fügt in einer Hinzufügung, Tilgung oder Ersetzung eine Hand hinzu</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::add and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>//rdg/add</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>hand</String>
+															</entry>
+															<entry>
+																<String>namespace</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Urheber der Hinzufügung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'Korrektor 2';'m4':'Korrektor 3';'m5':'Korrektor 4';'mr':'manus recentior';'unknown':'unklar';),'m1')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::del and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>attributeNames</String>
+																<String>rend
+hand</String>
+															</entry>
+															<entry>
+																<String>elementLocations</String>
+																<String>//rdg/del</String>
+															</entry>
+															<entry>
+																<String>values</String>
+																<String>
+${ask('Urheber der Tilgung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'Korrektor 2';'m4':'Korrektor 3';'m5':'Korrektor 4';'mr':'manus recentior';'unknown':'unklar';),'m1')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributesOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::subst and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>//subst</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>hand</String>
+															</entry>
+															<entry>
+																<String>namespace</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('Urheber der Korrektur',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'Korrektor 2';'m4':'Korrektor 3';'m5':'Korrektor 4';'mr':'manus recentior';'unknown':'unklar';),'m1')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -23234,6 +23362,11 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 														<menuItem>
 															<field name="actionID">
 																<String>pta_rdg[resp]</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>pta_add_del_subst[hand] -</String>
 															</field>
 														</menuItem>
 													</menuEntry-array>
@@ -23904,10 +24037,14 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
+																	<String>pta_rdg[@varSeq]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
 																	<String>pta_rdg[@type=transposition]</String>
 																</field>
 															</toolbarItem>
-															<toolbarSeparator/>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
