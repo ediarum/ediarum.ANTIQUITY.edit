@@ -1,0 +1,51 @@
+@import url("reading_view.css");
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+
+oxy|comment,
+oxy|comment[oxy_comment_start],
+oxy|processing-instruction {
+    display:none !important;
+}
+
+oxy|processing-instruction[xml-stylesheet],
+oxy|processing-instruction[oxy_comment_start]
+{
+    display:none !important;
+}
+
+/* Zitat */
+
+quote{
+    background-color:yellow !important;
+    
+    -oxy-placeholder-content:"[Zitat eintragen]"   
+}
+
+
+/* Pseudo-Zitat */
+
+seg[type="psq"]{
+    background-color:yellow;
+    
+    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+}
+/* Anspielung */
+
+seg[type="allusion"]{
+    background-color:yellow;
+   
+    -oxy-placeholder-content:"[Text der Anspielung eintragen]"
+}
+
+seg[type="similar"]{
+    background-color:yellow;
+    
+    -oxy-placeholder-content:"[Text der Simile eintragen]"
+}
+
+seg[type="source"]{
+    background-color:yellow;
+   
+    -oxy-placeholder-content:"[Text der Quelle eintragen]"
+}

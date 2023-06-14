@@ -75,6 +75,7 @@ oxy|comment{
 TEI {
     padding: 1em;
     font-family: BBAWfont;
+     -oxy-display-tags: none;
 }
 
 /* ################ teiHeader ############ */
@@ -379,7 +380,7 @@ listPerson person abbr:after{
     content: " \A "
 }
 
-/* Handschriftliche Textzeigen */
+/* Handschriftliche Textzeugen */
 listWit:not([xml|id]):before{
     content: "Liste der Textzeugen: Handschriftliche Zeugen";
     font-weight:bold;
@@ -387,7 +388,7 @@ listWit:not([xml|id]):before{
 }
 
 listWit listWit[xml|id]:before{
-    content:"\A"
+    content:"\A "
 }
 
 listWit listWit[xml|id] > head{
@@ -439,6 +440,16 @@ sourceDesc listBibl:before{
     font-size:110%;
 }
 
+listBibl listBibl[xml|id]:before{
+    content:"\A "
+}
+
+listBibl listBibl[xml|id] > head{
+    text-decoration:underline;
+    font-weight:bold;
+    font-size:110%;
+}
+
 listBibl editor{
     -oxy-placeholder-content:"[Herausgeber der Edition]";
     -oxy-show-placeholder:always;
@@ -484,7 +495,11 @@ sourceDesc listPerson note{
     -oxy-placeholder-content:"[Zitierhinweis]";
 }
 
-
+ref[target]{
+    color: #465E7A;
+    border-bottom: 1px dashed #00C6FF;
+    
+}
 
 
 /*
@@ -715,34 +730,34 @@ text hi[rend="underline"] del{
 
 
 /* Publishers editing */
-quote supplied,
-text supplied {
+TEI[telota|doctype="transcripton"] quote supplied,
+TEI[telota|doctype="transcripton"] text supplied {
     font-family: "BBAWfont-italic";
     background-color: #e0e0e0;
     -oxy-display-tags: none;    
 }
 
-quote supplied:before,
-text supplied:before  {
+TEI[telota|doctype="transcripton"] quote supplied:before,
+TEI[telota|doctype="transcripton"] text supplied:before  {
     content: "[";
     font-style: normal;
 }
 
-quote supplied:after,
-text supplied:after {
+TEI[telota|doctype="transcripton"] quote supplied:after,
+TEI[telota|doctype="transcripton"] text supplied:after {
     content: "]";
     font-style: normal;
 }
 
 
-text supplied[cert="low"]:before {
+TEI[telota|doctype="transcripton"] text supplied[cert="low"]:before {
     content: "zu ergänzen wohl [";
     font-family: "BBAWfont-italic";
     color: gray;
 }
 
-quote surplus,
-text surplus {
+TEI[telota|doctype="transcripton"] quote surplus,
+TEI[telota|doctype="transcripton"] text surplus {
     text-decoration: line-through;
     color: #395B8C;
 }
@@ -1185,21 +1200,365 @@ biblStruct{
 }
 
 
-/* Pseudo-Zitat */
 
-seg,quote{
+
+seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem,said,supplied,surplus,rdgGrp{
     -oxy-display-tags: none;   
 }
 
-seg[type="psq"]{
-    background-color:purple;
-    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+
+/* Zitat */
+
+TEI[telota|doctype="edition"] quote{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Zitat eintragen]"   
 }
 
 
+/* Pseudo-Zitat */
+
+seg[type="psq"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+}
+/* Anspielung */
+
 seg[type="allusion"]{
-    background-color:blue;
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
     -oxy-placeholder-content:"[Text der Anspielung eintragen]"
 }
 
+seg[type="similar"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Simile eintragen]"
+}
 
+seg[type="source"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Quelle eintragen]"
+}
+
+/* direkte Rede */
+
+said:before{
+    content: "»";  
+    color: blue;
+    font-size: 130%;
+}
+
+said:after{
+    content: "«"; 
+    color: blue;
+    font-size: 130%;
+}
+
+/* Crux */
+
+sic:empty{
+    content:"\02020";
+    font-size: 130%;
+}
+
+sic:not(:empty):before,sic:not(:empty):after{
+    content:"\02020";  
+    font-size: 130%;
+}
+
+/* Nachweis von Textzeugen */
+
+app[type="witnesses"] rdg[wit]{
+    content: attr(wit);
+    background-color: Gainsboro;
+    color: DimGray;
+    font-size: 81%;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+}
+
+/* Beginn eines Textzeugen */
+
+witStart{
+    content:" Beginn: ";   
+}
+
+/* Ende eines Textzeugen */
+
+
+witEnd{
+    content:" Ende: ";
+}
+
+/* Beginn einer Lücke eines Textzeugen */
+
+
+lacunaStart{
+    content:" Beginn Lücke: "; 
+}
+
+/* Ende einer Lücke eines Textzeugen */
+
+
+lacunaEnd{
+    content:" Ende Lücke: ";  
+}
+
+
+/* Variantenapparat allgemein */
+
+text app[type="variants"]{
+    padding-left: 8px; 
+    padding-right: 8px; 
+    padding-bottom: 4px; 
+    background-color: RoyalBlue;
+}
+
+app[type="variants"] lem {
+    background-color: LightYellow;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;     
+}
+
+/*  
+app[type="variants"] lem:empty {
+    content: " [leere primäre Variante] ";
+    color: DimGray;
+    font-size: 81%; 
+}
+*/
+
+app[type="variants"] rdg {
+    background-color: LavenderBlush;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+    color: DimGray;
+}
+
+app[type="variants"] rdg:nth-child(2n) {
+    background-color: lightCyan;
+}    
+
+
+app[type="variants"] lem[wit][source][resp]:after {
+    content: " ("attr(wit)"; " attr(source) attr(resp)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[wit][source]:after {
+    content: " ("attr(wit)"; " attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[wit][resp]:after {
+    content: " ("attr(wit)"; " attr(resp)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[source][resp]:after {
+    content: " ("attr(resp)"; " attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 81%;
+}
+
+    
+app[type="variants"] rdg[wit][source][resp]:after {
+    content: " ("attr(wit)"; " attr(source) attr(resp)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[wit][source]:after {
+    content: " ("attr(wit)"; " attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[wit][resp]:after {
+    content: " ("attr(wit)"; " attr(resp)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[source][resp]:after {
+    content: " ("attr(resp)"; " attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 81%;
+}
+
+/* Hinzufügung */
+
+rdg[type="addition"]{
+    content: " [add.] ";
+    font-size: 81%;
+}
+
+
+/* Auslassung */
+
+rdg[type="omission"]{
+    content:" [om.] ";
+    font-size: 81%;
+}
+
+/* Homoioteleuton */
+
+rdg[cause="homoioteleuton"]{
+    content:" [om. - Homoioteleuton] ";
+    font-size: 81%;
+}
+
+/* Homoiarkton */
+
+rdg[cause="homoiarkton"]{
+    content:" [om. - Homoiarkton] ";
+    font-size: 81%;
+}
+
+/* saut du même */
+
+rdg[cause="saut_du_meme"]{
+    content:" [om. - saut du même] ";
+    font-size: 81%;
+}
+
+
+/* Löschung */
+
+lem[type="deletion"]{
+    content:" [del.] ";
+    font-size: 81%;
+}
+
+rdg[type="deletion"]{
+    content:" [del.] ";
+    font-size: 81%;
+}
+
+/* Nicht lesbarer Text */
+
+rdg[type="illegible"]{
+    content:" [illegible] ";
+    font-size: 81%;
+}
+
+/* Lücke (Beschädigung) */
+rdg[type="damage"]{
+    content:" [damage] ";
+    font-size: 81%;
+}
+
+/* Lücke (freigelassen) */
+
+rdg[type="fenestra"]{
+    content:" [fenestra] ";
+    font-size: 81%;
+}
+
+/* Umstellung */
+
+rdg[type="transposition"]{
+    content:" [transp.] ";
+    font-size: 81%;    
+}
+
+
+/* vermutete Lücke */
+
+rdg[type="lacunam_indicavit"]{
+    content:" [lacunam_indicavit] ";
+    font-size: 81%;
+}
+
+/* Korrektur durch Schreiber/Korrektor */
+
+rdg[varSeq="1"][hand][style]{
+    content:" [a.c.] ";
+    font-size: 81%;
+}
+
+rdg[varSeq="2"][hand][style]{
+    content:" [p.c.] ";
+    font-size: 81%;
+}
+
+/* Konjektur */
+
+lem[type="conjecture"]{
+    content:" [coni.] ";
+    font-size: 81%;
+}
+
+rdg[type="conjecture"]{
+        content:" [coni.] ";
+    font-size: 81%;
+}
+
+/* Korrektur durch Editor:in */
+
+lem[type="correction"]{
+    content:" [corr.] ";
+    font-size: 81%;
+}
+
+/* Vorschlag für Konjektur */
+
+rdg[type="proposition"]{
+    content:" [prop.] ";
+    font-size: 81%;
+}
+
+/* Variantengruppe */
+
+rdgGrp:before{
+    content: "[";
+    font-size: 120%;
+    color: DarkGray;
+}
+
+rdgGrp:after{
+    content: "]";
+    font-size: 120%;
+    color: DarkGray;
+}

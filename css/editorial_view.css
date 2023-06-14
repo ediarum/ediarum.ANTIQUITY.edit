@@ -375,9 +375,36 @@ listWit[xml|id]:before{
 }
 
 witness:before{
-    content: "Handschriftlicher Zeuge: "oxy_xpath(oxy_concat("string-join(child::abbr/string(), ' ')")) " \A ""xml:id (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) "), Abschrift ("oxy_textfield(edit, "source",color, "black",columns, 10) "), Transkription der Handschrift (" 
-    oxy_textfield(edit, "corresp",color, "black",columns, 10)
-    ") , Sigle: "
+    content: "Handschriftlicher Zeuge: "oxy_xpath(oxy_concat("string-join(child::abbr/string(), ' ')")) " \A ""xml:id (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) "), Abschrift ("oxy_textfield(edit, "source",color, "black",columns, 10) "), Sigle: ";
+    font-style:italic;
+    font-size:110%;
+}
+
+witness name:before{
+    content: "lat. Name der Handschrift: ";
+    font-style:italic;
+}
+
+witness name[key]:after{
+    content: "\A Transkription der Handschrift: " 
+    oxy_textfield(edit, "key",color, "black",columns, 15);
+    font-style:italic;
+}
+
+witness origDate:before{
+    content: "Datierung: ";
+    font-style:italic;
+}
+
+witness origDate:after{
+    content: "maschinenlesbare Datierung: Nicht vor: "oxy_textfield(edit, "notBefore",color, "black",columns, 5) " und nicht nach "oxy_textfield(edit, "notAfter",color, "black",columns, 5);
+    display:block;
+    font-style:italic;
+}
+
+witness locus:before{
+    content: "Folio bzw. Seiten der Handschrift: ";
+    font-style:italic;
 }
 
 listBibl bibl:before{
