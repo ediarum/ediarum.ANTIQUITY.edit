@@ -12851,7 +12851,7 @@ pta_remove_attributes</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::del[@crend=" "]</String>
+														<String>ancestor-or-self::del[@cert=" "]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -12862,6 +12862,34 @@ pta_remove_attributes</String>
 															<entry>
 																<String>name</String>
 																<String>cert</String>
+															</entry>
+															<entry>
+																<String>removeIfEmpty</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::del[@rend=" "]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>ancestor-or-self::del</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>rend</String>
 															</entry>
 															<entry>
 																<String>removeIfEmpty</String>
@@ -12993,7 +13021,7 @@ pta_remove_attributes</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>self::del</String>
+														<String>self::add[parent::subst] or self::del[parent::subst] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -13007,7 +13035,7 @@ pta_remove_attributes</String>
 															</entry>
 															<entry>
 																<String>xpathLocation</String>
-																<String>//subst/del</String>
+																<String>parent::subst/del</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -23039,6 +23067,23 @@ ${ask('Urheber der Tilgung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'
 															<entry>
 																<String>actionIDs</String>
 																<String>pta_subst[hand]_1
+pta_subst[hand]_2</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::add[parent::subst] or self::del[parent::subst] and //TEI[@telota:doctype='edition']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>pta_subst[hand]_1
 pta_moveCaret
 pta_@[remove]</String>
 															</entry>
@@ -23080,13 +23125,13 @@ pta_@[remove]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>child::del and //TEI[@telota:doctype='edition']</String>
+														<String>parent::subst and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>elementLocation</String>
-																<String>//del</String>
+																<String>parent::subst/del</String>
 															</entry>
 															<entry>
 																<String>name</String>
