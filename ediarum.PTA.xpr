@@ -20,86 +20,6 @@
                                     <Boolean>false</Boolean>
                                 </field>
                             </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.ovp.edit/ediarum.ovp.register.framework/ediarum.OVP.register</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum_mediaevum/ediarum.mediaevum.register.framework/ediarum.mediaevum.register</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum_basis/ediarum_basis_register.framework/ediarum.BASIS.register</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.BASE.edit/ediarum.INTRO.framework/ediarum.INTRO</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.ovp.edit/ediarum.ovp.framework/ediarum.OVP.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.REGISTER.edit/ediarum.REGISTER.framework/ediarum.REGISTER.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum_mediaevum/ediarum.mediaevum.framework/ediarum.mediaevum</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum.BASE.edit/ediarum.BASE.framework/ediarum.BASE.edit</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum_basis/ediarum_basis.framework/ediarum.BASIS</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>4/ediarum_basis/ediarum_basis_readonly.framework/ediarum.BASIS.readonly</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
                         </documentTypeEntry-array>
                     </entry>
                     <entry>
@@ -200,6 +120,17 @@
                                 </field>
                                 <field name="shortDescription">
                                     <String>URL der öffentlichen Projekt-Domain</String>
+                                </field>
+                            </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${pta_personenregister}</String>
+                                </field>
+                                <field name="value">
+                                    <String>http://localhost:8080/exist/apps/bibelexegese.web/api/register?alphabet=${ask('Buchstabe A-Z', generic, '')}</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String></String>
                                 </field>
                             </userEditorVariable>
                         </userEditorVariable-array>
