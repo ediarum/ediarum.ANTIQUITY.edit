@@ -23211,6 +23211,192 @@ pta_@[remove]</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>00_persName_test</String>
+										</field>
+										<field name="name">
+											<String>Personenname</String>
+										</field>
+										<field name="description">
+											<String>Im Manuskript explizit erwähnte Person kennzeichnen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::text
+or ancestor-or-self::abstract 
+or ancestor-or-self::correspDesc/note
+or ancestor-or-self::note[parent::notesStmt]
+or ancestor-or-self::p[parent::physDesc]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>URL</String>
+																<String>${pta_personenregister}</String>
+															</entry>
+															<entry>
+																<String>element</String>
+																<String>&lt;persName xmlns='http://www.tei-c.org/ns/1.0'  key='$ITEMS'>&lt;/persName></String>
+															</entry>
+															<entry>
+																<String>item rendering</String>
+																<String>$XPATH{/span}</String>
+															</entry>
+															<entry>
+																<String>item separator</String>
+																<String> </String>
+															</entry>
+															<entry>
+																<String>item variable</String>
+																<String>$XPATH{@xml:id}</String>
+															</entry>
+															<entry>
+																<String>multiple selection</String>
+																<String>true</String>
+															</entry>
+															<entry>
+																<String>namespaces</String>
+																<String>tei:http://www.tei-c.org/ns/1.0</String>
+															</entry>
+															<entry>
+																<String>node</String>
+																<String>//li</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>org.bbaw.telota.ediarum.RegisterSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_subst_del_repurposed</String>
+										</field>
+										<field name="name">
+											<String>Korrektur durch Hinzufügung von Diakritika</String>
+										</field>
+										<field name="description">
+											<String>Korrektur durch Hinzufügung von Diakritika</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("subst") and //TEI[@telota:doctype='transcription']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;subst xmlns="http://www.tei-c.org/ns/1.0">&lt;del rend="repurposed">${selection}&lt;/del>&lt;add place="inline">${caret}&lt;/add>&lt;/subst></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertOrReplaceFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>pta_retrace</String>
+										</field>
+										<field name="name">
+											<String>Korrektur durch Überschreiben bzw. Nachzeichnen des ursprünglichen Textes</String>
+										</field>
+										<field name="description">
+											<String>Korrektur durch Überschreiben bzw. Nachzeichnen des ursprünglichen Textes</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("subst") and //TEI[@telota:doctype='transcription']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;retrace xmlns="http://www.tei-c.org/ns/1.0">${caret}&lt;/retrace></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("subst") and //TEI[@telota:doctype='transcription']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;retrace xmlns="http://www.tei-c.org/ns/1.0">${caret}&lt;/retrace></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertOrReplaceFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -23774,11 +23960,39 @@ pta_@[remove]</String>
 													<String>pta_del</String>
 												</field>
 											</toolbarItem>
-											<toolbarItem>
-												<field name="actionID">
-													<String>pta_subst</String>
+											<toolbar>
+												<field name="id">
+													<String>Korrekturen</String>
 												</field>
-											</toolbarItem>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String>${framework}/icons/del_overwrite.gif</String>
+												</field>
+												<field name="smallIconPath">
+													<String>${framework}/icons/del_overwrite16.gif</String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>pta_subst</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>pta_subst_del_repurposed</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>pta_retrace</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
 											<toolbarItem>
 												<field name="actionID">
 													<String>pta_add</String>
@@ -24415,6 +24629,29 @@ pta_@[remove]</String>
 														</toolbarEntry-array>
 													</field>
 												</toolbar>
+											</toolbarEntry-array>
+										</field>
+									</toolbar>
+									<toolbar>
+										<field name="id">
+											<String>tester</String>
+										</field>
+										<field name="type">
+											<Integer>2</Integer>
+										</field>
+										<field name="largeIconPath">
+											<null/>
+										</field>
+										<field name="smallIconPath">
+											<null/>
+										</field>
+										<field name="toolbarEntriesDescriptorList">
+											<toolbarEntry-array>
+												<toolbarItem>
+													<field name="actionID">
+														<String>00_persName_test</String>
+													</field>
+												</toolbarItem>
 											</toolbarEntry-array>
 										</field>
 									</toolbar>
