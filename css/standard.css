@@ -707,6 +707,13 @@ text add {
     -oxy-placeholder-content: "[Hinzufügung]"
 }
 
+retrace {
+    color: green;
+    font-weight:bold;
+    -oxy-display-tags: none;
+    -oxy-placeholder-content: "[Überschreiben bzw. Nachzeichnen des ursprünglichen Textes]";
+}
+
 quote hi[rend="overline"],
 text hi[rend="overline"] {
     text-decoration: overline;
