@@ -9473,7 +9473,7 @@ or ancestor-or-self::list[@rendition='#et']</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;change xmlns="http://www.tei-c.org/ns/1.0" when="${date(yyyy-MM-dd)}" who="${ask('Kürzel Bearbeiter*in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">&lt;/change></String>
+																<String>&lt;change xmlns="http://www.tei-c.org/ns/1.0" when="${date(yyyy-MM-dd)}" who="${ask('Kürzel Bearbeiter:in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">&lt;/change></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -9499,7 +9499,7 @@ or ancestor-or-self::list[@rendition='#et']</String>
 																<String>fragment</String>
 																<String>&lt;revisionDesc xmlns="http://www.tei-c.org/ns/1.0">
   &lt;listChange>
-    &lt;change when="${date(yyyy-MM-dd)}" who="${ask('Kürzel Bearbeiter*in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">&lt;/change>
+    &lt;change when="${date(yyyy-MM-dd)}" who="${ask('Kürzel Bearbeiter:in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">&lt;/change>
   &lt;/listChange>
 &lt;/revisionDesc></String>
 															</entry>
@@ -14663,10 +14663,10 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<String>pta_respStmt</String>
 										</field>
 										<field name="name">
-											<String>Mitarbeiter*in</String>
+											<String>Mitarbeiter:in</String>
 										</field>
 										<field name="description">
-											<String>Mitarbeiter*in (nicht: Herausgeber*in) am edierten Text</String>
+											<String>Mitarbeiter:in (nicht: Herausgeber:in) am edierten Text</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -14692,7 +14692,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 																<String>fragment</String>
 																<String>&lt;respStmt xmlns="http://www.tei-c.org/ns/1.0">
   &lt;resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}&lt;/resp>
-  &lt;persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben ihres Vor- und Nachnamen)', generic, '')}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}&lt;/persName>
+  &lt;persName xml:id="${ask('Mitarbeiter:in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben Ihres Vor- und Nachnamen)', generic, '')}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter:in: Vor- und Nachname', generic, '')}&lt;/persName>
 &lt;/respStmt></String>
 															</entry>
 															<entry>
@@ -15309,7 +15309,7 @@ ${ask('Endatum im Format JJJJ-MM-TT')}</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>fragment</String>
-																<String>&lt;change xmlns="http://www.tei-c.org/ns/1.0" when="${date(yyyy-MM-dd)}" who="${ask('Kürzel Bearbeiter*in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">&lt;/change></String>
+																<String>&lt;change xmlns="http://www.tei-c.org/ns/1.0" when="${date(yyyy-MM-dd)}" who="${ask('Kürzel Bearbeiter:in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">&lt;/change></String>
 															</entry>
 															<entry>
 																<String>insertLocation</String>
@@ -15334,7 +15334,7 @@ ${ask('Endatum im Format JJJJ-MM-TT')}</String>
 															<entry>
 																<String>fragment</String>
 																<String>&lt;revisionDesc xmlns="http://www.tei-c.org/ns/1.0">
-  &lt;change when="${date(yyyy-MM-dd)}" who="${ask('Kürzel Bearbeiter*in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">&lt;/change>
+  &lt;change when="${date(yyyy-MM-dd)}" who="${ask('Kürzel Bearbeiter:in', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">&lt;/change>
 &lt;/revisionDesc></String>
 															</entry>
 															<entry>
