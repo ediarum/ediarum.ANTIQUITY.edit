@@ -51,17 +51,6 @@
 									</cssFile>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/css/editorial_view.css</String>
-										</field>
-										<field name="title">
-											<String>Redaktionsansicht</String>
-										</field>
-										<field name="alternate">
-											<Boolean>true</Boolean>
-										</field>
-									</cssFile>
-									<cssFile>
-										<field name="href">
 											<String>${framework}/css/reading_view.css</String>
 										</field>
 										<field name="title">
@@ -73,10 +62,32 @@
 									</cssFile>
 									<cssFile>
 										<field name="href">
+											<String>${framework}/css/editorial_view.css</String>
+										</field>
+										<field name="title">
+											<String>Redaktionsansicht</String>
+										</field>
+										<field name="alternate">
+											<Boolean>true</Boolean>
+										</field>
+									</cssFile>
+									<cssFile>
+										<field name="href">
 											<String>${framework}/css/plus_quotes.css</String>
 										</field>
 										<field name="title">
 											<String>+ Zitate und Quellen</String>
+										</field>
+										<field name="alternate">
+											<Boolean>false</Boolean>
+										</field>
+									</cssFile>
+									<cssFile>
+										<field name="href">
+											<String>${framework}/css/plus_variants.css</String>
+										</field>
+										<field name="title">
+											<String>+ Varianten</String>
 										</field>
 										<field name="alternate">
 											<Boolean>false</Boolean>
@@ -11578,6 +11589,30 @@ hand</String>
 														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
 													</field>
 												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::cb[not(@facs) and ancestor::div[@type='transcription'] and ancestor::TEI[@telota:doctype='transcription']]</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>self::cb</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>facs</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>${ask('URL des Digitalisats', generic, '')}</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
 											</actionMode-array>
 										</field>
 										<field name="enabledInReadOnlyContext">
@@ -12978,6 +13013,26 @@ ANT_remove_attributes</String>
 												<actionMode>
 													<field name="xpathCondition">
 														<String>self::pb</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>position</String>
+																<String>After</String>
+															</entry>
+															<entry>
+																<String>xpathLocation</String>
+																<String>.</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.MoveCaretOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::gb</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -23305,6 +23360,258 @@ or ancestor-or-self::p[parent::physDesc]</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>ANT_gb</String>
+										</field>
+										<field name="name">
+											<String>Bogenanfang</String>
+										</field>
+										<field name="description">
+											<String>Bogenanfang</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("gb")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>gb
+ANT_moveCaret</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>ant_gb</String>
+										</field>
+										<field name="name">
+											<String>Foliowechsel</String>
+										</field>
+										<field name="description">
+											<String>Foliowechsel</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("gb")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;gb xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Nummerierung des Bogenanfangs')}" /></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as first child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>ANT_gb[break]</String>
+										</field>
+										<field name="name">
+											<String>Bogenanfang im Wort</String>
+										</field>
+										<field name="description">
+											<String>Bogenanfang einfügen, der ein Wort trennt - allerdings ohne Trennzeichen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::text and //TEI[@telota:doctype='transcription']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;gb xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Nummerierung des Bogenanfangs')}" break="no" />${caret}</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as first child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>ANT_gb[facs]</String>
+										</field>
+										<field name="name">
+											<String>Bogenanfang mit Link</String>
+										</field>
+										<field name="description">
+											<String>Bogenanfang mit Link zum Digitalisat</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("gb")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>ANT_gb[facs]_1
+ANT_moveCaret</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>ANT_gb[facs]_1</String>
+										</field>
+										<field name="name">
+											<String>Bogenanfang mit Link</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction: Bogenanfang mit Link zum Digitalisat</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("gb")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;gb xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Nummerierung des Bogenanfangs')}" facs="${ask('URL des Digitalisats', generic, '')}" /></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String></String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as first child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -23817,6 +24124,23 @@ or ancestor-or-self::p[parent::physDesc]</String>
 																<String>ANT_pb[facs]</String>
 															</field>
 														</toolbarItem>
+														<toolbarSeparator/>
+														<toolbarItem>
+															<field name="actionID">
+																<String>ANT_gb</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>ANT_gb[break]</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>ANT_gb[facs]</String>
+															</field>
+														</toolbarItem>
+														<toolbarSeparator/>
 														<toolbarItem>
 															<field name="actionID">
 																<String>ANT_cb</String>

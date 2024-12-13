@@ -53,12 +53,14 @@ div[type='textpart'][subtype][n]:before{
             color, gray)" "oxy_textfield(edit, "n",color, "black",columns, 3)" ";;
 }
 
-text pb[n]:after{
+text pb[n]:after,
+text gb[n]:after{
     content: "(" oxy_textfield(edit, "n",color, "black",columns, 4) ")";
     color: gray;
 }
 
-text pb[n][facs]:after{
+text pb[n][facs]:after,
+text gb[n][facs]:after{
     content: "(" oxy_textfield(edit, "n",color, "black",columns, 4)" - "attr(facs) ")";
     color: gray;
 }

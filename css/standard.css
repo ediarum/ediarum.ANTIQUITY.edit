@@ -650,7 +650,9 @@ text space {
 }
 
 text pb,
-text cb {
+text cb,
+text gb
+{
     content: "|";
     padding: 0;
     color: black;
@@ -664,23 +666,29 @@ text cb {
 }
 
 text pb[n]:after,
-text cb[n]:after {
+text cb[n]:after,
+text gb[n]:after{
     content: "(" attr(n) ")\A";
     font-family: "BBAWfont-italic";
     color: gray;
 }
 
-text pb[facs]:after {
+text pb[facs]:after,
+text gb[facs]:after{
     content: "(folio)";
     font-family: "BBAWfont-italic";
 }
 
-text pb[n][facs]:after {
+text pb[n][facs]:after,
+text gb[n][facs]:after
+{
     content: "(" attr(n) ")";
     font-family: "BBAWfont-italic";
 }
 
-text pb[facs]:after {
+text pb[facs]:after,
+text gb[facs]:after
+{
     link: url(attr(facs));
     color: #6998BC;
 }
