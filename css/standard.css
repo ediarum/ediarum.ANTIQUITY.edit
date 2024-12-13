@@ -693,6 +693,21 @@ text gb[facs]:after
     color: #6998BC;
 }
 
+text list,
+text list item {
+    display: block;
+    -oxy-display-tags: none;
+}
+
+text list {
+    margin: 1em 0 1em 1em;    
+}
+
+item{
+    -oxy-placeholder-content:"Listenpunkt eingeben";
+}
+
+
 /* Authors editing */
 
 quote subst,
