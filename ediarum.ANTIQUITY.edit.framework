@@ -24213,10 +24213,10 @@ ANT_moveCaret</String>
 													<Integer>3</Integer>
 												</field>
 												<field name="largeIconPath">
-													<String></String>
+													<String>${framework}/icons/unorderedList20.png</String>
 												</field>
 												<field name="smallIconPath">
-													<String></String>
+													<String>${framework}/icons/unorderedList16.png</String>
 												</field>
 												<field name="toolbarEntriesDescriptorList">
 													<toolbarEntry-array>

@@ -704,9 +704,12 @@ text list {
 }
 
 item{
-    -oxy-placeholder-content:"Listenpunkt eingeben";
+    -oxy-placeholder-content:"Listenpunkt";
 }
 
+list head{
+    -oxy-placeholder-content:"Überschrift einer Liste";
+}
 
 /* Authors editing */
 
