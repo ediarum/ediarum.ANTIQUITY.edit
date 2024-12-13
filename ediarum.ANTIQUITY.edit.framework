@@ -12,7 +12,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>ediarum.PTA.edit</String>
+						<String>ediarum.ANTIQUITY.edit</String>
 					</field>
 					<field name="schemaDescriptor">
 						<docTypeSchema>
@@ -11532,7 +11532,7 @@ hand</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_@facs</String>
+											<String>ANT_@facs</String>
 										</field>
 										<field name="name">
 											<String>Link auf Digitalisat</String>
@@ -11586,7 +11586,7 @@ hand</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_cb</String>
+											<String>ANT_cb</String>
 										</field>
 										<field name="name">
 											<String>Spaltenumbruch</String>
@@ -11636,7 +11636,7 @@ hand</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_del</String>
+											<String>ANT_del</String>
 										</field>
 										<field name="name">
 											<String>Streichung</String>
@@ -11698,7 +11698,7 @@ hand</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_handDesc_insert</String>
+											<String>ANT_handDesc_insert</String>
 										</field>
 										<field name="name">
 											<String>handNote insert</String>
@@ -11834,7 +11834,7 @@ hand</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_handNote_count</String>
+											<String>ANT_handNote_count</String>
 										</field>
 										<field name="name">
 											<String>handNote count</String>
@@ -11928,7 +11928,7 @@ hand</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_handDesc_all</String>
+											<String>ANT_handDesc_all</String>
 										</field>
 										<field name="name">
 											<String>Hand hinzufügen</String>
@@ -11958,8 +11958,8 @@ hand</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_handDesc_insert
-pta_handNote_count</String>
+																<String>ANT_handDesc_insert
+ANT_handNote_count</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -11975,7 +11975,7 @@ pta_handNote_count</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_@hand</String>
+											<String>ANT_@hand</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Hand</String>
@@ -12161,7 +12161,7 @@ pta_handNote_count</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_subst</String>
+											<String>ANT_subst</String>
 										</field>
 										<field name="name">
 											<String>Korrektur durch Schreiber</String>
@@ -12239,7 +12239,7 @@ pta_handNote_count</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_add</String>
+											<String>ANT_add</String>
 										</field>
 										<field name="name">
 											<String>Hinzufügung durch Schreiber</String>
@@ -12317,7 +12317,7 @@ pta_handNote_count</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_gap</String>
+											<String>ANT_gap</String>
 										</field>
 										<field name="name">
 											<String>Nicht lesbarer Text</String>
@@ -12363,7 +12363,7 @@ pta_handNote_count</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_unclear</String>
+											<String>ANT_unclear</String>
 										</field>
 										<field name="name">
 											<String>Unsichere Lesung</String>
@@ -12410,7 +12410,7 @@ or ancestor-or-self::quote and //TEI[@telota:doctype='transcription']</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_del_gap</String>
+											<String>ANT_del_gap</String>
 										</field>
 										<field name="name">
 											<String>Zerstörung durch Schreiber</String>
@@ -12472,7 +12472,7 @@ or ancestor-or-self::quote and //TEI[@telota:doctype='transcription']</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_gap_reason-Abfrage</String>
+											<String>ANT_gap_reason-Abfrage</String>
 										</field>
 										<field name="name">
 											<String>Lücke im Text</String>
@@ -12502,8 +12502,8 @@ or ancestor-or-self::quote and //TEI[@telota:doctype='transcription']</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_gap[edition]_insert
-pta_remove_attributes</String>
+																<String>ANT_gap[edition]_insert
+ANT_remove_attributes</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -12535,7 +12535,7 @@ pta_remove_attributes</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_hi[initiale|ekthesis]</String>
+											<String>ANT_hi[initiale|ekthesis]</String>
 										</field>
 										<field name="name">
 											<String>Initiale/Ekthesis</String>
@@ -12581,7 +12581,7 @@ pta_remove_attributes</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_hi[rubricated]</String>
+											<String>ANT_hi[rubricated]</String>
 										</field>
 										<field name="name">
 											<String>Rubrizierter Text</String>
@@ -12627,7 +12627,7 @@ pta_remove_attributes</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_hi[underline]</String>
+											<String>ANT_hi[underline]</String>
 										</field>
 										<field name="name">
 											<String>Unterstrichen</String>
@@ -12673,7 +12673,7 @@ pta_remove_attributes</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_hi[overline]</String>
+											<String>ANT_hi[overline]</String>
 										</field>
 										<field name="name">
 											<String>Überstrichen</String>
@@ -12719,7 +12719,7 @@ pta_remove_attributes</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_@[remove]</String>
+											<String>ANT_@[remove]</String>
 										</field>
 										<field name="name">
 											<String>remove attributes</String>
@@ -12913,7 +12913,7 @@ pta_remove_attributes</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_moveCaret</String>
+											<String>ANT_moveCaret</String>
 										</field>
 										<field name="name">
 											<String>Cursor verschieben</String>
@@ -13051,7 +13051,7 @@ pta_remove_attributes</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_pb</String>
+											<String>ANT_pb</String>
 										</field>
 										<field name="name">
 											<String>Foliowechsel/Seitenumbruch</String>
@@ -13082,7 +13082,7 @@ pta_remove_attributes</String>
 															<entry>
 																<String>actionIDs</String>
 																<String>pb
-pta_moveCaret</String>
+ANT_moveCaret</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -13098,7 +13098,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_pb[facs]</String>
+											<String>ANT_pb[facs]</String>
 										</field>
 										<field name="name">
 											<String>Foliowechsel mit Link</String>
@@ -13129,7 +13129,7 @@ pta_moveCaret</String>
 															<entry>
 																<String>actionIDs</String>
 																<String>pb[facs]
-pta_moveCaret</String>
+ANT_moveCaret</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -13145,7 +13145,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_note[Marginalie]</String>
+											<String>ANT_note[Marginalie]</String>
 										</field>
 										<field name="name">
 											<String>Marginalie</String>
@@ -13191,7 +13191,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_@hand[unknown]</String>
+											<String>ANT_@hand[unknown]</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf unbekannte Hand</String>
@@ -13269,7 +13269,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_handNote[manus_recentior]_insert</String>
+											<String>ANT_handNote[manus_recentior]_insert</String>
 										</field>
 										<field name="name">
 											<String>Manus recentior_insert</String>
@@ -13323,7 +13323,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_handNote[manus_recentior]_all</String>
+											<String>ANT_handNote[manus_recentior]_all</String>
 										</field>
 										<field name="name">
 											<String>Jüngere Hand hinzufügen</String>
@@ -13353,8 +13353,8 @@ pta_moveCaret</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_handNote[manus_recentior]_insert
-pta_handNote_count</String>
+																<String>ANT_handNote[manus_recentior]_insert
+ANT_handNote_count</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -13370,7 +13370,7 @@ pta_handNote_count</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_handshift</String>
+											<String>ANT_handshift</String>
 										</field>
 										<field name="name">
 											<String>Handwechsel</String>
@@ -13448,7 +13448,7 @@ pta_handNote_count</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_nomSac_all</String>
+											<String>ANT_nomSac_all</String>
 										</field>
 										<field name="name">
 											<String>Nomen Sacrum</String>
@@ -13478,9 +13478,9 @@ pta_handNote_count</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_nomSac_abbr
-pta_nomSac_expan
-pta_moveCaret</String>
+																<String>ANT_nomSac_abbr
+ANT_nomSac_expan
+ANT_moveCaret</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -13496,7 +13496,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_abbr</String>
+											<String>ANT_abbr</String>
 										</field>
 										<field name="name">
 											<String>insert abbr</String>
@@ -13544,7 +13544,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_nomSac_expan</String>
+											<String>ANT_nomSac_expan</String>
 										</field>
 										<field name="name">
 											<String>Nomina Sacra insert expan</String>
@@ -13598,7 +13598,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_writingSession</String>
+											<String>ANT_writingSession</String>
 										</field>
 										<field name="name">
 											<String>Neue Sektion beginnen</String>
@@ -13652,7 +13652,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_div/@n</String>
+											<String>ANT_div/@n</String>
 										</field>
 										<field name="name">
 											<String>Abschnittsnummerierung</String>
@@ -13710,7 +13710,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_head</String>
+											<String>ANT_head</String>
 										</field>
 										<field name="name">
 											<String>Titel entfernen/hinzufügen</String>
@@ -13780,7 +13780,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_expan</String>
+											<String>ANT_expan</String>
 										</field>
 										<field name="name">
 											<String>insert expan</String>
@@ -13834,7 +13834,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_abbr-expan_all</String>
+											<String>ANT_abbr-expan_all</String>
 										</field>
 										<field name="name">
 											<String>Abkürzungen/Ligaturen auflösen</String>
@@ -13864,9 +13864,9 @@ pta_moveCaret</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_abbr
-pta_expan
-pta_moveCaret</String>
+																<String>ANT_abbr
+ANT_expan
+ANT_moveCaret</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -13882,7 +13882,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_g[diple]</String>
+											<String>ANT_g[diple]</String>
 										</field>
 										<field name="name">
 											<String>Diple</String>
@@ -13928,7 +13928,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_g[paragraphos]</String>
+											<String>ANT_g[paragraphos]</String>
 										</field>
 										<field name="name">
 											<String>Paragraphos</String>
@@ -13974,7 +13974,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_altIdentifier</String>
+											<String>ANT_altIdentifier</String>
 										</field>
 										<field name="name">
 											<String>Weiterer Nachweis</String>
@@ -14030,7 +14030,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_author</String>
+											<String>ANT_author</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf das Autorenregister</String>
@@ -14196,7 +14196,7 @@ pta_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_persName</String>
+											<String>ANT_persName</String>
 										</field>
 										<field name="name">
 											<String>Personenname</String>
@@ -14274,7 +14274,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_langUsage</String>
+											<String>ANT_langUsage</String>
 										</field>
 										<field name="name">
 											<String>Schreibsprache</String>
@@ -14384,7 +14384,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_symbol_symbols_02</String>
+											<String>ANT_symbol_symbols_02</String>
 										</field>
 										<field name="name">
 											<String>(Anti-)Sigma-periestigmenon-Majuskel</String>
@@ -14430,7 +14430,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_symbol_symbols_03</String>
+											<String>ANT_symbol_symbols_03</String>
 										</field>
 										<field name="name">
 											<String>Verweiszeichen</String>
@@ -14476,7 +14476,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_symbol_symbols_04</String>
+											<String>ANT_symbol_symbols_04</String>
 										</field>
 										<field name="name">
 											<String>ϗ (Abkürzungszeichen für καὶ)</String>
@@ -14522,7 +14522,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_symbol_symbols_05</String>
+											<String>ANT_symbol_symbols_05</String>
 										</field>
 										<field name="name">
 											<String>Textgliederungs- und Auszeichnungs-Zeichen</String>
@@ -14568,7 +14568,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_msDesc/physDesc</String>
+											<String>ANT_msDesc/physDesc</String>
 										</field>
 										<field name="name">
 											<String>Beschreibung der Handschrift</String>
@@ -14660,7 +14660,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_respStmt</String>
+											<String>ANT_respStmt</String>
 										</field>
 										<field name="name">
 											<String>Mitarbeiter:in</String>
@@ -14717,7 +14717,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_lb</String>
+											<String>ANT_lb</String>
 										</field>
 										<field name="name">
 											<String>Zeilenumbruch</String>
@@ -14767,7 +14767,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_lb[break]</String>
+											<String>ANT_lb[break]</String>
 										</field>
 										<field name="name">
 											<String>Zeilenumbruch im Wort</String>
@@ -14817,7 +14817,7 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_textClass</String>
+											<String>ANT_textClass</String>
 										</field>
 										<field name="name">
 											<String>Textklasse einfügen</String>
@@ -14847,8 +14847,8 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_textClass_01
-pta_textClass_02</String>
+																<String>ANT_textClass_01
+ANT_textClass_02</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -14864,7 +14864,7 @@ pta_textClass_02</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_div_xml-lang_insert</String>
+											<String>ANT_div_xml-lang_insert</String>
 										</field>
 										<field name="name">
 											<String>insert div/@xml:lang</String>
@@ -14922,7 +14922,7 @@ pta_textClass_02</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_copy_xml-lang</String>
+											<String>ANT_copy_xml-lang</String>
 										</field>
 										<field name="name">
 											<String>copy_xml-lang</String>
@@ -15012,7 +15012,7 @@ pta_textClass_02</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_div_xml-lang</String>
+											<String>ANT_div_xml-lang</String>
 										</field>
 										<field name="name">
 											<String>Bitte ausfüllen</String>
@@ -15042,8 +15042,8 @@ pta_textClass_02</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_div_xml-lang_insert
-pta_copy_xml-lang</String>
+																<String>ANT_div_xml-lang_insert
+ANT_copy_xml-lang</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -15059,7 +15059,7 @@ pta_copy_xml-lang</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_creation_date_when</String>
+											<String>ANT_creation_date_when</String>
 										</field>
 										<field name="name">
 											<String>Genaues Datum</String>
@@ -15113,7 +15113,7 @@ pta_copy_xml-lang</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_creation_date_fromTo</String>
+											<String>ANT_creation_date_fromTo</String>
 										</field>
 										<field name="name">
 											<String>Genaue Zeitspanne</String>
@@ -15169,7 +15169,7 @@ ${ask('Endatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_creation_date_notBeforeNotAfter</String>
+											<String>ANT_creation_date_notBeforeNotAfter</String>
 										</field>
 										<field name="name">
 											<String>Ungefährer Zeitraum</String>
@@ -15225,7 +15225,7 @@ ${ask('Endatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_create_msIdentifier_xml-id</String>
+											<String>ANT_create_msIdentifier_xml-id</String>
 										</field>
 										<field name="name">
 											<String>ID nachtragen</String>
@@ -15279,7 +15279,7 @@ ${ask('Endatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_revisionDesc[1]</String>
+											<String>ANT_revisionDesc[1]</String>
 										</field>
 										<field name="name">
 											<String>Bearbeitungshistorie hinzufügen</String>
@@ -15359,7 +15359,7 @@ ${ask('Endatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_revisionDesc</String>
+											<String>ANT_revisionDesc</String>
 										</field>
 										<field name="name">
 											<String>Bearbeitungshistorie hinzufügen</String>
@@ -15389,7 +15389,7 @@ ${ask('Endatum im Format JJJJ-MM-TT')}</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_revisionDesc[1]
+																<String>ANT_revisionDesc[1]
 revisionDesc[2]</String>
 															</entry>
 														</serializableOrderedMap>
@@ -15406,7 +15406,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_symbol_symbols_01</String>
+											<String>ANT_symbol_symbols_01</String>
 										</field>
 										<field name="name">
 											<String>Koptische und archaische Buchstaben</String>
@@ -15452,7 +15452,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_textClass_01</String>
+											<String>ANT_textClass_01</String>
 										</field>
 										<field name="name">
 											<String>Textklasse 01: insert</String>
@@ -15482,7 +15482,7 @@ revisionDesc[2]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>URL</String>
-																<String>${ediarum_project_domain}${ediarum_projects_directory}${ediarum_project_name}${pta_textClassFunction}</String>
+																<String>${ediarum_project_domain}${ediarum_projects_directory}${ediarum_project_name}${ANT_textClassFunction}</String>
 															</entry>
 															<entry>
 																<String>element</String>
@@ -15536,7 +15536,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_textClass_02</String>
+											<String>ANT_textClass_02</String>
 										</field>
 										<field name="name">
 											<String>Textklasse 02: sort</String>
@@ -15594,7 +15594,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_pb[break]</String>
+											<String>ANT_pb[break]</String>
 										</field>
 										<field name="name">
 											<String>Foliowechsel im Wort</String>
@@ -15644,7 +15644,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_cb[break]</String>
+											<String>ANT_cb[break]</String>
 										</field>
 										<field name="name">
 											<String>Spaltenumbruch im Wort</String>
@@ -15694,7 +15694,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_nomSac_abbr</String>
+											<String>ANT_nomSac_abbr</String>
 										</field>
 										<field name="name">
 											<String>Nomina Sacra insert abbr</String>
@@ -15768,7 +15768,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_symbol_symbols_06</String>
+											<String>ANT_symbol_symbols_06</String>
 										</field>
 										<field name="name">
 											<String>Symbole: Griechisches Nummernzeichen</String>
@@ -15814,7 +15814,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_symbol_symbols_07</String>
+											<String>ANT_symbol_symbols_07</String>
 										</field>
 										<field name="name">
 											<String>Mittelpunkt</String>
@@ -15860,7 +15860,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_seg[@type=psq]</String>
+											<String>ANT_seg[@type=psq]</String>
 										</field>
 										<field name="name">
 											<String>Pseudo-Zitat</String>
@@ -15906,7 +15906,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_seg[@type=allusion]</String>
+											<String>ANT_seg[@type=allusion]</String>
 										</field>
 										<field name="name">
 											<String>Anspielung</String>
@@ -15952,7 +15952,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_quote</String>
+											<String>ANT_quote</String>
 										</field>
 										<field name="name">
 											<String>Zitat</String>
@@ -15998,10 +15998,10 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_writingSession_edition</String>
+											<String>ANT_writingSession_edition</String>
 										</field>
 										<field name="name">
-											<String>pta_writingSession_edition</String>
+											<String>ANT_writingSession_edition</String>
 										</field>
 										<field name="description">
 											<String>Teil einer MultipleAction</String>
@@ -16052,10 +16052,10 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_writingSession[@n]</String>
+											<String>ANT_writingSession[@n]</String>
 										</field>
 										<field name="name">
-											<String>pta_writingSession[@n]</String>
+											<String>ANT_writingSession[@n]</String>
 										</field>
 										<field name="description">
 											<String>Teil einer MultipleAction: Wenn @subtype folgende Werte hat, muss eine Abfrage zur Zählung oder Bibelstellenangabe erfolgen</String>
@@ -16274,7 +16274,7 @@ revisionDesc[2]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_writingSession_edition_all</String>
+											<String>ANT_writingSession_edition_all</String>
 										</field>
 										<field name="name">
 											<String>Neue Sektion beginnen</String>
@@ -16304,8 +16304,8 @@ revisionDesc[2]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_writingSession_edition
-pta_writingSession[@n]</String>
+																<String>ANT_writingSession_edition
+ANT_writingSession[@n]</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -16321,7 +16321,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_sic</String>
+											<String>ANT_sic</String>
 										</field>
 										<field name="name">
 											<String>Crux</String>
@@ -16367,7 +16367,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_witStart</String>
+											<String>ANT_witStart</String>
 										</field>
 										<field name="name">
 											<String>Beginn einer Handschrift (Textzeugengruppe)</String>
@@ -16445,7 +16445,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_witEnd</String>
+											<String>ANT_witEnd</String>
 										</field>
 										<field name="name">
 											<String>Ende einer Handschrift (Textzeugengruppe)</String>
@@ -16523,7 +16523,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_lacunaStart</String>
+											<String>ANT_lacunaStart</String>
 										</field>
 										<field name="name">
 											<String>Beginn einer Lücke in einer Handschrift (Textzeugengruppe)</String>
@@ -16601,7 +16601,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_lacunaEnd</String>
+											<String>ANT_lacunaEnd</String>
 										</field>
 										<field name="name">
 											<String>Ende einer Lücke in einer Handschrift (Textzeugengruppe)</String>
@@ -16679,7 +16679,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[wit]</String>
+											<String>ANT_rdg[wit]</String>
 										</field>
 										<field name="name">
 											<String>Handschrift hinzufügen</String>
@@ -16813,7 +16813,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@cause=orthographic]</String>
+											<String>ANT_rdg[@cause=orthographic]</String>
 										</field>
 										<field name="name">
 											<String>orthographische Variante</String>
@@ -16939,7 +16939,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@cause=homoioteleuton]</String>
+											<String>ANT_rdg[@cause=homoioteleuton]</String>
 										</field>
 										<field name="name">
 											<String>Homoioteleuton</String>
@@ -17065,7 +17065,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@cause=dittography]</String>
+											<String>ANT_rdg[@cause=dittography]</String>
 										</field>
 										<field name="name">
 											<String>Dittographie</String>
@@ -17191,7 +17191,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@cause=homoiarkton]</String>
+											<String>ANT_rdg[@cause=homoiarkton]</String>
 										</field>
 										<field name="name">
 											<String>Homoiarkton</String>
@@ -17317,7 +17317,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@cause=saut_du_meme]</String>
+											<String>ANT_rdg[@cause=saut_du_meme]</String>
 										</field>
 										<field name="name">
 											<String>saut du même</String>
@@ -17443,7 +17443,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@wit @type=addition]_1</String>
+											<String>ANT_rdg[@wit @type=addition]_1</String>
 										</field>
 										<field name="name">
 											<String>Hinzufügung (in Handschrift)_1</String>
@@ -17580,7 +17580,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=omission]_1</String>
+											<String>ANT_rdg[@type=omission]_1</String>
 										</field>
 										<field name="name">
 											<String>Auslassung (in Handschrift)_1</String>
@@ -17706,7 +17706,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@wit @type=deletion]</String>
+											<String>ANT_rdg[@wit @type=deletion]</String>
 										</field>
 										<field name="name">
 											<String>Löschung (in Handschrift)</String>
@@ -17832,7 +17832,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=illegible]</String>
+											<String>ANT_rdg[@type=illegible]</String>
 										</field>
 										<field name="name">
 											<String>Nicht lesbarer Text</String>
@@ -17958,7 +17958,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=damage]</String>
+											<String>ANT_rdg[@type=damage]</String>
 										</field>
 										<field name="name">
 											<String>Lücke (Beschädigung)</String>
@@ -18084,7 +18084,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=fenestra]</String>
+											<String>ANT_rdg[@type=fenestra]</String>
 										</field>
 										<field name="name">
 											<String>Lücke (freigelassen)</String>
@@ -18210,7 +18210,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=transposition]</String>
+											<String>ANT_rdg[@type=transposition]</String>
 										</field>
 										<field name="name">
 											<String>Umstellung (klein)</String>
@@ -18336,7 +18336,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg_pers/source/wit</String>
+											<String>ANT_rdg_pers/source/wit</String>
 										</field>
 										<field name="name">
 											<String>Wahl resp/source/wit</String>
@@ -18522,7 +18522,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_conjecture_2</String>
+											<String>ANT_conjecture_2</String>
 										</field>
 										<field name="name">
 											<String>Lemma (Konjektur)</String>
@@ -18600,7 +18600,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_conjecture_1</String>
+											<String>ANT_conjecture_1</String>
 										</field>
 										<field name="name">
 											<String>Reading (Konjektur)</String>
@@ -18648,7 +18648,7 @@ pta_writingSession[@n]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_conjecture</String>
+											<String>ANT_conjecture</String>
 										</field>
 										<field name="name">
 											<String>Konjektur</String>
@@ -18678,8 +18678,8 @@ pta_writingSession[@n]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_conjecture_1
-pta_conjecture_2
+																<String>ANT_conjecture_1
+ANT_conjecture_2
 </String>
 															</entry>
 														</serializableOrderedMap>
@@ -18696,7 +18696,7 @@ pta_conjecture_2
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_correction_2</String>
+											<String>ANT_correction_2</String>
 										</field>
 										<field name="name">
 											<String>Lemma (Korrektur)</String>
@@ -18774,7 +18774,7 @@ pta_conjecture_2
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_correction</String>
+											<String>ANT_correction</String>
 										</field>
 										<field name="name">
 											<String>Korrektur</String>
@@ -18804,8 +18804,8 @@ pta_conjecture_2
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_correction_1
-pta_correction_2
+																<String>ANT_correction_1
+ANT_correction_2
 </String>
 															</entry>
 														</serializableOrderedMap>
@@ -18822,7 +18822,7 @@ pta_correction_2
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_lem[@type=deletion]</String>
+											<String>ANT_lem[@type=deletion]</String>
 										</field>
 										<field name="name">
 											<String>Lemma (Tilgung)</String>
@@ -18900,7 +18900,7 @@ pta_correction_2
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_deletion</String>
+											<String>ANT_deletion</String>
 										</field>
 										<field name="name">
 											<String>Tilgung</String>
@@ -18930,8 +18930,8 @@ pta_correction_2
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_conjecture_1
-pta_lem[@type=deletion]
+																<String>ANT_conjecture_1
+ANT_lem[@type=deletion]
 </String>
 															</entry>
 														</serializableOrderedMap>
@@ -18948,7 +18948,7 @@ pta_lem[@type=deletion]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_addition</String>
+											<String>ANT_addition</String>
 										</field>
 										<field name="name">
 											<String>Hinzufügung</String>
@@ -19022,7 +19022,7 @@ pta_lem[@type=deletion]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[source]</String>
+											<String>ANT_rdg[source]</String>
 										</field>
 										<field name="name">
 											<String>Edition hinzufügen</String>
@@ -19156,7 +19156,7 @@ pta_lem[@type=deletion]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[resp]</String>
+											<String>ANT_rdg[resp]</String>
 										</field>
 										<field name="name">
 											<String>Konjektor:in hinzufügen</String>
@@ -19290,7 +19290,7 @@ pta_lem[@type=deletion]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@varSeq]</String>
+											<String>ANT_rdg[@varSeq]</String>
 										</field>
 										<field name="name">
 											<String>Korrektur durch Schreiber/Korrektor</String>
@@ -19363,7 +19363,7 @@ ${ask('Ort der Korrektur',combobox,('supralinear':'über der Zeile';'marginal':'
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_app[@xml:id]_1</String>
+											<String>ANT_app[@xml:id]_1</String>
 										</field>
 										<field name="name">
 											<String>Umstellung (groß, erstens: Auslassung)</String>
@@ -19423,7 +19423,7 @@ ${id}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_app[@xml:id]_2</String>
+											<String>ANT_app[@xml:id]_2</String>
 										</field>
 										<field name="name">
 											<String>Umstellung (groß, zweitens: Hinzufügung)</String>
@@ -19505,7 +19505,7 @@ ${id}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg_Luecke</String>
+											<String>ANT_rdg_Luecke</String>
 										</field>
 										<field name="name">
 											<String>Lücke (in Handschrift)</String>
@@ -19631,7 +19631,7 @@ ${id}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_lem[@xml:id]</String>
+											<String>ANT_lem[@xml:id]</String>
 										</field>
 										<field name="name">
 											<String>Identifikator</String>
@@ -19725,7 +19725,7 @@ ${id}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_lem[@copyOf]</String>
+											<String>ANT_lem[@copyOf]</String>
 										</field>
 										<field name="name">
 											<String>identische Variante</String>
@@ -19843,7 +19843,7 @@ ${id}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg_identische_Variante</String>
+											<String>ANT_rdg_identische_Variante</String>
 										</field>
 										<field name="name">
 											<String>identische Korrektur</String>
@@ -19873,8 +19873,8 @@ ${id}</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_lem[@xml:id]
-pta_lem[@copyOf]</String>
+																<String>ANT_lem[@xml:id]
+ANT_lem[@copyOf]</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -19890,7 +19890,7 @@ pta_lem[@copyOf]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_said</String>
+											<String>ANT_said</String>
 										</field>
 										<field name="name">
 											<String>direkte Rede</String>
@@ -19936,7 +19936,7 @@ pta_lem[@copyOf]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=proposition]_1</String>
+											<String>ANT_rdg[@type=proposition]_1</String>
 										</field>
 										<field name="name">
 											<String>Konjektur (Vorschlag)_1</String>
@@ -20006,7 +20006,7 @@ pta_lem[@copyOf]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=conjecture]</String>
+											<String>ANT_rdg[@type=conjecture]</String>
 										</field>
 										<field name="name">
 											<String>Konjektur (nicht übernommen)</String>
@@ -20036,9 +20036,9 @@ pta_lem[@copyOf]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg[@type=conjecture]_1
-pta_rdg_pers/source/wit
-pta_@[remove]
+																<String>ANT_rdg[@type=conjecture]_1
+ANT_rdg_pers/source/wit
+ANT_@[remove]
 </String>
 															</entry>
 														</serializableOrderedMap>
@@ -20055,7 +20055,7 @@ pta_@[remove]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@wit @type=addition]</String>
+											<String>ANT_rdg[@wit @type=addition]</String>
 										</field>
 										<field name="name">
 											<String>Hinzufügung (in Handschrift)</String>
@@ -20085,9 +20085,9 @@ pta_@[remove]
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg[@wit @type=addition]_1
-pta_moveCaret
-pta_@[remove]</String>
+																<String>ANT_rdg[@wit @type=addition]_1
+ANT_moveCaret
+ANT_@[remove]</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -20103,7 +20103,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=omission] - Kopie</String>
+											<String>ANT_rdg[@type=omission] - Kopie</String>
 										</field>
 										<field name="name">
 											<String>Auslassung (in Handschrift)</String>
@@ -20133,9 +20133,9 @@ pta_@[remove]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg[@type=omission]_1
-pta_moveCaret
-pta_@[remove]</String>
+																<String>ANT_rdg[@type=omission]_1
+ANT_moveCaret
+ANT_@[remove]</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -20151,7 +20151,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=conjecture]_1</String>
+											<String>ANT_rdg[@type=conjecture]_1</String>
 										</field>
 										<field name="name">
 											<String>Konjektur (nicht übernommen)_1</String>
@@ -20221,7 +20221,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=conjecture]_2</String>
+											<String>ANT_rdg[@type=conjecture]_2</String>
 										</field>
 										<field name="name">
 											<String>Konjektur (nicht übernommen)_2</String>
@@ -20407,7 +20407,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=proposition]</String>
+											<String>ANT_rdg[@type=proposition]</String>
 										</field>
 										<field name="name">
 											<String>Konjektur (Vorschlag)</String>
@@ -20437,10 +20437,10 @@ pta_@[remove]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg[@type=proposition]_1
-pta_rdg_pers/source/wit
-pta_@[remove]
-pta_@[remove]
+																<String>ANT_rdg[@type=proposition]_1
+ANT_rdg_pers/source/wit
+ANT_@[remove]
+ANT_@[remove]
 </String>
 															</entry>
 														</serializableOrderedMap>
@@ -20457,7 +20457,7 @@ pta_@[remove]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=deletion]</String>
+											<String>ANT_rdg[@type=deletion]</String>
 										</field>
 										<field name="name">
 											<String>Tilgung (nicht übernommen)</String>
@@ -20487,9 +20487,9 @@ pta_@[remove]
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg[@type=deletion]_1
-pta_rdg_pers/source/wit
-pta_@[remove]
+																<String>ANT_rdg[@type=deletion]_1
+ANT_rdg_pers/source/wit
+ANT_@[remove]
 
 </String>
 															</entry>
@@ -20507,7 +20507,7 @@ pta_@[remove]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=lacunam_indicavit]_1</String>
+											<String>ANT_rdg[@type=lacunam_indicavit]_1</String>
 										</field>
 										<field name="name">
 											<String>Lücke vermutet (nicht übernommen)_1</String>
@@ -20577,7 +20577,7 @@ pta_@[remove]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=addition]</String>
+											<String>ANT_rdg[@type=addition]</String>
 										</field>
 										<field name="name">
 											<String>Hinzufügung (nicht übernommen)</String>
@@ -20607,9 +20607,9 @@ pta_@[remove]
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg[@type=addition]_1
-pta_rdg_pers/source/wit
-pta_@[remove]
+																<String>ANT_rdg[@type=addition]_1
+ANT_rdg_pers/source/wit
+ANT_@[remove]
 
 </String>
 															</entry>
@@ -20627,7 +20627,7 @@ pta_@[remove]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=addition]_1</String>
+											<String>ANT_rdg[@type=addition]_1</String>
 										</field>
 										<field name="name">
 											<String>Hinzufügung (nicht übernommen)_1</String>
@@ -20697,7 +20697,7 @@ pta_@[remove]
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=lacunam_indicavit]</String>
+											<String>ANT_rdg[@type=lacunam_indicavit]</String>
 										</field>
 										<field name="name">
 											<String>Lücke vermutet (nicht übernommen)</String>
@@ -20727,8 +20727,8 @@ pta_@[remove]
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg[@type=lacunam_indicavit]_1
-pta_rdg_pers/source/wit
+																<String>ANT_rdg[@type=lacunam_indicavit]_1
+ANT_rdg_pers/source/wit
 
 
 </String>
@@ -20747,7 +20747,7 @@ pta_rdg_pers/source/wit
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_seg[@type=similar]</String>
+											<String>ANT_seg[@type=similar]</String>
 										</field>
 										<field name="name">
 											<String>Simile</String>
@@ -20793,7 +20793,7 @@ pta_rdg_pers/source/wit
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_seg[@type=source]</String>
+											<String>ANT_seg[@type=source]</String>
 										</field>
 										<field name="name">
 											<String>Quelle</String>
@@ -20839,7 +20839,7 @@ pta_rdg_pers/source/wit
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg_1</String>
+											<String>ANT_rdg_1</String>
 										</field>
 										<field name="name">
 											<String>neue Variante_1</String>
@@ -20909,7 +20909,7 @@ pta_rdg_pers/source/wit
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg</String>
+											<String>ANT_rdg</String>
 										</field>
 										<field name="name">
 											<String>neue Variante</String>
@@ -20939,9 +20939,9 @@ pta_rdg_pers/source/wit
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_rdg_1
-pta_rdg_pers/source/wit
-pta_@[remove]</String>
+																<String>ANT_rdg_1
+ANT_rdg_pers/source/wit
+ANT_@[remove]</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -20957,7 +20957,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdg[@type=deletion]_1</String>
+											<String>ANT_rdg[@type=deletion]_1</String>
 										</field>
 										<field name="name">
 											<String>Tilgung (nicht übernommen)_1</String>
@@ -21027,7 +21027,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_correction_1</String>
+											<String>ANT_correction_1</String>
 										</field>
 										<field name="name">
 											<String>Reading (Korrektur)</String>
@@ -21075,7 +21075,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_rdgGrp</String>
+											<String>ANT_rdgGrp</String>
 										</field>
 										<field name="name">
 											<String>Variantengruppe einfügen</String>
@@ -21121,7 +21121,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_var_listWit</String>
+											<String>ANT_var_listWit</String>
 										</field>
 										<field name="name">
 											<String>Handschriftlichen Zeugen hinzufügen</String>
@@ -21300,7 +21300,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_pb/@edRef_check</String>
+											<String>ANT_pb/@edRef_check</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Handschrift bzw. Edition 1</String>
@@ -21354,7 +21354,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_pb/@edRef_insert</String>
+											<String>ANT_pb/@edRef_insert</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf eine Handschrift</String>
@@ -21520,7 +21520,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_pb/@edRef</String>
+											<String>ANT_pb/@edRef</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Handschrift bzw. Edition</String>
@@ -21550,8 +21550,8 @@ pta_@[remove]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_pb/@edRef_check
-pta_pb/@edRef_insert</String>
+																<String>ANT_pb/@edRef_check
+ANT_pb/@edRef_insert</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -21567,7 +21567,7 @@ pta_pb/@edRef_insert</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_gap[edition]_insert</String>
+											<String>ANT_gap[edition]_insert</String>
 										</field>
 										<field name="name">
 											<String>Lücke im Text</String>
@@ -21613,7 +21613,7 @@ pta_pb/@edRef_insert</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_remove_attributes</String>
+											<String>ANT_remove_attributes</String>
 										</field>
 										<field name="name">
 											<String>Entferne überflüssige Attribute</String>
@@ -21664,7 +21664,7 @@ quantity</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_@source</String>
+											<String>ANT_@source</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf frühere Edition</String>
@@ -21742,7 +21742,7 @@ quantity</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_@resp</String>
+											<String>ANT_@resp</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Konjektor:in</String>
@@ -21820,7 +21820,7 @@ quantity</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_var_get_witness_@source</String>
+											<String>ANT_var_get_witness_@source</String>
 										</field>
 										<field name="name">
 											<String>Abschrift verlinken</String>
@@ -21938,7 +21938,7 @@ quantity</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_var_origDate[@when_@notBefore_@notAfter]</String>
+											<String>ANT_var_origDate[@when_@notBefore_@notAfter]</String>
 										</field>
 										<field name="name">
 											<String>maschinenlesbare Datierung</String>
@@ -22018,7 +22018,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_var_listBibl</String>
+											<String>ANT_var_listBibl</String>
 										</field>
 										<field name="name">
 											<String>Zeugen frühere Editionen hinzufügen</String>
@@ -22207,7 +22207,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_var_listWit_group</String>
+											<String>ANT_var_listWit_group</String>
 										</field>
 										<field name="name">
 											<String>Handschriftliche Zeugengruppe hinzufügen</String>
@@ -22336,7 +22336,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_persName/@ref</String>
+											<String>ANT_persName/@ref</String>
 										</field>
 										<field name="name">
 											<String>GND des:r Konjektor:in ergänzen</String>
@@ -22390,7 +22390,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_note_konjektor_in</String>
+											<String>ANT_note_konjektor_in</String>
 										</field>
 										<field name="name">
 											<String>Zitierangabe (Konjektor:in)</String>
@@ -22444,7 +22444,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_witness_locus</String>
+											<String>ANT_witness_locus</String>
 										</field>
 										<field name="name">
 											<String>Folia bzw. Seiten maschinenlesbar hinterlegen</String>
@@ -22500,7 +22500,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_witness/name[@key]</String>
+											<String>ANT_witness/name[@key]</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Handschriftenbeschreibung der Handschrift</String>
@@ -22554,7 +22554,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_bibl/@facs</String>
+											<String>ANT_bibl/@facs</String>
 										</field>
 										<field name="name">
 											<String>Faksimile ergänzen</String>
@@ -22608,7 +22608,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_var_get_witness/@source_Konjektor:in</String>
+											<String>ANT_var_get_witness/@source_Konjektor:in</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf eine Handschrift (Konjektor:in)</String>
@@ -22726,7 +22726,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_var_listPerson</String>
+											<String>ANT_var_listPerson</String>
 										</field>
 										<field name="name">
 											<String>Konjektor:innen hinzufügen</String>
@@ -22818,7 +22818,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_var_listBibl_group</String>
+											<String>ANT_var_listBibl_group</String>
 										</field>
 										<field name="name">
 											<String>Gruppe von Zeugen frühere Editionen hinzufügen</String>
@@ -22952,7 +22952,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_add_del[hand] -</String>
+											<String>ANT_add_del[hand] -</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Hand (Hinzufügung/Tilgung)</String>
@@ -23036,7 +23036,7 @@ ${ask('Urheber der Tilgung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_subst[hand]</String>
+											<String>ANT_subst[hand]</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Hand (Ersetzung)</String>
@@ -23066,8 +23066,8 @@ ${ask('Urheber der Tilgung',combobox,('m1':'Schreiber';'m2':'Korrektor 1';'m3':'
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_subst[hand]_1
-pta_subst[hand]_2</String>
+																<String>ANT_subst[hand]_1
+ANT_subst[hand]_2</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -23083,9 +23083,9 @@ pta_subst[hand]_2</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>pta_subst[hand]_1
-pta_moveCaret
-pta_@[remove]</String>
+																<String>ANT_subst[hand]_1
+ANT_moveCaret
+ANT_@[remove]</String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -23101,7 +23101,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_subst[hand]_2</String>
+											<String>ANT_subst[hand]_2</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Hand (Ersetzung) - Tilgung @rend</String>
@@ -23155,7 +23155,7 @@ pta_@[remove]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_subst[hand]_1</String>
+											<String>ANT_subst[hand]_1</String>
 										</field>
 										<field name="name">
 											<String>Verweis auf Hand (Ersetzung) - Einfügen @hand</String>
@@ -23247,7 +23247,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<serializableOrderedMap>
 															<entry>
 																<String>URL</String>
-																<String>${pta_personenregister}</String>
+																<String>${ANT_personenregister}</String>
 															</entry>
 															<entry>
 																<String>element</String>
@@ -23291,7 +23291,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_subst_del_repurposed</String>
+											<String>ANT_subst_del_repurposed</String>
 										</field>
 										<field name="name">
 											<String>Korrektur durch Hinzufügung von Diakritika</String>
@@ -23337,7 +23337,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>pta_retrace</String>
+											<String>ANT_retrace</String>
 										</field>
 										<field name="name">
 											<String>Korrektur durch Überschreiben bzw. Nachzeichnen des ursprünglichen Textes</String>
@@ -23443,12 +23443,12 @@ or ancestor-or-self::p[parent::physDesc]</String>
 																<menuEntry-array>
 																	<menuItem>
 																		<field name="actionID">
-																			<String>pta_lb</String>
+																			<String>ANT_lb</String>
 																		</field>
 																	</menuItem>
 																	<menuItem>
 																		<field name="actionID">
-																			<String>pta_lb[break]</String>
+																			<String>ANT_lb[break]</String>
 																		</field>
 																	</menuItem>
 																</menuEntry-array>
@@ -23481,7 +23481,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 																	</menuItem>
 																	<menuItem>
 																		<field name="actionID">
-																			<String>pta_cb</String>
+																			<String>ANT_cb</String>
 																		</field>
 																	</menuItem>
 																</menuEntry-array>
@@ -23493,17 +23493,17 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<menuSeparator/>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_writingSession</String>
+																<String>ANT_writingSession</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_head</String>
+																<String>ANT_head</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_div/@n</String>
+																<String>ANT_div/@n</String>
 															</field>
 														</menuItem>
 													</menuEntry-array>
@@ -23642,7 +23642,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_respStmt</String>
+																<String>ANT_respStmt</String>
 															</field>
 														</menuItem>
 														<menu>
@@ -23659,7 +23659,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 																<menuEntry-array>
 																	<menuItem>
 																		<field name="actionID">
-																			<String>pta_revisionDesc</String>
+																			<String>ANT_revisionDesc</String>
 																		</field>
 																	</menuItem>
 																	<menuItem>
@@ -23713,37 +23713,37 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_var_get_witness/@source_Konjektor:in</String>
+																<String>ANT_var_get_witness/@source_Konjektor:in</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_witness/name[@key]</String>
+																<String>ANT_witness/name[@key]</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_note_konjektor_in</String>
+																<String>ANT_note_konjektor_in</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_persName/@ref</String>
+																<String>ANT_persName/@ref</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_witness_locus</String>
+																<String>ANT_witness_locus</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_bibl/@facs</String>
+																<String>ANT_bibl/@facs</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_var_origDate[@when_@notBefore_@notAfter]</String>
+																<String>ANT_var_origDate[@when_@notBefore_@notAfter]</String>
 															</field>
 														</menuItem>
 													</menuEntry-array>
@@ -23766,27 +23766,27 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_rdg[wit]</String>
+																<String>ANT_rdg[wit]</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_rdg[source]</String>
+																<String>ANT_rdg[source]</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_rdg[resp]</String>
+																<String>ANT_rdg[resp]</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_add_del[hand] -</String>
+																<String>ANT_add_del[hand] -</String>
 															</field>
 														</menuItem>
 														<menuItem>
 															<field name="actionID">
-																<String>pta_subst[hand]</String>
+																<String>ANT_subst[hand]</String>
 															</field>
 														</menuItem>
 													</menuEntry-array>
@@ -23868,12 +23868,12 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_lb</String>
+																<String>ANT_lb</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_lb[break]</String>
+																<String>ANT_lb[break]</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
@@ -23896,33 +23896,33 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_pb</String>
+																<String>ANT_pb</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_pb[break]</String>
+																<String>ANT_pb[break]</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_pb[facs]</String>
+																<String>ANT_pb[facs]</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_cb</String>
+																<String>ANT_cb</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_cb[break]</String>
+																<String>ANT_cb[break]</String>
 															</field>
 														</toolbarItem>
 														<toolbarSeparator/>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_@facs</String>
+																<String>ANT_@facs</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
@@ -23930,34 +23930,34 @@ or ancestor-or-self::p[parent::physDesc]</String>
 											</toolbar>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_note[Marginalie]</String>
+													<String>ANT_note[Marginalie]</String>
 												</field>
 											</toolbarItem>
 											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_hi[initiale|ekthesis]</String>
+													<String>ANT_hi[initiale|ekthesis]</String>
 												</field>
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_hi[rubricated]</String>
+													<String>ANT_hi[rubricated]</String>
 												</field>
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_hi[underline]</String>
+													<String>ANT_hi[underline]</String>
 												</field>
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_hi[overline]</String>
+													<String>ANT_hi[overline]</String>
 												</field>
 											</toolbarItem>
 											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_del</String>
+													<String>ANT_del</String>
 												</field>
 											</toolbarItem>
 											<toolbar>
@@ -23977,17 +23977,17 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_subst</String>
+																<String>ANT_subst</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_subst_del_repurposed</String>
+																<String>ANT_subst_del_repurposed</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_retrace</String>
+																<String>ANT_retrace</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
@@ -23995,28 +23995,28 @@ or ancestor-or-self::p[parent::physDesc]</String>
 											</toolbar>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_add</String>
+													<String>ANT_add</String>
 												</field>
 											</toolbarItem>
 											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_unclear</String>
+													<String>ANT_unclear</String>
 												</field>
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_gap</String>
+													<String>ANT_gap</String>
 												</field>
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_gap_reason-Abfrage</String>
+													<String>ANT_gap_reason-Abfrage</String>
 												</field>
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
-													<String>pta_del_gap</String>
+													<String>ANT_del_gap</String>
 												</field>
 											</toolbarItem>
 											<toolbarSeparator/>
@@ -24037,12 +24037,12 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_abbr-expan_all</String>
+																<String>ANT_abbr-expan_all</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_nomSac_all</String>
+																<String>ANT_nomSac_all</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
@@ -24066,7 +24066,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_persName</String>
+																<String>ANT_persName</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
@@ -24095,22 +24095,22 @@ or ancestor-or-self::p[parent::physDesc]</String>
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_author</String>
+																<String>ANT_author</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_@hand</String>
+																<String>ANT_@hand</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_@hand[unknown]</String>
+																<String>ANT_@hand[unknown]</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>pta_handshift</String>
+																<String>ANT_handshift</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
@@ -24154,30 +24154,30 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<toolbarEntry-array>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_altIdentifier</String>
+																	<String>ANT_altIdentifier</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_textClass</String>
+																	<String>ANT_textClass</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_handDesc_all</String>
+																	<String>ANT_handDesc_all</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_handNote[manus_recentior]_all</String>
+																	<String>ANT_handNote[manus_recentior]_all</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_msDesc/physDesc</String>
+																	<String>ANT_msDesc/physDesc</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>
@@ -24218,48 +24218,48 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<toolbarEntry-array>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_g[diple]</String>
+																	<String>ANT_g[diple]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_g[paragraphos]</String>
+																	<String>ANT_g[paragraphos]</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_symbol_symbols_01</String>
+																	<String>ANT_symbol_symbols_01</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_symbol_symbols_02</String>
+																	<String>ANT_symbol_symbols_02</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_symbol_symbols_03</String>
+																	<String>ANT_symbol_symbols_03</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_symbol_symbols_04</String>
+																	<String>ANT_symbol_symbols_04</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_symbol_symbols_05</String>
+																	<String>ANT_symbol_symbols_05</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_symbol_symbols_06</String>
+																	<String>ANT_symbol_symbols_06</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_symbol_symbols_07</String>
+																	<String>ANT_symbol_symbols_07</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>
@@ -24346,29 +24346,29 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<toolbarEntry-array>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_var_listWit</String>
+																	<String>ANT_var_listWit</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_var_listWit_group</String>
-																</field>
-															</toolbarItem>
-															<toolbarSeparator/>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_var_listBibl</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_var_listBibl_group</String>
+																	<String>ANT_var_listWit_group</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_var_listPerson</String>
+																	<String>ANT_var_listBibl</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>ANT_var_listBibl_group</String>
+																</field>
+															</toolbarItem>
+															<toolbarSeparator/>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>ANT_var_listPerson</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>
@@ -24391,38 +24391,38 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<toolbarEntry-array>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_conjecture</String>
+																	<String>ANT_conjecture</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_correction</String>
+																	<String>ANT_correction</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_deletion</String>
+																	<String>ANT_deletion</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_addition</String>
+																	<String>ANT_addition</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_sic</String>
+																	<String>ANT_sic</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[source]</String>
+																	<String>ANT_rdg[source]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[resp]</String>
+																	<String>ANT_rdg[resp]</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>
@@ -24445,94 +24445,94 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<toolbarEntry-array>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg</String>
+																	<String>ANT_rdg</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdgGrp</String>
+																	<String>ANT_rdgGrp</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@cause=orthographic]</String>
+																	<String>ANT_rdg[@cause=orthographic]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@wit @type=addition]</String>
+																	<String>ANT_rdg[@wit @type=addition]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@type=omission] - Kopie</String>
+																	<String>ANT_rdg[@type=omission] - Kopie</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@wit @type=deletion]</String>
+																	<String>ANT_rdg[@wit @type=deletion]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@type=illegible]</String>
+																	<String>ANT_rdg[@type=illegible]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg_Luecke</String>
+																	<String>ANT_rdg_Luecke</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@varSeq]</String>
+																	<String>ANT_rdg[@varSeq]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[@type=transposition]</String>
-																</field>
-															</toolbarItem>
-															<toolbarSeparator/>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@type=conjecture]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@type=proposition]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@type=deletion]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@type=addition]</String>
-																</field>
-															</toolbarItem>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>pta_rdg[@type=lacunam_indicavit]</String>
+																	<String>ANT_rdg[@type=transposition]</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[wit]</String>
+																	<String>ANT_rdg[@type=conjecture]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[source]</String>
+																	<String>ANT_rdg[@type=proposition]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[resp]</String>
+																	<String>ANT_rdg[@type=deletion]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>ANT_rdg[@type=addition]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>ANT_rdg[@type=lacunam_indicavit]</String>
+																</field>
+															</toolbarItem>
+															<toolbarSeparator/>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>ANT_rdg[wit]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>ANT_rdg[source]</String>
+																</field>
+															</toolbarItem>
+															<toolbarItem>
+																<field name="actionID">
+																	<String>ANT_rdg[resp]</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>
@@ -24555,27 +24555,27 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<toolbarEntry-array>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_witStart</String>
+																	<String>ANT_witStart</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_witEnd</String>
+																	<String>ANT_witEnd</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_lacunaStart</String>
+																	<String>ANT_lacunaStart</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_lacunaEnd</String>
+																	<String>ANT_lacunaEnd</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_rdg[wit]</String>
+																	<String>ANT_rdg[wit]</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>
@@ -24598,60 +24598,37 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<toolbarEntry-array>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_quote</String>
+																	<String>ANT_quote</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_seg[@type=allusion]</String>
+																	<String>ANT_seg[@type=allusion]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_seg[@type=psq]</String>
+																	<String>ANT_seg[@type=psq]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_seg[@type=similar]</String>
+																	<String>ANT_seg[@type=similar]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_seg[@type=source]</String>
+																	<String>ANT_seg[@type=source]</String>
 																</field>
 															</toolbarItem>
 															<toolbarItem>
 																<field name="actionID">
-																	<String>pta_said</String>
+																	<String>ANT_said</String>
 																</field>
 															</toolbarItem>
 														</toolbarEntry-array>
 													</field>
 												</toolbar>
-											</toolbarEntry-array>
-										</field>
-									</toolbar>
-									<toolbar>
-										<field name="id">
-											<String>tester</String>
-										</field>
-										<field name="type">
-											<Integer>2</Integer>
-										</field>
-										<field name="largeIconPath">
-											<null/>
-										</field>
-										<field name="smallIconPath">
-											<null/>
-										</field>
-										<field name="toolbarEntriesDescriptorList">
-											<toolbarEntry-array>
-												<toolbarItem>
-													<field name="actionID">
-														<String>00_persName_test</String>
-													</field>
-												</toolbarItem>
 											</toolbarEntry-array>
 										</field>
 									</toolbar>
@@ -24705,7 +24682,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 						<String-array/>
 					</field>
 					<field name="description">
-						<String>Oxygen XML Framework for ediarum.BASE, built on the "DTA Base Format" of the German Text Archive</String>
+						<String>Oxygen XML Framework for ediarum.ANTIQUITY</String>
 					</field>
 					<field name="doctypeRules">
 						<documentTypeRule-array>
