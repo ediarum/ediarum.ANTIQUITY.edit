@@ -23409,60 +23409,6 @@ ANT_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>ant_gb</String>
-										</field>
-										<field name="name">
-											<String>Foliowechsel</String>
-										</field>
-										<field name="description">
-											<String>Foliowechsel</String>
-										</field>
-										<field name="largeIconPath">
-											<String></String>
-										</field>
-										<field name="smallIconPath">
-											<String></String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>oxy:allows-child-element("gb")</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>fragment</String>
-																<String>&lt;gb xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Nummerierung des Bogenanfangs')}" /></String>
-															</entry>
-															<entry>
-																<String>insertLocation</String>
-																<String></String>
-															</entry>
-															<entry>
-																<String>insertPosition</String>
-																<String>Inside as first child</String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
 											<String>ANT_gb[break]</String>
 										</field>
 										<field name="name">
@@ -24229,11 +24175,6 @@ ANT_moveCaret</String>
 															</field>
 														</toolbarItem>
 														<toolbarSeparator/>
-														<toolbarItem>
-															<field name="actionID">
-																<String>ANT_gb</String>
-															</field>
-														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
 																<String>ANT_gb[break]</String>
