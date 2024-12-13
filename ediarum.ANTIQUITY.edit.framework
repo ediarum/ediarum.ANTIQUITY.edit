@@ -23386,13 +23386,13 @@ or ancestor-or-self::p[parent::physDesc]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("gb")</String>
+														<String>ancestor-or-self::text and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
-																<String>gb
+																<String>ANT_gb_1
 ANT_moveCaret</String>
 															</entry>
 														</serializableOrderedMap>
@@ -23537,7 +23537,7 @@ ANT_moveCaret</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("gb")</String>
+														<String>ancestor-or-self::text and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -23584,7 +23584,7 @@ ANT_moveCaret</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("gb")</String>
+														<String>ancestor-or-self::text and //TEI[@telota:doctype='transcription']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -23595,6 +23595,56 @@ ANT_moveCaret</String>
 															<entry>
 																<String>insertLocation</String>
 																<String></String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>Inside as first child</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>ANT_gb_1</String>
+										</field>
+										<field name="name">
+											<String>Bogenanfang</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction: Bogenanfang einfügen, der ein Wort trennt - allerdings ohne Trennzeichen</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::text and //TEI[@telota:doctype='transcription']</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;gb xmlns="http://www.tei-c.org/ns/1.0" n="${ask('Nummerierung des Bogenanfangs')}" />${caret}</String>
 															</entry>
 															<entry>
 																<String>insertPosition</String>
