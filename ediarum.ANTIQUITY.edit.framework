@@ -25578,7 +25578,7 @@ or ancestor-or-self::p[parent::physDesc]</String>
 														<Integer>4</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/schemata/tei-pta.rng</String>
+														<String>${framework}/schemata/ediarum_ANTIQUITY.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>
@@ -25592,14 +25592,14 @@ or ancestor-or-self::p[parent::physDesc]</String>
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>ediarum.PTA.edit</String>
+									<String>ediarum.ANTIQUITY.edit</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
 						<list>
-							<String>ediarum.PTA.edit</String>
+							<String>ediarum.ANTIQUITY.edit</String>
 						</list>
 					</field>
 					<field name="defaultTransformationScenarios">
