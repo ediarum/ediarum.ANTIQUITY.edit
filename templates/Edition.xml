@@ -13,18 +13,7 @@
         </respStmt>
       </titleStmt>
       <publicationStmt>
-        <authority ref="http://www.bbaw.de">Berlin-Brandenburgische Akademie der Wissenschaften</authority>
-        <distributor>Patristic Text Archive</distributor>
-        <availability>
-          <licence target="https://creativecommons.org/licenses/by-sa/4.0/">Available under a Creative Commons Attribution ShareAlike 4.0 International License</licence>
-        </availability>
-        <idno type="PTA"></idno>
-        <idno type="TLG"></idno>
-        <idno type="CPG"></idno>
-        <idno type="BHG"/>
-        <idno type="Aldama"/>
-        <idno type="Pinakes-Oeuvre"></idno>
-        <idno type="ClaCla"></idno>
+        <publisher>Herausgebende Institution</publisher>
       </publicationStmt>
       <sourceDesc>
         <msDesc rend="manuscript">
@@ -68,12 +57,10 @@
       </editorialDecl>
       <classDecl>
         <taxonomy xml:id="comphistsem">
-          <bibl> Text Type Classification by <ref target="https://www.comphistsem.org/46.html">"Computational Historical Semantics</ref></bibl>
+          <bibl>Text Type Classification by <ref target="https://www.comphistsem.org/46.html">"Computational Historical Semantics</ref></bibl>
         </taxonomy>
       </classDecl>
     </encodingDesc>
-    
-    
     <profileDesc>
       <creation>
         <date/>
