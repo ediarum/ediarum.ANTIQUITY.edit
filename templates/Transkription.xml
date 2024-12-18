@@ -3,7 +3,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title xml:lang="${ask('Schreibsprache eintragen', generic, 'la')}"/>
+        <title xml:lang="${ask('Schreibsprache eintragen', generic, 'la', @xmlLang)}"/>
         <author>${ask('Autor eintragen', generic, '')}</author>
         <respStmt>
           <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
@@ -57,7 +57,7 @@
         <head>
           <title/>
         </head>
-        <div type="textpart" subtype="${ask('Unterabschnitt der Transkription', combobox, ('section':'Fließtexte';'fragment':'fragmentarische Überlieferung';'commented':'Kommentar';'commentary':'vergleichbarer Text';), 'section')}">
+        <div type="textpart" subtype="${ask('Unterabschnitt der Transkription', combobox, ('section':'Fließtexte';'fragment':'fragmentarische Überlieferung';'commented':'Kommentar';'commentary':'vergleichbarer Text';), 'section')}" xml:lang="${answer(@xmlLang)}">
           <p></p>
         </div>
       </div>
