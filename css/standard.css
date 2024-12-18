@@ -239,7 +239,7 @@ msIdentifier[xml|id]{
 
 msIdentifier[xml|id=''],
 msIdentifier[xml|id='_']{
-    content: oxy_editor(type,button,actionID,pta_create_msIdentifier_xml-id); 
+    content: oxy_editor(type,button,actionID,ANT_create_msIdentifier_xml-id); 
 }
 
 
@@ -258,7 +258,7 @@ profileDesc creation placeName:empty{
 }
 
 textClass:empty{
-    content: oxy_editor(type, button, actionID, pta_textClass, transparent, true, color, black, text-align, right);
+    content: oxy_editor(type, button, actionID, ANT_textClass, transparent, true, color, black, text-align, right);
 }
 
 keywords:before{
@@ -563,7 +563,7 @@ revisionDesc[status='final']:before {
     }
  
 revisionDesc:after {
-        content: oxy_editor(type,button,actionID,pta_revisionDesc);
+        content: oxy_editor(type,button,actionID,ANT_revisionDesc);
     }
 
 
@@ -945,10 +945,10 @@ profileDesc creation:before{
 
 profileDesc creation date {
     display: block;
-    content: oxy_editor(type,button,actionID,pta_creation_date_when) " oder "oxy_editor(type,button,actionID,pta_creation_date_fromTo) " oder "oxy_editor(type,button,actionID,pta_creation_date_notBeforeNotAfter);
+    content: oxy_editor(type,button,actionID,ANT_creation_date_when) " oder "oxy_editor(type,button,actionID,ANT_creation_date_fromTo) " oder "oxy_editor(type,button,actionID,ANT_creation_date_notBeforeNotAfter);
 }
 
-/* pta_creation_date */
+/* ANT_creation_date */
 
 profileDesc creation placeName {
     display: block;
@@ -1025,12 +1025,12 @@ div head title{
 }
 
 div[type='transcription']:not([xml|lang]):before{
-    content: "Schreibsprache: " oxy_editor(type,button,actionID,pta_div_xml-lang);;
+    content: "Schreibsprache: " oxy_editor(type,button,actionID,ANT_div_xml-lang);;
     color:gray;
     background-color:#abbcff
 }
 
-/* pta_div/@xml:lang */
+/* ANT_div/@xml:lang */
 
 div[type='transcription'][xml|lang]:before{
     content: "Schreibsprache: " attr(xml|lang);
@@ -1120,11 +1120,11 @@ div[type='textpart'][subtype='commented']:before{
 
 
 div[type='transcription'] div[type='textpart']:after{
-    content: oxy_editor(type, button, actionID, pta_writingSession, transparent, true, color, black, text-align, right)" ";
+    content: oxy_editor(type, button, actionID, ANT_writingSession, transparent, true, color, black, text-align, right)" ";
 }
 
 div[type='edition'] div[type='textpart']:after{
-    content: oxy_editor(type, button, actionID, pta_writingSession_edition_all, transparent, true, color, black, text-align, right)" ";
+    content: oxy_editor(type, button, actionID, ANT_writingSession_edition_all, transparent, true, color, black, text-align, right)" ";
 }
 
 

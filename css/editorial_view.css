@@ -30,7 +30,7 @@ msIdentifier[xml|id]{
 
 
 div[type='transcription']:not([xml|lang])[n]:before{
-    content: "\A Transkription \A Schreibsprache: "oxy_editor(type,button,actionID,pta_div_xml-lang) "\A CTS-PTA-URN: " oxy_textfield(edit, "n",color, "black",columns, 30) "\A\A";
+    content: "\A Transkription \A Schreibsprache: "oxy_editor(type,button,actionID,ANT_div_xml-lang) "\A CTS-PTA-URN: " oxy_textfield(edit, "n",color, "black",columns, 30) "\A\A";
     font-size: 105%;
 }
 
