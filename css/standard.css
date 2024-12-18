@@ -123,7 +123,7 @@ respStmt resp note {
     -oxy-display-tags: none;
 }
 
-respStmt resp:before,
+respStmt:before,
 respStmt note:before{
     content: " (";
 
@@ -131,7 +131,7 @@ respStmt note:before{
 respStmt resp:after{
     content: " "
 }
-
+respStmt:after,
 respStmt note:after {
     content: ")";
 }
@@ -250,12 +250,12 @@ textClass:empty,
 titleStmt title:empty,
 titleStmt author:empty,
 publicationStmt date:empty,
-publicationStmt idno:empty,
-publicationStmt date:empty,
 profileDesc creation date:empty,
+publicationStmt idno:empty,
 profileDesc creation placeName:empty{
-    background-color:#abbcff
+    background-color:#abbcff;
 }
+
 
 textClass:empty{
     content: oxy_editor(type, button, actionID, ANT_textClass, transparent, true, color, black, text-align, right);
@@ -965,16 +965,19 @@ profileDesc creation date:before {
 profileDesc creation date[when] {
     content: oxy_editor(type,datePicker,edit,'@when',format,'yyyy-MM-dd');
     -oxy-display-tags: none;
+    background-color:transparent!important;
 }
 
 profileDesc creation date[from] {
     content: oxy_editor(type,datePicker,edit,'@from',format,'yyyy-MM-dd') " bis " oxy_editor(type,datePicker,edit,'@to',format,'yyyy-MM-dd');
     -oxy-display-tags: none;
+    background-color:transparent!important;
 }
 
 profileDesc creation date[notBefore] {
     content: "Nicht vor" oxy_editor(type,datePicker,edit,'@notBefore',format,'yyyy-MM-dd') " und nicht nach " oxy_editor(type,datePicker,edit,'@notAfter',format,'yyyy-MM-dd');
-    -oxy-display-tags: none;    
+    -oxy-display-tags: none;
+    background-color:transparent!important;
 }
 
 
