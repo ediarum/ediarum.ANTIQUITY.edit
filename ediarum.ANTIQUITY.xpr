@@ -43,6 +43,17 @@
                                     <String>URL zum Handbuch</String>
                                 </field>
                             </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${ANT_textClassFunction}</String>
+                                </field>
+                                <field name="value">
+                                    <String>file:/D:/02_telota/01_ediarum/01_Module/ediarum.ANTIQUITY.edit/resources/cabinet.xql</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String></String>
+                                </field>
+                            </userEditorVariable>
                         </userEditorVariable-array>
                     </entry>
                 </serializableOrderedMap>

@@ -259,6 +259,7 @@ profileDesc creation placeName:empty{
 
 textClass:empty{
     content: oxy_editor(type, button, actionID, ANT_textClass, transparent, true, color, black, text-align, right);
+    border: solid 2px;
 }
 
 keywords:before{
