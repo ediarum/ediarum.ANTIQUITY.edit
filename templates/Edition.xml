@@ -4,9 +4,7 @@
     <fileDesc>
       <titleStmt>
         <title xml:lang="${ask('Schreibsprache eintragen', generic, 'la')}"/>
-        <author>
-          <persName>${ask('Autor eintragen', generic, '')}</persName>
-        </author>
+        <author>${ask('Autor eintragen', generic, '')}</author>
         <respStmt>
           <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
           <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben Ihres Vor- und Nachnamens)', generic, '', @editor)}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}</persName>
