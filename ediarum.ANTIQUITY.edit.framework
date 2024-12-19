@@ -13653,13 +13653,13 @@ ANT_moveCaret</String>
 									</action>
 									<action>
 										<field name="id">
-											<String>ANT_writingSession</String>
+											<String>ANT_writingSession_transcription</String>
 										</field>
 										<field name="name">
-											<String>Neue Sektion beginnen</String>
+											<String>Neue Sektion beginnen (Transkription)</String>
 										</field>
 										<field name="description">
-											<String>Weiterere Sektion beginnen</String>
+											<String>Weiterere Sektion in der Transkription beginnen</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/icons/new_section_24.png</String>
@@ -13677,7 +13677,7 @@ ANT_moveCaret</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("div")</String>
+														<String>oxy:allows-child-element("div") and //TEI[@telota:doctype="transcription"]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -15985,7 +15985,7 @@ revisionDesc[2]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("div")</String>
+														<String></String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -16240,10 +16240,10 @@ revisionDesc[2]</String>
 											<String>ANT_writingSession_edition_all</String>
 										</field>
 										<field name="name">
-											<String>Neue Sektion beginnen</String>
+											<String>Neue Sektion beginnen (Editionstext)</String>
 										</field>
 										<field name="description">
-											<String>Weiterere Sektion beginnen</String>
+											<String>Weiterere Sektion im Editionstext beginnen</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/icons/new_section_24.png</String>
@@ -16261,7 +16261,7 @@ revisionDesc[2]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>oxy:allows-child-element("div")</String>
+														<String>ancestor-or-self::div and  //TEI[@telota:doctype="edition"]</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -23758,7 +23758,12 @@ ANT_moveCaret</String>
 														<menuSeparator/>
 														<menuItem>
 															<field name="actionID">
-																<String>ANT_writingSession</String>
+																<String>ANT_writingSession_transcription</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>ANT_writingSession_edition_all</String>
 															</field>
 														</menuItem>
 														<menuItem>

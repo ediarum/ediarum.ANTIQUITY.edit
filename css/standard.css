@@ -1129,7 +1129,7 @@ div[type='textpart'][subtype='commented']:before{
 
 
 div[type='transcription'] div[type='textpart']:after{
-    content: oxy_editor(type, button, actionID, ANT_writingSession, transparent, true, color, black, text-align, right)" ";
+    content: oxy_editor(type, button, actionID, ANT_writingSession_transcription, transparent, true, color, black, text-align, right)" ";
 }
 
 div[type='edition'] div[type='textpart']:after{
