@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" telota:doctype="transcription" xml:id="e_${uuid}">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" telota:doctype="edition" xml:id="e_${uuid}">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -14,13 +14,7 @@
         <publisher>Herausgebende Institution</publisher>
       </publicationStmt>
       <sourceDesc>
-        <msDesc rend="manuscript">
-          <msIdentifier xml:id="${ask('ID für transkribierte Handschrift eintragen in Form von Aufbewahrungsort_Signatur', generic, '')}">
-            <settlement>${ask('Aufbewahrungsort der Handschrift eingeben', generic, '')}</settlement>
-            <repository>${ask('Bibliothek der Handschrift eingeben', generic, '')}</repository>
-            <idno>${ask('Signatur der Handschrift', generic, '')}</idno>
-          </msIdentifier>
-        </msDesc>
+        
       </sourceDesc>
     </fileDesc>
     <encodingDesc>

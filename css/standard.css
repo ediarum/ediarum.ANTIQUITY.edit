@@ -278,6 +278,14 @@ textClass keywords term{
     -oxy-show-placeholder : always ;
 }
 
+sourceDesc:empty{
+    content:"Textzeugen eintragen über die Symbolleiste > Variantenapparat (Metadaten)";
+    font-weight:bold;
+    font-size:120%;
+    background-color: #abbcff;;
+}
+
+
 sourceDesc,
 msIdentifier {
     -oxy-display-tags: none;
