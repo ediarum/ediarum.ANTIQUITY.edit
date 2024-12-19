@@ -1191,7 +1191,8 @@ text hi[rend='superscript']{
 text num{
     -oxy-display-tags: none;
     -oxy-placeholder-content:"Zahl";
-    font-style:italic;
+    /*font-style:italic;*/
+    text-decoration: overline;
 }
 
 /* Marginalien */
