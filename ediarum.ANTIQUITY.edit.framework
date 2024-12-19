@@ -20896,7 +20896,7 @@ ANT_rdg_pers/source/wit
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String></String>
+														<String>//TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -21108,7 +21108,7 @@ ANT_@[remove]</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::head</String>
+														<String>ancestor-or-self::head and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -21137,7 +21137,7 @@ ANT_@[remove]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::witness</String>
+														<String>ancestor-or-self::witness and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -21166,7 +21166,7 @@ ANT_@[remove]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>//listWit and not(//listWit/listWit[@xml:id])</String>
+														<String>//listWit and not(//listWit/listWit[@xml:id]) and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -21195,7 +21195,7 @@ ANT_@[remove]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>not(//listWit) and not(//sourceDesc/listWit)</String>
+														<String>not(//listWit) and not(//sourceDesc/listWit) and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -21226,7 +21226,7 @@ ANT_@[remove]</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>not(//listWit)</String>
+														<String>not(//listWit) and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22005,7 +22005,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::bibl</String>
+														<String>ancestor-or-self::bibl and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22036,7 +22036,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>//listBibl and //listBibl/listBibl[@xml:id]</String>
+														<String>//listBibl and //listBibl/listBibl[@xml:id] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22067,7 +22067,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>//listBibl and not(//listBibl/listBibl[@xml:id])</String>
+														<String>//listBibl and not(//listBibl/listBibl[@xml:id]) and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22098,7 +22098,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>not(//sourceDesc//listBibl) and //sourceDesc/listWit</String>
+														<String>not(//sourceDesc//listBibl) and //sourceDesc/listWit and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22131,7 +22131,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>not(//sourceDesc//listBibl) and not(//sourceDesc/listWit)</String>
+														<String>not(//sourceDesc//listBibl) and not(//sourceDesc/listWit) and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22194,7 +22194,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::witness[ancestor::listWit[@xml:id]]</String>
+														<String>ancestor-or-self::witness[ancestor::listWit[@xml:id]] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22226,7 +22226,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::witness[ancestor::listWit[not(@xml:id)]]</String>
+														<String>ancestor-or-self::witness[ancestor::listWit[not(@xml:id)]] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22258,7 +22258,7 @@ ${ask('Ungefährer Zeitraum: Enddatum im Format JJJJ-MM-TT')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>not(//listWit[@xml:id]) and not(//sourceDesc//listWit)</String>
+														<String>not(//listWit[@xml:id]) and not(//sourceDesc//listWit) and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22713,7 +22713,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::person</String>
+														<String>ancestor-or-self::person and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22743,7 +22743,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>not(//sourceDesc//listPerson) and //sourceDesc//listBibl</String>
+														<String>not(//sourceDesc//listPerson) and //sourceDesc//listBibl and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22805,7 +22805,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::bibl[ancestor::listBibl[@xml:id]]</String>
+														<String>ancestor-or-self::bibl[ancestor::listBibl[@xml:id]] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22839,7 +22839,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>ancestor-or-self::bibl[ancestor::listBibl[not(@xml:id)]]</String>
+														<String>ancestor-or-self::bibl[ancestor::listBibl[not(@xml:id)]] and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -22873,7 +22873,7 @@ ${ask('Ende: Folia bzw. Seiten der Handschrift')}</String>
 												</actionMode>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>not(//listBibl[@xml:id]) and not(//sourceDesc//listBibl)</String>
+														<String>not(//listBibl[@xml:id]) and not(//sourceDesc//listBibl) and //TEI[@telota:doctype='edition']</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
@@ -24617,16 +24617,6 @@ ANT_moveCaret</String>
 										</field>
 										<field name="toolbarEntriesDescriptorList">
 											<toolbarEntry-array>
-												<toolbarItem>
-													<field name="actionID">
-														<String>ANT_textClass_01</String>
-													</field>
-												</toolbarItem>
-												<toolbarItem>
-													<field name="actionID">
-														<String>ANT_textClass_02</String>
-													</field>
-												</toolbarItem>
 												<toolbarItem>
 													<field name="actionID">
 														<String>ediarum_manual</String>
