@@ -1180,6 +1180,20 @@ text hi[rend='rubricated']{
     -oxy-placeholder-content:"rubrizierter Text"
 }
 
+text hi[rend='superscript']{
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"hochgestellter Text";
+    position: relative; 
+    top: -0.5em;
+    font-size: 0.7em;
+}
+
+text num{
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"Zahl";
+    font-style:italic;
+}
+
 /* Marginalien */
 
 text note[place^='top'],
