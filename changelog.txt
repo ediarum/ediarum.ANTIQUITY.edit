@@ -1,19 +1,13 @@
-Berlin-Brandenburgische Akademie der Wissenschaften 
-TELOTA - The electronic Life of the Academy
-
+CHANGELOG ediarum.ANTIQUITY.edit
 ------------------------------------------------------------------------------------------------
 
-ediarum.PTA.edit
-Digitale Arbeitsumgebung fÃ¼r das Editionsvorhaben Patristisches Textarchiv: Ein Open Access-Archiv antiker christlicher Texte
+0.6.0. vom 20.12.2024
 
-Framework (Dokumenttyp Zuordnung) fÃ¼r Oxygen XML 
+	* Umbenennung in ediarum.ANTIQUITY.edit, inkl. Anpassungen
+	* Lösung PTA-sepzifischer Features
+	* Robustere Gestaltung vorhandener Features, z.B. Textklassen hinzufügen
+	* Ergänzung kleinerer Features, z.B. Hochstellen, Zahlen
 
-Entwicklung: Nadine Arndt, nadine.arndt@bbaw.de & Elke Zinsmeister, zinsmeister@bbaw.de
-
-Ehemalige: Ursula Kundert
-
-CHANGELOG
-------------------------------------------------------------------------------------------------
 
 0.5.8. vom 30.05.2023
 
