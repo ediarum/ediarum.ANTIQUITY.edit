@@ -14767,10 +14767,10 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<String>ANT_textClass</String>
 										</field>
 										<field name="name">
-											<String>Textklasse einfügen</String>
+											<String>Textklasse einfügen/ändern</String>
 										</field>
 										<field name="description">
-											<String>fügt eine Textklasse ein</String>
+											<String>fügt eine Textklasse ein oder ändert sie</String>
 										</field>
 										<field name="largeIconPath">
 											<String></String>
@@ -14788,13 +14788,31 @@ or ancestor-or-self::p[parent::physDesc] and //TEI[@telota:doctype='edition']</S
 											<actionMode-array>
 												<actionMode>
 													<field name="xpathCondition">
-														<String>not(//profileDesc//textClass//keywords)</String>
+														<String>not(//profileDesc//textClass/keywords)</String>
 													</field>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
 																<String>actionIDs</String>
 																<String>ANT_textClass_01
+ANT_textClass_02</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>//profileDesc//textClass/keywords</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>ANT_removeElements
+ANT_textClass_01
 ANT_textClass_02</String>
 															</entry>
 														</serializableOrderedMap>
@@ -23738,6 +23756,98 @@ ANT_moveCaret</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>ANT_removeElements</String>
+										</field>
+										<field name="name">
+											<String>remove Elements</String>
+										</field>
+										<field name="description">
+											<String>Teil einer MultipleAction</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>//keywords</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>//keywords</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.DeleteElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>ANT_textClass_delete</String>
+										</field>
+										<field name="name">
+											<String>Textklasse löschen</String>
+										</field>
+										<field name="description">
+											<String>löscht eine Textklasse</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>//profileDesc//textClass/keywords</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>actionIDs</String>
+																<String>ANT_removeElements</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteMultipleActionsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -23986,6 +24096,34 @@ ANT_moveCaret</String>
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
+														<menu>
+															<field name="label">
+																<String>Textklasse</String>
+															</field>
+															<field name="accessKey">
+																<String></String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>ANT_textClass</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>ANT_textClass_delete</String>
+																		</field>
+																	</menuItem>
+																</menuEntry-array>
+															</field>
+															<field name="context">
+																<null/>
+															</field>
+														</menu>
 														<menuItem>
 															<field name="actionID">
 																<String>ANT_respStmt</String>
@@ -24562,12 +24700,6 @@ ANT_moveCaret</String>
 															<toolbarItem>
 																<field name="actionID">
 																	<String>ANT_altIdentifier</String>
-																</field>
-															</toolbarItem>
-															<toolbarSeparator/>
-															<toolbarItem>
-																<field name="actionID">
-																	<String>ANT_textClass</String>
 																</field>
 															</toolbarItem>
 															<toolbarSeparator/>
