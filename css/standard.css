@@ -770,20 +770,23 @@ text hi[rend="underline"] del{
 
 /* Publishers editing */
 TEI[telota|doctype="transcripton"] quote supplied,
-TEI[telota|doctype="transcripton"] text supplied {
+TEI[telota|doctype="transcripton"] text supplied,
+app supplied{
     font-family: "BBAWfont-italic";
     background-color: #e0e0e0;
     -oxy-display-tags: none;    
 }
 
 TEI[telota|doctype="transcripton"] quote supplied:before,
-TEI[telota|doctype="transcripton"] text supplied:before  {
+TEI[telota|doctype="transcripton"] text supplied:before,
+app supplied:before  {
     content: "[";
     font-style: normal;
 }
 
 TEI[telota|doctype="transcripton"] quote supplied:after,
-TEI[telota|doctype="transcripton"] text supplied:after {
+TEI[telota|doctype="transcripton"] text supplied:after,
+app supplied:after {
     content: "]";
     font-style: normal;
 }

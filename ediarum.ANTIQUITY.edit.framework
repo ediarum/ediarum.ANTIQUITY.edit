@@ -23692,6 +23692,52 @@ ANT_moveCaret</String>
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>ANT_supplied</String>
+										</field>
+										<field name="name">
+											<String>Fehlendes Wort</String>
+										</field>
+										<field name="description">
+											<String>Fehlendes Wort oder Satzzeichen, durch Herausgeber ergänzt</String>
+										</field>
+										<field name="largeIconPath">
+											<String>${framework}/icons/supplied.gif</String>
+										</field>
+										<field name="smallIconPath">
+											<String>${framework}/icons/supplied16.gif</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("supplied")</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;supplied xmlns="http://www.tei-c.org/ns/1.0">&lt;/supplied></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -24376,6 +24422,11 @@ ANT_moveCaret</String>
 												</field>
 											</toolbarItem>
 											<toolbarSeparator/>
+											<toolbarItem>
+												<field name="actionID">
+													<String>ANT_supplied</String>
+												</field>
+											</toolbarItem>
 											<toolbar>
 												<field name="id">
 													<String>Abkürzungen</String>
