@@ -3,24 +3,15 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title xml:lang="la"/>
-        <author/>
+        <title xml:lang="${ask('Schreibsprache eintragen', generic, 'la', @xmlLang)}"/>
+        <author>${ask('Autor eintragen', generic, '')}</author>
         <respStmt>
           <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
+          <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben Ihres Vor- und Nachnamens)', generic, '', @editor)}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}</persName>
         </respStmt>
       </titleStmt>
       <publicationStmt>
-        <authority ref="http://www.bbaw.de">Berlin-Brandenburgische Akademie der Wissenschaften</authority>
-        <distributor>Patristic Text Archive</distributor>
-        <availability>
-          <licence target="https://creativecommons.org/licenses/by-sa/4.0/">Available under a Creative Commons Attribution ShareAlike 4.0 International License</licence>
-        </availability>
-        <date></date>
-        <idno type="PTA"></idno>
-        <idno type="CPG"></idno>
-        <idno type="BHG"/>
-        <idno type="Aldama"/>
-        <idno type="Pinakes-Oeuvre"></idno>
+        <publisher>Herausgebende Institution</publisher>
       </publicationStmt>
       <sourceDesc>
         <msDesc rend="manuscript">
@@ -66,7 +57,7 @@
         <head>
           <title/>
         </head>
-        <div type="textpart" subtype="${ask('Unterabschnitt der Transkription', combobox, ('section':'Fließtexte';'fragment':'fragmentarische Überlieferung';'commented':'Kommentar';'commentary':'vergleichbarer Text';), 'section')}">
+        <div type="textpart" subtype="${ask('Unterabschnitt der Transkription', combobox, ('section':'Fließtexte';'fragment':'fragmentarische Überlieferung';'commented':'Kommentar';'commentary':'vergleichbarer Text';), 'section')}" xml:lang="${answer(@xmlLang)}">
           <p></p>
         </div>
       </div>

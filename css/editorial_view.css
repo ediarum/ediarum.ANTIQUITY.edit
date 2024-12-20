@@ -1,4 +1,23 @@
-/* Redaktionsansicht Bibelexegese */
+/* 
+Copyright 2024 Berlin-Brandenburg Academy of Sciences and Humanities
+
+This file is part of ediarum.ANTIQUITY.edit
+
+ediarum.ANTIQUITY.edit is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published 
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ediarum.ANTIQUITY.edit is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with ediarum.ANTIQUITY.edit. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/* Redaktionsansicht ANTIQUITY */
 
 @namespace xml "http://www.w3.org/XML/1998/namespace";
 @namespace telota "http://www.telota.de";
@@ -30,7 +49,7 @@ msIdentifier[xml|id]{
 
 
 div[type='transcription']:not([xml|lang])[n]:before{
-    content: "\A Transkription \A Schreibsprache: "oxy_editor(type,button,actionID,pta_div_xml-lang) "\A CTS-PTA-URN: " oxy_textfield(edit, "n",color, "black",columns, 30) "\A\A";
+    content: "\A Transkription \A Schreibsprache: "oxy_editor(type,button,actionID,ANT_div_xml-lang) "\A CTS-PTA-URN: " oxy_textfield(edit, "n",color, "black",columns, 30) "\A\A";
     font-size: 105%;
 }
 
@@ -53,12 +72,14 @@ div[type='textpart'][subtype][n]:before{
             color, gray)" "oxy_textfield(edit, "n",color, "black",columns, 3)" ";;
 }
 
-text pb[n]:after{
+text pb[n]:after,
+text gb[n]:after{
     content: "(" oxy_textfield(edit, "n",color, "black",columns, 4) ")";
     color: gray;
 }
 
-text pb[n][facs]:after{
+text pb[n][facs]:after,
+text gb[n][facs]:after{
     content: "(" oxy_textfield(edit, "n",color, "black",columns, 4)" - "attr(facs) ")";
     color: gray;
 }

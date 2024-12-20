@@ -1,23 +1,20 @@
-/* Hallo Elke */
-
-
 /* 
-Copyright 2011-2018 Berlin-Brandenburg Academy of Sciences and Humanities
+Copyright 2024 Berlin-Brandenburg Academy of Sciences and Humanities
 
-This file is part of ediarum.BASE.edit.edit.
+This file is part of ediarum.ANTIQUITY.edit
 
-ediarum.BASE.edit is free software: you can redistribute it and/or modify
+ediarum.ANTIQUITY.edit is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published 
 by the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-ediarum.BASE.edit is distributed in the hope that it will be useful,
+ediarum.ANTIQUITY.edit is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with ediarum.BASE.edit. If not, see <http://www.gnu.org/licenses/>.
+along with ediarum.ANTIQUITY.edit. If not, see <http://www.gnu.org/licenses/>.
 */
 
 @namespace xml "http://www.w3.org/XML/1998/namespace";
@@ -123,7 +120,7 @@ respStmt resp note {
     -oxy-display-tags: none;
 }
 
-respStmt resp:before,
+respStmt:before,
 respStmt note:before{
     content: " (";
 
@@ -131,7 +128,7 @@ respStmt note:before{
 respStmt resp:after{
     content: " "
 }
-
+respStmt:after,
 respStmt note:after {
     content: ")";
 }
@@ -239,7 +236,7 @@ msIdentifier[xml|id]{
 
 msIdentifier[xml|id=''],
 msIdentifier[xml|id='_']{
-    content: oxy_editor(type,button,actionID,pta_create_msIdentifier_xml-id); 
+    content: oxy_editor(type,button,actionID,ANT_create_msIdentifier_xml-id); 
 }
 
 
@@ -250,15 +247,16 @@ textClass:empty,
 titleStmt title:empty,
 titleStmt author:empty,
 publicationStmt date:empty,
-publicationStmt idno:empty,
-publicationStmt date:empty,
 profileDesc creation date:empty,
+publicationStmt idno:empty,
 profileDesc creation placeName:empty{
-    background-color:#abbcff
+    background-color:#abbcff;
 }
 
+
 textClass:empty{
-    content: oxy_editor(type, button, actionID, pta_textClass, transparent, true, color, black, text-align, right);
+    content: oxy_editor(type, button, actionID, ANT_textClass, transparent, true, color, black, text-align, right);
+    border: solid 2px;
 }
 
 keywords:before{
@@ -279,6 +277,14 @@ textClass keywords term{
     -oxy-placeholder-content: "[Textklasse]";
     -oxy-show-placeholder : always ;
 }
+
+sourceDesc:empty{
+    content:"Textzeugen eintragen über die Symbolleiste > Variantenapparat (Metadaten)";
+    font-weight:bold;
+    font-size:120%;
+    background-color: #abbcff;;
+}
+
 
 sourceDesc,
 msIdentifier {
@@ -563,7 +569,7 @@ revisionDesc[status='final']:before {
     }
  
 revisionDesc:after {
-        content: oxy_editor(type,button,actionID,pta_revisionDesc);
+        content: oxy_editor(type,button,actionID,ANT_revisionDesc);
     }
 
 
@@ -650,7 +656,9 @@ text space {
 }
 
 text pb,
-text cb {
+text cb,
+text gb
+{
     content: "|";
     padding: 0;
     color: black;
@@ -664,25 +672,49 @@ text cb {
 }
 
 text pb[n]:after,
-text cb[n]:after {
+text cb[n]:after,
+text gb[n]:after{
     content: "(" attr(n) ")\A";
     font-family: "BBAWfont-italic";
     color: gray;
 }
 
-text pb[facs]:after {
+text pb[facs]:after,
+text gb[facs]:after{
     content: "(folio)";
     font-family: "BBAWfont-italic";
 }
 
-text pb[n][facs]:after {
+text pb[n][facs]:after,
+text gb[n][facs]:after
+{
     content: "(" attr(n) ")";
     font-family: "BBAWfont-italic";
 }
 
-text pb[facs]:after {
+text pb[facs]:after,
+text gb[facs]:after
+{
     link: url(attr(facs));
     color: #6998BC;
+}
+
+text list,
+text list item {
+    display: block;
+    -oxy-display-tags: none;
+}
+
+text list {
+    margin: 1em 0 1em 1em;    
+}
+
+item{
+    -oxy-placeholder-content:"Listenpunkt";
+}
+
+list head{
+    -oxy-placeholder-content:"Überschrift einer Liste";
 }
 
 /* Authors editing */
@@ -705,6 +737,13 @@ text add {
     color: green;
     -oxy-display-tags: none;
     -oxy-placeholder-content: "[Hinzufügung]"
+}
+
+retrace {
+    color: green;
+    font-weight:bold;
+    -oxy-display-tags: none;
+    -oxy-placeholder-content: "[Überschreiben bzw. Nachzeichnen des ursprünglichen Textes]";
 }
 
 quote hi[rend="overline"],
@@ -731,20 +770,23 @@ text hi[rend="underline"] del{
 
 /* Publishers editing */
 TEI[telota|doctype="transcripton"] quote supplied,
-TEI[telota|doctype="transcripton"] text supplied {
+TEI[telota|doctype="transcripton"] text supplied,
+app supplied{
     font-family: "BBAWfont-italic";
     background-color: #e0e0e0;
     -oxy-display-tags: none;    
 }
 
 TEI[telota|doctype="transcripton"] quote supplied:before,
-TEI[telota|doctype="transcripton"] text supplied:before  {
+TEI[telota|doctype="transcripton"] text supplied:before,
+app supplied:before  {
     content: "[";
     font-style: normal;
 }
 
 TEI[telota|doctype="transcripton"] quote supplied:after,
-TEI[telota|doctype="transcripton"] text supplied:after {
+TEI[telota|doctype="transcripton"] text supplied:after,
+app supplied:after {
     content: "]";
     font-style: normal;
 }
@@ -912,10 +954,10 @@ profileDesc creation:before{
 
 profileDesc creation date {
     display: block;
-    content: oxy_editor(type,button,actionID,pta_creation_date_when) " oder "oxy_editor(type,button,actionID,pta_creation_date_fromTo) " oder "oxy_editor(type,button,actionID,pta_creation_date_notBeforeNotAfter);
+    content: oxy_editor(type,button,actionID,ANT_creation_date_when) " oder "oxy_editor(type,button,actionID,ANT_creation_date_fromTo) " oder "oxy_editor(type,button,actionID,ANT_creation_date_notBeforeNotAfter);
 }
 
-/* pta_creation_date */
+/* ANT_creation_date */
 
 profileDesc creation placeName {
     display: block;
@@ -931,16 +973,19 @@ profileDesc creation date:before {
 profileDesc creation date[when] {
     content: oxy_editor(type,datePicker,edit,'@when',format,'yyyy-MM-dd');
     -oxy-display-tags: none;
+    background-color:transparent!important;
 }
 
 profileDesc creation date[from] {
     content: oxy_editor(type,datePicker,edit,'@from',format,'yyyy-MM-dd') " bis " oxy_editor(type,datePicker,edit,'@to',format,'yyyy-MM-dd');
     -oxy-display-tags: none;
+    background-color:transparent!important;
 }
 
 profileDesc creation date[notBefore] {
     content: "Nicht vor" oxy_editor(type,datePicker,edit,'@notBefore',format,'yyyy-MM-dd') " und nicht nach " oxy_editor(type,datePicker,edit,'@notAfter',format,'yyyy-MM-dd');
-    -oxy-display-tags: none;    
+    -oxy-display-tags: none;
+    background-color:transparent!important;
 }
 
 
@@ -992,12 +1037,12 @@ div head title{
 }
 
 div[type='transcription']:not([xml|lang]):before{
-    content: "Schreibsprache: " oxy_editor(type,button,actionID,pta_div_xml-lang);;
+    content: "Schreibsprache: " oxy_editor(type,button,actionID,ANT_div_xml-lang);;
     color:gray;
     background-color:#abbcff
 }
 
-/* pta_div/@xml:lang */
+/* ANT_div/@xml:lang */
 
 div[type='transcription'][xml|lang]:before{
     content: "Schreibsprache: " attr(xml|lang);
@@ -1087,11 +1132,11 @@ div[type='textpart'][subtype='commented']:before{
 
 
 div[type='transcription'] div[type='textpart']:after{
-    content: oxy_editor(type, button, actionID, pta_writingSession, transparent, true, color, black, text-align, right)" ";
+    content: oxy_editor(type, button, actionID, ANT_writingSession_transcription, transparent, true, color, black, text-align, right)" ";
 }
 
 div[type='edition'] div[type='textpart']:after{
-    content: oxy_editor(type, button, actionID, pta_writingSession_edition_all, transparent, true, color, black, text-align, right)" ";
+    content: oxy_editor(type, button, actionID, ANT_writingSession_edition_all, transparent, true, color, black, text-align, right)" ";
 }
 
 
@@ -1137,6 +1182,28 @@ text hi[rend='rubricated']{
     /*font-size:1.6em;*/
     -oxy-placeholder-content:"rubrizierter Text"
 }
+
+text hi[rend='superscript']{
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"hochgestellter Text";
+    position: relative; 
+    top: -0.5em;
+    font-size: 0.7em;
+}
+
+text num{
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"Zahl";
+}
+
+text div[xml|lang="grc"] num{
+    text-decoration: overline;
+}
+
+text div[xml|lang="la"] num{
+    font-style:italic;
+}
+
 
 /* Marginalien */
 
