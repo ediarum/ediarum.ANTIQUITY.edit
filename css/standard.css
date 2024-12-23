@@ -21,32 +21,6 @@ along with ediarum.ANTIQUITY.edit. If not, see <http://www.gnu.org/licenses/>.
 @namespace telota "http://www.telota.de";
 @namespace oxy "http://www.oxygenxml.com/extensions/author";
 
-/*@font-face{
-    font-family: "BBAWfont";
-    src:url("../fonts/linlibertine_r.ttf");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face{
-    font-family: "BBAWfont-italic";
-    src:url("../fonts/linlibertine_ri.ttf");
-    font-weight: normal;
-}
-
-@font-face{
-    font-family: "Biolinum";
-    src: url("../fonts/linbiolinum_r.ttf");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face{
-    font-family: "Biolinum-italic";
-    src: url("../fonts/linbiolinum_ri.ttf");
-    font-weight: normal;
-}*/
-
 @font-face{
     font-family: "IFAOGrec";
     src: url("../fonts/IFAOGrec.ttf");
