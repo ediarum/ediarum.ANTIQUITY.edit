@@ -23,7 +23,7 @@ abstract: >-
   a subset of the TEI guidelines.
 license: GPL-3.0
 version: 0.6.0
-date-released: '2024-12-20'
+date-released: '2024-12-30'
 references: 
   - authors:
       - given-names: Martin
