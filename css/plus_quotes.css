@@ -1,0 +1,70 @@
+/* 
+Copyright 2024 Berlin-Brandenburg Academy of Sciences and Humanities
+
+This file is part of ediarum.ANTIQUITY.edit
+
+ediarum.ANTIQUITY.edit is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published 
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ediarum.ANTIQUITY.edit is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with ediarum.ANTIQUITY.edit. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+@import url("reading_view.css");
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+
+oxy|comment,
+oxy|comment[oxy_comment_start],
+oxy|processing-instruction {
+    display:none !important;
+}
+
+oxy|processing-instruction[xml-stylesheet],
+oxy|processing-instruction[oxy_comment_start]
+{
+    display:none !important;
+}
+
+/* Zitat */
+
+quote{
+    background-color:yellow !important;
+    
+    -oxy-placeholder-content:"[Zitat eintragen]"   
+}
+
+
+/* Pseudo-Zitat */
+
+seg[type="psq"]{
+    background-color:yellow;
+    
+    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+}
+/* Anspielung */
+
+seg[type="allusion"]{
+    background-color:yellow;
+   
+    -oxy-placeholder-content:"[Text der Anspielung eintragen]"
+}
+
+seg[type="similar"]{
+    background-color:yellow;
+    
+    -oxy-placeholder-content:"[Text der Simile eintragen]"
+}
+
+seg[type="source"]{
+    background-color:yellow;
+   
+    -oxy-placeholder-content:"[Text der Quelle eintragen]"
+}

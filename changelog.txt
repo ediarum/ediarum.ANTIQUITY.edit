@@ -1,0 +1,61 @@
+CHANGELOG ediarum.ANTIQUITY.edit
+------------------------------------------------------------------------------------------------
+
+0.6.0. vom 30.12.2024
+
+	* Umbenennung in ediarum.ANTIQUITY.edit, inkl. Anpassungen
+	* L�sung PTA-sepzifischer Features
+	* Robustere Gestaltung vorhandener Features, z.B. Textklassen hinzuf�gen
+	* Erg�nzung kleinerer Features, z.B. Hochstellen, Zahlen
+
+
+0.5.8. vom 30.05.2023
+
+	* Erweiterung für Editionstexte (Metadaten) implementiert
+
+0.5.7. vom 04.05.2023
+
+	* Erweiterung für Editionstexte (Textbereich) implementiert
+
+0.5.6. vom 22.11.2022
+
+	* Shortcut für lb break
+	* CSS für syrischen Text (rtl)
+
+
+0.5.5. vom 24.01.2022
+
+	* An Oxygen 24.0 angepasst.
+	* Unbenannte Aktionsleisten benannt
+
+0.5.4 vom 30.09.2021
+
+	* kleinere Bugs behoben
+	
+0.5.3 vom 27.08.2021
+
+	* Marginalien mit Hintergrundfarbe
+	* kleinere Bugs behoben
+
+0.5.2 vom 09.08.2021
+
+	* Schema aktualisiert
+
+0.5.1 vom 19.07.2021
+
+	* Neue Schriftart
+	* Angabe von Textklassen
+	* Kleinere Anpassungen
+
+0.5.0 vom 05.07.2021
+
+	* Breakpoint: Datenmodell folgt dem des PTA
+	* Featureanpassungen für Transkriptionen
+	* Testphase startet
+
+
+0.4.4 vom 22.11.2020:
+
+	* Initial commit: Release ediarum.BIBELEXEGESE.edit v0.4.4
+	* Umstellung auf ediarum.BASE.edit
+	* Featureanpassungen für Transkriptionen

@@ -1,0 +1,178 @@
+/* 
+Copyright 2024 Berlin-Brandenburg Academy of Sciences and Humanities
+
+This file is part of ediarum.ANTIQUITY.edit
+
+ediarum.ANTIQUITY.edit is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published 
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ediarum.ANTIQUITY.edit is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with ediarum.ANTIQUITY.edit. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+@import url("reading_view.css");
+
+/* Variantenapparat allgemein */
+
+
+
+text app{
+    padding-left: 8px; 
+    padding-right: 8px; 
+    padding-bottom: 4px; 
+    background-color: DarkOrange;
+}
+
+app[type="variants"] lem {
+    background-color: LightYellow;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+}
+
+app[type="variants"] rdg {
+    background-color: lightCyan;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+}
+
+app[type="variants"] rdg:nth-child(2n) {
+    background-color: PaleGreen;
+}    
+
+
+app[type="variants"] lem[wit][source][resp]:after {
+    content: " ("attr(wit) attr(source) attr(resp)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[wit][source]:after {
+    content: " ("attr(wit)"; " attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[wit][resp]:after {
+    content: " ("attr(wit) attr(resp)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[source][resp]:after {
+    content: " ("attr(resp)"; " attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] lem[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 70%;
+}
+
+    
+app[type="variants"] rdg[wit][source][resp]:after {
+    content: " ("attr(wit) attr(source) attr(resp)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[wit][source]:after {
+    content: " ("attr(wit) attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[wit][resp]:after {
+    content: " ("attr(wit) attr(resp)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[source][resp]:after {
+    content: " ("attr(resp) attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 70%;
+}
+
+app[type="variants"] rdg[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 70%;
+}
+
+
+
+/* Homoioteleuton */
+rdg[cause="homoioteleuton"]{
+    content:" (Homoioteleuton) ";
+}
+
+/* Homoiarkton */
+rdg[cause="homoiarkton"]{
+    content:" (Homoiarkton) ";
+}
+
+/* saut du même */
+rdg[cause="saut_du_meme"]{
+    content:" (saut du même) ";
+}
+
+/* Hinzufügung */
+
+
+
+
+/* Auslassung */
+rdg[type="omission"]{
+    content:" (Auslassung) ";
+}
+
+/* Löschung */
+rdg[type="deletion"]{
+    content:" (Löschung) ";
+}
+
+/* Nicht lesbarer Text */
+rdg[type="illegible"]{
+    content:" (Nicht lesbarer Text) ";
+}
+
+/* Lücke (Beschädigung) */
+rdg[type="damage"]{
+    content:" (Lücke (Beschädigung)) ";
+}
+
+/* Lücke (freigelassen) */
+rdg[type="fenestra"]{
+    content:" (Lücke (freigelassen)) ";
+}
+
+/* vermutete Lücke */
+rdg[type="lacunam_indicavit"]{
+    content:" (vermutete Lücke) ";
+}
+
+/* Korrektur durch Schreiber/Korrektor */
+rdg[varSeq][hand][style]{
+    content:" (Korrektur " attr(varSeq)") ";
+}

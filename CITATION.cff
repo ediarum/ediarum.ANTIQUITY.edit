@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+title: ediarum.ANTIQUITY.edit
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Nadine
+    family-names: Arndt
+    orcid: 'https://orcid.org/0000-0002-2257-7236'
+  - given-names: Elke
+    family-names: Zinsmeister
+    orcid: 'https://orcid.org/0009-0000-1816-6648'
+repository-code: 'https://github.com/ediarum/ediarum.ANTIQUITY.edit'
+url: 'https://www.ediarum.org'
+abstract: >-
+  ediarum.ANTIQUITY is a digital working environment that
+  has been tailored to the requirements of editing texts
+  from antiquity, late antiquity and the Byzantine period.
+  It enables easy and convenient transcription and
+  annotation of manuscripts or prints in TEI-XML. The data
+  model is based on the PTA-Schema (Patristic Text Archive),
+  a subset of the TEI guidelines.
+license: GPL-3.0
+version: 0.6.0
+date-released: '2024-12-30'
+references: 
+  - authors:
+      - given-names: Martin
+        family-names: Fechner
+        orcid: 'https://orcid.org/0000-0001-9233-0653'
+    title: "ediarum.JAR"
+    type: software
+    repository-code: "https://github.com/ediarum/ediarum.JAR" 
+    version: 3.1.0
+  - authors:
+    - given-names: Annette
+      name-particle: von
+      family-names: Stockhausen
+      orcid: 'https://orcid.org/0000-0001-5382-6322'
+    title: "Patristisches Textarchiv (PTA) – TEI-Schema"
+    type: dataset
+    repository-code: "https://github.com/PatristicTextArchive/Schema" 
+    version: 3.0

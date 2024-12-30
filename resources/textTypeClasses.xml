@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:telota="http://www.telota.de"
+     telota:doctype="text_type_class_register"
+     xml:id="text_type_class_register">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Text Type ClassificationSystematisation of Keywords for Computational Historical Semantics</title>
+         </titleStmt>
+         <publicationStmt>
+            <p part="N">by Roland Scheel and Tim Geelhaar Goethe-Universität Frankfurt am Main 17th April
+                    2014</p>
+         </publicationStmt>
+         <sourceDesc default="false">
+            <p part="N">Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+            <!--<list type="text_classes">-->
+                <!--<item type="text_class">-->
+         <list type="text_class">
+            <head>Biblical</head>
+            <item>
+               <label>Biblical - Genesis</label>
+            </item>
+            <item>
+               <label>Biblical - Exodus</label>
+            </item>
+            <item>
+               <label>Biblical - Leviticus</label>
+            </item>
+            <item>
+               <label>Biblical - Numeri</label>
+            </item>
+            <item>
+               <label>Biblical - Deuteronomium</label>
+            </item>
+            <item>
+               <label>Biblical - Joshua</label>
+            </item>
+            <item>
+               <label>Biblical - Judges</label>
+            </item>
+            <item>
+               <label>Biblical - Ruth</label>
+            </item>
+            <item>
+               <label>Biblical - Samuel</label>
+            </item>
+            <item>
+               <label>Biblical - Kings</label>
+            </item>
+            <item>
+               <label>Biblical - Chronicles</label>
+            </item>
+            <item>
+               <label>Biblical - Ezra</label>
+            </item>
+            <item>
+               <label>Biblical - Nehemiah</label>
+            </item>
+            <item>
+               <label>Biblical - Tobit</label>
+            </item>
+            <item>
+               <label>Biblical - Judith</label>
+            </item>
+            <item>
+               <label>Biblical - Esther</label>
+            </item>
+            <item>
+               <label>Biblical - Maccabees</label>
+            </item>
+            <item>
+               <label>Biblical - Psalms</label>
+            </item>
+            <item>
+               <label>Biblical - Job</label>
+            </item>
+            <item>
+               <label>Biblical - Proverbs</label>
+            </item>
+            <item>
+               <label>Biblical - Ecclesiastes</label>
+            </item>
+            <item>
+               <label>Biblical - Song of Solomon</label>
+            </item>
+            <item>
+               <label>Biblical - Wisdom</label>
+            </item>
+            <item>
+               <label>Biblical - Sirach</label>
+            </item>
+            <item>
+               <label>Biblical - Psalms of Solomon</label>
+            </item>
+            <item>
+               <label>Biblical - Minor Prophets</label>
+            </item>
+            <item>
+               <label>Biblical - Isaiah</label>
+            </item>
+            <item>
+               <label>Biblical - Jeremiah</label>
+            </item>
+            <item>
+               <label>Biblical - Baruch</label>
+            </item>
+            <item>
+               <label>Biblical - Lamentations</label>
+            </item>
+            <item>
+               <label>Biblical - Letter of Jeremiah</label>
+            </item>
+            <item>
+               <label>Biblical - Ezekiel</label>
+            </item>
+            <item>
+               <label>Biblical - Daniel</label>
+            </item>
+            <item>
+               <label>Biblical - Gospel According to Matthew</label>
+            </item>
+            <item>
+               <label>Biblical - Gospel According to Mark</label>
+            </item>
+            <item>
+               <label>Biblical - Gospel According to Luke</label>
+            </item>
+            <item>
+               <label>Biblical - Gospel According to John</label>
+            </item>
+            <item>
+               <label>Biblical - Acts of the Apostles</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Romans</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Corinthians I</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Corinthians II</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Galatians</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Ephesians</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Philippians</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Colossians</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Thessalonians I</label>
+            </item>
+            <item>
+               <label>Biblical - Pauline Epistles: To the Thessalonians II</label>
+            </item>
+            <item>
+               <label>Biblical - Pastoral Epistles: To Timothy I</label>
+            </item>
+            <item>
+               <label>Biblical - Pastoral Epistles: To Timothy II</label>
+            </item>
+            <item>
+               <label>Biblical - Pastoral Epistles: To Titus</label>
+            </item>
+            <item>
+               <label>Biblical - Pastoral Epistles: To Philemon</label>
+            </item>
+            <item>
+               <label>Biblical - Pastoral Epistles: Tothe Hebrews</label>
+            </item>
+            <item>
+               <label>Biblical - General Epistles: Epistle of James</label>
+            </item>
+            <item>
+               <label>Biblical - General Epistles: Epistle of Peter I</label>
+            </item>
+            <item>
+               <label>Biblical - General Epistles: Epistle of Peter II</label>
+            </item>
+            <item>
+               <label>Biblical - General Epistles: Epistle of John I</label>
+            </item>
+            <item>
+               <label>Biblical - General Epistles: Epistle of John II</label>
+            </item>
+            <item>
+               <label>Biblical - General Epistles: Epistle of John III</label>
+            </item>
+            <item>
+               <label>Biblical - General Epistles: Epistle of Jude</label>
+            </item>
+            <item>
+               <label>Biblical - Revelation</label>
+            </item>
+            <item>
+               <label>Biblical - New Testament Apocrypha</label>
+            </item>
+            <item>
+               <label>Biblical - Paratexts</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Theological</head>
+            <item>
+               <label>Theological - Genesis</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Genesis</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Exodus</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Leviticus</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Numeri</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Deuteronomium</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Joshua</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Judges</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Ruth</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Samuel</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Kings</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Chronicles</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Ezra</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Nehemiah</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Tobit</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Judith</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Esther</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Maccabees</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Psalms</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Job</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Proverbs</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Ecclesiastes</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Song of Solomon</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Wisdom</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Sirach</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Psalms of Solomon</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Minor Prophets</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Isaiah</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Jeremiah</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Baruch</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Lamentations</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Letter of Jeremiah</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Ezekiel</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: Old Testament - Daniel</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Gospel According to Matthew</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Gospel According to Mark</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Gospel According to Luke</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Gospel According to John</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Acts of the Apostles</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Romans</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Corinthians I</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Corinthians II</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Galatians</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Ephesians</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Philippians</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Colossians</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Thessalonians I</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pauline Epistles: To the Thessalonians II</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pastoral Epistles: To Timothy I</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pastoral Epistles: To Timothy II</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pastoral Epistles: To Titus</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pastoral Epistles: To Philemon</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Pastoral Epistles: Tothe Hebrews</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - General Epistles: Epistle of James</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - General Epistles: Epistle of Peter I</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - General Epistles: Epistle of Peter II</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - General Epistles: Epistle of John I</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - General Epistles: Epistle of John II</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - General Epistles: Epistle of John III</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - General Epistles: Epistle of Jude</label>
+            </item>
+            <item>
+               <label>Theological - Bible Exegesis: New Testament - Revelation</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - [subcategories mirroring Bible
+                                    structure]</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Antichrist</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Christology</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Catechism</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Creation</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Doctrine of the Faith</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Doctrine of Grace</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Doctrine of God</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Ecclesiology</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Eschatology</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Free will</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Justice</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Mariology</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Monasticism</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Mysticism</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Peace Pneumatology Predestination</label>
+            </item>
+            <item>
+               <label>Theological - Dogmatic Treatise - Purgatory Resurrection Sacraments
+                                    Trinity</label>
+            </item>
+            <item>
+               <label>Theological - Polemics</label>
+            </item>
+            <item>
+               <label>Theological - Polemics</label>
+            </item>
+            <item>
+               <label>Theological - Vision</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Liturgical</head>
+            <item>
+               <label>Liturgical - Missale</label>
+            </item>
+            <item>
+               <label>Liturgical - Antiphonary</label>
+            </item>
+            <item>
+               <label>Liturgical - Blessing</label>
+            </item>
+            <item>
+               <label>Liturgical - Ceremony</label>
+            </item>
+            <item>
+               <label>Liturgical - Diptychon</label>
+            </item>
+            <item>
+               <label>Liturgical - Exorcism</label>
+            </item>
+            <item>
+               <label>Liturgical - Gradual</label>
+            </item>
+            <item>
+               <label>Liturgical - Hymn</label>
+            </item>
+            <item>
+               <label>Liturgical - Lectionary</label>
+            </item>
+            <item>
+               <label>Liturgical - Text related to memoria</label>
+            </item>
+            <item>
+               <label>Liturgical - Ordines Pater noster</label>
+            </item>
+            <item>
+               <label>Liturgical - Prayer</label>
+            </item>
+            <item>
+               <label>Liturgical - Procession</label>
+            </item>
+            <item>
+               <label>Liturgical - Psalter</label>
+            </item>
+            <item>
+               <label>Liturgical - Sacrament</label>
+            </item>
+            <item>
+               <label>Liturgical - Symbolon</label>
+            </item>
+            <item>
+               <label>Liturgical - Poem</label>
+            </item>
+            <item>
+               <label>Liturgical - Treatise</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Paraenetic</head>
+            <item>
+               <label>Paraenetic - Exempla</label>
+            </item>
+            <item>
+               <label>Paraenetic - Paraenetic Letter</label>
+            </item>
+            <item>
+               <label>Paraenetic - Mirror</label>
+            </item>
+            <item>
+               <label>Paraenetic - Sermon</label>
+            </item>
+            <item>
+               <label>Paraenetic - Treatise (thematic)</label>
+            </item>
+            <item>
+               <label>Paraenetic - Penitential</label>
+            </item>
+            <item>
+               <label>Paraenetic - Sentences</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Religious practical</head>
+            <item>
+               <label>Religious practical - Carmen</label>
+            </item>
+            <item>
+               <label>Religious practical - Prayer</label>
+            </item>
+            <item>
+               <label>Religious practical - Book of Hours</label>
+            </item>
+            <item>
+               <label>Religious practical - Memoria</label>
+            </item>
+            <item>
+               <label>Religious practical - Religious Theatre</label>
+            </item>
+            <item>
+               <label>Religious practical - Report</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Legal</head>
+            <item>
+               <label>Legal - Canon Law</label>
+            </item>
+            <item>
+               <label>Legal - Capitulary</label>
+            </item>
+            <item>
+               <label>Legal - Royal Episcopal</label>
+            </item>
+            <item>
+               <label>Legal - Charter</label>
+            </item>
+            <item>
+               <label>Legal - Contract/Treaty</label>
+            </item>
+            <item>
+               <label>Legal - Council</label>
+            </item>
+            <item>
+               <label>Legal - Customary Law</label>
+            </item>
+            <item>
+               <label>Legal - Decree</label>
+            </item>
+            <item>
+               <label>Legal - Feudal Law</label>
+            </item>
+            <item>
+               <label>Legal - Jurisdiction (church)</label>
+            </item>
+            <item>
+               <label>Legal - Jurisdiction (secular)</label>
+            </item>
+            <item>
+               <label>Legal - Law of the Land</label>
+            </item>
+            <item>
+               <label>Legal - Lex Barbarorum</label>
+            </item>
+            <item>
+               <label>Legal - Monastic Rule</label>
+            </item>
+            <item>
+               <label>Legal - Procedural Law</label>
+            </item>
+            <item>
+               <label>Legal - Roman Law</label>
+            </item>
+            <item>
+               <label>Legal - Rule of a Corporations other than Monastery</label>
+            </item>
+            <item>
+               <label>Legal - Synodal Statute</label>
+            </item>
+            <item>
+               <label>Legal - Testament</label>
+            </item>
+            <item>
+               <label>Legal - Town Law</label>
+            </item>
+            <item>
+               <label>Legal - Visitation</label>
+            </item>
+            <item>
+               <label>Legal - Glossary on [categories above]</label>
+            </item>
+            <item>
+               <label>Legal - Treatise on [categories above]</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Administrative</head>
+            <item>
+               <label>Administrative - Account of Properties (Rent-roll/Polyptychon etc.)</label>
+            </item>
+            <item>
+               <label>Administrative - Tax List</label>
+            </item>
+            <item>
+               <label>Administrative - Toll Tariff</label>
+            </item>
+            <item>
+               <label>Administrative - Library Catalogue</label>
+            </item>
+            <item>
+               <label>Administrative - Repertorie of Fiefs</label>
+            </item>
+            <item>
+               <label>Administrative - List of Persons (Matricle, List of burghers, of communities
+                                etc.)</label>
+            </item>
+            <item>
+               <label>Administrative - Rental</label>
+            </item>
+            <item>
+               <label>Administrative - Administrative Communications</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Scholarly</head>
+            <item>
+               <label>Scholarly - Encyclopedia</label>
+            </item>
+            <item>
+               <label>Scholarly - Summa</label>
+            </item>
+            <item>
+               <label>Scholarly - Compilation/Florilegium</label>
+            </item>
+            <item>
+               <label>Scholarly - Commentary</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (artes liberales)</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (artes liberales) - Rhetoric</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (artes liberales) - Grammar</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (artes liberales) - Logics</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (artes liberales) - Arithmetic</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (artes liberales) - Geometry</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (artes liberales) - Music</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (artes liberales) - Astronomy</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (virtues)</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (politics)</label>
+            </item>
+            <item>
+               <label>Scholarly - Treatise (specific other subjects)</label>
+            </item>
+            <item>
+               <label>Scholarly - Itinerary/Geography</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Educational</head>
+            <item>
+               <label>Educational - artes notariae</label>
+            </item>
+            <item>
+               <label>Educational - ars dictaminis/ars dictandi</label>
+            </item>
+            <item>
+               <label>Educational - artes praedicandi</label>
+            </item>
+            <item>
+               <label>Educational - artes orandi</label>
+            </item>
+            <item>
+               <label>Educational - Manual on Teaching and Learning</label>
+            </item>
+            <item>
+               <label>Educational - University: disputation</label>
+            </item>
+            <item>
+               <label>Educational - University: disputation - Theology</label>
+            </item>
+            <item>
+               <label>Educational - University: disputation - Law</label>
+            </item>
+            <item>
+               <label>Educational - University: disputation - Medicine</label>
+            </item>
+            <item>
+               <label>Educational - Exercise</label>
+            </item>
+            <item>
+               <label>Educational - Dictionary and Grammar</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Medical</head>
+            <item>
+               <label>Medical - Treatise</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Polemic</head>
+            <item>
+               <label>Polemic - Apologia</label>
+            </item>
+            <item>
+               <label>Polemic - Complaint</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Oratory</head>
+            <item>
+               <label>Oratory - Funeral/Eulogy</label>
+            </item>
+            <item>
+               <label>Oratory - Panegyric</label>
+            </item>
+            <item>
+               <label>Oratory - Collection</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Historiography</head>
+            <item>
+               <label>Historiography - Annals</label>
+            </item>
+            <item>
+               <label>Historiography - Chronicle</label>
+            </item>
+            <item>
+               <label>Historiography - Thematic Historiography</label>
+            </item>
+            <item>
+               <label>Historiography - Thematic Historiography - Church history</label>
+            </item>
+            <item>
+               <label>Historiography - Gesta</label>
+            </item>
+            <item>
+               <label>Historiography - World Chronicle</label>
+            </item>
+            <item>
+               <label>Historiography - Genealogy</label>
+            </item>
+            <item>
+               <label>Historiography - Poem</label>
+            </item>
+            <item>
+               <label>Historiography - Travel Report</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Biographical</head>
+            <item>
+               <label>Biographical - Hagiography</label>
+            </item>
+            <item>
+               <label>Biographical - Hagiography - Legendaria</label>
+            </item>
+            <item>
+               <label>Biographical - Hagiography - Martyrologia Translationes</label>
+            </item>
+            <item>
+               <label>Biographical - Biography (non-hagiographical)</label>
+            </item>
+            <item>
+               <label>Biographical - Autobiography</label>
+            </item>
+            <item>
+               <label>Biographical - Poem</label>
+            </item>
+            <item>
+               <label>Biographical - Epitaph</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Letters</head>
+            <item>
+               <label>Letters - Dedication</label>
+            </item>
+            <item>
+               <label>Letters - Collection</label>
+            </item>
+            <item>
+               <label>Letters - Official Letter</label>
+            </item>
+            <item>
+               <label>Letters - Personal Letter</label>
+            </item>
+            <item>
+               <label>Letters - Mimetic Letter</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Inscriptions</head>
+            <item>
+               <label>Inscriptions - Epitaph</label>
+            </item>
+            <item>
+               <label>Inscriptions - Monument</label>
+            </item>
+            <item>
+               <label>Inscriptions - Building</label>
+            </item>
+            <item>
+               <label>Inscriptions - Graffito</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Songs (non-liturgical)</head>
+            <item>
+               <label>Songs (non-liturgical)</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Non-referential: Prose</head>
+            <item>
+               <label>Non-referential: Prose</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Non-referential: Poetry</head>
+            <item>
+               <label>Non-referential: Poetry</label>
+            </item>
+         </list>
+         <list type="text_class">
+            <head>Diverse</head>
+            <item>
+               <label>Diverse</label>
+            </item>
+         </list>
+         <!--</item>-->
+         <!--</list>-->
+      </body>
+   </text>
+</TEI>

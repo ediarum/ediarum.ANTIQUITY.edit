@@ -1,0 +1,1605 @@
+/* 
+Copyright 2024 Berlin-Brandenburg Academy of Sciences and Humanities
+
+This file is part of ediarum.ANTIQUITY.edit
+
+ediarum.ANTIQUITY.edit is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published 
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ediarum.ANTIQUITY.edit is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with ediarum.ANTIQUITY.edit. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+@namespace xml "http://www.w3.org/XML/1998/namespace";
+@namespace telota "http://www.telota.de";
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+@font-face{
+    font-family: "IFAOGrec";
+    src: url("../fonts/IFAOGrec.ttf");
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "brill";
+    src: url("../fonts/BrillRoman.ttf");
+    font-weight: normal;
+}
+
+oxy|processing-instruction{
+    visibility:-oxy-collapse-text;
+    -oxy-display-tags: none;
+}
+
+oxy|comment{
+    visibility:-oxy-collapse-text;
+    -oxy-display-tags: none;
+}
+
+TEI {
+    padding: 1em;
+    font-family: BBAWfont;
+     -oxy-display-tags: none;
+}
+
+/* ################ teiHeader ############ */
+
+teiHeader {
+    padding: 0 0 1em 0;
+    border-bottom: 1px #000000 solid;
+    font-family: "BBAWfont-italic";
+
+}
+
+titleStmt {
+    display: block;
+    margin: 0 0 1em 0;
+}
+
+titleStmt title {
+    -oxy-placeholder-content: "Titel";
+    -oxy-display-tags: none;
+    font-size: 1.5em;
+}
+
+titleStmt title idno {
+    padding: 0 0.5em 0 0;
+    -oxy-placeholder-content: "Briefnummer";
+    -oxy-display-tags: none;
+}
+
+titleStmt title idno:after {
+    content: ".";
+} 
+
+titleStmt editor,
+titleStmt respStmt {
+    display: block;
+    font-size: 0.8em;
+}
+
+teiHeader > editor:after {
+    content: "(Herausgeber)";
+}
+
+respStmt resp,
+respStmt resp note {
+    -oxy-display-tags: none;
+}
+
+respStmt:before,
+respStmt note:before{
+    content: " (";
+
+}
+respStmt resp:after{
+    content: " "
+}
+respStmt:after,
+respStmt note:after {
+    content: ")";
+}
+
+respStmt persName,
+titleStmt persName surname,
+titleStmt persName forename {
+    -oxy-display-tags: none;
+}
+
+titleStmt surname:after {
+    content:",";
+}
+
+editionStmt {
+    display: none;
+}
+
+publicationStmt {
+    display: block;
+    /*-oxy-foldable : true ;
+    -oxy-folded : true ;
+    content: "Angaben zur Publikation";
+    font-style:normal;
+    font-weight:bold;*/
+    margin-bottom:1em;
+}
+
+publicationStmt authority,
+publicationStmt distributor,
+publicationStmt availability{
+    display:block;
+    text-align:right;
+}
+
+publicationStmt date:before{
+    content:"(Geplantes) Veröffentlichungsdatum : "
+}
+
+publicationStmt date{
+    display:block;
+    margin-bottom:1em;
+    -oxy-placeholder-content:"Datum der Veröffentlichung";
+    -oxy-show-placeholder:always;
+    color:black;
+    text-align:right;
+}
+
+
+publicationStmt idno{
+    display:block;
+    margin-bottom:1em;
+    color:black;
+}
+
+publicationStmt idno{
+    -oxy-placeholder-content:"Bitte ausfüllen oder löschen über 'Rechtsklick > Komplett löschen'";
+    -oxy-show-placeholder:always;
+}
+
+publicationStmt idno[type="PTA"]:before{
+    content: "PTA-Signatur: "
+}
+
+publicationStmt idno[type="CPG"]:before{
+    content: "CPG-Signatur: "
+}
+
+publicationStmt idno[type="BHG"]:before{
+    content: "BHG-Signatur: "
+}
+
+publicationStmt idno[type="Aldama"]:before{
+    content: "Aldama: "
+}
+
+publicationStmt idno[type="Pinakes-Oeuvre"]:before{
+    content: "Pinakes-Oeuvre-Signatur: "
+}
+
+publicationStmt idno[type="ClaCla"]:before{
+    content: "ClaCla-Signatur: "
+}
+
+publicationStmt idno[type="TLG"]:before{
+    content: "TLG-Signatur: "
+}
+
+msDesc msIdentifier settlement{
+    -oxy-placeholder-content:"Aufbewahrungsort der Handschrift";
+    -oxy-show-placeholder:always;
+}
+msDesc msIdentifier repository{
+    -oxy-placeholder-content:"Bibliothek der Handschrift";
+    -oxy-show-placeholder:always;
+}
+msDesc msIdentifier idno{
+    -oxy-placeholder-content:"Signatur der Handschrift";
+    -oxy-show-placeholder:always;
+}
+
+msIdentifier[xml|id]{
+    content:''
+}
+
+msIdentifier[xml|id=''],
+msIdentifier[xml|id='_']{
+    content: oxy_editor(type,button,actionID,ANT_create_msIdentifier_xml-id); 
+}
+
+
+sourceDesc msDesc settlement:empty,
+sourceDesc msDesc repository:empty,
+sourceDesc msDesc idno:empty,
+textClass:empty,
+titleStmt title:empty,
+titleStmt author:empty,
+publicationStmt date:empty,
+profileDesc creation date:empty,
+publicationStmt idno:empty,
+profileDesc creation placeName:empty{
+    background-color:#abbcff;
+}
+
+
+textClass:empty{
+    content: oxy_editor(type, button, actionID, ANT_textClass, transparent, true, color, black, text-align, right);
+    border: solid 2px;
+}
+
+keywords:before{
+    content: "Textklasse(n):";
+    font-weight:bold;
+}
+textClass keywords{
+    margin-top:1em;
+}
+
+textClass,
+textClass keywords,
+textClass keywords term{
+    display: block;
+}
+
+textClass keywords term{
+    -oxy-placeholder-content: "[Textklasse]";
+    -oxy-show-placeholder : always ;
+}
+
+sourceDesc:empty{
+    content:"Textzeugen eintragen über die Symbolleiste > Variantenapparat (Metadaten)";
+    font-weight:bold;
+    font-size:120%;
+    background-color: #abbcff;;
+}
+
+
+sourceDesc,
+msIdentifier {
+    -oxy-display-tags: none;
+    margin:2em 0 2em 0;
+}
+
+
+sourceDesc msDesc settlement:after,
+sourceDesc msDesc institution:after,
+sourceDesc msDesc repository:after,
+sourceDesc msDesc collection:after{
+    content: " / ";
+}
+
+sourceDesc:before {
+    display: block;
+}
+
+sourceDesc msDesc {
+    display: block;/*
+    content: "Handschrift: ";*/
+}
+
+sourceDesc msDesc:before {
+    content: "Handschrift: ";
+    font-weight:bold;
+}
+
+sourceDesc msDesc * {
+    -oxy-display-tags: none;
+}
+
+sourceDesc msDesc idno[type='uri']:before {
+    content: "\A URI: ";
+}
+
+sourceDesc msDesc physDesc p {
+    display: block;
+    -oxy-placeholder-content: "[Hier Papier, Format etc. eintragen]";
+}
+
+sourceDesc msDesc physDesc objectDesc{
+    display: block;
+    margin-top:1em;
+}
+
+sourceDesc msDesc physDesc objectDesc:before {
+    content: "Handschriftenbeschreibung: ";
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+sourceDesc listWit witness,
+sourceDesc listBibl bibl,
+sourceDesc listPerson person
+{
+    display: block;
+}
+
+/* TEXTZEUGEN METADATEN */
+listWit:not([xml|id]),
+sourceDesc listBibl,
+sourceDesc listPerson{
+    -oxy-foldable: true;
+    -oxy-folded: true;
+    margin-top: 2em;
+}
+
+
+listWit[xml|id] witness,
+listBibl bibl,
+listPerson person{
+    display:block;
+    margin-top:1em;
+    margin-left:1em;
+}
+
+abbr[type='siglum']{
+    font-weight:bold;
+}
+
+listWit witness abbr{
+    -oxy-placeholder-content:"[Sigle der Handschrift]";
+}
+
+listBibl bibl abbr{
+    -oxy-placeholder-content:"[Sigle der Edition]";
+}
+
+listPerson person abbr{
+    -oxy-placeholder-content:"[Sigle Konjektor:in]";
+}
+
+listWit witness abbr:after,
+listBibl bibl abbr:after,
+listPerson person abbr:after{
+    content: " \A "
+}
+
+/* Handschriftliche Textzeugen */
+listWit:not([xml|id]):before{
+    content: "Liste der Textzeugen: Handschriftliche Zeugen";
+    font-weight:bold;
+    font-size:110%;
+}
+
+listWit listWit[xml|id]:before{
+    content:"\A "
+}
+
+listWit listWit[xml|id] > head{
+    text-decoration:underline;
+    font-weight:bold;
+    font-size:110%;
+}
+
+listWit{
+    -oxy-display-tags: none;
+}
+
+listWit:not([xml|id]) head{
+    display:block;
+}
+
+listWit:not([xml|id]) witness{
+    display:block;
+    margin-top:1em;
+}
+
+witness name{
+    -oxy-placeholder-content:"[Lateinischer Name der Handschrift]";
+    -oxy-show-placeholder:always;
+}
+
+witness name:not([key]):after{
+    content: "Bitte Verweis auf die Handschriftenbeschreibung setzen, ggf. diese neu anlegen";
+    border:solid red;
+    padding: 1px;
+    display:block;
+}
+
+witness origDate{
+    -oxy-placeholder-content:"[Datierung der Handschrift]";
+    -oxy-show-placeholder:always;
+}
+
+witness locus{
+    -oxy-placeholder-content:"[Folia bzw. Seiten der Handschrift]";
+    -oxy-show-placeholder:always;
+}
+
+/* frühere Editionen */
+
+sourceDesc listBibl:before{
+    content: "Liste der Textzeugen: frühere Editionen";
+    font-weight:bold;
+    font-size:110%;
+}
+
+listBibl listBibl[xml|id]:before{
+    content:"\A "
+}
+
+listBibl listBibl[xml|id] > head{
+    text-decoration:underline;
+    font-weight:bold;
+    font-size:110%;
+}
+
+listBibl editor{
+    -oxy-placeholder-content:"[Herausgeber der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl title{
+    -oxy-placeholder-content:"[Titel der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl pubPlace{
+    -oxy-placeholder-content:"[Erscheinungsort der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl publisher{
+    -oxy-placeholder-content:"[Verlag/Verleger der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl date{
+    -oxy-placeholder-content:"[Veröffentlichungsjahr der Edition]";
+    -oxy-show-placeholder:always;
+}
+
+listBibl publisher:before,
+listBibl publisher:after,
+listBibl title:before,
+listBibl title:after{
+    content: " / ";
+}
+
+
+/* Konjektoren */
+sourceDesc listPerson:before{
+    content: "Konjektor:innen";
+    font-weight:bold;
+    font-size:110%;
+}
+
+sourceDesc listPerson note{
+    display:block;
+    -oxy-placeholder-content:"[Zitierhinweis]";
+}
+
+ref[target]{
+    color: #465E7A;
+    border-bottom: 1px dashed #00C6FF;
+    
+}
+
+
+/*
+listWit[n='textWitnesses'] listWit witness{
+    content: oxy_xpath(oxy_concat("string-join(//listWit[@n='textWitnesses']/witness[contains('",attr("sameAs"),"',@xml:id)]/idno[@type='siglum']/string(), ' ')")) " ";
+}*/
+
+/* revisionDesc */
+
+revisionDesc {
+-oxy-foldable : true ;
+-oxy-folded : true ;
+
+}
+
+revisionDesc change {
+display : block ;
+margin-top : 0.4em ;
+margin-right : 0 ;
+margin-bottom : 0 ;
+margin-left : 0 ;
+border-bottom-width : 1px ;
+border-bottom-style : solid ;
+border-bottom-color : rgb(127 , 157 , 185) ;
+border-left-width : 1px ;
+border-left-style : solid ;
+border-left-color : rgb(127 , 157 , 185) ;
+border-right-width : 1px ;
+border-right-style : solid ;
+border-right-color : rgb(127 , 157 , 185) ;
+border-top-width : 1px ;
+border-top-style : solid ;
+border-top-color : rgb(127 , 157 , 185) ;
+padding-top : 0.4em ;
+padding-right : 0.4em ;
+padding-left : 0.4em ;
+padding-bottom : 0.4em ;
+background-color : white ;
+max-width : 50rem ;
+-oxy-display-tags : none ;
+
+line-height : 1.4 ;
+-oxy-show-placeholder : always ;
+-oxy-placeholder-content : "[Kommentar zur Änderung eingeben]" ;
+}
+
+
+revisionDesc[status='draft']:before {
+        content:
+        "Status: " url('gfx/status_draft.gif')
+    }
+    
+revisionDesc[status='final']:before {
+        content:
+        "Status: " url('gfx/status_final.gif')
+         }
+ revisionDesc {
+        display: block;
+        margin: 1em 0 0.5em 0;
+         color : rgb(70 , 94 , 122) ;
+    }
+ 
+revisionDesc:after {
+        content: oxy_editor(type,button,actionID,ANT_revisionDesc);
+    }
+
+
+revisionDesc listChange:before {
+                display: block;
+               margin: 1em 0 0.5em 0;
+               font-family : "BBAWfont-italic" ;     
+               
+               color : rgb(70 , 94 , 122) ;
+    	content: "Bearbeitungshistorie";
+    	margin: 0.5em 0 0 0;
+    	
+    }
+    
+revisionDesc listChange{  
+    -oxy-foldable: true;
+	-oxy-folded: true;
+	
+  }
+
+revisionDesc change {
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "[Kommentar zur Änderung eingeben]";
+    }
+revisionDesc change:before {
+    	content: oxy_editor(type,datePicker,edit,'@when',format,'yyyy-MM-dd');
+    }
+ revisionDesc change[who]:before {
+    	content: oxy_editor(type,datePicker,edit,'@when',format,'yyyy-MM-dd')
+        	     " von " oxy_editor(type,text,edit,'@who',columns,10) " ";
+    }
+
+
+
+/* ############## text ################# */
+
+/* text structure */
+
+text body {
+    position: relative;
+    display: block;
+}
+
+text head {
+    display: block;
+    margin: 0 0 1em 0;
+}
+
+text head[type="h1"] {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+text head[type="h2"] {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+text head[type="h3"] {
+    font-size: 1.2em;
+}
+
+text p {
+    display: block;
+    margin: 0 0 1em 0;
+}
+
+text lb {
+    display: inline;
+    -oxy-display-tags: none;            
+}
+
+text lb:before {
+    content: "\A";
+    white-space: pre-line;
+}
+
+/* see <br> in http://www.w3.org/TR/CSS2/sample.html */
+
+text space {
+    content: "   ";
+    border-bottom: 1px dotted gray;
+    -oxy-display-tags: none;
+}
+
+text pb,
+text cb,
+text gb
+{
+    content: "|";
+    padding: 0;
+    color: black;
+    -oxy-display-tags: none;
+    display:block;
+    
+}
+
+text cb {
+    content: "||";
+}
+
+text pb[n]:after,
+text cb[n]:after,
+text gb[n]:after{
+    content: "(" attr(n) ")\A";
+    font-family: "BBAWfont-italic";
+    color: gray;
+}
+
+text pb[facs]:after,
+text gb[facs]:after{
+    content: "(folio)";
+    font-family: "BBAWfont-italic";
+}
+
+text pb[n][facs]:after,
+text gb[n][facs]:after
+{
+    content: "(" attr(n) ")";
+    font-family: "BBAWfont-italic";
+}
+
+text pb[facs]:after,
+text gb[facs]:after
+{
+    link: url(attr(facs));
+    color: #6998BC;
+}
+
+text list,
+text list item {
+    display: block;
+    -oxy-display-tags: none;
+}
+
+text list {
+    margin: 1em 0 1em 1em;    
+}
+
+item{
+    -oxy-placeholder-content:"Listenpunkt";
+}
+
+list head{
+    -oxy-placeholder-content:"Überschrift einer Liste";
+}
+
+/* Authors editing */
+
+quote subst,
+text subst {
+    -oxy-display-tags: none;
+}
+
+quote del,
+text del {
+    color: red;
+    background-color: white;
+    text-decoration: line-through;
+    -oxy-display-tags: none;
+}
+
+quote add,
+text add {
+    color: green;
+    -oxy-display-tags: none;
+    -oxy-placeholder-content: "[Hinzufügung]"
+}
+
+retrace {
+    color: green;
+    font-weight:bold;
+    -oxy-display-tags: none;
+    -oxy-placeholder-content: "[Überschreiben bzw. Nachzeichnen des ursprünglichen Textes]";
+}
+
+quote hi[rend="overline"],
+text hi[rend="overline"] {
+    text-decoration: overline;
+    -oxy-display-tags: none;
+}
+
+quote hi[rend="underline"],
+text hi[rend="underline"] {
+    text-decoration: underline;
+    -oxy-display-tags: none;
+}
+
+
+quote del hi[rend="underline"],
+text del hi[rend="underline"],
+quote hi[rend="underline"] del,
+text hi[rend="underline"] del{
+    text-decoration: line-through underline;
+}
+
+
+
+/* Publishers editing */
+TEI[telota|doctype="transcripton"] quote supplied,
+TEI[telota|doctype="transcripton"] text supplied,
+app supplied{
+    font-family: "BBAWfont-italic";
+    background-color: #e0e0e0;
+    -oxy-display-tags: none;    
+}
+
+TEI[telota|doctype="transcripton"] quote supplied:before,
+TEI[telota|doctype="transcripton"] text supplied:before,
+app supplied:before  {
+    content: "[";
+    font-style: normal;
+}
+
+TEI[telota|doctype="transcripton"] quote supplied:after,
+TEI[telota|doctype="transcripton"] text supplied:after,
+app supplied:after {
+    content: "]";
+    font-style: normal;
+}
+
+
+TEI[telota|doctype="transcripton"] text supplied[cert="low"]:before {
+    content: "zu ergänzen wohl [";
+    font-family: "BBAWfont-italic";
+    color: gray;
+}
+
+TEI[telota|doctype="transcripton"] quote surplus,
+TEI[telota|doctype="transcripton"] text surplus {
+    text-decoration: line-through;
+    color: #395B8C;
+}
+
+quote choice,
+text choice {
+    -oxy-display-tags: none;
+}
+
+quote choice sic,
+quote choice orig,
+text choice sic,
+text choice orig,
+quote choice abbr,
+text choice abbr {
+    background-color: #FFDDDD;
+    -oxy-display-tags: none;
+}
+
+quote choice corr,
+quote choice reg,
+text choice corr,
+text choice reg,
+quote choice expan,
+text choice expan {
+    font-style: italic;
+    background-color: #E8FFDD;
+    -oxy-display-tags: none;
+    -oxy-placeholder-content: "[Normalisierte Schreibung]";
+}
+
+quote choice corr,
+text choice corr {
+    -oxy-placeholder-content: "[Korrigierte Schreibung]";
+}
+
+quote corr[type="deleted"],
+text corr[type="deleted"] {
+    content: "[gelöscht]";
+    font-style: italic;
+    color: green;
+}
+
+quote choice abbr,
+text choice abbr {
+    background-color: #e0e0e0;
+}
+
+
+quote choice expan,
+text choice expan {
+    background-color: #E8FFDD;
+    -oxy-placeholder-content: "[Aufgelöste Schreibung]";
+}
+
+quote gap,
+quote unclear,
+text gap,
+text unclear {
+    background-color: #FFA100;
+    -oxy-display-tags: none;
+}
+
+quote gap:after,
+quote unclear:after,
+text gap:after,
+text unclear:after {
+    background-color: #FFA100;
+}
+
+quote unclear,
+text unclear {
+    -oxy-placeholder-content: "[Unsichere Lesung]";
+}
+
+
+quote gap,
+text gap {
+    content: "   ";
+}
+
+text damage {
+    -oxy-display-tags: none;
+    font-style: italic;
+}
+
+text damage:empty {
+    -oxy-display-tags: none;
+    content: "Schadhafte Stelle";
+}
+
+text damage:before {
+    content: "[";
+}
+
+text damage:after {
+    content: "]";
+}
+
+quote ex,
+text ex {
+    font-family: "BBAWfont-italic";
+    -oxy-display-tags: none;
+}
+
+text foreign {
+    font-family: "DejaVu Serif";
+    font-size: 0.8em;
+    -oxy-display-tags: none;
+    background-color: #e0e0e0;
+}
+
+text hi[rendition="#aq"] {
+    font-family: Biolinum;
+    -oxy-display-tags: none;
+}
+
+
+/* Bibelexegese */
+
+titleStmt title {
+    -oxy-show-placeholder: always;
+}
+
+titleStmt author{
+    display: block;
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"Autor"
+}
+
+msIdentifier altIdentifier{
+    display:block;
+}
+
+msIdentifier altIdentifier[type='diktyon']:before{
+    content: "Diktyon-Signatur: " 
+}
+
+msIdentifier altIdentifier:before{
+    content: "weitere Signatur: " 
+}
+
+encodingDesc{
+    display:none;
+}
+
+profileDesc creation:before{
+    content:"Erstellungs-";
+    font-style:normal;
+    font-weight:bold;
+}
+
+profileDesc creation date {
+    display: block;
+    content: oxy_editor(type,button,actionID,ANT_creation_date_when) " oder "oxy_editor(type,button,actionID,ANT_creation_date_fromTo) " oder "oxy_editor(type,button,actionID,ANT_creation_date_notBeforeNotAfter);
+}
+
+/* ANT_creation_date */
+
+profileDesc creation placeName {
+    display: block;
+    /*-oxy-editable: false;*/
+    -oxy-placeholder-content:"Schreibort";
+    -oxy-show-placeholder:always;
+}
+
+profileDesc creation date:before {
+    content: "Datum: ";
+}
+
+profileDesc creation date[when] {
+    content: oxy_editor(type,datePicker,edit,'@when',format,'yyyy-MM-dd');
+    -oxy-display-tags: none;
+    background-color:transparent!important;
+}
+
+profileDesc creation date[from] {
+    content: oxy_editor(type,datePicker,edit,'@from',format,'yyyy-MM-dd') " bis " oxy_editor(type,datePicker,edit,'@to',format,'yyyy-MM-dd');
+    -oxy-display-tags: none;
+    background-color:transparent!important;
+}
+
+profileDesc creation date[notBefore] {
+    content: "Nicht vor" oxy_editor(type,datePicker,edit,'@notBefore',format,'yyyy-MM-dd') " und nicht nach " oxy_editor(type,datePicker,edit,'@notAfter',format,'yyyy-MM-dd');
+    -oxy-display-tags: none;
+    background-color:transparent!important;
+}
+
+
+profileDesc creation placeName:before {
+    content: "Ort: ";
+}
+
+
+
+profileDesc, langUsage, language{
+    -oxy-display-tags: none;
+}
+
+language:before{
+    content:"\A Schreibsprache: " attr(ident)" - "
+}
+
+language:empty{
+    -oxy-placeholder-content: "Schreibsprache (Freitext)";
+    -oxy-show-placeholder:always;
+}
+
+handDesc, handNote{
+    display: block;
+}
+
+handNote:after{
+    content:" ("attr(xml|id)")";
+    color:#a5a5a5 !important;
+}
+
+handDesc{
+    display: block;
+    margin-bottom: 1em;
+}
+
+handDesc:before{
+    content: "Anzahl der Schreiber: "attr(hands);
+    font-weight: bold!important;
+}
+
+
+/* body */
+
+div head title{
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"Titel eingeben";
+    display: block;
+}
+
+div[type='transcription']:not([xml|lang]):before{
+    content: "Schreibsprache: " oxy_editor(type,button,actionID,ANT_div_xml-lang);;
+    color:gray;
+    background-color:#abbcff
+}
+
+/* ANT_div/@xml:lang */
+
+div[type='transcription'][xml|lang]:before{
+    content: "Schreibsprache: " attr(xml|lang);
+    color:gray;
+    font-size: 75%;
+}
+
+div[type='transcription'][xml|lang="syc"]{
+	direction: rtl;
+    display: block;
+    font-family: "Estrangelo Edessa";
+}
+
+div[type='transcription']{
+    display: block;
+    font-family: "brill";
+}
+
+div[type='textpart'][subtype]:before{
+    color:gray;
+    font-size: 75%;
+}
+
+div[type='textpart'][subtype='section']:before{
+    content: "Sektion " attr(n);
+}
+
+div[type='textpart'][subtype='fragment']:before{
+    content: "Fragment " attr(n);
+}
+
+div[type='transcription'] div[type='textpart'][subtype='commented']:before{
+    content: "Kommentar " attr(n);
+}
+
+div[type='transcription'] div[type='textpart'][subtype='commentary']:before{
+    content: "vergleichbarer Text " attr(n);
+}
+
+/* weitere Abschnitte (Editionstext) */
+
+div[type='edition'] div[type='textpart'][subtype='commented']:before{
+    content: "Kommentierter Text " attr(n);
+}
+
+div[type='edition'] div[type='textpart'][subtype='commentary']:before{
+    content: "Kommentierung " attr(n);
+}
+
+div[type='textpart'][subtype='book']:before{
+    content: "Buch " attr(n);
+}
+
+div[type='textpart'][subtype='homily']:before{
+    content: "Homilie " attr(n);
+}
+
+div[type='textpart'][subtype='chapter']:before{
+    content: "Kapitel " attr(n);
+}
+
+div[type='textpart'][subtype='subdok']:before{
+    content: "Unterdokument " attr(n);
+}
+
+div[type='textpart'][subtype='praefatio']:before{
+    content: "Praefatio " ;
+}
+
+div[type='textpart'][subtype='hypopsalmos']:before{
+    content: "Hypopsalmos ";
+}
+
+div[type='textpart'][subtype='hypothesis']:before{
+    content: "Hypothesis ";
+}
+
+div[type='textpart'][subtype='perioche']:before{
+    content: "Perioche ";
+}
+
+div[type='textpart'][subtype='commented']:before{
+    content: "Kommentar " attr(n);
+}
+
+
+
+
+div[type='transcription'] div[type='textpart']:after{
+    content: oxy_editor(type, button, actionID, ANT_writingSession_transcription, transparent, true, color, black, text-align, right)" ";
+}
+
+div[type='edition'] div[type='textpart']:after{
+    content: oxy_editor(type, button, actionID, ANT_writingSession_edition_all, transparent, true, color, black, text-align, right)" ";
+}
+
+
+g{
+    -oxy-display-tags: none;
+    background-color:lightblue;
+}
+
+g[type='diple']{
+    /*content:"›";*/
+    content:"\203a";
+}
+
+g[type='doubled_diple']{
+    /*content:"»";*/
+    content:"\00bb";
+}
+
+g[type='paragraphos']{
+    /*content:"—"; = 2014 = Geviertstrich, Gedankenstrich = 2013*/
+    content:"\2014";
+}
+
+text hi[rend='initial']{
+    -oxy-display-tags: none;
+    font-weight:bold;
+    -oxy-display-tags: none;
+    font-size:2.2em;
+    -oxy-placeholder-content:"Initiale"
+}
+
+text hi[rend='ekthesis']{
+    font-weight:bold;
+    -oxy-display-tags: none;
+    font-size:1.6em;
+    -oxy-placeholder-content:"Ekthesis"
+}
+
+text hi[rend='rubricated']{
+    -oxy-display-tags: none;
+    color: red;
+    font-weight:bold;
+    /*font-size:1.6em;*/
+    -oxy-placeholder-content:"rubrizierter Text"
+}
+
+text hi[rend='superscript']{
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"hochgestellter Text";
+    position: relative; 
+    top: -0.5em;
+    font-size: 0.7em;
+}
+
+text num{
+    -oxy-display-tags: none;
+    -oxy-placeholder-content:"Zahl";
+}
+
+text div[xml|lang="grc"] num{
+    text-decoration: overline;
+}
+
+text div[xml|lang="la"] num{
+    font-style:italic;
+}
+
+
+/* Marginalien */
+
+text note[place^='top'],
+text note[place^='bottom'],
+text note[place='margin_inner'],
+text note[place='margin_outer']{
+    -oxy-placeholder-content:"Marginalie eingeben";
+    background-color: #FFF5EE;
+}
+
+text note[place^='top']{
+    border-top:dotted 1px;
+}
+
+text note[place^='bottom']{
+    border-bottom:dotted 1px;
+}
+
+text note[place='margin_inner']{
+    border-left:dotted 1px;
+}
+
+text note[place='margin_outer']{
+    border-right:dotted 1px;
+}
+
+/* Nomina Sacra */
+
+abbr[type='nomSac'] hi[rendition='#ol']{
+    -oxy-display-tags: none;
+    text-decoration: overline;
+}
+
+/* Handschriftenwechsel */
+handShift{
+    -oxy-display-tags: none;
+    /*content: attr(scribeRef) " ";*/
+    font-size:70%;
+    position: relative; 
+    top: -0.5em;
+    font-size: 0.7em;
+    content:" \|" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("scribeRef"),"',@xml:id)]/string(), ' ')")) " ";
+}
+
+
+/* #######################################
+ * #######################################
+ * #######################################
+ * 
+ * Editionstext 
+ * 
+ * ######################################
+ * ######################################
+ * ######################################*/
+
+/* Metadaten */
+
+biblStruct{
+    display:none;
+}
+
+
+
+
+seg,quote,sic,witStart,witEnd,lacunaStart,lacunaEnd,app,rdg,lem,said,supplied,surplus,rdgGrp{
+    -oxy-display-tags: none;   
+}
+
+
+/* Zitat */
+
+TEI[telota|doctype="edition"] quote{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Zitat eintragen]"   
+}
+
+
+/* Pseudo-Zitat */
+
+seg[type="psq"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Pseudo-Zitat eintragen]"
+}
+/* Anspielung */
+
+seg[type="allusion"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Anspielung eintragen]"
+}
+
+seg[type="similar"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Simile eintragen]"
+}
+
+seg[type="source"]{
+    background-color:yellow;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-bottom: 6px; 
+    -oxy-placeholder-content:"[Text der Quelle eintragen]"
+}
+
+/* direkte Rede */
+
+said:before{
+    content: "»";  
+    color: blue;
+    font-size: 130%;
+}
+
+said:after{
+    content: "«"; 
+    color: blue;
+    font-size: 130%;
+}
+
+/* Crux */
+
+sic:empty{
+    content:"\02020";
+    font-size: 130%;
+}
+
+sic:not(:empty):before,sic:not(:empty):after{
+    content:"\02020";  
+    font-size: 130%;
+}
+
+/* Nachweis von Textzeugen */
+
+app[type="witnesses"] rdg[wit]{
+    content: attr(wit);
+    background-color: Gainsboro;
+    color: DimGray;
+    font-size: 81%;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+}
+
+/* Beginn eines Textzeugen */
+
+witStart{
+    content:" Beginn: ";   
+}
+
+/* Ende eines Textzeugen */
+
+
+witEnd{
+    content:" Ende: ";
+}
+
+/* Beginn einer Lücke eines Textzeugen */
+
+
+lacunaStart{
+    content:" Beginn Lücke: "; 
+}
+
+/* Ende einer Lücke eines Textzeugen */
+
+
+lacunaEnd{
+    content:" Ende Lücke: ";  
+}
+
+
+/* Variantenapparat allgemein */
+
+text app[type="variants"]{
+    padding-left: 8px; 
+    padding-right: 8px; 
+    padding-bottom: 4px; 
+    background-color: RoyalBlue;
+}
+
+app[type="variants"] lem {
+    background-color: LightYellow;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;     
+}
+
+/*  
+app[type="variants"] lem:empty {
+    content: " [leere primäre Variante] ";
+    color: DimGray;
+    font-size: 81%; 
+}
+*/
+
+app[type="variants"] rdg {
+    background-color: LavenderBlush;
+    border-style: dashed;
+    border-color:gray;
+    border-width: 1px;
+    color: DimGray;
+}
+
+app[type="variants"] rdg:nth-child(2n) {
+    background-color: lightCyan;
+}    
+
+
+app[type="variants"] lem[wit][source][resp]:after {
+    content: " ("attr(wit)"; " attr(source) attr(resp)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[wit][source]:after {
+    content: " ("attr(wit)"; " attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[wit][resp]:after {
+    content: " ("attr(wit)"; " attr(resp)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[source][resp]:after {
+    content: " ("attr(resp)"; " attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] lem[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 81%;
+}
+
+    
+app[type="variants"] rdg[wit][source][resp]:after {
+    content: " ("attr(wit)"; " attr(source) attr(resp)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[wit][source]:after {
+    content: " ("attr(wit)"; " attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[wit][resp]:after {
+    content: " ("attr(wit)"; " attr(resp)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[source][resp]:after {
+    content: " ("attr(resp)"; " attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[wit]:after {
+    content: " ("attr(wit)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[source]:after {
+    content: " ("attr(source)") ";
+    font-size: 81%;
+}
+
+app[type="variants"] rdg[resp]:after {
+    content: " ("attr(resp)") ";
+    font-size: 81%;
+}
+
+/* Hinzufügung */
+
+rdg[type="addition"]{
+    content: " [add.] ";
+    font-size: 81%;
+}
+
+
+/* Auslassung */
+
+rdg[type="omission"]{
+    content:" [om.] ";
+    font-size: 81%;
+}
+
+/* Homoioteleuton */
+
+rdg[cause="homoioteleuton"]{
+    content:" [om. - Homoioteleuton] ";
+    font-size: 81%;
+}
+
+/* Homoiarkton */
+
+rdg[cause="homoiarkton"]{
+    content:" [om. - Homoiarkton] ";
+    font-size: 81%;
+}
+
+/* saut du même */
+
+rdg[cause="saut_du_meme"]{
+    content:" [om. - saut du même] ";
+    font-size: 81%;
+}
+
+
+/* Löschung */
+
+lem[type="deletion"]{
+    content:" [del.] ";
+    font-size: 81%;
+}
+
+rdg[type="deletion"]{
+    content:" [del.] ";
+    font-size: 81%;
+}
+
+/* Nicht lesbarer Text */
+
+rdg[type="illegible"]{
+    content:" [illegible] ";
+    font-size: 81%;
+}
+
+/* Lücke (Beschädigung) */
+rdg[type="damage"]{
+    content:" [damage] ";
+    font-size: 81%;
+}
+
+/* Lücke (freigelassen) */
+
+rdg[type="fenestra"]{
+    content:" [fenestra] ";
+    font-size: 81%;
+}
+
+/* Umstellung */
+
+rdg[type="transposition"]{
+    content:" [transp.] ";
+    font-size: 81%;    
+}
+
+
+/* vermutete Lücke */
+
+rdg[type="lacunam_indicavit"]{
+    content:" [lacunam_indicavit] ";
+    font-size: 81%;
+}
+
+/* Korrektur durch Schreiber/Korrektor */
+
+rdg[varSeq="1"][hand][style]{
+    content:" [a.c.] ";
+    font-size: 81%;
+}
+
+rdg[varSeq="2"][hand][style]{
+    content:" [p.c.] ";
+    font-size: 81%;
+}
+
+/* Konjektur */
+
+lem[type="conjecture"]{
+    content:" [coni.] ";
+    font-size: 81%;
+}
+
+rdg[type="conjecture"]{
+        content:" [coni.] ";
+    font-size: 81%;
+}
+
+/* Korrektur durch Editor:in */
+
+lem[type="correction"]{
+    content:" [corr.] ";
+    font-size: 81%;
+}
+
+/* Vorschlag für Konjektur */
+
+rdg[type="proposition"]{
+    content:" [prop.] ";
+    font-size: 81%;
+}
+
+/* Variantengruppe */
+
+rdgGrp:before{
+    content: "[";
+    font-size: 120%;
+    color: DarkGray;
+}
+
+rdgGrp:after{
+    content: "]";
+    font-size: 120%;
+    color: DarkGray;
+}

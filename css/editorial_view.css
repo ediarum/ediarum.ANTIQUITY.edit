@@ -1,0 +1,452 @@
+/* 
+Copyright 2024 Berlin-Brandenburg Academy of Sciences and Humanities
+
+This file is part of ediarum.ANTIQUITY.edit
+
+ediarum.ANTIQUITY.edit is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published 
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ediarum.ANTIQUITY.edit is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with ediarum.ANTIQUITY.edit. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/* Redaktionsansicht ANTIQUITY */
+
+@namespace xml "http://www.w3.org/XML/1998/namespace";
+@namespace telota "http://www.telota.de";
+
+/*@import url("standard.css");*/
+
+
+titleStmt title:after{
+    content: " ("oxy_textfield(edit, "xml:lang",color, "black",columns, 2)")";
+}
+
+handDesc:before{
+    content: "Anzahl der Schreiber ("oxy_textfield(edit, "hands",color, "black",columns, 2)")";
+}
+
+layout:before{
+    content: "Spalte(n): " oxy_textfield(edit, "columns",color, "black",columns, 2);
+}
+
+language:before{
+   content:"\A Schreibsprache: " oxy_textfield(edit, "ident",color, "black",columns, 4)" - ";
+}
+
+
+
+msIdentifier[xml|id]{
+    content:"ID: " oxy_textfield(edit, "xml:id",color, "black",columns, 10)" - "; 
+}
+
+
+div[type='transcription']:not([xml|lang])[n]:before{
+    content: "\A Transkription \A Schreibsprache: "oxy_editor(type,button,actionID,ANT_div_xml-lang) "\A CTS-PTA-URN: " oxy_textfield(edit, "n",color, "black",columns, 30) "\A\A";
+    font-size: 105%;
+}
+
+div[type='transcription'][n]:before{
+    content: "\A Transkription \A Schreibsprache: "oxy_textfield(edit, "xml:lang",color, "black",columns, 3) "\A CTS-PTA-URN: " oxy_textfield(edit, "n",color, "black",columns, 30) "\A\A";
+    font-size: 105%;
+}
+
+div[type='textpart'][subtype][n]:before{
+    font-size: 75%;
+    content:  
+        oxy_popup(
+            edit, "@subtype", 
+            values, "section, fragment, commented, commentary", 
+            labels, "Fließtext, fragmentarische Überlieferung, Kommentar, vergleichbarer Text",
+            resultSeparator, " ", 
+            columns, 5, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, gray)" "oxy_textfield(edit, "n",color, "black",columns, 3)" ";;
+}
+
+text pb[n]:after,
+text gb[n]:after{
+    content: "(" oxy_textfield(edit, "n",color, "black",columns, 4) ")";
+    color: gray;
+}
+
+text pb[n][facs]:after,
+text gb[n][facs]:after{
+    content: "(" oxy_textfield(edit, "n",color, "black",columns, 4)" - "attr(facs) ")";
+    color: gray;
+}
+
+/* Marginalien */
+text note[place]:after{
+    content: " (" 
+        oxy_popup(
+            edit, "@place", 
+            values, "top, top_inner, top_center, top_outer, bottom, bottom_inner, bottom_center, bottom_outer, margin_inner, margin_outer", 
+            labels, "am oberen Rand eingetragen, am oberen Rand innen eingetragen, am oberen Rand mittig eingetragen, am oberen Rand außen eingetragen, am unteren Rand eingetragen, am unteren Rand innen eingetragen, am unteren Rand mittig eingetragen, am unteren Rand außen eingetragen, am Rand innen, am Rand außen",
+            resultSeparator, " ", 
+            columns, 20, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+
+
+text add:after{
+    font-size: 75%;
+    color:black;
+    content: " (" 
+        oxy_popup(
+            edit, "@place", 
+            values, "above, inline, margin", 
+            labels, "über der Zeile eingetragen, innerhalb der Zeile eingetragen, am Rand eingetragen",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text add[hand^="#"]:after{
+    font-size: 75%;
+    color:black;
+    content: " (" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')")) " - "
+        oxy_popup(
+            edit, "@place", 
+            values, "above, inline, margin", 
+            labels, "über der Zeile eingetragen, innerhalb der Zeile eingetragen, am Rand eingetragen",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)
+            " ) ";
+}
+
+text add[hand="unknown"]:after{
+    font-size: 75%;
+    color:black;
+    content: " (Unbekannt - " 
+        oxy_popup(
+            edit, "@place", 
+            values, "above, inline, margin", 
+            labels, "über der Zeile eingetragen, innerhalb der Zeile eingetragen, am Rand eingetragen",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)
+            ") ";
+}
+
+text del:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" 
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text)",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text del[hand^="#"]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')"))" - "
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text)",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)" ) ";
+}
+
+text del[hand^="unknown"]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (Unbekannt - "
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text)",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black) " ) ";
+}
+
+text subst[hand]:after{
+    content:")";
+    font-size:75%;
+}
+
+text subst[hand^="#"]:before{
+    content: "(Ersetzung durch " oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')")) ": ";
+    font-size:75%;    
+}
+
+text subst[hand="unknown"]:before{
+    content: "(Ersetzung durch Unbekannt: ";
+    font-size:75%;    
+}
+
+text subst>del:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" 
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction, unmarked, marker", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text), Der zu ersetzende Text ist überhaupt nicht explizit markiert, Der zu ersetzende Text ist mit einem Zeichen (z.B. einem Obelus o.ä.) markiert",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)") ";
+}
+
+text subst>del[hand^="#"]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("hand"),"',@xml:id)]/string(), ' ')"))" - "
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text), Der zu ersetzende Text ist überhaupt nicht explizit markiert, Der zu ersetzende Text ist mit einem Zeichen (z.B. einem Obelus o.ä.) markiert",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)" ) ";
+}
+
+text subst>del[hand^="unknown"]:after{
+    font-size: 75%;
+    color:black;
+    text-decoration-line: none;
+    content: " (Unbekannt - "
+        oxy_popup(
+            edit, "@rend", 
+            values, "overwrite, strikethrough, erasure, expunction", 
+            labels, "Tilgung durch Überschreibung des ursprünglichen Textes, Tilgung durch Streichung, Tilgung durch Radieren, Tilgung duch Punkte (unter dem Text), Der zu ersetzende Text ist überhaupt nicht explizit markiert, Der zu ersetzende Text ist mit einem Zeichen (z.B. einem Obelus o.ä.) markiert",
+            resultSeparator, " ", 
+            columns, 15, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black) " ) ";
+}
+
+
+
+text unclear:after{
+    content: " (unleserlich)";
+    font-style:italic;
+}
+
+/* <gap reason="illegible" unit="character" quantity="1"/> */
+
+text gap[reason="illegible"][unit][quantity]:before{
+    font-size:75%;
+    content: " ("
+        oxy_textfield(edit, "quantity",color, "black",columns, 3) " "
+        oxy_combobox(
+            edit, "@unit", 
+            editable, false,
+            values, "character, page, line", 
+            labels, "Zeichen, Seiten, Zeilen",
+            fontInherit, false,
+            color, black)
+            " = nicht lesbar"     
+}
+
+text gap[reason="damage"][unit][quantity]:before,
+text gap[reason="fenestra"][unit][quantity]:before{
+    font-size:75%;
+    content: " ("
+        oxy_textfield(edit, "quantity",color, "black",columns, 3) " "
+        oxy_combobox(
+            edit, "@unit", 
+            editable, false,
+            values, "character, page, line", 
+            labels, "Zeichen, Seiten, Zeilen",
+            fontInherit, false,
+            color, black)
+            " = "            
+        oxy_combobox(
+            edit, "@reason", 
+            editable, false,
+            values, "damage, fenestra", 
+            labels, "physische Beschädigung, Fenestra",
+            fontInherit, false,
+            color, black)")"
+}
+              
+text del[rend='erasure'] > gap[reason="illegible"][unit][quantity]:before{
+    font-size:75%;
+    content: " ("
+        oxy_textfield(edit, "quantity",color, "black",columns, 3) " "
+        oxy_combobox(
+            edit, "@unit", 
+            editable, false,
+            values, "character, page, line", 
+            labels, "Zeichen, Seiten, Zeilen",
+            fontInherit, false,
+            color, black)
+            " durch Schreiber zerstört) ";
+    text-decoration:none;
+}          
+
+
+
+handShift{
+    -oxy-display-tags: none;
+    font-size:70%;
+    position: relative; 
+    top: -0.5em;
+    font-size: 0.7em;
+    content:" \|" oxy_xpath(oxy_concat("string-join(//handDesc/handNote[contains('",attr("scribeRef"),"',@xml:id)]/string(), ' ')")) " ("
+    oxy_textfield(edit, "medium",color, "black",columns, 10)
+    ")";
+}
+
+
+
+
+
+text hi[rend='initial']:before,
+text hi[rend='ekthesis']:before{
+    content: oxy_popup(
+            edit, "@rend", 
+            values, "initial, ekthesis", 
+            labels, "(Initiale), (Ekthesis)",
+            resultSeparator, " ", 
+            columns, 6, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)
+            ;
+}
+
+/*div[type='transcription']{
+    display:block;
+}*/
+
+
+
+/* nochmal anschauen */
+/*text supplied:after{
+    content: "] " oxy_popup(
+            edit, "@cert", 
+            values, "high, low", 
+            labels, "(hohe Wahrscheinlichkeit), (geringe Wahrscheinlichkeit)",
+            resultSeparator, " ", 
+            columns, 18, 
+            selectionMode, "single",
+            fontInherit, false,
+            color, black)
+            ;
+}*/
+
+
+
+/* ###################################################################
+ * ###################################################################
+                    Editionstex
+ ###################################################################
+ ################################################################### 
+ *  */
+
+listWit:not([xml|id]),
+sourceDesc listBibl,
+sourceDesc listPerson{
+    -oxy-foldable: false;
+    -oxy-folded: false;
+}
+
+witness:focus-within,bibl:focus-within, person:focus-within{
+    background-color: #e0e0e0;
+}
+
+
+listWit[xml|id]:before{
+    content: "\A xml:id des Hyparchetyps (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) ")\A"!important;
+    color:red;
+}
+
+witness:before{
+    content: "Handschriftlicher Zeuge: "oxy_xpath(oxy_concat("string-join(child::abbr/string(), ' ')")) " \A ""xml:id (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) "), Abschrift ("oxy_textfield(edit, "source",color, "black",columns, 10) "), Sigle: ";
+    font-style:italic;
+    font-size:110%;
+}
+
+witness name:before{
+    content: "lat. Name der Handschrift: ";
+    font-style:italic;
+}
+
+witness name[key]:after{
+    content: "\A Transkription der Handschrift: " 
+    oxy_textfield(edit, "key",color, "black",columns, 15);
+    font-style:italic;
+}
+
+witness origDate:before{
+    content: "Datierung: ";
+    font-style:italic;
+}
+
+witness origDate:after{
+    content: "maschinenlesbare Datierung: Nicht vor: "oxy_textfield(edit, "notBefore",color, "black",columns, 5) " und nicht nach "oxy_textfield(edit, "notAfter",color, "black",columns, 5);
+    display:block;
+    font-style:italic;
+}
+
+witness locus:before{
+    content: "Folio bzw. Seiten der Handschrift: ";
+    font-style:italic;
+}
+
+listBibl bibl:before{
+    content:
+    "frühere Edition: "oxy_xpath(oxy_concat("string-join(child::abbr/string(), ' ')")) " \A "
+    "xml:id (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) "), Sigle: "
+}
+
+listBibl bibl[facs]:after{
+    content:
+    "\A Faksimile-Link: " oxy_textfield(edit, "facs",color, "black",columns, 50) " "url(gfx/link.png);
+    link: url(attr(facs));
+}
+
+sourceDesc listPerson person:before{
+    content: 
+    "Konjektor:in: "oxy_xpath(oxy_concat("string-join(child::abbr/string(), ' ')")) " \A "
+    "xml:id (" oxy_textfield(edit, "xml:id",color, "black",columns, 10) "), Kürzel: "
+}
+
+person note ref[target]:after{
+    content: " ("oxy_textfield(edit, "target",color, "black",columns, 10)")"
+}
+

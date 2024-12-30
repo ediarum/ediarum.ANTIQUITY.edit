@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" telota:doctype="transcription" xml:id="t_${uuid}">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="${ask('Schreibsprache eintragen', generic, 'la', @xmlLang)}"/>
+        <author>${ask('Autor eintragen', generic, '')}</author>
+        <respStmt>
+          <resp>${ask('Art der Mitarbeit', editable_combobox, ('Mitarbeit':'Mitarbeit';'Redaktionelle Mitarbeit':'Redaktionelle Mitarbeit';'Transkription':'Transkription';'Kommentar':'Kommentar';'Register':'Register';'':'';), 'transkribiert von')}</resp>
+          <persName xml:id="${ask('Mitarbeiter*in: Kürzel (bestehend aus dem jeweiligen Anfangsbuchstaben Ihres Vor- und Nachnamens)', generic, '', @editor)}" ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">${ask('Mitarbeiter*in: Vor- und Nachname', generic, '')}</persName>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Herausgebende Institution</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc rend="manuscript">
+          <msIdentifier xml:id="${ask('ID für transkribierte Handschrift eintragen in Form von Aufbewahrungsort_Signatur', generic, '')}">
+            <settlement>${ask('Aufbewahrungsort der Handschrift eingeben', generic, '')}</settlement>
+            <repository>${ask('Bibliothek der Handschrift eingeben', generic, '')}</repository>
+            <idno>${ask('Signatur der Handschrift', generic, '')}</idno>
+          </msIdentifier>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <editorialDecl>
+        <correction>
+          <p>Die in der Handschrift durchgehend auf ι und υ gesetzten Dialytika wurden bei der Transkription nicht aufgenommen.</p>
+        </correction>
+      </editorialDecl>
+      <refsDecl n="CTS">
+        <cRefPattern n="section" matchPattern="(.+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div[@type='transcription']/tei:div[@n='$1'])"/>
+      </refsDecl>
+      <classDecl>
+        <taxonomy xml:id="comphistsem">
+          <bibl>Text Type Classification by <ref target="https://www.comphistsem.org/46.html">"Computational Historical Semantics</ref></bibl>
+        </taxonomy>
+      </classDecl> 
+    </encodingDesc>
+    <profileDesc>
+      <creation>
+        <date/>
+        <placeName/>
+      </creation>
+      <textClass/>
+    </profileDesc>
+    <revisionDesc status="draft">
+      <listChange>
+        <change when="${date(yyyy-MM-dd)}" who="${answer(@editor)}">Created new record</change>
+      </listChange>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="transcription" n="urn:cts:pta:${ask('PTA-Autor-ID', generic, '')}.${ask('PTA-Werk-ID', generic, '')}.pta-ms${ask('Sigle der Handschrift', generic, '')}">
+        <head>
+          <title/>
+        </head>
+        <div type="textpart" subtype="${ask('Unterabschnitt der Transkription', combobox, ('section':'Fließtexte';'fragment':'fragmentarische Überlieferung';'commented':'Kommentar';'commentary':'vergleichbarer Text';), 'section')}" xml:lang="${answer(@xmlLang)}">
+          <p></p>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,158 @@
+/* 
+Copyright 2024 Berlin-Brandenburg Academy of Sciences and Humanities
+
+This file is part of ediarum.ANTIQUITY.edit
+
+ediarum.ANTIQUITY.edit is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published 
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ediarum.ANTIQUITY.edit is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with ediarum.ANTIQUITY.edit. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+@import url("standard.css");
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+
+oxy|comment,
+oxy|comment[oxy_comment_start],
+oxy|processing-instruction {
+    display:none !important;
+}
+
+oxy|processing-instruction[xml-stylesheet],
+oxy|processing-instruction[oxy_comment_start]
+{
+    display:none !important;
+}
+
+quote{
+    background-color:transparent !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important; 
+    padding-bottom: 0px !important;    
+}
+
+
+/* Pseudo-Zitat */
+
+seg[type="psq"]{
+    background-color:transparent;
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+    
+}
+/* Anspielung */
+
+seg[type="allusion"]{
+    background-color:transparent;
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+   
+}
+
+seg[type="similar"]{
+    background-color:transparent;
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+    
+}
+
+seg[type="source"]{
+    background-color:transparent;
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+   
+}
+
+
+
+text app [type="variants"]{   
+    padding-left: 0px; 
+    padding-right: 0px; 
+    padding-bottom: 0px; 
+   background-color:transparent
+}
+
+text app,
+app[type="variants"] lem {
+    background-color:transparent;
+    border-style:none;
+    content:none;
+}
+
+app[type="variants"] lem:empty {
+    display:none;
+}
+
+rdg {
+    display:none 
+}
+
+app[type="variants"] lem[wit][source][resp]:after {
+    content: none;
+}
+
+app[type="variants"] lem[wit][source]:after {
+     content: none;
+}
+
+app[type="variants"] lem[wit][resp]:after {
+     content: none;
+}
+
+app[type="variants"] lem[source][resp]:after {
+      content: none;
+}
+
+app[type="variants"] lem[wit]:after {
+      content: none;
+}
+
+app[type="variants"] lem[source]:after {
+     content: none;
+}
+
+app[type="variants"] lem[resp]:after {
+     content: none;
+}
+
+    
+app[type="variants"] rdg[wit][source][resp]:after {
+    content: none;
+}
+
+app[type="variants"] rdg[wit][source]:after {
+     content: none;
+}
+
+app[type="variants"] rdg[wit][resp]:after {
+      content: none;
+}
+
+app[type="variants"] rdg[source][resp]:after {
+     content: none;
+}
+
+app[type="variants"] rdg[wit]:after {
+    content: none;
+}
+
+app[type="variants"] rdg[source]:after {
+      content: none;
+}
+
+app[type="variants"] rdg[resp]:after {
+      content: none;
+}
