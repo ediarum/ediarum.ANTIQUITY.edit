@@ -1,7 +1,7 @@
 CHANGELOG ediarum.ANTIQUITY.edit
 ------------------------------------------------------------------------------------------------
 
-0.6.0. vom 20.12.2024
+0.6.0. vom 30.12.2024
 
 	* Umbenennung in ediarum.ANTIQUITY.edit, inkl. Anpassungen
 	* Lösung PTA-sepzifischer Features
